@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="诗Shi" customModuleProvider="target">
+            <connections>
+                <outlet property="btnAll" destination="U90-Pc-OH4" id="bcU-fC-2OZ"/>
+                <outlet property="btnCommunity" destination="lum-rs-4zG" id="30p-98-ei5"/>
+                <outlet property="btnRandom" destination="HP9-bl-Lsk" id="yqR-QG-7mD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="qeE-ow-6bT">
+            <rect key="frame" x="0.0" y="0.0" width="255" height="364"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U90-Pc-OH4">
+                    <rect key="frame" x="0.0" y="0.0" width="255" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="nln-Ns-x4M"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                    <state key="normal" title="浏览所有诗人">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="allClick:" destination="-1" eventType="touchUpInside" id="EBC-uy-UfN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HP9-bl-Lsk">
+                    <rect key="frame" x="0.0" y="60" width="255" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="9vi-SI-Upg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                    <state key="normal" title="随机一首诗">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="randomClick:" destination="-1" eventType="touchUpInside" id="bai-x7-9nb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKs-hL-i73">
+                    <rect key="frame" x="0.0" y="120" width="255" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="uof-6Q-ux5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                    <state key="normal" title="智能对诗">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMf-dM-Xyt">
+                    <rect key="frame" x="0.0" y="180" width="255" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Kw3-Nz-18k"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                    <state key="normal" title="作品夹">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q45-qn-LOQ">
+                    <rect key="frame" x="0.0" y="240" width="255" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="GSS-cy-7wZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="搜索">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="searchClick:" destination="-1" eventType="touchUpInside" id="RB7-sY-QNN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lum-rs-4zG">
+                    <rect key="frame" x="0.0" y="300" width="255" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="SkT-7J-2UU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                    <state key="normal" title="社区">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="communityClick:" destination="-1" eventType="touchUpInside" id="SS7-Th-adx"/>
+                    </connections>
+                </button>
+            </subviews>
+            <point key="canvasLocation" x="-423.5" y="-43"/>
+        </stackView>
+    </objects>
+</document>

@@ -1,0 +1,23 @@
+PODS:
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - iCarousel (1.8.3)
+  - SnapKit (3.0.2)
+  - SwipeBack (1.1.1)
+
+DEPENDENCIES:
+  - FMDB
+  - iCarousel (~> 1.8.3)
+  - SnapKit (~> 3.0.2)
+  - SwipeBack (~> 1.0)
+
+SPEC CHECKSUMS:
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SwipeBack: d6759601b40da1f4161033feb30ab475d7d04322
+
+PODFILE CHECKSUM: d76203b83ad4b8ef07bbede322568e4751f86fce
+
+COCOAPODS: 1.1.1

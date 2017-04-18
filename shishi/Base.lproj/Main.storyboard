@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="My4-e8-g9E">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="CMb-mh-7mt">
+            <objects>
+                <navigationController id="My4-e8-g9E" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dMc-PO-dEb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="c4N-kx-mYj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hh7-Gj-iBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2348" y="-61"/>
+        </scene>
+        <!--Data Source-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="诗Shi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HU3-AU-Aav"/>
+                        <viewControllerLayoutGuide type="bottom" id="iCb-jE-CgN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B4b-aF-26o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_image" translatesAutoresizingMaskIntoConstraints="NO" id="3wQ-k6-c1t">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8u-0H-nxJ" customClass="iCarousel">
+                                <rect key="frame" x="0.0" y="72" width="375" height="587"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="um5-86-bx3"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="lXT-Ez-wfx"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouB-fW-byp">
+                                <rect key="frame" x="295" y="607" width="80" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Cp5-vp-4Na"/>
+                                    <constraint firstAttribute="width" constant="80" id="KXc-2a-peM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="VVx-EW-Nui"/>
+                                    <constraint firstAttribute="height" constant="60" id="b4S-f1-9VW"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="fht-qU-lUQ"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="wi3-WH-RMM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
+                                <state key="normal" image="setting"/>
+                                <connections>
+                                    <action selector="settingClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ufW-JP-wkh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzI-z9-HcF">
+                                <rect key="frame" x="0.0" y="607" width="80" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="2Ey-E1-D2P"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="DC6-iA-8Ec"/>
+                                    <constraint firstAttribute="width" constant="80" id="Nvi-2R-dJ6"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Tuk-LK-Lo3"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="cEI-DZ-5Gf"/>
+                                    <constraint firstAttribute="height" constant="60" id="h2d-2P-YGW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
+                                <state key="normal" image="add"/>
+                                <connections>
+                                    <action selector="addClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ae7-WN-BfY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iCb-jE-CgN" firstAttribute="top" secondItem="3wQ-k6-c1t" secondAttribute="bottom" id="0e3-BT-pOu"/>
+                            <constraint firstItem="iCb-jE-CgN" firstAttribute="top" secondItem="g8u-0H-nxJ" secondAttribute="bottom" constant="8" id="4md-wr-iWP"/>
+                            <constraint firstItem="ouB-fW-byp" firstAttribute="trailing" secondItem="g8u-0H-nxJ" secondAttribute="trailing" id="5Wn-DU-GhZ"/>
+                            <constraint firstItem="3wQ-k6-c1t" firstAttribute="top" secondItem="HU3-AU-Aav" secondAttribute="bottom" id="5t7-7I-6FH"/>
+                            <constraint firstItem="iCb-jE-CgN" firstAttribute="top" secondItem="3wQ-k6-c1t" secondAttribute="bottom" id="7Jt-R1-ECP"/>
+                            <constraint firstItem="ouB-fW-byp" firstAttribute="bottom" secondItem="iCb-jE-CgN" secondAttribute="top" id="84i-GJ-srP"/>
+                            <constraint firstItem="CzI-z9-HcF" firstAttribute="leading" secondItem="g8u-0H-nxJ" secondAttribute="leading" id="8Hi-Mp-SKL"/>
+                            <constraint firstItem="3wQ-k6-c1t" firstAttribute="leading" secondItem="B4b-aF-26o" secondAttribute="leading" id="BGf-EC-Fdh"/>
+                            <constraint firstAttribute="trailing" secondItem="3wQ-k6-c1t" secondAttribute="trailing" id="Los-nJ-BAD"/>
+                            <constraint firstItem="3wQ-k6-c1t" firstAttribute="top" secondItem="HU3-AU-Aav" secondAttribute="bottom" id="Oku-w4-m2C"/>
+                            <constraint firstItem="g8u-0H-nxJ" firstAttribute="top" secondItem="HU3-AU-Aav" secondAttribute="bottom" constant="8" id="UQV-pf-uwK"/>
+                            <constraint firstItem="CzI-z9-HcF" firstAttribute="top" secondItem="ouB-fW-byp" secondAttribute="top" id="Zf9-ea-kNr"/>
+                            <constraint firstAttribute="trailing" secondItem="g8u-0H-nxJ" secondAttribute="trailing" id="aeG-f7-71e"/>
+                            <constraint firstItem="iCb-jE-CgN" firstAttribute="top" secondItem="3wQ-k6-c1t" secondAttribute="bottom" id="ft9-43-J45"/>
+                            <constraint firstItem="iCb-jE-CgN" firstAttribute="top" secondItem="3wQ-k6-c1t" secondAttribute="bottom" id="hGQ-wi-t5z"/>
+                            <constraint firstItem="g8u-0H-nxJ" firstAttribute="leading" secondItem="B4b-aF-26o" secondAttribute="leading" id="okx-Eh-gpe"/>
+                            <constraint firstItem="3wQ-k6-c1t" firstAttribute="top" secondItem="HU3-AU-Aav" secondAttribute="bottom" id="tB0-wJ-LEm"/>
+                            <constraint firstItem="3wQ-k6-c1t" firstAttribute="top" secondItem="HU3-AU-Aav" secondAttribute="bottom" id="vuu-ED-Qge"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FD9-qT-e4m"/>
+                    <connections>
+                        <outlet property="btnAdd" destination="CzI-z9-HcF" id="V6l-SS-3cg"/>
+                        <outlet property="btnSetting" destination="ouB-fW-byp" id="jsx-TN-oAa"/>
+                        <outlet property="carousel" destination="g8u-0H-nxJ" id="M4i-ZM-GgR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1218.4000000000001" y="-60.719640179910051"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="add" width="22" height="22"/>
+        <image name="launch_image" width="320" height="480"/>
+        <image name="setting" width="44" height="44"/>
+    </resources>
+</document>

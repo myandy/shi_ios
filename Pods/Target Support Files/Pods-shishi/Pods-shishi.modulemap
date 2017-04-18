@@ -1,0 +1,6 @@
+framework module Pods_shishi {
+  umbrella header "Pods-shishi-umbrella.h"
+
+  export *
+  module * { export * }
+}

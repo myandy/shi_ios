@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="FZLanTingHei-L-GBK-M.TTF">
+            <string>FZLTXHKM</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view autoresizesSubviews="NO" contentMode="scaleToFill" id="kmc-ut-NLb" customClass="UMComLoginPlatformView">
+            <rect key="frame" x="0.0" y="0.0" width="429" height="125"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他登录方式" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZh-Kz-oib">
+                    <rect key="frame" x="172.5" y="2" width="84" height="14"/>
+                    <fontDescription key="fontDescription" name="FZLTXHKM" family="FZLanTingHei-L-GBK-M" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SzY-EY-Ecc" userLabel="left">
+                    <rect key="frame" x="5" y="8.5" width="157.5" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Zft-ZV-PNc"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qyi-Hw-45i" userLabel="right">
+                    <rect key="frame" x="266.5" y="8.5" width="157.5" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="qw8-Ak-Vyq"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HQ-gu-QVO" userLabel="qq">
+                    <rect key="frame" x="184.5" y="46" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="0gN-oN-RML"/>
+                        <constraint firstAttribute="height" constant="60" id="bcx-HN-kpE"/>
+                    </constraints>
+                    <state key="normal" image="UMComSDKResources.bundle/images/tencent+x.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdZ-Pw-ST2" userLabel="wechat">
+                    <rect key="frame" x="260.5" y="46" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Ur2-LK-qOK"/>
+                        <constraint firstAttribute="width" constant="50" id="zTV-4H-z2Z"/>
+                    </constraints>
+                    <state key="normal" image="UMComSDKResources.bundle/images/wechat+x.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="zTV-4H-z2Z"/>
+                            <exclude reference="Ur2-LK-qOK"/>
+                        </mask>
+                    </variation>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKi-T2-uDX" userLabel="sina">
+                    <rect key="frame" x="107.5" y="46" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="r74-d4-gf3"/>
+                        <constraint firstAttribute="height" constant="50" id="rPi-0i-4xC"/>
+                    </constraints>
+                    <state key="normal" image="UMComSDKResources.bundle/images/sinax.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="r74-d4-gf3"/>
+                            <exclude reference="rPi-0i-4xC"/>
+                        </mask>
+                    </variation>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Qyi-Hw-45i" firstAttribute="centerY" secondItem="AZh-Kz-oib" secondAttribute="centerY" id="4Em-3A-RXX"/>
+                <constraint firstItem="SzY-EY-Ecc" firstAttribute="trailing" secondItem="AZh-Kz-oib" secondAttribute="leading" constant="-10" id="5Wb-C1-slZ"/>
+                <constraint firstItem="bKi-T2-uDX" firstAttribute="height" secondItem="7HQ-gu-QVO" secondAttribute="height" id="6jT-ci-HVz"/>
+                <constraint firstAttribute="bottom" secondItem="bKi-T2-uDX" secondAttribute="bottom" constant="105" id="9Rf-ZV-gLw"/>
+                <constraint firstAttribute="trailing" secondItem="Qyi-Hw-45i" secondAttribute="trailing" constant="5" id="AYR-ps-udI"/>
+                <constraint firstItem="pdZ-Pw-ST2" firstAttribute="height" secondItem="7HQ-gu-QVO" secondAttribute="height" id="LNQ-V3-GVq"/>
+                <constraint firstAttribute="bottom" secondItem="7HQ-gu-QVO" secondAttribute="bottom" constant="5" id="MZ3-A9-SzZ"/>
+                <constraint firstItem="AZh-Kz-oib" firstAttribute="top" secondItem="kmc-ut-NLb" secondAttribute="top" constant="2" id="UCS-q8-xiU"/>
+                <constraint firstItem="Qyi-Hw-45i" firstAttribute="leading" secondItem="AZh-Kz-oib" secondAttribute="trailing" constant="10" id="UiK-qN-fCm"/>
+                <constraint firstItem="7HQ-gu-QVO" firstAttribute="centerX" secondItem="AZh-Kz-oib" secondAttribute="centerX" id="XFp-hZ-QJM"/>
+                <constraint firstItem="AZh-Kz-oib" firstAttribute="centerX" secondItem="kmc-ut-NLb" secondAttribute="centerX" id="XYb-tx-F0Q"/>
+                <constraint firstItem="7HQ-gu-QVO" firstAttribute="top" secondItem="AZh-Kz-oib" secondAttribute="bottom" constant="30" id="Y9J-cE-f3c"/>
+                <constraint firstItem="pdZ-Pw-ST2" firstAttribute="centerY" secondItem="7HQ-gu-QVO" secondAttribute="centerY" id="Yis-eJ-fm0"/>
+                <constraint firstItem="7HQ-gu-QVO" firstAttribute="leading" secondItem="bKi-T2-uDX" secondAttribute="trailing" constant="17" id="Zb8-Ek-Ahk"/>
+                <constraint firstItem="pdZ-Pw-ST2" firstAttribute="leading" secondItem="7HQ-gu-QVO" secondAttribute="trailing" constant="16" id="cNh-j0-fk3"/>
+                <constraint firstItem="pdZ-Pw-ST2" firstAttribute="width" secondItem="7HQ-gu-QVO" secondAttribute="width" id="eFh-MZ-pq0"/>
+                <constraint firstItem="SzY-EY-Ecc" firstAttribute="centerY" secondItem="AZh-Kz-oib" secondAttribute="centerY" id="hHc-Mq-Zl3"/>
+                <constraint firstItem="bKi-T2-uDX" firstAttribute="centerY" secondItem="7HQ-gu-QVO" secondAttribute="centerY" id="hsC-k8-cyL"/>
+                <constraint firstItem="SzY-EY-Ecc" firstAttribute="leading" secondItem="kmc-ut-NLb" secondAttribute="leading" constant="5" id="oyE-x5-3hH"/>
+                <constraint firstItem="bKi-T2-uDX" firstAttribute="width" secondItem="7HQ-gu-QVO" secondAttribute="width" id="qiE-me-Y0k"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="9Rf-ZV-gLw"/>
+                    <exclude reference="MZ3-A9-SzZ"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="qqLoginButton" destination="7HQ-gu-QVO" id="CjV-Mh-mo8"/>
+                <outlet property="sinaLoginButton" destination="bKi-T2-uDX" id="QDp-8k-QXB"/>
+                <outlet property="wechatLoginButton" destination="pdZ-Pw-ST2" id="J1Q-9k-bcC"/>
+            </connections>
+            <point key="canvasLocation" x="100.5" y="-592"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="UMComSDKResources.bundle/images/sinax.png" width="75" height="75"/>
+        <image name="UMComSDKResources.bundle/images/tencent+x.png" width="75" height="75"/>
+        <image name="UMComSDKResources.bundle/images/wechat+x.png" width="75" height="75"/>
+    </resources>
+</document>
