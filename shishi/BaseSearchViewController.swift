@@ -63,13 +63,13 @@ class BaseSearchViewController: UIViewController,UITableViewDelegate,UITableView
         NSLog("yun size %d", items.count)
         table.reloadData()
         
-        search.barTintColor = UIColor(intColor:StaticColor.BACK_COLOR)
+        search.barTintColor = UIColor(intColor: SSTheme.Color.BACK_COLOR)
         search.backgroundImage=UIImage()
         search.delegate=self
         
-        table.backgroundColor = UIColor(intColor:StaticColor.BACK_COLOR)
-        cancel.backgroundColor = UIColor(intColor:StaticColor.BACK_COLOR)
-        divide.backgroundColor = UIColor(intColor:StaticColor.DIVIDE_COLOR)
+        table.backgroundColor = UIColor(intColor:SSTheme.Color.BACK_COLOR)
+        cancel.backgroundColor = UIColor(intColor:SSTheme.Color.BACK_COLOR)
+        divide.backgroundColor = UIColor(intColor:SSTheme.Color.DIVIDE_COLOR)
         
     }
     

@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let chooseCellIdentifier = "ChooseCollectionViewCell"
+
 class ChooseViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
     @IBOutlet weak var search: UISearchBar!
     
@@ -28,18 +30,18 @@ class ChooseViewController: UIViewController,UITableViewDelegate,UITableViewData
         orginItems=items
         table.dataSource = self
         table.delegate = self
-        table.register(BaseSearchTableViewCell.self, forCellReuseIdentifier: "ChooseCollectionViewCell")
+        table.register(BaseSearchTableViewCell.self, forCellReuseIdentifier: chooseCellIdentifier)
    
         NSLog("yun size %d", items.count)
         table.reloadData()
         
-        search.barTintColor = UIColor(intColor:StaticColor.BACK_COLOR)
+        search.barTintColor = UIColor(intColor:SSTheme.Color.BACK_COLOR)
         search.backgroundImage=UIImage()
         search.delegate=self
 
-        table.backgroundColor = UIColor(intColor:StaticColor.BACK_COLOR)
-        cancel.backgroundColor = UIColor(intColor:StaticColor.BACK_COLOR)
-        divide.backgroundColor = UIColor(intColor:StaticColor.DIVIDE_COLOR)
+        table.backgroundColor = UIColor(intColor:SSTheme.Color.BACK_COLOR)
+        cancel.backgroundColor = UIColor(intColor:SSTheme.Color.BACK_COLOR)
+        divide.backgroundColor = UIColor(intColor:SSTheme.Color.DIVIDE_COLOR)
         
     }
     
@@ -78,7 +80,7 @@ class ChooseViewController: UIViewController,UITableViewDelegate,UITableViewData
       }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell:BaseSearchTableViewCell  = tableView.dequeueReusableCell(withIdentifier: "ChooseCollectionViewCell", for: indexPath)as! BaseSearchTableViewCell
+        let cell:BaseSearchTableViewCell  = tableView.dequeueReusableCell(withIdentifier: chooseCellIdentifier, for: indexPath)as! BaseSearchTableViewCell
         let data = items[indexPath.row] as! Yun
         cell.title.text = data.name
         cell.desc.text = String(format:"字数：%d", Int(data.count!))
