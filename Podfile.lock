@@ -1,23 +1,31 @@
 PODS:
+  - Alamofire (4.2.0)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
   - iCarousel (1.8.3)
+  - RxSwift (3.1.0)
   - SnapKit (3.0.2)
-  - SwipeBack (1.1.1)
+  - XCGLogger (4.0.0):
+    - XCGLogger/Core (= 4.0.0)
+  - XCGLogger/Core (4.0.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.2.0)
   - FMDB
   - iCarousel (~> 1.8.3)
+  - RxSwift (~> 3.1.0)
   - SnapKit (~> 3.0.2)
-  - SwipeBack (~> 1.0)
+  - XCGLogger
 
 SPEC CHECKSUMS:
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
-  SwipeBack: d6759601b40da1f4161033feb30ab475d7d04322
+  XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: d76203b83ad4b8ef07bbede322568e4751f86fce
+PODFILE CHECKSUM: 7164f16408f75e0db06442385ff63278bff2d40a
 
 COCOAPODS: 1.1.1
