@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditVC" customModule="诗Shi" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelBtn" destination="8PD-ZK-K3F" id="OBf-tw-hmr"/>
+                <outlet property="confirmBtn" destination="mPL-7N-acN" id="0fL-Xk-TFC"/>
+                <outlet property="segmentedControl" destination="edH-yF-mfH" id="l6b-r2-tKS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PD-ZK-K3F">
+                    <rect key="frame" x="0.0" y="540" width="80" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="mnY-id-fvL"/>
+                        <constraint firstAttribute="width" constant="80" id="ort-e8-rHa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
+                    <state key="normal" image="cancel"/>
+                    <connections>
+                        <action selector="cancelBtnClick:" destination="-1" eventType="touchUpInside" id="cJU-Ws-U2O"/>
+                    </connections>
+                </button>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="edH-yF-mfH">
+                    <rect key="frame" x="228.5" y="556" width="143" height="29"/>
+                    <segments>
+                        <segment title="" image="layout_bg_edit"/>
+                        <segment title="" image="layout_bg_paper"/>
+                        <segment title="" image="layout_bg_album"/>
+                    </segments>
+                    <connections>
+                        <action selector="pagedChanged:" destination="-1" eventType="valueChanged" id="Me7-hq-yIF"/>
+                    </connections>
+                </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPL-7N-acN">
+                    <rect key="frame" x="520" y="540" width="80" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="aus-wk-7bZ"/>
+                        <constraint firstAttribute="height" constant="60" id="iCr-WS-U6g"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
+                    <state key="normal" image="setting"/>
+                    <connections>
+                        <action selector="confirmBtnClick:" destination="-1" eventType="touchUpInside" id="6kd-g1-1ji"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="8PD-ZK-K3F" secondAttribute="bottom" id="4Hj-ow-gVs"/>
+                <constraint firstItem="8PD-ZK-K3F" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8AQ-2J-VvY"/>
+                <constraint firstItem="edH-yF-mfH" firstAttribute="centerY" secondItem="8PD-ZK-K3F" secondAttribute="centerY" id="JPP-4h-oqR"/>
+                <constraint firstItem="edH-yF-mfH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Kpq-aT-683"/>
+                <constraint firstAttribute="bottom" secondItem="mPL-7N-acN" secondAttribute="bottom" id="hw1-kO-bPg"/>
+                <constraint firstAttribute="trailing" secondItem="mPL-7N-acN" secondAttribute="trailing" id="sp6-TS-JMb"/>
+            </constraints>
+            <point key="canvasLocation" x="16" y="-83"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cancel" width="15" height="15"/>
+        <image name="layout_bg_album" width="33" height="38"/>
+        <image name="layout_bg_edit" width="33" height="38"/>
+        <image name="layout_bg_paper" width="33" height="38"/>
+        <image name="setting" width="44" height="44"/>
+    </resources>
+</document>

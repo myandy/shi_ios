@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AllAuthorViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
+class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
     @IBOutlet weak var sc: UISegmentedControl!
     
     @IBOutlet weak var btnChoose: UIButton!
@@ -65,7 +65,7 @@ class AllAuthorViewController: UIViewController, UICollectionViewDelegate,UIColl
         cv.dataSource = self
         cv.delegate = self
         
-        cv.register(AllCollectionViewCell.self, forCellWithReuseIdentifier: "AllCollectionViewCell")
+        cv.register(AllAuthorCell.self, forCellWithReuseIdentifier: "AllAuthorCell")
         let height=cv.bounds.height/2-50
         NSLog(String(describing: height))
         vf.itemSize = CGSize(width:70,height:height)
@@ -105,7 +105,7 @@ class AllAuthorViewController: UIViewController, UICollectionViewDelegate,UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        let cell:AllCollectionViewCell  = cv.dequeueReusableCell(withReuseIdentifier: "AllCollectionViewCell", for: indexPath) as! AllCollectionViewCell
+        let cell:AllAuthorCell  = cv.dequeueReusableCell(withReuseIdentifier: "AllAuthorCell", for: indexPath) as! AllAuthorCell
         
         let data = items[indexPath.row%2==0 ? indexPath.row+1 : indexPath.row-1] as! Author
         

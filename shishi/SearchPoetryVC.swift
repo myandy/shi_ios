@@ -8,6 +8,9 @@
 
 import UIKit
 
-class SearchPoetryViewController: BaseSearchViewController{
+class SearchPoetryVC: BaseSearchVC{
     
+    override func loadData() {
+        items = PoetryDB.getRandom100()
+    }
 }

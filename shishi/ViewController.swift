@@ -37,26 +37,25 @@ class ViewController: UIViewController , iCarouselDataSource, iCarouselDelegate
     @IBAction func searchClick(_ sender: Any) {
         let alertController = UIAlertController(title: "搜索", message: "", preferredStyle: UIAlertControllerStyle.alert)
         let alertView1 = UIAlertAction(title: "搜索诗", style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
-            self.navigationController?.pushViewController(SearchPoetryViewController(), animated: true)
+            self.navigationController?.pushViewController(SearchPoetryVC(), animated: true)
          }
         let alertView2 = UIAlertAction(title: "搜索诗人", style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
-            self.navigationController?.pushViewController(SearchAuthorViewController(), animated: true)
+            self.navigationController?.pushViewController(SearchAuthorVC(), animated: true)
         }
         alertController.addAction(alertView1)
         alertController.addAction(alertView2)
         self.present(alertController, animated: true, completion: nil)
     }
     @IBAction func addClick(_ sender: Any) {
-        self.navigationController?.pushViewController(SearchPoetryViewController(), animated: true)
+        self.navigationController?.pushViewController(SearchYunVC(), animated: true)
     }
     @IBOutlet weak var btnRandom: UIButton!
     @IBAction func allClick(_ sender: AnyObject) {
-         self.navigationController?.pushViewController(AllAuthorViewController(), animated: true)
+         self.navigationController?.pushViewController(AllAuthorVC(), animated: true)
      }
     
     @IBAction func randomClick(_ sender: Any) {
-        let secondViewController = RandomPoetryViewController()
-        self.navigationController?.pushViewController(secondViewController, animated: true)
+        self.navigationController?.pushViewController(RandomPoetryVC(), animated: true)
     }
     override func awakeFromNib() {
         super.awakeFromNib()

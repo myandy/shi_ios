@@ -1,14 +1,17 @@
 //
-//  EditViewController.swift
+//  EditPagerView.swift
 //  shishi
 //
-//  Created by andymao on 2017/4/15.
+//  Created by andymao on 2017/4/23.
 //  Copyright © 2017年 andymao. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-public class EditViewController: UIViewController {
+
+public class EditPagerView : UIView,Nibloadable{
+    
+    
     
     @IBOutlet weak var ivTop: UIImageView!
     @IBOutlet weak var keyboard: UIImageView!
@@ -30,47 +33,32 @@ public class EditViewController: UIViewController {
                                         "bg084_small", "bg096_small",
                                         "bg118_small"]
     
-    var writing: Writing?
-    
-    var yun:Yun?
+    public var writing: Writing?
     
     
-    public init(writing:Writing) {
-        self.writing = writing
-        super.init(nibName: nil, bundle: nil)
-    }
+//    public init(frame: CGRect,writing: Writing){
+//        self.writing=writing
+//        super.init(frame: frame)
+//    }
+//    
+//    public required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
-    public init(yun:Yun) {
-        self.writing = Writing()
-        self.yun=yun
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        
+
+    public override func draw(_ rect: CGRect) {
         if writing==nil{
             writing=Writing()
         }
         
         if Utils.isPurnInt(string:(writing?.bgimg)!){
-            ivTop.image=UIImage(named: EditViewController.bgimgList[Int((writing?.bgimg)!)!])
+            ivTop.image=UIImage(named: EditPagerView.bgimgList[Int((writing?.bgimg)!)!])
         }
         
         let linearView = PingzeLinearView(frame: CGRect(x:10,y:70,width:300,height:20), code: "12345,6789")
-        self.view.addSubview(linearView)
-        // Do any additional setup after loading the view.
+        addSubview(linearView)
+
     }
-    
-    public override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
+  
     
 }

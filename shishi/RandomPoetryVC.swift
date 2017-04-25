@@ -8,9 +8,9 @@
 
 import UIKit
 
-class RandomPoetryViewController: UIViewController {
+class RandomPoetryVC: UIViewController {
     
-    @IBOutlet weak var lableIntro: UILabel!
+    @IBOutlet weak var introLabel: UILabel!
     @IBOutlet weak var lableContent: UILabel!
     @IBOutlet weak var lableTitle: UILabel!
     
@@ -53,10 +53,10 @@ class RandomPoetryViewController: UIViewController {
         lableContent.text=poetry.poetry
         
         if (poetry.intro?.characters.count)! > 5{
-            lableIntro.text=poetry.intro
+            introLabel.text=poetry.intro
         }
         else{
-            lableIntro.text=nil
+            introLabel.text=nil
         }
         
         

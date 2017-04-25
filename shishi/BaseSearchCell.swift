@@ -18,7 +18,7 @@ import Foundation
 
 import UIKit
 
-public class BaseSearchTableViewCell: UITableViewCell {
+public class BaseSearchCell: UITableViewCell {
     public var title:UILabel!
     public var desc:UILabel!
     

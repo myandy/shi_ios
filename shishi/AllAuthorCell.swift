@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class AllCollectionViewCell: UICollectionViewCell {
+public class AllAuthorCell: UICollectionViewCell {
 
     public var top:UIView!
     public var lableDynasty:UILabel!
