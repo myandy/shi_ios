@@ -34,11 +34,10 @@ class EditVC: UIViewController {
     }
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        let v = Bundle.main.loadNibNamed("EditPagerView", owner: nil, options: nil)?.first as! EditPagerView
-//        self.view.addSubview(v)
         editPagerView = EditPagerView.loadNib()
         editPagerView?.writing=writing
         self.view.addSubview(editPagerView!)
@@ -46,6 +45,13 @@ class EditVC: UIViewController {
         segmentedControl.tintColor=UIColor.clear
         segmentedControl.selectedSegmentIndex=0
         setSegmentedControlImage()
+        
+        editPagerView?.snp.makeConstraints { (make) in
+                        make.top.equalTo( self.view)
+                        make.bottom.equalTo(cancelBtn.snp.top)
+                        make.left.equalTo(self.view)
+            make.right.equalTo(self.view)
+                    }
 
     }
 

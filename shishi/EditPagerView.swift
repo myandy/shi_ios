@@ -35,16 +35,6 @@ public class EditPagerView : UIView,Nibloadable{
     
     public var writing: Writing?
     
-    
-//    public init(frame: CGRect,writing: Writing){
-//        self.writing=writing
-//        super.init(frame: frame)
-//    }
-//    
-//    public required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
 
     public override func draw(_ rect: CGRect) {
         if writing==nil{

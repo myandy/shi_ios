@@ -219,6 +219,8 @@
 		E2B0DFC31EAF971E001B790C /* UMComFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B0DE2E1EAF9560001B790C /* UMComFoundation.framework */; };
 		E2B0DFC41EAF971E001B790C /* UMCommunitySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B0DE2F1EAF9560001B790C /* UMCommunitySDK.framework */; };
 		E2B0DFC51EAF971E001B790C /* UMComNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B0DE301EAF9560001B790C /* UMComNetwork.framework */; };
+		E2B0DFC71EB0FCB0001B790C /* PoetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B0DFC61EB0FCB0001B790C /* PoetryView.swift */; };
+		E2B0DFC91EB0FCE8001B790C /* PoetryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2B0DFC81EB0FCE8001B790C /* PoetryView.xib */; };
 		E2B7B3021EA1BCC8009D3AFB /* PingzeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B3011EA1BCC8009D3AFB /* PingzeView.swift */; };
 		E2B7B3041EA1C58A009D3AFB /* PingzeLinearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B3031EA1C58A009D3AFB /* PingzeLinearView.swift */; };
 		E2B7B3071EA1D133009D3AFB /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B3051EA1D133009D3AFB /* EditVC.swift */; };
@@ -232,7 +234,6 @@
 		E2E393131EA23AD7005C5685 /* Yun.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E393121EA23AD7005C5685 /* Yun.swift */; };
 		E2E393171EA23DF7005C5685 /* SearchYunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E393151EA23DF7005C5685 /* SearchYunVC.swift */; };
 		E2E393181EA23DF7005C5685 /* BaseSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2E393161EA23DF7005C5685 /* BaseSearchVC.xib */; };
-		E2E393211EA388DB005C5685 /* EditTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3931F1EA388DB005C5685 /* EditTabBarController.swift */; };
 		E2E393261EA3C837005C5685 /* SearchAuthorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E393241EA3C837005C5685 /* SearchAuthorVC.swift */; };
 		E2E3932D1EA3CCEC005C5685 /* SearchPoetryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3932B1EA3CCEC005C5685 /* SearchPoetryVC.swift */; };
 		E2E393301EA3CE29005C5685 /* BaseSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3932F1EA3CE29005C5685 /* BaseSearchCell.swift */; };
@@ -1797,6 +1798,8 @@
 		E2B0DFBE1EAF9580001B790C /* UMComUserUpdateDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMComUserUpdateDataController.m; sourceTree = "<group>"; };
 		E2B0DFC01EAF9580001B790C /* UMComUserAlbumDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMComUserAlbumDataController.h; sourceTree = "<group>"; };
 		E2B0DFC11EAF9580001B790C /* UMComUserAlbumDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMComUserAlbumDataController.m; sourceTree = "<group>"; };
+		E2B0DFC61EB0FCB0001B790C /* PoetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoetryView.swift; sourceTree = "<group>"; };
+		E2B0DFC81EB0FCE8001B790C /* PoetryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PoetryView.xib; sourceTree = "<group>"; };
 		E2B7B3011EA1BCC8009D3AFB /* PingzeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingzeView.swift; sourceTree = "<group>"; };
 		E2B7B3031EA1C58A009D3AFB /* PingzeLinearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingzeLinearView.swift; sourceTree = "<group>"; };
 		E2B7B3051EA1D133009D3AFB /* EditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
@@ -1810,7 +1813,6 @@
 		E2E393121EA23AD7005C5685 /* Yun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yun.swift; sourceTree = "<group>"; };
 		E2E393151EA23DF7005C5685 /* SearchYunVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchYunVC.swift; sourceTree = "<group>"; };
 		E2E393161EA23DF7005C5685 /* BaseSearchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseSearchVC.xib; sourceTree = "<group>"; };
-		E2E3931F1EA388DB005C5685 /* EditTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTabBarController.swift; sourceTree = "<group>"; };
 		E2E393241EA3C837005C5685 /* SearchAuthorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAuthorVC.swift; sourceTree = "<group>"; };
 		E2E3932B1EA3CCEC005C5685 /* SearchPoetryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPoetryVC.swift; sourceTree = "<group>"; };
 		E2E3932F1EA3CE29005C5685 /* BaseSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSearchCell.swift; sourceTree = "<group>"; };
@@ -6118,7 +6120,6 @@
 				E2B7B3031EA1C58A009D3AFB /* PingzeLinearView.swift */,
 				E2B7B3051EA1D133009D3AFB /* EditVC.swift */,
 				E2B7B3061EA1D133009D3AFB /* EditVC.xib */,
-				E2E3931F1EA388DB005C5685 /* EditTabBarController.swift */,
 			);
 			name = edit;
 			sourceTree = "<group>";
@@ -6136,6 +6137,8 @@
 		E2E3931A1EA24622005C5685 /* random */ = {
 			isa = PBXGroup;
 			children = (
+				E2B0DFC61EB0FCB0001B790C /* PoetryView.swift */,
+				E2B0DFC81EB0FCE8001B790C /* PoetryView.xib */,
 				E27639A71E0E7D4A00078771 /* RandomPoetryVC.swift */,
 				E27639A81E0E7D4A00078771 /* RandomPoetryVC.xib */,
 			);
@@ -6155,9 +6158,9 @@
 		E2E3932E1EA3CE04005C5685 /* base */ = {
 			isa = PBXGroup;
 			children = (
-				E2E3932F1EA3CE29005C5685 /* BaseSearchCell.swift */,
 				E2E393311EA3CF7A005C5685 /* BaseSearchVC.swift */,
 				E2E393161EA23DF7005C5685 /* BaseSearchVC.xib */,
+				E2E3932F1EA3CE29005C5685 /* BaseSearchCell.swift */,
 			);
 			name = base;
 			sourceTree = "<group>";
@@ -6237,6 +6240,7 @@
 				751E08541EACA61D00BAB696 /* UMComLoginPlatformView.xib in Resources */,
 				751E07F31EACA61D00BAB696 /* UMComProfileSettingController.xib in Resources */,
 				751E085C1EACA61D00BAB696 /* UMShareEditViewController.xib in Resources */,
+				E2B0DFC91EB0FCE8001B790C /* PoetryView.xib in Resources */,
 				751E08641EACA61D00BAB696 /* WeiboSDK.bundle in Resources */,
 				751E07E21EACA61D00BAB696 /* UMComUserInfoBar.xib in Resources */,
 				E2B0DA441EAD0F77001B790C /* EditPagerView.xib in Resources */,
@@ -6376,6 +6380,7 @@
 				751E07BE1EACA61D00BAB696 /* UMComLocationListDataController.m in Sources */,
 				751E08231EACA61D00BAB696 /* UIView+UMComAddition.m in Sources */,
 				751E07D11EACA61D00BAB696 /* UMComShareManager.m in Sources */,
+				E2B0DFC71EB0FCB0001B790C /* PoetryView.swift in Sources */,
 				751E08721EACA6B500BAB696 /* FontUtils.swift in Sources */,
 				751E07CB1EACA61D00BAB696 /* UMComRegisterViewController.m in Sources */,
 				751E081E1EACA61D00BAB696 /* UMComShareCollectionView.m in Sources */,
@@ -6440,7 +6445,6 @@
 				751E08031EACA61D00BAB696 /* UMComCommentEditView.m in Sources */,
 				751E07D81EACA61D00BAB696 /* UIViewController+UMComAddition.m in Sources */,
 				751E08061EACA61D00BAB696 /* UMComGridView.m in Sources */,
-				E2E393211EA388DB005C5685 /* EditTabBarController.swift in Sources */,
 				751E08181EACA61D00BAB696 /* UMImagePickerController.m in Sources */,
 				751E08371EACA61D00BAB696 /* UMComFeedsTableViewCell.m in Sources */,
 				751E07E91EACA61D00BAB696 /* UMComHorizontalTableView.m in Sources */,

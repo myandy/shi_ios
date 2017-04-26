@@ -10,15 +10,12 @@ import UIKit
 
 class RandomPoetryVC: UIViewController {
     
-    @IBOutlet weak var introLabel: UILabel!
-    @IBOutlet weak var lableContent: UILabel!
-    @IBOutlet weak var lableTitle: UILabel!
+    @IBOutlet weak var randomBtn: UIButton!
     
-    @IBOutlet weak var btnRandom: UIButton!
+    @IBOutlet weak var cancelBtn: UIButton!
     
-    @IBOutlet weak var btnCancel: UIButton!
+    var poetryView:PoetryView?
     
-    @IBOutlet weak var lableAuthor: UILabel!
     @IBAction func randomClick(_ sender: AnyObject) {
         refresh()
     }
@@ -30,51 +27,30 @@ class RandomPoetryVC: UIViewController {
     
     var poetry:Poetry!
     
-    @IBOutlet weak var btnShare: UIButton!
-    @IBAction func editClick(_ sender: AnyObject) {
-    }
+
     
     override public func viewDidLoad() {
-        refresh()
-        FontsUtils.setFont(view: self.view)
         
+        poetryView = PoetryView.loadNib()
+        self.view.insertSubview(poetryView!, aboveSubview: backgroundView)
+
+        poetryView?.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view)
+            make.bottom.equalTo(cancelBtn.snp.top)
+            make.left.equalTo(self.view)
+            make.right.equalTo(self.view)
+        }
+                refresh()
         
     }
-    override func viewDidLayoutSubviews() {
-        btnShare.layer.cornerRadius = btnShare.frame.size.width / 2
-    }
-    
-    
     
     func refresh(){
         poetry = PoetryDB.getRandomPoetry()
-        
-        lableTitle.text=poetry.title
-        lableContent.text=poetry.poetry
-        
-        if (poetry.intro?.characters.count)! > 5{
-            introLabel.text=poetry.intro
-        }
-        else{
-            introLabel.text=nil
-        }
-        
-        
-        let data = AuthorDB.getAuthor(name: poetry.author!)
-        
-        let cInt : Int32  = data!.color as Int32!
-        let color = UIColor(intColor:Int(cInt))
-        btnShare.backgroundColor = color
-        lableAuthor.text=poetry.author
-        
+        poetryView?.refresh(poetry: poetry)
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
 }
