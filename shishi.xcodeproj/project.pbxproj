@@ -199,6 +199,29 @@
 		751E08761EACA7B200BAB696 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E08751EACA7B200BAB696 /* AppConfig.swift */; };
 		751E08781EACA82C00BAB696 /* SSTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E08771EACA82C00BAB696 /* SSTheme.swift */; };
 		751E087C1EACAD5000BAB696 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 751E087E1EACAD5000BAB696 /* Localizable.strings */; };
+		756EFB2C1EB43EAD006E65DF /* AllAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB181EB43EAD006E65DF /* AllAuthorViewController.swift */; };
+		756EFB2D1EB43EAD006E65DF /* AllAuthorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB191EB43EAD006E65DF /* AllAuthorViewController.xib */; };
+		756EFB2E1EB43EAD006E65DF /* AllCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB1A1EB43EAD006E65DF /* AllCollectionViewCell.swift */; };
+		756EFB2F1EB43EAD006E65DF /* BaseSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB1C1EB43EAD006E65DF /* BaseSearchTableViewCell.swift */; };
+		756EFB301EB43EAD006E65DF /* BaseSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB1D1EB43EAD006E65DF /* BaseSearchViewController.swift */; };
+		756EFB311EB43EAD006E65DF /* BaseSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB1E1EB43EAD006E65DF /* BaseSearchViewController.xib */; };
+		756EFB321EB43EAD006E65DF /* EditTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB201EB43EAD006E65DF /* EditTabBarController.swift */; };
+		756EFB331EB43EAD006E65DF /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB211EB43EAD006E65DF /* EditViewController.swift */; };
+		756EFB341EB43EAD006E65DF /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB221EB43EAD006E65DF /* EditViewController.xib */; };
+		756EFB351EB43EAD006E65DF /* PingzeLinearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */; };
+		756EFB361EB43EAD006E65DF /* PingzeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB241EB43EAD006E65DF /* PingzeView.swift */; };
+		756EFB371EB43EAD006E65DF /* RandomPoetryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB261EB43EAD006E65DF /* RandomPoetryViewController.swift */; };
+		756EFB381EB43EAD006E65DF /* RandomPoetryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB271EB43EAD006E65DF /* RandomPoetryViewController.xib */; };
+		756EFB391EB43EAD006E65DF /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB291EB43EAD006E65DF /* ChooseViewController.swift */; };
+		756EFB3A1EB43EAD006E65DF /* SearchAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB2A1EB43EAD006E65DF /* SearchAuthorViewController.swift */; };
+		756EFB3B1EB43EAD006E65DF /* SearchPoetryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB2B1EB43EAD006E65DF /* SearchPoetryViewController.swift */; };
+		756EFB441EB44097006E65DF /* DuiShiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB3E1EB44097006E65DF /* DuiShiAPI.swift */; };
+		756EFB451EB44097006E65DF /* HTTPProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB401EB44097006E65DF /* HTTPProtocal.swift */; };
+		756EFB461EB44097006E65DF /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB411EB44097006E65DF /* Network.swift */; };
+		756EFB471EB44097006E65DF /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB431EB44097006E65DF /* NetworkLogger.swift */; };
+		756EFB491EB440EF006E65DF /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB481EB440EF006E65DF /* GlobalFunctions.swift */; };
+		756EFB4C1EB4429C006E65DF /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB4B1EB4429C006E65DF /* DataContainer.swift */; };
+		756EFB4E1EB44573006E65DF /* SSAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB4D1EB44573006E65DF /* SSAPIType.swift */; };
 		E2057C701DDBFE9200118080 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2057C6F1DDBFE9200118080 /* MainView.xib */; };
 		E2250FB11E533AEA00D062E8 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2250FB01E533AEA00D062E8 /* libsqlite3.tbd */; };
 		E225121C1E5343B100D062E8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E225121B1E5343B100D062E8 /* libz.tbd */; };
@@ -210,31 +233,15 @@
 		E276399B1E06E58000078771 /* shishi.db in Resources */ = {isa = PBXBuildFile; fileRef = E276399A1E06E58000078771 /* shishi.db */; };
 		E276399D1E096ECB00078771 /* Poetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276399C1E096ECA00078771 /* Poetry.swift */; };
 		E276399F1E0C05FE00078771 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276399E1E0C05FE00078771 /* Author.swift */; };
-		E27639A91E0E7D4A00078771 /* RandomPoetryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27639A71E0E7D4A00078771 /* RandomPoetryViewController.swift */; };
-		E27639AA1E0E7D4A00078771 /* RandomPoetryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E27639A81E0E7D4A00078771 /* RandomPoetryViewController.xib */; };
 		E284A7AA1DE4259A00252160 /* Pods_shishi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; };
 		E284A7AB1DE4259A00252160 /* Pods_shishi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E29558D01DD311720065AA1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29558CF1DD311720065AA1B /* ViewController.swift */; };
 		E29558D31DD311720065AA1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29558D11DD311720065AA1B /* Main.storyboard */; };
 		E29558D81DD311720065AA1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29558D61DD311720065AA1B /* LaunchScreen.storyboard */; };
-		E2B7B3021EA1BCC8009D3AFB /* PingzeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B3011EA1BCC8009D3AFB /* PingzeView.swift */; };
-		E2B7B3041EA1C58A009D3AFB /* PingzeLinearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B3031EA1C58A009D3AFB /* PingzeLinearView.swift */; };
-		E2B7B3071EA1D133009D3AFB /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B3051EA1D133009D3AFB /* EditViewController.swift */; };
-		E2B7B3081EA1D133009D3AFB /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2B7B3061EA1D133009D3AFB /* EditViewController.xib */; };
-		E2BBD2FE1E95174200B285DB /* AllCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BBD2FC1E95174200B285DB /* AllCollectionViewCell.swift */; };
-		E2BBD3011E99C2E800B285DB /* AllAuthorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2BBD3001E99C2E800B285DB /* AllAuthorViewController.xib */; };
 		E2BBD3031E9A5D8100B285DB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BBD3021E9A5D8100B285DB /* Color.swift */; };
 		E2BBD3051E9A694400B285DB /* Extensiton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BBD3041E9A694400B285DB /* Extensiton.swift */; };
-		E2E162771E1BDBF300BFE710 /* AllAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E162751E1BDBF300BFE710 /* AllAuthorViewController.swift */; };
 		E2E3930F1EA209EF005C5685 /* Writing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3930E1EA209EF005C5685 /* Writing.swift */; };
 		E2E393131EA23AD7005C5685 /* Yun.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E393121EA23AD7005C5685 /* Yun.swift */; };
-		E2E393171EA23DF7005C5685 /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E393151EA23DF7005C5685 /* ChooseViewController.swift */; };
-		E2E393181EA23DF7005C5685 /* BaseSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2E393161EA23DF7005C5685 /* BaseSearchViewController.xib */; };
-		E2E393211EA388DB005C5685 /* EditTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3931F1EA388DB005C5685 /* EditTabBarController.swift */; };
-		E2E393261EA3C837005C5685 /* SearchAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E393241EA3C837005C5685 /* SearchAuthorViewController.swift */; };
-		E2E3932D1EA3CCEC005C5685 /* SearchPoetryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3932B1EA3CCEC005C5685 /* SearchPoetryViewController.swift */; };
-		E2E393301EA3CE29005C5685 /* BaseSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3932F1EA3CE29005C5685 /* BaseSearchTableViewCell.swift */; };
-		E2E393321EA3CF7A005C5685 /* BaseSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E393311EA3CF7A005C5685 /* BaseSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -624,6 +631,29 @@
 		751E08771EACA82C00BAB696 /* SSTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTheme.swift; sourceTree = "<group>"; };
 		751E08801EACAD5600BAB696 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		751E08811EACAD7300BAB696 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		756EFB181EB43EAD006E65DF /* AllAuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllAuthorViewController.swift; sourceTree = "<group>"; };
+		756EFB191EB43EAD006E65DF /* AllAuthorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllAuthorViewController.xib; sourceTree = "<group>"; };
+		756EFB1A1EB43EAD006E65DF /* AllCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCollectionViewCell.swift; sourceTree = "<group>"; };
+		756EFB1C1EB43EAD006E65DF /* BaseSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSearchTableViewCell.swift; sourceTree = "<group>"; };
+		756EFB1D1EB43EAD006E65DF /* BaseSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSearchViewController.swift; sourceTree = "<group>"; };
+		756EFB1E1EB43EAD006E65DF /* BaseSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseSearchViewController.xib; sourceTree = "<group>"; };
+		756EFB201EB43EAD006E65DF /* EditTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTabBarController.swift; sourceTree = "<group>"; };
+		756EFB211EB43EAD006E65DF /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		756EFB221EB43EAD006E65DF /* EditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
+		756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingzeLinearView.swift; sourceTree = "<group>"; };
+		756EFB241EB43EAD006E65DF /* PingzeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingzeView.swift; sourceTree = "<group>"; };
+		756EFB261EB43EAD006E65DF /* RandomPoetryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomPoetryViewController.swift; sourceTree = "<group>"; };
+		756EFB271EB43EAD006E65DF /* RandomPoetryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RandomPoetryViewController.xib; sourceTree = "<group>"; };
+		756EFB291EB43EAD006E65DF /* ChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseViewController.swift; sourceTree = "<group>"; };
+		756EFB2A1EB43EAD006E65DF /* SearchAuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAuthorViewController.swift; sourceTree = "<group>"; };
+		756EFB2B1EB43EAD006E65DF /* SearchPoetryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPoetryViewController.swift; sourceTree = "<group>"; };
+		756EFB3E1EB44097006E65DF /* DuiShiAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuiShiAPI.swift; sourceTree = "<group>"; };
+		756EFB401EB44097006E65DF /* HTTPProtocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPProtocal.swift; sourceTree = "<group>"; };
+		756EFB411EB44097006E65DF /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		756EFB431EB44097006E65DF /* NetworkLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		756EFB481EB440EF006E65DF /* GlobalFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		756EFB4B1EB4429C006E65DF /* DataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
+		756EFB4D1EB44573006E65DF /* SSAPIType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSAPIType.swift; sourceTree = "<group>"; };
 		86A3D6B6999EBD9A4ABA66B1 /* Pods-shishi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shishi.release.xcconfig"; path = "Pods/Target Support Files/Pods-shishi/Pods-shishi.release.xcconfig"; sourceTree = "<group>"; };
 		E2057C6F1DDBFE9200118080 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		E2250FB01E533AEA00D062E8 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -636,30 +666,14 @@
 		E276399A1E06E58000078771 /* shishi.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = shishi.db; sourceTree = SOURCE_ROOT; };
 		E276399C1E096ECA00078771 /* Poetry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poetry.swift; sourceTree = "<group>"; };
 		E276399E1E0C05FE00078771 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
-		E27639A71E0E7D4A00078771 /* RandomPoetryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomPoetryViewController.swift; sourceTree = "<group>"; };
-		E27639A81E0E7D4A00078771 /* RandomPoetryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RandomPoetryViewController.xib; sourceTree = "<group>"; };
 		E29558CA1DD311720065AA1B /* 诗Shi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "诗Shi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29558CF1DD311720065AA1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E29558D21DD311720065AA1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E29558D71DD311720065AA1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E2B7B3011EA1BCC8009D3AFB /* PingzeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingzeView.swift; sourceTree = "<group>"; };
-		E2B7B3031EA1C58A009D3AFB /* PingzeLinearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingzeLinearView.swift; sourceTree = "<group>"; };
-		E2B7B3051EA1D133009D3AFB /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
-		E2B7B3061EA1D133009D3AFB /* EditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
-		E2BBD2FC1E95174200B285DB /* AllCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCollectionViewCell.swift; sourceTree = "<group>"; };
-		E2BBD3001E99C2E800B285DB /* AllAuthorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllAuthorViewController.xib; sourceTree = "<group>"; };
 		E2BBD3021E9A5D8100B285DB /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E2BBD3041E9A694400B285DB /* Extensiton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensiton.swift; sourceTree = "<group>"; };
-		E2E162751E1BDBF300BFE710 /* AllAuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllAuthorViewController.swift; sourceTree = "<group>"; };
 		E2E3930E1EA209EF005C5685 /* Writing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Writing.swift; sourceTree = "<group>"; };
 		E2E393121EA23AD7005C5685 /* Yun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yun.swift; sourceTree = "<group>"; };
-		E2E393151EA23DF7005C5685 /* ChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseViewController.swift; sourceTree = "<group>"; };
-		E2E393161EA23DF7005C5685 /* BaseSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseSearchViewController.xib; sourceTree = "<group>"; };
-		E2E3931F1EA388DB005C5685 /* EditTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTabBarController.swift; sourceTree = "<group>"; };
-		E2E393241EA3C837005C5685 /* SearchAuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAuthorViewController.swift; sourceTree = "<group>"; };
-		E2E3932B1EA3CCEC005C5685 /* SearchPoetryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPoetryViewController.swift; sourceTree = "<group>"; };
-		E2E3932F1EA3CE29005C5685 /* BaseSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSearchTableViewCell.swift; sourceTree = "<group>"; };
-		E2E393311EA3CF7A005C5685 /* BaseSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1688,6 +1702,7 @@
 		751E086A1EACA64B00BAB696 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				756EFB481EB440EF006E65DF /* GlobalFunctions.swift */,
 				751E08751EACA7B200BAB696 /* AppConfig.swift */,
 				751E086B1EACA66A00BAB696 /* AppDelegate.swift */,
 			);
@@ -1710,6 +1725,113 @@
 				751E087E1EACAD5000BAB696 /* Localizable.strings */,
 			);
 			path = Luanguage;
+			sourceTree = "<group>";
+		};
+		756EFB161EB43EAD006E65DF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				756EFB171EB43EAD006E65DF /* All */,
+				756EFB1B1EB43EAD006E65DF /* Base */,
+				756EFB1F1EB43EAD006E65DF /* Edit */,
+				756EFB251EB43EAD006E65DF /* Random */,
+				756EFB281EB43EAD006E65DF /* Search */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		756EFB171EB43EAD006E65DF /* All */ = {
+			isa = PBXGroup;
+			children = (
+				756EFB181EB43EAD006E65DF /* AllAuthorViewController.swift */,
+				756EFB191EB43EAD006E65DF /* AllAuthorViewController.xib */,
+				756EFB1A1EB43EAD006E65DF /* AllCollectionViewCell.swift */,
+			);
+			path = All;
+			sourceTree = "<group>";
+		};
+		756EFB1B1EB43EAD006E65DF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				756EFB1C1EB43EAD006E65DF /* BaseSearchTableViewCell.swift */,
+				756EFB1D1EB43EAD006E65DF /* BaseSearchViewController.swift */,
+				756EFB1E1EB43EAD006E65DF /* BaseSearchViewController.xib */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		756EFB1F1EB43EAD006E65DF /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				756EFB201EB43EAD006E65DF /* EditTabBarController.swift */,
+				756EFB211EB43EAD006E65DF /* EditViewController.swift */,
+				756EFB221EB43EAD006E65DF /* EditViewController.xib */,
+				756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */,
+				756EFB241EB43EAD006E65DF /* PingzeView.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		756EFB251EB43EAD006E65DF /* Random */ = {
+			isa = PBXGroup;
+			children = (
+				756EFB261EB43EAD006E65DF /* RandomPoetryViewController.swift */,
+				756EFB271EB43EAD006E65DF /* RandomPoetryViewController.xib */,
+			);
+			path = Random;
+			sourceTree = "<group>";
+		};
+		756EFB281EB43EAD006E65DF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				756EFB291EB43EAD006E65DF /* ChooseViewController.swift */,
+				756EFB2A1EB43EAD006E65DF /* SearchAuthorViewController.swift */,
+				756EFB2B1EB43EAD006E65DF /* SearchPoetryViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		756EFB3C1EB43EC0006E65DF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				756EFB3D1EB44097006E65DF /* API */,
+				756EFB3F1EB44097006E65DF /* Extension */,
+				756EFB401EB44097006E65DF /* HTTPProtocal.swift */,
+				756EFB411EB44097006E65DF /* Network.swift */,
+				756EFB4D1EB44573006E65DF /* SSAPIType.swift */,
+				756EFB421EB44097006E65DF /* Plugin */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		756EFB3D1EB44097006E65DF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				756EFB3E1EB44097006E65DF /* DuiShiAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		756EFB3F1EB44097006E65DF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		756EFB421EB44097006E65DF /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				756EFB431EB44097006E65DF /* NetworkLogger.swift */,
+			);
+			path = Plugin;
+			sourceTree = "<group>";
+		};
+		756EFB4A1EB44287006E65DF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				756EFB4B1EB4429C006E65DF /* DataContainer.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		AB45D9C395F61C097FCE8636 /* Frameworks */ = {
@@ -1749,18 +1871,6 @@
 			name = db;
 			sourceTree = "<group>";
 		};
-		E27639A21E0E0F8600078771 /* ui */ = {
-			isa = PBXGroup;
-			children = (
-				E2E3932E1EA3CE04005C5685 /* base */,
-				E2E393231EA3C720005C5685 /* search */,
-				E2E3931A1EA24622005C5685 /* random */,
-				E2E393191EA24605005C5685 /* all */,
-				E2B7B3001EA1BC9A009D3AFB /* edit */,
-			);
-			name = ui;
-			sourceTree = "<group>";
-		};
 		E29558C11DD311720065AA1B = {
 			isa = PBXGroup;
 			children = (
@@ -1782,11 +1892,13 @@
 		E29558CC1DD311720065AA1B /* shishi */ = {
 			isa = PBXGroup;
 			children = (
+				756EFB4A1EB44287006E65DF /* Data */,
+				756EFB3C1EB43EC0006E65DF /* Network */,
+				756EFB161EB43EAD006E65DF /* UI */,
 				751E086F1EACA6B500BAB696 /* Util */,
 				751E086A1EACA64B00BAB696 /* App */,
 				751E06001EACA61C00BAB696 /* Library */,
 				751E05F61EACA51300BAB696 /* Supporting Files */,
-				E27639A21E0E0F8600078771 /* ui */,
 				E276398D1E06D8E900078771 /* db */,
 				E29558CF1DD311720065AA1B /* ViewController.swift */,
 				E29558D11DD311720065AA1B /* Main.storyboard */,
@@ -1795,57 +1907,6 @@
 				E2BBD3041E9A694400B285DB /* Extensiton.swift */,
 			);
 			path = shishi;
-			sourceTree = "<group>";
-		};
-		E2B7B3001EA1BC9A009D3AFB /* edit */ = {
-			isa = PBXGroup;
-			children = (
-				E2B7B3011EA1BCC8009D3AFB /* PingzeView.swift */,
-				E2B7B3031EA1C58A009D3AFB /* PingzeLinearView.swift */,
-				E2B7B3051EA1D133009D3AFB /* EditViewController.swift */,
-				E2B7B3061EA1D133009D3AFB /* EditViewController.xib */,
-				E2E3931F1EA388DB005C5685 /* EditTabBarController.swift */,
-			);
-			name = edit;
-			sourceTree = "<group>";
-		};
-		E2E393191EA24605005C5685 /* all */ = {
-			isa = PBXGroup;
-			children = (
-				E2BBD3001E99C2E800B285DB /* AllAuthorViewController.xib */,
-				E2E162751E1BDBF300BFE710 /* AllAuthorViewController.swift */,
-				E2BBD2FC1E95174200B285DB /* AllCollectionViewCell.swift */,
-			);
-			name = all;
-			sourceTree = "<group>";
-		};
-		E2E3931A1EA24622005C5685 /* random */ = {
-			isa = PBXGroup;
-			children = (
-				E27639A71E0E7D4A00078771 /* RandomPoetryViewController.swift */,
-				E27639A81E0E7D4A00078771 /* RandomPoetryViewController.xib */,
-			);
-			name = random;
-			sourceTree = "<group>";
-		};
-		E2E393231EA3C720005C5685 /* search */ = {
-			isa = PBXGroup;
-			children = (
-				E2E3932B1EA3CCEC005C5685 /* SearchPoetryViewController.swift */,
-				E2E393241EA3C837005C5685 /* SearchAuthorViewController.swift */,
-				E2E393151EA23DF7005C5685 /* ChooseViewController.swift */,
-			);
-			name = search;
-			sourceTree = "<group>";
-		};
-		E2E3932E1EA3CE04005C5685 /* base */ = {
-			isa = PBXGroup;
-			children = (
-				E2E3932F1EA3CE29005C5685 /* BaseSearchTableViewCell.swift */,
-				E2E393311EA3CF7A005C5685 /* BaseSearchViewController.swift */,
-				E2E393161EA23DF7005C5685 /* BaseSearchViewController.xib */,
-			);
-			name = base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1922,6 +1983,8 @@
 				751E08611EACA61D00BAB696 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				751E08541EACA61D00BAB696 /* UMComLoginPlatformView.xib in Resources */,
 				751E07F31EACA61D00BAB696 /* UMComProfileSettingController.xib in Resources */,
+				756EFB2D1EB43EAD006E65DF /* AllAuthorViewController.xib in Resources */,
+				756EFB311EB43EAD006E65DF /* BaseSearchViewController.xib in Resources */,
 				751E085C1EACA61D00BAB696 /* UMShareEditViewController.xib in Resources */,
 				751E08641EACA61D00BAB696 /* WeiboSDK.bundle in Resources */,
 				751E07E21EACA61D00BAB696 /* UMComUserInfoBar.xib in Resources */,
@@ -1940,18 +2003,16 @@
 				751E08591EACA61D00BAB696 /* UMSCommentDetailController.xib in Resources */,
 				751E08341EACA61D00BAB696 /* UMComFriendTableViewCell.xib in Resources */,
 				751E05FC1EACA51300BAB696 /* fzsongkebenxiukai_fanti.ttf in Resources */,
-				E2BBD3011E99C2E800B285DB /* AllAuthorViewController.xib in Resources */,
 				751E085F1EACA61D00BAB696 /* UMSnsAccountViewController.xib in Resources */,
-				E27639AA1E0E7D4A00078771 /* RandomPoetryViewController.xib in Resources */,
 				751E07F81EACA61D00BAB696 /* UMComUserTableViewCell.xib in Resources */,
 				751E085B1EACA61D00BAB696 /* UMSCommentInputControlleriPad.xib in Resources */,
+				756EFB341EB43EAD006E65DF /* EditViewController.xib in Resources */,
 				751E07CA1EACA61D00BAB696 /* UMComLoginViewController.xib in Resources */,
+				756EFB381EB43EAD006E65DF /* RandomPoetryViewController.xib in Resources */,
 				751E07DD1EACA61D00BAB696 /* UMComTableViewCell.xib in Resources */,
 				E2057C701DDBFE9200118080 /* MainView.xib in Resources */,
-				E2E393181EA23DF7005C5685 /* BaseSearchViewController.xib in Resources */,
 				751E085A1EACA61D00BAB696 /* UMSCommentInputController.xib in Resources */,
 				751E082B1EACA61D00BAB696 /* UMCommunityStrings.strings in Resources */,
-				E2B7B3081EA1D133009D3AFB /* EditViewController.xib in Resources */,
 				751E05FB1EACA51300BAB696 /* fzqkyuesong.ttf in Resources */,
 				751E087C1EACAD5000BAB696 /* Localizable.strings in Resources */,
 				751E08671EACA61D00BAB696 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
@@ -1976,7 +2037,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7097152FEB5E7C67E5612575 /* [CP] Embed Pods Frameworks */ = {
@@ -2018,6 +2079,7 @@
 			files = (
 				751E08011EACA61D00BAB696 /* UMComBarButtonItem.m in Sources */,
 				751E08431EACA61D00BAB696 /* UMComFeedDetailViewController.m in Sources */,
+				756EFB491EB440EF006E65DF /* GlobalFunctions.swift in Sources */,
 				751E07ED1EACA61D00BAB696 /* UMComChatRecodTableViewCell.m in Sources */,
 				E29558D01DD311720065AA1B /* ViewController.swift in Sources */,
 				751E08241EACA61D00BAB696 /* UMComEmojiKeyBoardView.m in Sources */,
@@ -2033,6 +2095,7 @@
 				751E07C41EACA61D00BAB696 /* UMComUserDataController.m in Sources */,
 				751E080A1EACA61D00BAB696 /* UMComHorizonCollectionView.m in Sources */,
 				751E082F1EACA61D00BAB696 /* UMComEditTopicsTableViewCell.m in Sources */,
+				756EFB3B1EB43EAD006E65DF /* SearchPoetryViewController.swift in Sources */,
 				751E080C1EACA61D00BAB696 /* UMComLabel.m in Sources */,
 				751E07C81EACA61D00BAB696 /* UMComLoginManager.m in Sources */,
 				E276399D1E096ECB00078771 /* Poetry.swift in Sources */,
@@ -2040,7 +2103,6 @@
 				751E08141EACA61D00BAB696 /* UMAssetsCollectionCheckMarkView.m in Sources */,
 				751E082D1EACA61D00BAB696 /* UMCommunityUI.m in Sources */,
 				751E08171EACA61D00BAB696 /* UMAssetsCollectionOverlayView.m in Sources */,
-				E27639A91E0E7D4A00078771 /* RandomPoetryViewController.swift in Sources */,
 				751E084B1EACA61D00BAB696 /* UMComNoticeSystemViewController.m in Sources */,
 				751E08261EACA61D00BAB696 /* UMComProgressHUD.m in Sources */,
 				751E08481EACA61D00BAB696 /* UMComCommentMenuViewController.m in Sources */,
@@ -2052,11 +2114,11 @@
 				751E08021EACA61D00BAB696 /* UMComButton.m in Sources */,
 				751E08391EACA61D00BAB696 /* UMComFeedStyle.m in Sources */,
 				751E07E51EACA61D00BAB696 /* UMComLocationTableViewCell.m in Sources */,
+				756EFB321EB43EAD006E65DF /* EditTabBarController.swift in Sources */,
 				751E07DC1EACA61D00BAB696 /* UMComTableViewCell.m in Sources */,
 				751E08501EACA61D00BAB696 /* UMComTopicsTableViewController.m in Sources */,
-				E2B7B3041EA1C58A009D3AFB /* PingzeLinearView.swift in Sources */,
-				E2E3932D1EA3CCEC005C5685 /* SearchPoetryViewController.swift in Sources */,
 				751E07CF1EACA61D00BAB696 /* UMComLoginUser.m in Sources */,
+				756EFB471EB44097006E65DF /* NetworkLogger.swift in Sources */,
 				751E08121EACA61D00BAB696 /* UMComPageControlView.m in Sources */,
 				751E07BE1EACA61D00BAB696 /* UMComLocationListDataController.m in Sources */,
 				751E08231EACA61D00BAB696 /* UIView+UMComAddition.m in Sources */,
@@ -2065,21 +2127,25 @@
 				751E07CB1EACA61D00BAB696 /* UMComRegisterViewController.m in Sources */,
 				751E081E1EACA61D00BAB696 /* UMComShareCollectionView.m in Sources */,
 				751E07EE1EACA61D00BAB696 /* UMComSysCommentCell.m in Sources */,
+				756EFB461EB44097006E65DF /* Network.swift in Sources */,
 				751E07C51EACA61D00BAB696 /* UMComUserListDataController.m in Sources */,
 				751E07FC1EACA61D00BAB696 /* UMComResourceManager.m in Sources */,
+				756EFB2F1EB43EAD006E65DF /* BaseSearchTableViewCell.swift in Sources */,
 				751E08051EACA61D00BAB696 /* UMComEditTextView.m in Sources */,
+				756EFB441EB44097006E65DF /* DuiShiAPI.swift in Sources */,
 				751E07C71EACA61D00BAB696 /* UMComUserAlbumDataController.m in Sources */,
 				751E081C1EACA61D00BAB696 /* UMComSearchBar.m in Sources */,
 				751E07DA1EACA61D00BAB696 /* UMComRequestTableViewController.m in Sources */,
 				751E08411EACA61D00BAB696 /* UMComCommentTableViewCell.m in Sources */,
 				751E08251EACA61D00BAB696 /* UMComEmojiPageView.m in Sources */,
 				751E07FD1EACA61D00BAB696 /* UMComActionDeleteView.m in Sources */,
-				E2E393171EA23DF7005C5685 /* ChooseViewController.swift in Sources */,
 				751E084F1EACA61D00BAB696 /* UMComMicroTopicSearchViewController.m in Sources */,
 				751E08761EACA7B200BAB696 /* AppConfig.swift in Sources */,
 				751E07F41EACA61D00BAB696 /* UMComCommonTopicTableViewCell.m in Sources */,
 				751E08461EACA61D00BAB696 /* UMComMicLikeUserTableViewCell.m in Sources */,
+				756EFB361EB43EAD006E65DF /* PingzeView.swift in Sources */,
 				751E08081EACA61D00BAB696 /* UMComProgressView.m in Sources */,
+				756EFB2E1EB43EAD006E65DF /* AllCollectionViewCell.swift in Sources */,
 				751E07FB1EACA61D00BAB696 /* UMComResouceDefines.m in Sources */,
 				751E08781EACA82C00BAB696 /* SSTheme.swift in Sources */,
 				751E07E41EACA61D00BAB696 /* UMComLocationListController.m in Sources */,
@@ -2092,27 +2158,27 @@
 				751E07BF1EACA61D00BAB696 /* UMComTopicDataController.m in Sources */,
 				751E082E1EACA61D00BAB696 /* UMComFindViewController.m in Sources */,
 				751E07F21EACA61D00BAB696 /* UMComProfileSettingController.m in Sources */,
+				756EFB451EB44097006E65DF /* HTTPProtocal.swift in Sources */,
 				751E07F71EACA61D00BAB696 /* UMComUserTableViewCell.m in Sources */,
 				E2BBD3031E9A5D8100B285DB /* Color.swift in Sources */,
 				751E08281EACA61D00BAB696 /* UMComAvatarImageView.m in Sources */,
 				751E07B81EACA61D00BAB696 /* UMComFeedListDataController.m in Sources */,
 				751E07C31EACA61D00BAB696 /* UMComListDataController.m in Sources */,
-				E2B7B3071EA1D133009D3AFB /* EditViewController.swift in Sources */,
 				751E08471EACA61D00BAB696 /* UMComHomeFeedViewController.m in Sources */,
+				756EFB3A1EB43EAD006E65DF /* SearchAuthorViewController.swift in Sources */,
 				751E081A1EACA61D00BAB696 /* UMImagePickerThumbnailView.m in Sources */,
 				E2E3930F1EA209EF005C5685 /* Writing.swift in Sources */,
 				751E08111EACA61D00BAB696 /* UMComMutiTextRun.m in Sources */,
 				751E07F61EACA61D00BAB696 /* UMComUserProfileDetailView.m in Sources */,
 				751E080F1EACA61D00BAB696 /* UMComMutiStyleTextView.m in Sources */,
+				756EFB331EB43EAD006E65DF /* EditViewController.swift in Sources */,
 				751E07C21EACA61D00BAB696 /* UMComDataOperationErrorHandler.m in Sources */,
-				E2E393261EA3C837005C5685 /* SearchAuthorViewController.swift in Sources */,
 				751E07D91EACA61D00BAB696 /* UMComNavigationController.m in Sources */,
 				751E080E1EACA61D00BAB696 /* UMComMenuControlView.m in Sources */,
 				751E07E31EACA61D00BAB696 /* UMComEditForwardView.m in Sources */,
-				E2E393301EA3CE29005C5685 /* BaseSearchTableViewCell.swift in Sources */,
+				756EFB371EB43EAD006E65DF /* RandomPoetryViewController.swift in Sources */,
 				751E07EA1EACA61D00BAB696 /* UMComPostReplyEditView.m in Sources */,
 				751E08191EACA61D00BAB696 /* UMImagePickerGroupCell.m in Sources */,
-				E2E162771E1BDBF300BFE710 /* AllAuthorViewController.swift in Sources */,
 				751E08491EACA61D00BAB696 /* UMComCommentTableViewController.m in Sources */,
 				751E07EF1EACA61D00BAB696 /* UMComSysCommonTableViewCell.m in Sources */,
 				751E07BA1EACA61D00BAB696 /* UMComNoticeListDataController..m in Sources */,
@@ -2124,20 +2190,22 @@
 				751E08031EACA61D00BAB696 /* UMComCommentEditView.m in Sources */,
 				751E07D81EACA61D00BAB696 /* UIViewController+UMComAddition.m in Sources */,
 				751E08061EACA61D00BAB696 /* UMComGridView.m in Sources */,
-				E2E393211EA388DB005C5685 /* EditTabBarController.swift in Sources */,
 				751E08181EACA61D00BAB696 /* UMImagePickerController.m in Sources */,
 				751E08371EACA61D00BAB696 /* UMComFeedsTableViewCell.m in Sources */,
 				751E07E91EACA61D00BAB696 /* UMComHorizontalTableView.m in Sources */,
 				751E07F11EACA61D00BAB696 /* UMComSysPrivateLetterCell.m in Sources */,
+				756EFB351EB43EAD006E65DF /* PingzeLinearView.swift in Sources */,
 				751E08221EACA61D00BAB696 /* UMComShowToast.m in Sources */,
 				751E083E1EACA61D00BAB696 /* UMComNearbyFeedViewController.m in Sources */,
 				751E081D1EACA61D00BAB696 /* UMComSegmentedControl.m in Sources */,
+				756EFB2C1EB43EAD006E65DF /* AllAuthorViewController.swift in Sources */,
 				751E07C01EACA61D00BAB696 /* UMComTopicGroupDataController.m in Sources */,
 				751E08551EACA61D00BAB696 /* UMComShareDelegateHandler.m in Sources */,
 				751E08401EACA61D00BAB696 /* UMComTopicFeedViewController.m in Sources */,
 				751E07E11EACA61D00BAB696 /* UMComUserInfoBar.m in Sources */,
 				751E07E81EACA61D00BAB696 /* UMComSelectTopicView.m in Sources */,
 				751E08511EACA61D00BAB696 /* UMComUserCenterViewController.m in Sources */,
+				756EFB4E1EB44573006E65DF /* SSAPIType.swift in Sources */,
 				751E07DB1EACA61D00BAB696 /* UMComViewController.m in Sources */,
 				751E07DF1EACA61D00BAB696 /* UMComFindTableViewCell.m in Sources */,
 				751E08291EACA61D00BAB696 /* UMComImageView.m in Sources */,
@@ -2146,13 +2214,12 @@
 				E2E393131EA23AD7005C5685 /* Yun.swift in Sources */,
 				751E083B1EACA61D00BAB696 /* UMComFeedWithTopicTableViewController.m in Sources */,
 				751E08101EACA61D00BAB696 /* UMComMutiText.m in Sources */,
+				756EFB4C1EB4429C006E65DF /* DataContainer.swift in Sources */,
 				751E081B1EACA61D00BAB696 /* UMComRefreshView.m in Sources */,
 				751E083F1EACA61D00BAB696 /* UMComSearchViewController.m in Sources */,
-				E2E393321EA3CF7A005C5685 /* BaseSearchViewController.swift in Sources */,
 				751E07BD1EACA61D00BAB696 /* UMComLikeListDataController.m in Sources */,
 				751E07EC1EACA61D00BAB696 /* UMComReplyEditViewController.m in Sources */,
 				751E084C1EACA61D00BAB696 /* UMComPrivateChatTableViewController.m in Sources */,
-				E2BBD2FE1E95174200B285DB /* AllCollectionViewCell.swift in Sources */,
 				751E07CE1EACA61D00BAB696 /* UMComLoginHandler.m in Sources */,
 				751E08161EACA61D00BAB696 /* UMAssetsCollectionGrid.m in Sources */,
 				751E086D1EACA66A00BAB696 /* AppDelegate.swift in Sources */,
@@ -2161,7 +2228,6 @@
 				751E07D01EACA61D00BAB696 /* UMComMessageManager.m in Sources */,
 				751E07B71EACA61D00BAB696 /* UMComFeedEditDataController.m in Sources */,
 				751E07FF1EACA61D00BAB696 /* UMComAddedImageCellView.m in Sources */,
-				E2B7B3021EA1BCC8009D3AFB /* PingzeView.swift in Sources */,
 				751E07C91EACA61D00BAB696 /* UMComLoginViewController.m in Sources */,
 				751E07F91EACA61D00BAB696 /* UMComUserTableViewController.m in Sources */,
 				751E07C61EACA61D00BAB696 /* UMComUserUpdateDataController.m in Sources */,
@@ -2172,12 +2238,14 @@
 				751E084A1EACA61D00BAB696 /* UMComLikeTableViewController.m in Sources */,
 				751E083A1EACA61D00BAB696 /* UMComFeedTableViewController.m in Sources */,
 				751E08361EACA61D00BAB696 /* UMComFavouratesViewController.m in Sources */,
+				756EFB301EB43EAD006E65DF /* BaseSearchViewController.swift in Sources */,
 				E27639991E06E46300078771 /* DBManager.swift in Sources */,
 				751E07F01EACA61D00BAB696 /* UMComSysLikeTableViewCell.m in Sources */,
 				751E07F51EACA61D00BAB696 /* UMComUserNearbyViewController.m in Sources */,
 				751E08441EACA61D00BAB696 /* UMComFeedDetailViewHtmlBodyCell.m in Sources */,
 				751E08151EACA61D00BAB696 /* UMAssetsCollectionController.m in Sources */,
 				751E083D1EACA61D00BAB696 /* UMComHotFeedMenuViewController.m in Sources */,
+				756EFB391EB43EAD006E65DF /* ChooseViewController.swift in Sources */,
 				751E07BB1EACA61D00BAB696 /* UMComPrivateLetterListDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

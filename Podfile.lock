@@ -1,31 +1,57 @@
 PODS:
   - Alamofire (4.2.0)
+  - EVReflection (4.9.1):
+    - EVReflection/Core (= 4.9.1)
+  - EVReflection/Core (4.9.1)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
   - iCarousel (1.8.3)
+  - Moya (8.0.3):
+    - Moya/Core (= 8.0.3)
+  - Moya/Core (8.0.3):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (8.0.3):
+    - Moya/Core
+    - RxSwift (~> 3.0)
+  - ObjcExceptionBridging (1.0.1):
+    - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
+  - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
+  - ReachabilitySwift (3)
+  - Result (3.2.1)
   - RxSwift (3.1.0)
   - SnapKit (3.0.2)
-  - XCGLogger (4.0.0):
-    - XCGLogger/Core (= 4.0.0)
-  - XCGLogger/Core (4.0.0)
+  - XCGLogger (5.0.1):
+    - XCGLogger/Core (= 5.0.1)
+  - XCGLogger/Core (5.0.1):
+    - ObjcExceptionBridging
 
 DEPENDENCIES:
   - Alamofire (~> 4.2.0)
+  - EVReflection (~> 4.9.1)
   - FMDB
   - iCarousel (~> 1.8.3)
+  - Moya (~> 8.0.3)
+  - Moya/RxSwift
+  - ReachabilitySwift
   - RxSwift (~> 3.1.0)
   - SnapKit (~> 3.0.2)
   - XCGLogger
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  EVReflection: f656ab71b7ed34c0922c6c4836bb77e9b33ca66c
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
+  ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
   RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
-  XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
+  XCGLogger: 0b43697155d41e4a1b15fc776f319c2141646b09
 
-PODFILE CHECKSUM: 7164f16408f75e0db06442385ff63278bff2d40a
+PODFILE CHECKSUM: c85180017ea54ed23900a4f4cc6850ab78403bdf
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1

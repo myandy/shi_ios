@@ -10,6 +10,12 @@ target ‘shishi’ do
     pod 'XCGLogger'
     pod 'Alamofire', '~> 4.2.0'
     pod 'RxSwift', '~>3.1.0'
+    
+    pod 'Moya', '~>8.0.3'
+    pod 'Moya/RxSwift'
+    pod 'EVReflection', '~>4.9.1'
+    
+    pod 'ReachabilitySwift'
 end
 
 
