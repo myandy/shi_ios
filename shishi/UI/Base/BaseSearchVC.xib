@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseSearchViewController" customModule="诗Shi" customModuleProvider="target">
+            <connections>
+                <outlet property="cancel" destination="FVf-l7-qOb" id="53L-5M-LkK"/>
+                <outlet property="divide" destination="L6g-qg-pTP" id="xda-Uy-bhB"/>
+                <outlet property="search" destination="0LJ-us-DdR" id="dnL-IC-IAa"/>
+                <outlet property="table" destination="53f-KH-NBd" id="hqn-8H-PIn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" placeholder="搜索格律" translatesAutoresizingMaskIntoConstraints="NO" id="0LJ-us-DdR">
+                    <rect key="frame" x="50" y="0.0" width="325" height="44"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <scopeButtonTitles>
+                        <string>Title</string>
+                        <string>Title</string>
+                    </scopeButtonTitles>
+                </searchBar>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVf-l7-qOb">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="dp6-3t-kHg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="5"/>
+                    <state key="normal" title="Button" image="cancel">
+                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelClick:" destination="-1" eventType="touchUpInside" id="zPt-ly-loF"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="53f-KH-NBd">
+                    <rect key="frame" x="0.0" y="45" width="375" height="622"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L6g-qg-pTP">
+                    <rect key="frame" x="0.0" y="44" width="375" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="97H-kT-TiD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0LJ-us-DdR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0PV-ix-E4K"/>
+                <constraint firstItem="L6g-qg-pTP" firstAttribute="leading" secondItem="FVf-l7-qOb" secondAttribute="leading" id="4JF-Q9-W0B"/>
+                <constraint firstItem="L6g-qg-pTP" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="4RZ-8m-avp"/>
+                <constraint firstItem="L6g-qg-pTP" firstAttribute="top" secondItem="0LJ-us-DdR" secondAttribute="bottom" id="4Vb-0D-EGC"/>
+                <constraint firstItem="0LJ-us-DdR" firstAttribute="leading" secondItem="FVf-l7-qOb" secondAttribute="trailing" id="G7K-jE-s9d"/>
+                <constraint firstItem="FVf-l7-qOb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="KjK-yD-RX6"/>
+                <constraint firstItem="FVf-l7-qOb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ls4-4H-WwJ"/>
+                <constraint firstItem="53f-KH-NBd" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="R6I-jy-STw"/>
+                <constraint firstAttribute="bottom" secondItem="53f-KH-NBd" secondAttribute="bottom" id="UnM-oC-e13"/>
+                <constraint firstItem="FVf-l7-qOb" firstAttribute="height" secondItem="0LJ-us-DdR" secondAttribute="height" id="YsL-Sy-0KU"/>
+                <constraint firstItem="53f-KH-NBd" firstAttribute="top" secondItem="L6g-qg-pTP" secondAttribute="bottom" id="hzT-Dg-LcB"/>
+                <constraint firstItem="53f-KH-NBd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jIU-ZO-VuF"/>
+                <constraint firstAttribute="trailing" secondItem="0LJ-us-DdR" secondAttribute="trailing" id="ncI-wi-YYW"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="cancel" width="15" height="15"/>
+    </resources>
+</document>

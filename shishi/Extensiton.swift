@@ -73,3 +73,24 @@ public extension UIImage {
     }
 }
 
+
+protocol Nibloadable {
+    
+}
+
+extension Nibloadable where Self : UIView{
+    /*
+     static func loadNib(_ nibNmae :String = "") -> Self{
+     let nib = nibNmae == "" ? "\(self)" : nibNmae
+     return Bundle.main.loadNibNamed(nib, owner: nil, options: nil)?.first as! Self
+     }
+     */
+    static func loadNib(_ nibNmae :String? = nil) -> Self{
+        return Bundle.main.loadNibNamed(nibNmae ?? "\(self)", owner: nil, options: nil)?.first as! Self
+    }
+}
+
+protocol SearchModel{
+    func getTitle() ->String
+    func getDesc() ->String
+}

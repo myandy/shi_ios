@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UMComNetwork/UMComHttpManager.h>
-#import <UMComDataStorage/UMComDataBasePublicHeader.h>
 
+#import <UMComDataStorage/UMComDataBasePublicHeader.h>
+#import <UMComNetwork/UMComHttpManager.h>
 /**
  feed的评论列表排序类型
  

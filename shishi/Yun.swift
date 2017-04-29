@@ -17,10 +17,20 @@ public class Yun{
     var count:Int32?
 }
 
-public class YunDB{
-    static let TABLE_NAME="t_yun"
+extension Yun : SearchModel{
+    func getTitle() -> String {
+        return name!
+    }
     
-    static let BY_PNUM = " order by id "
+    func getDesc() -> String {
+        return String(count!)
+    }
+}
+
+class YunDB{
+    private static let TABLE_NAME="t_yun"
+    
+    private static let BY_PNUM = " order by id "
     
     public class func getList(rs: FMResultSet)->NSMutableArray?{
         let array = NSMutableArray()

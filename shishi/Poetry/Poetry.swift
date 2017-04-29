@@ -9,25 +9,31 @@
 import Foundation
 import FMDB
 
-public class Poetry{
-    
-
+class Poetry{
     var poetry:String?
     var author:String?
     var intro:String?
     var title:String?
     var dNum:Int32?
-
-
 }
 
-public class PoetryDB{
+extension Poetry : SearchModel{
+    func getTitle() -> String {
+        return title!
+    }
     
-    static let TABLE_NAME="t_poetry"
+    func getDesc() -> String {
+        return poetry!
+    }
+}
+
+class PoetryDB{
     
-    static let BY_PNUM = " order by p_num desc"
+    private static let TABLE_NAME="t_poetry"
     
-    public class func getList(rs: FMResultSet)->NSMutableArray?{
+    private static let BY_PNUM = " order by p_num desc"
+    
+    private class func getList(rs: FMResultSet)->NSMutableArray?{
         let array = NSMutableArray()
         while rs.next() {
             let model = Poetry()
@@ -40,8 +46,6 @@ public class PoetryDB{
         }
         return array
     }
-    
-    
     
     public class func getRandom100()->NSMutableArray! {
         let db = DBManager.shared.getDatabase()

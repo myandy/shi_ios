@@ -9,8 +9,7 @@
 import Foundation
 import FMDB
 
-public class Author{
-    
+class Author{
     var name:String?
     var enName:String?
     var intro:String?
@@ -19,17 +18,26 @@ public class Author{
     var color:Int32?
 }
 
+extension Author : SearchModel{
+    func getTitle() -> String {
+        return name!
+    }
+    
+    func getDesc() -> String {
+        return dynasty!
+    }
+}
 
-public class AuthorDB{
+class AuthorDB{
     
-    static let TABLE_NAME="t_author"
+    private static let TABLE_NAME="t_author"
     
-    static let BY_PNUM = " order by p_num "
+    private static let BY_PNUM = " order by p_num "
     
-    static let BY_DNUM = " order by d_num desc"
+    private static let BY_DNUM = " order by d_num desc"
 
     
-    public class func getList(rs: FMResultSet)->NSMutableArray?{
+    private class func getList(rs: FMResultSet)->NSMutableArray?{
         let array = NSMutableArray()
         while rs.next() {
             let model = Author()
