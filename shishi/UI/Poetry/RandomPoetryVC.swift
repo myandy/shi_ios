@@ -26,23 +26,17 @@ class RandomPoetryVC: UIViewController {
     }
     
     var poetry:Poetry!
-    
-
-    
+   
     override public func viewDidLoad() {
-        
         poetryView = PoetryView.loadNib()
-        
-        //编译不过，是不是代码合并时冲突了
-        //self.view.insertSubview(poetryView!, aboveSubview: backgroundView)
-
+        self.view.addSubview(poetryView!)
         poetryView?.snp.makeConstraints { (make) in
             make.top.equalTo(self.view)
             make.bottom.equalTo(cancelBtn.snp.top)
             make.left.equalTo(self.view)
             make.right.equalTo(self.view)
         }
-                refresh()
+        refresh()
         
     }
     
