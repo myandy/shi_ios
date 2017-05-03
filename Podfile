@@ -17,6 +17,11 @@ target ‘shishi’ do
     pod 'SwiftyJSON'
     
     pod 'ReachabilitySwift'
+    
+    pod 'RxCocoa'
+    pod 'NSObject+Rx'
+    
+    pod 'Result'
 end
 
 

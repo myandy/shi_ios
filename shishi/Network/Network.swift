@@ -73,8 +73,7 @@ extension DuiShiNetwork {
 
 
 
-private let requestIndexKey = "NetworkingRequestIndexKey"
-private let defaultResetRequest = 1
+
 
 // Static methods
 class Networking {
@@ -83,28 +82,7 @@ class Networking {
     
     typealias HeadClosure = (_ target: TargetType) -> [String: String]?
     
-    static var uid: String?
-    static var sid: String?
-    static var sidSeq: String?
-    //包序号
-    static var requestIndex = defaultResetRequest
     
-    static func resetRequestIndex() {
-        setRequestIndex(index: defaultResetRequest)
-    }
-    //全新登录成功后，重围包序号
-    static func setRequestIndex(index: Int) {
-        requestIndex = index
-        let defaults = UserDefaults.standard
-        defaults.set(requestIndex, forKey: requestIndexKey)
-        defaults.synchronize()
-
-    }
-    //从本地保存的数据恢复包序号
-    static func resumeRequestIndex() {
-        let defaults = UserDefaults.standard
-        requestIndex = (defaults.value(forKey: requestIndexKey) as? Int) ?? defaultResetRequest
-    }
     
     static var versionString: String {
         get {

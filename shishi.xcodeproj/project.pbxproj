@@ -226,6 +226,8 @@
 		756EFB711EB45A76006E65DF /* EditPagerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB6D1EB45A76006E65DF /* EditPagerView.xib */; };
 		756EFB721EB45A76006E65DF /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB6E1EB45A76006E65DF /* EditVC.swift */; };
 		756EFB731EB45A76006E65DF /* EditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB6F1EB45A76006E65DF /* EditVC.xib */; };
+		756EFB761EBA256D006E65DF /* DuiShiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB751EBA256D006E65DF /* DuiShiVC.swift */; };
+		756EFB781EBA28D1006E65DF /* SSStr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB771EBA28D1006E65DF /* SSStr.swift */; };
 		E2057C701DDBFE9200118080 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2057C6F1DDBFE9200118080 /* MainView.xib */; };
 		E2250FB11E533AEA00D062E8 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2250FB01E533AEA00D062E8 /* libsqlite3.tbd */; };
 		E225121C1E5343B100D062E8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E225121B1E5343B100D062E8 /* libz.tbd */; };
@@ -661,6 +663,8 @@
 		756EFB6D1EB45A76006E65DF /* EditPagerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditPagerView.xib; sourceTree = "<group>"; };
 		756EFB6E1EB45A76006E65DF /* EditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		756EFB6F1EB45A76006E65DF /* EditVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditVC.xib; sourceTree = "<group>"; };
+		756EFB751EBA256D006E65DF /* DuiShiVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuiShiVC.swift; sourceTree = "<group>"; };
+		756EFB771EBA28D1006E65DF /* SSStr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSStr.swift; sourceTree = "<group>"; };
 		86A3D6B6999EBD9A4ABA66B1 /* Pods-shishi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shishi.release.xcconfig"; path = "Pods/Target Support Files/Pods-shishi/Pods-shishi.release.xcconfig"; sourceTree = "<group>"; };
 		E2057C6F1DDBFE9200118080 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		E2250FB01E533AEA00D062E8 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -1722,6 +1726,7 @@
 				751E08701EACA6B500BAB696 /* FontUtils.swift */,
 				751E08711EACA6B500BAB696 /* Utils.swift */,
 				751E08771EACA82C00BAB696 /* SSTheme.swift */,
+				756EFB771EBA28D1006E65DF /* SSStr.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1737,6 +1742,7 @@
 		756EFB161EB43EAD006E65DF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				756EFB741EBA2494006E65DF /* DuiShi */,
 				756EFB611EB459E2006E65DF /* Poetry */,
 				756EFB171EB43EAD006E65DF /* All */,
 				756EFB1B1EB43EAD006E65DF /* Base */,
@@ -1851,6 +1857,14 @@
 				756EFB641EB459E2006E65DF /* PoetryView.xib */,
 			);
 			path = Poetry;
+			sourceTree = "<group>";
+		};
+		756EFB741EBA2494006E65DF /* DuiShi */ = {
+			isa = PBXGroup;
+			children = (
+				756EFB751EBA256D006E65DF /* DuiShiVC.swift */,
+			);
+			path = DuiShi;
 			sourceTree = "<group>";
 		};
 		AB45D9C395F61C097FCE8636 /* Frameworks */ = {
@@ -2058,7 +2072,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7097152FEB5E7C67E5612575 /* [CP] Embed Pods Frameworks */ = {
@@ -2187,6 +2201,7 @@
 				751E08281EACA61D00BAB696 /* UMComAvatarImageView.m in Sources */,
 				751E07B81EACA61D00BAB696 /* UMComFeedListDataController.m in Sources */,
 				751E07C31EACA61D00BAB696 /* UMComListDataController.m in Sources */,
+				756EFB781EBA28D1006E65DF /* SSStr.swift in Sources */,
 				751E08471EACA61D00BAB696 /* UMComHomeFeedViewController.m in Sources */,
 				751E081A1EACA61D00BAB696 /* UMImagePickerThumbnailView.m in Sources */,
 				E2E3930F1EA209EF005C5685 /* Writing.swift in Sources */,
@@ -2222,6 +2237,7 @@
 				756EFB5A1EB45935006E65DF /* SearchYunVC.swift in Sources */,
 				751E07C01EACA61D00BAB696 /* UMComTopicGroupDataController.m in Sources */,
 				751E08551EACA61D00BAB696 /* UMComShareDelegateHandler.m in Sources */,
+				756EFB761EBA256D006E65DF /* DuiShiVC.swift in Sources */,
 				751E08401EACA61D00BAB696 /* UMComTopicFeedViewController.m in Sources */,
 				751E07E11EACA61D00BAB696 /* UMComUserInfoBar.m in Sources */,
 				751E07E81EACA61D00BAB696 /* UMComSelectTopicView.m in Sources */,

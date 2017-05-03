@@ -15,11 +15,15 @@ PODS:
   - Moya/RxSwift (8.0.3):
     - Moya/Core
     - RxSwift (~> 3.0)
+  - NSObject+Rx (2.1.0):
+    - RxSwift
   - ObjcExceptionBridging (1.0.1):
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
   - ReachabilitySwift (3)
   - Result (3.2.1)
+  - RxCocoa (3.2.0):
+    - RxSwift (~> 3.1)
   - RxSwift (3.1.0)
   - SnapKit (3.0.2)
   - SwiftyJSON (3.1.4)
@@ -35,7 +39,10 @@ DEPENDENCIES:
   - iCarousel (~> 1.8.3)
   - Moya (~> 8.0.3)
   - Moya/RxSwift
+  - NSObject+Rx
   - ReachabilitySwift
+  - Result
+  - RxCocoa
   - RxSwift (~> 3.1.0)
   - SnapKit (~> 3.0.2)
   - SwiftyJSON
@@ -47,14 +54,16 @@ SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
+  NSObject+Rx: 09277ba78aa12a8e454c82429eb4e31bfb413131
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
+  RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XCGLogger: 0b43697155d41e4a1b15fc776f319c2141646b09
 
-PODFILE CHECKSUM: c098a97180d24cd76fa6866ce8256dd89cacdb8d
+PODFILE CHECKSUM: 97afeebcb37f3e80892f97c1e07cbb12223841e6
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1
