@@ -3,15 +3,7 @@ import Moya
 import RxSwift
 import Alamofire
 
-/*
- 从源码来看,ANAMOFILE支持
- case Data(NSURLRequest, NSData)
- case File(NSURLRequest, NSURL)
- case Stream(NSURLRequest, NSInputStream)
- 三种形式的上传，其中Data正好是我们需要的文件上分片上传，但是MOYA框架的MoyaProvider，只封装了MultipartFormData上传，而且接口未导出，因此当前上传使用自定义POST
- 其中数据格式固定如下：
- 在APITYPE(TargetType)中的parameters字典内，以Networking.LEO_UPLOAD_PARAM_KEY标识的参数为文件上传数据,并且APITYPE中要实现自定义参数编码格式ParameterEncoding
- */
+
 
 
 private let REQUEST_RETRY_COUNT = 3

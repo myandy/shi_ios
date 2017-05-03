@@ -22,6 +22,7 @@ PODS:
   - Result (3.2.1)
   - RxSwift (3.1.0)
   - SnapKit (3.0.2)
+  - SwiftyJSON (3.1.4)
   - XCGLogger (5.0.1):
     - XCGLogger/Core (= 5.0.1)
   - XCGLogger/Core (5.0.1):
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - ReachabilitySwift
   - RxSwift (~> 3.1.0)
   - SnapKit (~> 3.0.2)
+  - SwiftyJSON
   - XCGLogger
 
 SPEC CHECKSUMS:
@@ -50,8 +52,9 @@ SPEC CHECKSUMS:
   Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
   RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XCGLogger: 0b43697155d41e4a1b15fc776f319c2141646b09
 
-PODFILE CHECKSUM: c85180017ea54ed23900a4f4cc6850ab78403bdf
+PODFILE CHECKSUM: c098a97180d24cd76fa6866ce8256dd89cacdb8d
 
 COCOAPODS: 1.2.1
