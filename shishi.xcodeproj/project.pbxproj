@@ -199,22 +199,8 @@
 		751E08761EACA7B200BAB696 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E08751EACA7B200BAB696 /* AppConfig.swift */; };
 		751E08781EACA82C00BAB696 /* SSTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E08771EACA82C00BAB696 /* SSTheme.swift */; };
 		751E087C1EACAD5000BAB696 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 751E087E1EACAD5000BAB696 /* Localizable.strings */; };
-		756EFB2C1EB43EAD006E65DF /* AllAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB181EB43EAD006E65DF /* AllAuthorViewController.swift */; };
-		756EFB2D1EB43EAD006E65DF /* AllAuthorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB191EB43EAD006E65DF /* AllAuthorViewController.xib */; };
-		756EFB2E1EB43EAD006E65DF /* AllCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB1A1EB43EAD006E65DF /* AllCollectionViewCell.swift */; };
-		756EFB2F1EB43EAD006E65DF /* BaseSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB1C1EB43EAD006E65DF /* BaseSearchTableViewCell.swift */; };
-		756EFB301EB43EAD006E65DF /* BaseSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB1D1EB43EAD006E65DF /* BaseSearchViewController.swift */; };
-		756EFB311EB43EAD006E65DF /* BaseSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB1E1EB43EAD006E65DF /* BaseSearchViewController.xib */; };
-		756EFB321EB43EAD006E65DF /* EditTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB201EB43EAD006E65DF /* EditTabBarController.swift */; };
-		756EFB331EB43EAD006E65DF /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB211EB43EAD006E65DF /* EditViewController.swift */; };
-		756EFB341EB43EAD006E65DF /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB221EB43EAD006E65DF /* EditViewController.xib */; };
 		756EFB351EB43EAD006E65DF /* PingzeLinearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */; };
 		756EFB361EB43EAD006E65DF /* PingzeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB241EB43EAD006E65DF /* PingzeView.swift */; };
-		756EFB371EB43EAD006E65DF /* RandomPoetryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB261EB43EAD006E65DF /* RandomPoetryViewController.swift */; };
-		756EFB381EB43EAD006E65DF /* RandomPoetryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB271EB43EAD006E65DF /* RandomPoetryViewController.xib */; };
-		756EFB391EB43EAD006E65DF /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB291EB43EAD006E65DF /* ChooseViewController.swift */; };
-		756EFB3A1EB43EAD006E65DF /* SearchAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB2A1EB43EAD006E65DF /* SearchAuthorViewController.swift */; };
-		756EFB3B1EB43EAD006E65DF /* SearchPoetryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB2B1EB43EAD006E65DF /* SearchPoetryViewController.swift */; };
 		756EFB441EB44097006E65DF /* DuiShiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB3E1EB44097006E65DF /* DuiShiAPI.swift */; };
 		756EFB451EB44097006E65DF /* HTTPProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB401EB44097006E65DF /* HTTPProtocal.swift */; };
 		756EFB461EB44097006E65DF /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB411EB44097006E65DF /* Network.swift */; };
@@ -648,22 +634,8 @@
 		751E08771EACA82C00BAB696 /* SSTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTheme.swift; sourceTree = "<group>"; };
 		751E08801EACAD5600BAB696 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		751E08811EACAD7300BAB696 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		756EFB181EB43EAD006E65DF /* AllAuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllAuthorViewController.swift; sourceTree = "<group>"; };
-		756EFB191EB43EAD006E65DF /* AllAuthorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllAuthorViewController.xib; sourceTree = "<group>"; };
-		756EFB1A1EB43EAD006E65DF /* AllCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCollectionViewCell.swift; sourceTree = "<group>"; };
-		756EFB1C1EB43EAD006E65DF /* BaseSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSearchTableViewCell.swift; sourceTree = "<group>"; };
-		756EFB1D1EB43EAD006E65DF /* BaseSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSearchViewController.swift; sourceTree = "<group>"; };
-		756EFB1E1EB43EAD006E65DF /* BaseSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseSearchViewController.xib; sourceTree = "<group>"; };
-		756EFB201EB43EAD006E65DF /* EditTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTabBarController.swift; sourceTree = "<group>"; };
-		756EFB211EB43EAD006E65DF /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
-		756EFB221EB43EAD006E65DF /* EditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
 		756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingzeLinearView.swift; sourceTree = "<group>"; };
 		756EFB241EB43EAD006E65DF /* PingzeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingzeView.swift; sourceTree = "<group>"; };
-		756EFB261EB43EAD006E65DF /* RandomPoetryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomPoetryViewController.swift; sourceTree = "<group>"; };
-		756EFB271EB43EAD006E65DF /* RandomPoetryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RandomPoetryViewController.xib; sourceTree = "<group>"; };
-		756EFB291EB43EAD006E65DF /* ChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseViewController.swift; sourceTree = "<group>"; };
-		756EFB2A1EB43EAD006E65DF /* SearchAuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAuthorViewController.swift; sourceTree = "<group>"; };
-		756EFB2B1EB43EAD006E65DF /* SearchPoetryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPoetryViewController.swift; sourceTree = "<group>"; };
 		756EFB3E1EB44097006E65DF /* DuiShiAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuiShiAPI.swift; sourceTree = "<group>"; };
 		756EFB401EB44097006E65DF /* HTTPProtocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPProtocal.swift; sourceTree = "<group>"; };
 		756EFB411EB44097006E65DF /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -683,8 +655,8 @@
 		756EFB621EB459E2006E65DF /* Poetry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poetry.swift; sourceTree = "<group>"; };
 		756EFB631EB459E2006E65DF /* PoetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoetryView.swift; sourceTree = "<group>"; };
 		756EFB641EB459E2006E65DF /* PoetryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PoetryView.xib; sourceTree = "<group>"; };
-		756EFB651EB459E2006E65DF /* RandomPoetryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomPoetryVC.swift; sourceTree = "<group>"; };
-		756EFB661EB459E2006E65DF /* RandomPoetryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RandomPoetryVC.xib; sourceTree = "<group>"; };
+		756EFB651EB459E2006E65DF /* RandomPoetryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomPoetryVC.swift; path = ../Poetry/RandomPoetryVC.swift; sourceTree = "<group>"; };
+		756EFB661EB459E2006E65DF /* RandomPoetryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RandomPoetryVC.xib; path = ../Poetry/RandomPoetryVC.xib; sourceTree = "<group>"; };
 		756EFB6C1EB45A76006E65DF /* EditPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPagerView.swift; sourceTree = "<group>"; };
 		756EFB6D1EB45A76006E65DF /* EditPagerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditPagerView.xib; sourceTree = "<group>"; };
 		756EFB6E1EB45A76006E65DF /* EditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
@@ -1781,9 +1753,6 @@
 				756EFB4F1EB45929006E65DF /* AllAuthorCell.swift */,
 				756EFB501EB45929006E65DF /* AllAuthorVC.swift */,
 				756EFB511EB45929006E65DF /* AllAuthorVC.xib */,
-				756EFB181EB43EAD006E65DF /* AllAuthorViewController.swift */,
-				756EFB191EB43EAD006E65DF /* AllAuthorViewController.xib */,
-				756EFB1A1EB43EAD006E65DF /* AllCollectionViewCell.swift */,
 			);
 			path = All;
 			sourceTree = "<group>";
@@ -1794,9 +1763,6 @@
 				756EFB5B1EB4596C006E65DF /* BaseSearchCell.swift */,
 				756EFB5C1EB4596C006E65DF /* BaseSearchVC.swift */,
 				756EFB5D1EB4596C006E65DF /* BaseSearchVC.xib */,
-				756EFB1C1EB43EAD006E65DF /* BaseSearchTableViewCell.swift */,
-				756EFB1D1EB43EAD006E65DF /* BaseSearchViewController.swift */,
-				756EFB1E1EB43EAD006E65DF /* BaseSearchViewController.xib */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1808,9 +1774,6 @@
 				756EFB6D1EB45A76006E65DF /* EditPagerView.xib */,
 				756EFB6E1EB45A76006E65DF /* EditVC.swift */,
 				756EFB6F1EB45A76006E65DF /* EditVC.xib */,
-				756EFB201EB43EAD006E65DF /* EditTabBarController.swift */,
-				756EFB211EB43EAD006E65DF /* EditViewController.swift */,
-				756EFB221EB43EAD006E65DF /* EditViewController.xib */,
 				756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */,
 				756EFB241EB43EAD006E65DF /* PingzeView.swift */,
 			);
@@ -1820,8 +1783,8 @@
 		756EFB251EB43EAD006E65DF /* Random */ = {
 			isa = PBXGroup;
 			children = (
-				756EFB261EB43EAD006E65DF /* RandomPoetryViewController.swift */,
-				756EFB271EB43EAD006E65DF /* RandomPoetryViewController.xib */,
+				756EFB651EB459E2006E65DF /* RandomPoetryVC.swift */,
+				756EFB661EB459E2006E65DF /* RandomPoetryVC.xib */,
 			);
 			path = Random;
 			sourceTree = "<group>";
@@ -1832,9 +1795,6 @@
 				756EFB551EB45935006E65DF /* SearchAuthorVC.swift */,
 				756EFB561EB45935006E65DF /* SearchPoetryVC.swift */,
 				756EFB571EB45935006E65DF /* SearchYunVC.swift */,
-				756EFB291EB43EAD006E65DF /* ChooseViewController.swift */,
-				756EFB2A1EB43EAD006E65DF /* SearchAuthorViewController.swift */,
-				756EFB2B1EB43EAD006E65DF /* SearchPoetryViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1889,8 +1849,6 @@
 				756EFB621EB459E2006E65DF /* Poetry.swift */,
 				756EFB631EB459E2006E65DF /* PoetryView.swift */,
 				756EFB641EB459E2006E65DF /* PoetryView.xib */,
-				756EFB651EB459E2006E65DF /* RandomPoetryVC.swift */,
-				756EFB661EB459E2006E65DF /* RandomPoetryVC.xib */,
 			);
 			path = Poetry;
 			sourceTree = "<group>";
@@ -2006,7 +1964,7 @@
 				TargetAttributes = {
 					E29558C91DD311720065AA1B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = G5YJVZL9SU;
+						DevelopmentTeam = X8Q8BW44Z2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2044,8 +2002,6 @@
 				751E08611EACA61D00BAB696 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				751E08541EACA61D00BAB696 /* UMComLoginPlatformView.xib in Resources */,
 				751E07F31EACA61D00BAB696 /* UMComProfileSettingController.xib in Resources */,
-				756EFB2D1EB43EAD006E65DF /* AllAuthorViewController.xib in Resources */,
-				756EFB311EB43EAD006E65DF /* BaseSearchViewController.xib in Resources */,
 				751E085C1EACA61D00BAB696 /* UMShareEditViewController.xib in Resources */,
 				751E08641EACA61D00BAB696 /* WeiboSDK.bundle in Resources */,
 				751E07E21EACA61D00BAB696 /* UMComUserInfoBar.xib in Resources */,
@@ -2072,9 +2028,7 @@
 				751E085F1EACA61D00BAB696 /* UMSnsAccountViewController.xib in Resources */,
 				751E07F81EACA61D00BAB696 /* UMComUserTableViewCell.xib in Resources */,
 				751E085B1EACA61D00BAB696 /* UMSCommentInputControlleriPad.xib in Resources */,
-				756EFB341EB43EAD006E65DF /* EditViewController.xib in Resources */,
 				751E07CA1EACA61D00BAB696 /* UMComLoginViewController.xib in Resources */,
-				756EFB381EB43EAD006E65DF /* RandomPoetryViewController.xib in Resources */,
 				751E07DD1EACA61D00BAB696 /* UMComTableViewCell.xib in Resources */,
 				E2057C701DDBFE9200118080 /* MainView.xib in Resources */,
 				751E085A1EACA61D00BAB696 /* UMSCommentInputController.xib in Resources */,
@@ -2104,7 +2058,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7097152FEB5E7C67E5612575 /* [CP] Embed Pods Frameworks */ = {
@@ -2162,7 +2116,6 @@
 				751E07C41EACA61D00BAB696 /* UMComUserDataController.m in Sources */,
 				751E080A1EACA61D00BAB696 /* UMComHorizonCollectionView.m in Sources */,
 				751E082F1EACA61D00BAB696 /* UMComEditTopicsTableViewCell.m in Sources */,
-				756EFB3B1EB43EAD006E65DF /* SearchPoetryViewController.swift in Sources */,
 				751E080C1EACA61D00BAB696 /* UMComLabel.m in Sources */,
 				756EFB671EB459E2006E65DF /* Poetry.swift in Sources */,
 				751E07C81EACA61D00BAB696 /* UMComLoginManager.m in Sources */,
@@ -2183,7 +2136,6 @@
 				751E08021EACA61D00BAB696 /* UMComButton.m in Sources */,
 				751E08391EACA61D00BAB696 /* UMComFeedStyle.m in Sources */,
 				751E07E51EACA61D00BAB696 /* UMComLocationTableViewCell.m in Sources */,
-				756EFB321EB43EAD006E65DF /* EditTabBarController.swift in Sources */,
 				751E07DC1EACA61D00BAB696 /* UMComTableViewCell.m in Sources */,
 				751E08501EACA61D00BAB696 /* UMComTopicsTableViewController.m in Sources */,
 				751E07CF1EACA61D00BAB696 /* UMComLoginUser.m in Sources */,
@@ -2201,7 +2153,6 @@
 				751E07C51EACA61D00BAB696 /* UMComUserListDataController.m in Sources */,
 				756EFB531EB45929006E65DF /* AllAuthorVC.swift in Sources */,
 				751E07FC1EACA61D00BAB696 /* UMComResourceManager.m in Sources */,
-				756EFB2F1EB43EAD006E65DF /* BaseSearchTableViewCell.swift in Sources */,
 				751E08051EACA61D00BAB696 /* UMComEditTextView.m in Sources */,
 				756EFB6A1EB459E2006E65DF /* RandomPoetryVC.swift in Sources */,
 				756EFB441EB44097006E65DF /* DuiShiAPI.swift in Sources */,
@@ -2217,7 +2168,6 @@
 				751E08461EACA61D00BAB696 /* UMComMicLikeUserTableViewCell.m in Sources */,
 				756EFB361EB43EAD006E65DF /* PingzeView.swift in Sources */,
 				751E08081EACA61D00BAB696 /* UMComProgressView.m in Sources */,
-				756EFB2E1EB43EAD006E65DF /* AllCollectionViewCell.swift in Sources */,
 				751E07FB1EACA61D00BAB696 /* UMComResouceDefines.m in Sources */,
 				751E08781EACA82C00BAB696 /* SSTheme.swift in Sources */,
 				751E07E41EACA61D00BAB696 /* UMComLocationListController.m in Sources */,
@@ -2238,18 +2188,15 @@
 				751E07B81EACA61D00BAB696 /* UMComFeedListDataController.m in Sources */,
 				751E07C31EACA61D00BAB696 /* UMComListDataController.m in Sources */,
 				751E08471EACA61D00BAB696 /* UMComHomeFeedViewController.m in Sources */,
-				756EFB3A1EB43EAD006E65DF /* SearchAuthorViewController.swift in Sources */,
 				751E081A1EACA61D00BAB696 /* UMImagePickerThumbnailView.m in Sources */,
 				E2E3930F1EA209EF005C5685 /* Writing.swift in Sources */,
 				751E08111EACA61D00BAB696 /* UMComMutiTextRun.m in Sources */,
 				751E07F61EACA61D00BAB696 /* UMComUserProfileDetailView.m in Sources */,
 				751E080F1EACA61D00BAB696 /* UMComMutiStyleTextView.m in Sources */,
-				756EFB331EB43EAD006E65DF /* EditViewController.swift in Sources */,
 				751E07C21EACA61D00BAB696 /* UMComDataOperationErrorHandler.m in Sources */,
 				751E07D91EACA61D00BAB696 /* UMComNavigationController.m in Sources */,
 				751E080E1EACA61D00BAB696 /* UMComMenuControlView.m in Sources */,
 				751E07E31EACA61D00BAB696 /* UMComEditForwardView.m in Sources */,
-				756EFB371EB43EAD006E65DF /* RandomPoetryViewController.swift in Sources */,
 				751E07EA1EACA61D00BAB696 /* UMComPostReplyEditView.m in Sources */,
 				751E08191EACA61D00BAB696 /* UMImagePickerGroupCell.m in Sources */,
 				751E08491EACA61D00BAB696 /* UMComCommentTableViewController.m in Sources */,
@@ -2273,7 +2220,6 @@
 				751E083E1EACA61D00BAB696 /* UMComNearbyFeedViewController.m in Sources */,
 				751E081D1EACA61D00BAB696 /* UMComSegmentedControl.m in Sources */,
 				756EFB5A1EB45935006E65DF /* SearchYunVC.swift in Sources */,
-				756EFB2C1EB43EAD006E65DF /* AllAuthorViewController.swift in Sources */,
 				751E07C01EACA61D00BAB696 /* UMComTopicGroupDataController.m in Sources */,
 				751E08551EACA61D00BAB696 /* UMComShareDelegateHandler.m in Sources */,
 				751E08401EACA61D00BAB696 /* UMComTopicFeedViewController.m in Sources */,
@@ -2315,7 +2261,6 @@
 				751E084A1EACA61D00BAB696 /* UMComLikeTableViewController.m in Sources */,
 				751E083A1EACA61D00BAB696 /* UMComFeedTableViewController.m in Sources */,
 				751E08361EACA61D00BAB696 /* UMComFavouratesViewController.m in Sources */,
-				756EFB301EB43EAD006E65DF /* BaseSearchViewController.swift in Sources */,
 				E27639991E06E46300078771 /* DBManager.swift in Sources */,
 				751E07F01EACA61D00BAB696 /* UMComSysLikeTableViewCell.m in Sources */,
 				751E07F51EACA61D00BAB696 /* UMComUserNearbyViewController.m in Sources */,
@@ -2323,7 +2268,6 @@
 				751E08441EACA61D00BAB696 /* UMComFeedDetailViewHtmlBodyCell.m in Sources */,
 				751E08151EACA61D00BAB696 /* UMAssetsCollectionController.m in Sources */,
 				751E083D1EACA61D00BAB696 /* UMComHotFeedMenuViewController.m in Sources */,
-				756EFB391EB43EAD006E65DF /* ChooseViewController.swift in Sources */,
 				751E07BB1EACA61D00BAB696 /* UMComPrivateLetterListDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2466,7 +2410,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = G5YJVZL9SU;
+				DEVELOPMENT_TEAM = X8Q8BW44Z2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2504,7 +2448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = G5YJVZL9SU;
+				DEVELOPMENT_TEAM = X8Q8BW44Z2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
