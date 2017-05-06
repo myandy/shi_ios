@@ -201,7 +201,7 @@
 		751E087C1EACAD5000BAB696 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 751E087E1EACAD5000BAB696 /* Localizable.strings */; };
 		756EFB351EB43EAD006E65DF /* PingzeLinearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */; };
 		756EFB361EB43EAD006E65DF /* PingzeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB241EB43EAD006E65DF /* PingzeView.swift */; };
-		756EFB441EB44097006E65DF /* DuiShiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB3E1EB44097006E65DF /* DuiShiAPI.swift */; };
+		756EFB441EB44097006E65DF /* DuishiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB3E1EB44097006E65DF /* DuishiAPI.swift */; };
 		756EFB451EB44097006E65DF /* HTTPProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB401EB44097006E65DF /* HTTPProtocal.swift */; };
 		756EFB461EB44097006E65DF /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB411EB44097006E65DF /* Network.swift */; };
 		756EFB471EB44097006E65DF /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB431EB44097006E65DF /* NetworkLogger.swift */; };
@@ -226,8 +226,13 @@
 		756EFB711EB45A76006E65DF /* EditPagerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB6D1EB45A76006E65DF /* EditPagerView.xib */; };
 		756EFB721EB45A76006E65DF /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB6E1EB45A76006E65DF /* EditVC.swift */; };
 		756EFB731EB45A76006E65DF /* EditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB6F1EB45A76006E65DF /* EditVC.xib */; };
-		756EFB761EBA256D006E65DF /* DuiShiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB751EBA256D006E65DF /* DuiShiVC.swift */; };
+		756EFB761EBA256D006E65DF /* DuishiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB751EBA256D006E65DF /* DuishiVC.swift */; };
 		756EFB781EBA28D1006E65DF /* SSStr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB771EBA28D1006E65DF /* SSStr.swift */; };
+		756EFB7C1EBB8109006E65DF /* UIVIewController+SS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB7B1EBB8109006E65DF /* UIVIewController+SS.swift */; };
+		756EFB801EBB8368006E65DF /* JSONAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB7F1EBB8368006E65DF /* JSONAble.swift */; };
+		756EFB831EBD9C92006E65DF /* Observable+DuiShi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB821EBD9C92006E65DF /* Observable+DuiShi.swift */; };
+		756EFB851EBD9D08006E65DF /* Observable+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB841EBD9D08006E65DF /* Observable+Result.swift */; };
+		756EFB871EBDCAF0006E65DF /* DuishiEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB861EBDCAF0006E65DF /* DuishiEditView.swift */; };
 		E2057C701DDBFE9200118080 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2057C6F1DDBFE9200118080 /* MainView.xib */; };
 		E2250FB11E533AEA00D062E8 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2250FB01E533AEA00D062E8 /* libsqlite3.tbd */; };
 		E225121C1E5343B100D062E8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E225121B1E5343B100D062E8 /* libz.tbd */; };
@@ -638,7 +643,7 @@
 		751E08811EACAD7300BAB696 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingzeLinearView.swift; sourceTree = "<group>"; };
 		756EFB241EB43EAD006E65DF /* PingzeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingzeView.swift; sourceTree = "<group>"; };
-		756EFB3E1EB44097006E65DF /* DuiShiAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuiShiAPI.swift; sourceTree = "<group>"; };
+		756EFB3E1EB44097006E65DF /* DuishiAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuishiAPI.swift; sourceTree = "<group>"; };
 		756EFB401EB44097006E65DF /* HTTPProtocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPProtocal.swift; sourceTree = "<group>"; };
 		756EFB411EB44097006E65DF /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		756EFB431EB44097006E65DF /* NetworkLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
@@ -663,8 +668,13 @@
 		756EFB6D1EB45A76006E65DF /* EditPagerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditPagerView.xib; sourceTree = "<group>"; };
 		756EFB6E1EB45A76006E65DF /* EditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		756EFB6F1EB45A76006E65DF /* EditVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditVC.xib; sourceTree = "<group>"; };
-		756EFB751EBA256D006E65DF /* DuiShiVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuiShiVC.swift; sourceTree = "<group>"; };
+		756EFB751EBA256D006E65DF /* DuishiVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuishiVC.swift; sourceTree = "<group>"; };
 		756EFB771EBA28D1006E65DF /* SSStr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSStr.swift; sourceTree = "<group>"; };
+		756EFB7B1EBB8109006E65DF /* UIVIewController+SS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIewController+SS.swift"; sourceTree = "<group>"; };
+		756EFB7F1EBB8368006E65DF /* JSONAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAble.swift; sourceTree = "<group>"; };
+		756EFB821EBD9C92006E65DF /* Observable+DuiShi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+DuiShi.swift"; sourceTree = "<group>"; };
+		756EFB841EBD9D08006E65DF /* Observable+Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Result.swift"; sourceTree = "<group>"; };
+		756EFB861EBDCAF0006E65DF /* DuishiEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuishiEditView.swift; sourceTree = "<group>"; };
 		86A3D6B6999EBD9A4ABA66B1 /* Pods-shishi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shishi.release.xcconfig"; path = "Pods/Target Support Files/Pods-shishi/Pods-shishi.release.xcconfig"; sourceTree = "<group>"; };
 		E2057C6F1DDBFE9200118080 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		E2250FB01E533AEA00D062E8 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -1742,7 +1752,8 @@
 		756EFB161EB43EAD006E65DF /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				756EFB741EBA2494006E65DF /* DuiShi */,
+				756EFB791EBB8109006E65DF /* Common */,
+				756EFB741EBA2494006E65DF /* Duishi */,
 				756EFB611EB459E2006E65DF /* Poetry */,
 				756EFB171EB43EAD006E65DF /* All */,
 				756EFB1B1EB43EAD006E65DF /* Base */,
@@ -1808,6 +1819,7 @@
 		756EFB3C1EB43EC0006E65DF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				756EFB7D1EBB8368006E65DF /* Models */,
 				756EFB3D1EB44097006E65DF /* API */,
 				756EFB3F1EB44097006E65DF /* Extension */,
 				756EFB401EB44097006E65DF /* HTTPProtocal.swift */,
@@ -1821,7 +1833,7 @@
 		756EFB3D1EB44097006E65DF /* API */ = {
 			isa = PBXGroup;
 			children = (
-				756EFB3E1EB44097006E65DF /* DuiShiAPI.swift */,
+				756EFB3E1EB44097006E65DF /* DuishiAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1829,6 +1841,8 @@
 		756EFB3F1EB44097006E65DF /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				756EFB841EBD9D08006E65DF /* Observable+Result.swift */,
+				756EFB821EBD9C92006E65DF /* Observable+DuiShi.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1859,12 +1873,46 @@
 			path = Poetry;
 			sourceTree = "<group>";
 		};
-		756EFB741EBA2494006E65DF /* DuiShi */ = {
+		756EFB741EBA2494006E65DF /* Duishi */ = {
 			isa = PBXGroup;
 			children = (
-				756EFB751EBA256D006E65DF /* DuiShiVC.swift */,
+				756EFB751EBA256D006E65DF /* DuishiVC.swift */,
+				756EFB861EBDCAF0006E65DF /* DuishiEditView.swift */,
 			);
+			name = Duishi;
 			path = DuiShi;
+			sourceTree = "<group>";
+		};
+		756EFB791EBB8109006E65DF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				756EFB7A1EBB8109006E65DF /* Category */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		756EFB7A1EBB8109006E65DF /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				756EFB7B1EBB8109006E65DF /* UIVIewController+SS.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		756EFB7D1EBB8368006E65DF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				756EFB7E1EBB8368006E65DF /* Common */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		756EFB7E1EBB8368006E65DF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				756EFB7F1EBB8368006E65DF /* JSONAble.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		AB45D9C395F61C097FCE8636 /* Frameworks */ = {
@@ -1978,7 +2026,7 @@
 				TargetAttributes = {
 					E29558C91DD311720065AA1B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = X8Q8BW44Z2;
+						DevelopmentTeam = G5YJVZL9SU;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2136,6 +2184,7 @@
 				751E08521EACA61D00BAB696 /* UMComLoginHandler+Social.m in Sources */,
 				756EFB521EB45929006E65DF /* AllAuthorCell.swift in Sources */,
 				751E08141EACA61D00BAB696 /* UMAssetsCollectionCheckMarkView.m in Sources */,
+				756EFB831EBD9C92006E65DF /* Observable+DuiShi.swift in Sources */,
 				756EFB5F1EB4596C006E65DF /* BaseSearchVC.swift in Sources */,
 				751E082D1EACA61D00BAB696 /* UMCommunityUI.m in Sources */,
 				751E08171EACA61D00BAB696 /* UMAssetsCollectionOverlayView.m in Sources */,
@@ -2143,7 +2192,9 @@
 				751E08261EACA61D00BAB696 /* UMComProgressHUD.m in Sources */,
 				751E08481EACA61D00BAB696 /* UMComCommentMenuViewController.m in Sources */,
 				751E080B1EACA61D00BAB696 /* UMComHorizonMenuView.m in Sources */,
+				756EFB871EBDCAF0006E65DF /* DuishiEditView.swift in Sources */,
 				751E08731EACA6B500BAB696 /* Utils.swift in Sources */,
+				756EFB801EBB8368006E65DF /* JSONAble.swift in Sources */,
 				E276399F1E0C05FE00078771 /* Author.swift in Sources */,
 				E2BBD3051E9A694400B285DB /* Extensiton.swift in Sources */,
 				751E08001EACA61D00BAB696 /* UMComAddedImageView.m in Sources */,
@@ -2169,7 +2220,7 @@
 				751E07FC1EACA61D00BAB696 /* UMComResourceManager.m in Sources */,
 				751E08051EACA61D00BAB696 /* UMComEditTextView.m in Sources */,
 				756EFB6A1EB459E2006E65DF /* RandomPoetryVC.swift in Sources */,
-				756EFB441EB44097006E65DF /* DuiShiAPI.swift in Sources */,
+				756EFB441EB44097006E65DF /* DuishiAPI.swift in Sources */,
 				751E07C71EACA61D00BAB696 /* UMComUserAlbumDataController.m in Sources */,
 				751E081C1EACA61D00BAB696 /* UMComSearchBar.m in Sources */,
 				751E07DA1EACA61D00BAB696 /* UMComRequestTableViewController.m in Sources */,
@@ -2237,7 +2288,7 @@
 				756EFB5A1EB45935006E65DF /* SearchYunVC.swift in Sources */,
 				751E07C01EACA61D00BAB696 /* UMComTopicGroupDataController.m in Sources */,
 				751E08551EACA61D00BAB696 /* UMComShareDelegateHandler.m in Sources */,
-				756EFB761EBA256D006E65DF /* DuiShiVC.swift in Sources */,
+				756EFB761EBA256D006E65DF /* DuishiVC.swift in Sources */,
 				751E08401EACA61D00BAB696 /* UMComTopicFeedViewController.m in Sources */,
 				751E07E11EACA61D00BAB696 /* UMComUserInfoBar.m in Sources */,
 				751E07E81EACA61D00BAB696 /* UMComSelectTopicView.m in Sources */,
@@ -2248,6 +2299,7 @@
 				751E08291EACA61D00BAB696 /* UMComImageView.m in Sources */,
 				751E08211EACA61D00BAB696 /* UMComiToast.m in Sources */,
 				751E081F1EACA61D00BAB696 /* UMComGridTableViewCell.m in Sources */,
+				756EFB851EBD9D08006E65DF /* Observable+Result.swift in Sources */,
 				E2E393131EA23AD7005C5685 /* Yun.swift in Sources */,
 				751E083B1EACA61D00BAB696 /* UMComFeedWithTopicTableViewController.m in Sources */,
 				751E08101EACA61D00BAB696 /* UMComMutiText.m in Sources */,
@@ -2283,6 +2335,7 @@
 				756EFB701EB45A76006E65DF /* EditPagerView.swift in Sources */,
 				751E08441EACA61D00BAB696 /* UMComFeedDetailViewHtmlBodyCell.m in Sources */,
 				751E08151EACA61D00BAB696 /* UMAssetsCollectionController.m in Sources */,
+				756EFB7C1EBB8109006E65DF /* UIVIewController+SS.swift in Sources */,
 				751E083D1EACA61D00BAB696 /* UMComHotFeedMenuViewController.m in Sources */,
 				751E07BB1EACA61D00BAB696 /* UMComPrivateLetterListDataController.m in Sources */,
 			);
@@ -2426,7 +2479,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = X8Q8BW44Z2;
+				DEVELOPMENT_TEAM = G5YJVZL9SU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2436,7 +2489,7 @@
 					"$(PROJECT_DIR)/shishi/Library/UMCommunitySDK/UMComThirdComponent/UMSocial_Sdk/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/shishi/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2464,7 +2517,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = X8Q8BW44Z2;
+				DEVELOPMENT_TEAM = G5YJVZL9SU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2474,7 +2527,7 @@
 					"$(PROJECT_DIR)/shishi/Library/UMCommunitySDK/UMComThirdComponent/UMSocial_Sdk/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/shishi/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

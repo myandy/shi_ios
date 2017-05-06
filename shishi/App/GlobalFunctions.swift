@@ -103,8 +103,8 @@ func bindingErrorToInterface(error: Swift.Error) {
 //    return DataContainer.sharedInstance.userProvider.provider
 //}
 //网络层便捷入口
-func duiShiNetwork() -> DuiShiNetwork {
-    return DataContainer.default.duishiNetwork
+func duishiNetwork() -> DuishiNetwork {
+    return DataContainer.default.duiShiNetwork
 }
 
 

@@ -15,6 +15,7 @@ target ‘shishi’ do
     pod 'Moya/RxSwift'
     pod 'EVReflection', '~>4.9.1'
     pod 'SwiftyJSON'
+    pod 'Moya-SwiftyJSONMapper/RxSwift'
     
     pod 'ReachabilitySwift'
     
@@ -22,6 +23,10 @@ target ‘shishi’ do
     pod 'NSObject+Rx'
     
     pod 'Result'
+    
+    pod 'MBProgressHUD'
+    
+    pod 'SwiftyImage'
 end
 
 

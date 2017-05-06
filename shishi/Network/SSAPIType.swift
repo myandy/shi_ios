@@ -10,8 +10,15 @@ import Alamofire
 import Moya
 
 protocol SSAPIType {
+    var headers: [String: String]? { get }
+    
 }
 
+extension SSAPIType {
+    var headers: [String: String]? {
+        return nil
+    }
+}
 
 extension TargetType {
     

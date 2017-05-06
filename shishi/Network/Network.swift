@@ -50,8 +50,8 @@ protocol NetworkingType {
     
 }
 
-struct DuiShiNetwork: NetworkingType {
-    typealias T = DuiShiAPI
+struct DuishiNetwork: NetworkingType {
+    typealias T = DuishiAPI
     let provider: OnlineProvider<T>
     
 }
@@ -62,9 +62,9 @@ struct DuiShiNetwork: NetworkingType {
 
 
 // "Public" interfaces
-extension DuiShiNetwork {
+extension DuishiNetwork {
     /// Request to fetch a given target. Ensures that valid XApp tokens exist before making request
-    func request(token: DuiShiAPI, defaults: UserDefaults = UserDefaults.standard) -> Observable<Moya.Response> {
+    func request(token: DuishiAPI, defaults: UserDefaults = UserDefaults.standard) -> Observable<Moya.Response> {
         return self.provider.request(token).retry(REQUEST_RETRY_COUNT)
     }
 }
@@ -91,15 +91,15 @@ class Networking {
         }
     }
 
-    class func newDuiShiNetwork() -> DuiShiNetwork {
-        return DuiShiNetwork(provider: newProvider(plugins: plugins, headClosure: authHeadClosure))
+    class func newDuishiNetwork() -> DuishiNetwork {
+        return DuishiNetwork(provider: newProvider(plugins: plugins, headClosure: authHeadClosure))
     }
     
     
 
     //StubbingNetworking
-    static func newDuiShiStubbingNetwork() -> DuiShiNetwork {
-        return DuiShiNetwork(provider: OnlineProvider(endpointClosure: endpointsClosure(), requestClosure: endpointResolver(), stubClosure: MoyaProvider.immediatelyStub, plugins: plugins, online: .just(true)))
+    static func newDuishiStubbingNetwork() -> DuishiNetwork {
+        return DuishiNetwork(provider: OnlineProvider(endpointClosure: endpointsClosure(), requestClosure: endpointResolver(), stubClosure: MoyaProvider.immediatelyStub, plugins: plugins, online: .just(true)))
     }
 
     
@@ -112,6 +112,8 @@ class Networking {
                 //let headDic:[String: String] = ["x-leo-agent-version": versionString, "x-leo-agent-platform": "ios"]
                 
                 let headDic:[String: String] = [:]
+                
+//                let headDic:[String: String] = ["Accept": "application/json", "Content-Type": "application/json"]
                 
                 return headDic
             }
@@ -145,13 +147,36 @@ class Networking {
     static func endpointsClosure<T>(headClosure: HeadClosure? = nil) -> (T) -> Endpoint<T> where T: TargetType, T: SSAPIType{
         return  { (target: T) -> Endpoint<T> in
             let bodyParameterEncoding = target.parameterEncoding
-            let endpoint: Endpoint<T> = Endpoint<T>(url: url(route: target), sampleResponseClosure:
+            var endpoint: Endpoint<T> = Endpoint<T>(url: url(route: target), sampleResponseClosure:
                 {
                     .networkResponse(200, target.sampleData)
                 }, method: target.method, parameters: target.parameters, parameterEncoding:bodyParameterEncoding)
             
 
+            var headFields = [String: String]()
+            //目前仅用于上传文件，API额外的头部信息
+            if let apiHeader = target.headers , !apiHeader.isEmpty {
+                apiHeader.forEach { (key, value) in
+                    headFields[key] = value
+                }
+            }
             
+            //服务端定义的HEADER信息
+            if let headClosure = headClosure, let networkingHeadFields = headClosure(target) , !networkingHeadFields.isEmpty {
+                networkingHeadFields.forEach { (key, value) in
+                    headFields[key] = value
+                }
+                
+                
+            }
+            
+            if !headFields.isEmpty {
+                //为什么Moya 8.0.0-beta.3能编译过，Moya 8.0.0-beta.5编译不过？不知道哪里出了问题
+                //                endpoint = endpoint.adding(newHttpHeaderFields: headFields)
+                endpoint = endpoint.adding(httpHeaderFields: headFields)
+            }
+            
+
             return endpoint
         }
         

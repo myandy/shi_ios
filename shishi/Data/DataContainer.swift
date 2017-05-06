@@ -14,7 +14,7 @@ class DataContainer: NSObject {
     }()
     
     
-    lazy private(set) var duishiNetwork: DuiShiNetwork = {
-        return AppConfig.isStubbingNetwork ? Networking.newDuiShiStubbingNetwork() : Networking.newDuiShiNetwork()
+    lazy private(set) var duiShiNetwork: DuishiNetwork = {
+        return AppConfig.isStubbingNetwork ? Networking.newDuishiStubbingNetwork() : Networking.newDuishiNetwork()
     }()
 }

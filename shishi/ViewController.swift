@@ -58,8 +58,8 @@ class ViewController: UIViewController , iCarouselDataSource, iCarouselDelegate
         self.navigationController?.pushViewController(RandomPoetryVC(), animated: true)
     }
     
-    @IBAction func onDuiShiBtnClick(_ sender: AnyObject) {
-        self.navigationController?.pushViewController(DuiShiVC(), animated: true)
+    @IBAction func onBtnClick(_ sender: AnyObject) {
+        self.navigationController?.pushViewController(DuishiVC(), animated: true)
     }
     
     override func awakeFromNib() {

@@ -9,7 +9,8 @@
 import UIKit
 
 class SSStr: NSObject {
-    struct DuiShi {
-        static var duiShi                       : String { return NSLocalizedString("DUISHI", comment: "") }
+    struct Duishi {
+        static var duishi                       : String { return NSLocalizedString("DUISHI", comment: "") }
+        static var refresh                       : String { return NSLocalizedString("REFRESH", comment: "") }
     }
 }

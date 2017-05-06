@@ -11,21 +11,18 @@ import RxSwift
 import Moya
 import Alamofire
 
-private let materialPath = "/material"
-private let worksPath = "/works"
-private let backgroundPath = "/background"
-private let editor = "/editor"
 
-enum DuiShiAPI {
+enum DuishiAPI {
     
-    case works(userId: String?, page: Int?, pageSize: Int)
+    case xiaLian(shangLian: String, locker: String?)
     
+    static let emptyLoker = "0"
 }
 
-extension DuiShiAPI: TargetType {
+extension DuishiAPI: TargetType {
     /// The method used for parameter encoding.
     public var parameterEncoding: ParameterEncoding {
-        return URLEncoding.default
+        return JSONEncoding.default
     }
     
     var task: Task {
@@ -34,8 +31,8 @@ extension DuiShiAPI: TargetType {
     
     var path: String {
         switch self {
-        case .works:
-            return worksPath
+        case .xiaLian:
+            return "/GetXiaLian"
             
        
             
@@ -43,7 +40,7 @@ extension DuiShiAPI: TargetType {
         }
     }
     
-    var base: String { return HTTPProtocal.SERVER_ADDRESS_API }
+    var base: String { return "http://couplet.msra.cn/app/CoupletsWS_V2.asmx" }
     var baseURL: URL {
         return URL(string: base)!
     }
@@ -54,9 +51,19 @@ extension DuiShiAPI: TargetType {
         var apiParams: [String: Any]? = nil
         switch self {
             
-        case .works:
+        case .xiaLian(let shangLian, let locker):
+            var lockerString = locker
+            if lockerString == nil {
+                lockerString = ""
+                for _ in 0..<shangLian.characters.count {
+                    lockerString! += type(of: self).emptyLoker
+                }
+            }
+            
             apiParams = [
-                "page_size":  0,
+                "shanglian":  shangLian,
+                "xialianLocker":  lockerString!,
+                "isUpdate":  false,
             ]
             
        
@@ -70,8 +77,8 @@ extension DuiShiAPI: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .works:
-            return .get
+        case .xiaLian:
+            return .post
             
             
             
@@ -85,7 +92,7 @@ extension DuiShiAPI: TargetType {
     
 }
 
-extension DuiShiAPI: SSAPIType {
+extension DuishiAPI: SSAPIType {
 }
 
 

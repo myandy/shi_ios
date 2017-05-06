@@ -58,13 +58,13 @@ class BaseSearchVC: UIViewController{
         table.delegate = self
         table.register(BaseSearchCell.self, forCellReuseIdentifier: "BaseSearchCell")
         
-        search.barTintColor = UIColor(intColor: SSTheme.Color.BACK_COLOR)
+        search.barTintColor = UIColor(intColor: SSTheme.ColorInt.BACK)
         search.backgroundImage=UIImage()
         search.delegate=self
         
-        table.backgroundColor = UIColor(intColor:SSTheme.Color.BACK_COLOR)
-        cancel.backgroundColor = UIColor(intColor:SSTheme.Color.BACK_COLOR)
-        divide.backgroundColor = UIColor(intColor:SSTheme.Color.DIVIDE_COLOR)
+        table.backgroundColor = UIColor(intColor:SSTheme.ColorInt.BACK)
+        cancel.backgroundColor = UIColor(intColor:SSTheme.ColorInt.BACK)
+        divide.backgroundColor = UIColor(intColor:SSTheme.ColorInt.DIVIDE)
         
         loadData()
         

@@ -7,8 +7,15 @@ PODS:
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
   - iCarousel (1.8.3)
+  - MBProgressHUD (1.0.0)
   - Moya (8.0.3):
     - Moya/Core (= 8.0.3)
+  - Moya-SwiftyJSONMapper/Core (2.2.0):
+    - Moya (~> 8.0.0)
+    - SwiftyJSON
+  - Moya-SwiftyJSONMapper/RxSwift (2.2.0):
+    - Moya-SwiftyJSONMapper/Core
+    - Moya/RxSwift
   - Moya/Core (8.0.3):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
@@ -26,6 +33,7 @@ PODS:
     - RxSwift (~> 3.1)
   - RxSwift (3.1.0)
   - SnapKit (3.0.2)
+  - SwiftyImage (1.1.0)
   - SwiftyJSON (3.1.4)
   - XCGLogger (5.0.1):
     - XCGLogger/Core (= 5.0.1)
@@ -37,7 +45,9 @@ DEPENDENCIES:
   - EVReflection (~> 4.9.1)
   - FMDB
   - iCarousel (~> 1.8.3)
+  - MBProgressHUD
   - Moya (~> 8.0.3)
+  - Moya-SwiftyJSONMapper/RxSwift
   - Moya/RxSwift
   - NSObject+Rx
   - ReachabilitySwift
@@ -45,6 +55,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift (~> 3.1.0)
   - SnapKit (~> 3.0.2)
+  - SwiftyImage
   - SwiftyJSON
   - XCGLogger
 
@@ -53,7 +64,9 @@ SPEC CHECKSUMS:
   EVReflection: f656ab71b7ed34c0922c6c4836bb77e9b33ca66c
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
+  Moya-SwiftyJSONMapper: 03c9d3e562c9025c8c00fa3ec97ae1da61a2be37
   NSObject+Rx: 09277ba78aa12a8e454c82429eb4e31bfb413131
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
@@ -61,9 +74,10 @@ SPEC CHECKSUMS:
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SwiftyImage: 4d3feb0211beb7217b39ac553e3ee64ceb72d611
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XCGLogger: 0b43697155d41e4a1b15fc776f319c2141646b09
 
-PODFILE CHECKSUM: 97afeebcb37f3e80892f97c1e07cbb12223841e6
+PODFILE CHECKSUM: af4eaa94454cb9bf46961c73b70074a35e20e2dd
 
 COCOAPODS: 1.2.1
