@@ -15,7 +15,6 @@ class Author{
     var intro:String?
     var dynasty:String?
     var pNum:Int32?
-    var color:Int32?
 }
 
 extension Author : SearchModel{
@@ -46,7 +45,6 @@ class AuthorDB{
             model.enName = rs.string(forColumn: "en_name")
              model.dynasty = rs.string(forColumn: "d_dynasty")
             model.pNum = rs.int(forColumn: "p_num")
-            model.color = rs.int(forColumn: "color")
             array.add(model)
         }
         return array
