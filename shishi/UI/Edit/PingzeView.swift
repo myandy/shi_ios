@@ -13,15 +13,18 @@ public class PingzeView: UIView {
     
     static let TYPE_PING = 1
     
-    static let TYPE_ZE = 2
+    static let TYPE_ZHONG = 2
     
-    static let TYPE_ZHONG_PING = 4
+    static let TYPE_ZE = 3
     
-    static let TYPE_ZHONG_ZE = 5
+    static let TYPE_PING_YUN = 4
     
-    static let TYPE_PING_YUN = 7
+    static let TYPE_ZE_YUN = 6
     
-    static let TYPE_ZE_YUN = 8
+    static let TYPE_PING_YUN_CAN = 7
+    
+    static let TYPE_ZE_YUN_CAN = 9
+    
     
     static let COLOR_PING = 0x8e8e8e
     
@@ -30,6 +33,10 @@ public class PingzeView: UIView {
     static let COLOR_ZE_YUN = 0xb03b28
     
     static let COLOR_PING_YUN = 0x0070fb
+    
+    static let COLOR_YUN_GREEN = 0x8dc63f
+    
+    
     
     
     public init(frame: CGRect, shape: Int) {
@@ -58,32 +65,32 @@ public class PingzeView: UIView {
             ctx.setStrokeColor(UIColor.init(intColor: PingzeView.COLOR_PING).cgColor)
             ctx.addArc(center: center, radius: radius, startAngle: 0, endAngle: endAngle, clockwise: true)
             ctx.strokePath()
+        case PingzeView.TYPE_ZHONG:
+            ctx.setStrokeColor(UIColor.init(intColor: PingzeView.COLOR_PING).cgColor)
+            ctx.addArc(center: center, radius: 3, startAngle: 0, endAngle: endAngle, clockwise: true)
+            ctx.strokePath()
+            ctx.beginPath()
+            ctx.setStrokeColor(UIColor.init(intColor: PingzeView.COLOR_PING).cgColor)
+            ctx.addArc(center: center, radius: 6, startAngle: 0, endAngle: endAngle, clockwise: true)
+            ctx.strokePath()
         case PingzeView.TYPE_ZE:
             ctx.setFillColor(UIColor.init(intColor: PingzeView.COLOR_ZE).cgColor)
             ctx.addArc(center: center, radius: radius, startAngle: 0, endAngle: endAngle, clockwise: true)
             ctx.fillPath()
-        case PingzeView.TYPE_ZHONG_PING:
-            ctx.setStrokeColor(UIColor.init(intColor: PingzeView.COLOR_PING).cgColor)
-            ctx.addArc(center: center, radius: 3, startAngle: 0, endAngle: endAngle, clockwise: true)
-            ctx.strokePath()
-            ctx.beginPath()
-            ctx.setStrokeColor(UIColor.init(intColor: PingzeView.COLOR_PING).cgColor)
-            ctx.addArc(center: center, radius: 6, startAngle: 0, endAngle: endAngle, clockwise: true)
-            ctx.strokePath()
-        case PingzeView.TYPE_ZHONG_ZE:
-            ctx.setFillColor(UIColor.init(intColor: PingzeView.COLOR_ZE).cgColor)
-            ctx.addArc(center: center, radius: 3, startAngle: 0, endAngle: endAngle, clockwise: true)
-            ctx.fillPath()
-            ctx.beginPath()
-            ctx.setStrokeColor(UIColor.init(intColor: PingzeView.COLOR_ZE).cgColor)
-            ctx.addArc(center: center, radius: 6, startAngle: 0, endAngle: endAngle, clockwise: true)
-            ctx.strokePath()
         case PingzeView.TYPE_PING_YUN:
             ctx.setFillColor(UIColor.init(intColor: PingzeView.COLOR_PING_YUN).cgColor)
             ctx.addArc(center: center, radius: radius, startAngle: 0, endAngle: endAngle, clockwise: true)
             ctx.fillPath()
         case PingzeView.TYPE_ZE_YUN:
             ctx.setFillColor(UIColor.init(intColor: PingzeView.COLOR_ZE_YUN).cgColor)
+            ctx.addArc(center: center, radius: radius, startAngle: 0, endAngle: endAngle, clockwise: true)
+            ctx.fillPath()
+        case PingzeView.TYPE_PING_YUN_CAN:
+            ctx.setStrokeColor(UIColor.init(intColor: PingzeView.COLOR_YUN_GREEN).cgColor)
+            ctx.addArc(center: center, radius: radius, startAngle: 0, endAngle: endAngle, clockwise: true)
+            ctx.strokePath()
+        case PingzeView.TYPE_ZE_YUN_CAN:
+            ctx.setFillColor(UIColor.init(intColor: PingzeView.COLOR_YUN_GREEN).cgColor)
             ctx.addArc(center: center, radius: radius, startAngle: 0, endAngle: endAngle, clockwise: true)
             ctx.fillPath()
         default: break

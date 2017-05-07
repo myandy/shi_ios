@@ -240,18 +240,20 @@
 		E22512201E53455700D062E8 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E225121F1E53455700D062E8 /* ImageIO.framework */; };
 		E22512221E53456900D062E8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E22512211E53456900D062E8 /* SystemConfiguration.framework */; };
 		E22512241E53457D00D062E8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E22512231E53457D00D062E8 /* CoreTelephony.framework */; };
-		E27639991E06E46300078771 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27639981E06E46300078771 /* DBManager.swift */; };
-		E276399B1E06E58000078771 /* shishi.db in Resources */ = {isa = PBXBuildFile; fileRef = E276399A1E06E58000078771 /* shishi.db */; };
-		E276399F1E0C05FE00078771 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276399E1E0C05FE00078771 /* Author.swift */; };
+		E22869B61EBED7D100238DF8 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869B11EBED7D100238DF8 /* Author.swift */; };
+		E22869B71EBED7D100238DF8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869B21EBED7D100238DF8 /* Color.swift */; };
+		E22869B81EBED7D100238DF8 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869B31EBED7D100238DF8 /* DBManager.swift */; };
+		E22869B91EBED7D100238DF8 /* Writing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869B41EBED7D100238DF8 /* Writing.swift */; };
+		E22869BA1EBED7D100238DF8 /* Yun.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869B51EBED7D100238DF8 /* Yun.swift */; };
+		E22869BC1EBED7FC00238DF8 /* Former.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869BB1EBED7FC00238DF8 /* Former.swift */; };
+		E22869BE1EBEDACB00238DF8 /* shishi.db in Resources */ = {isa = PBXBuildFile; fileRef = E22869BD1EBEDACB00238DF8 /* shishi.db */; };
 		E284A7AA1DE4259A00252160 /* Pods_shishi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; };
 		E284A7AB1DE4259A00252160 /* Pods_shishi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E29558D01DD311720065AA1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29558CF1DD311720065AA1B /* ViewController.swift */; };
 		E29558D31DD311720065AA1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29558D11DD311720065AA1B /* Main.storyboard */; };
 		E29558D81DD311720065AA1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29558D61DD311720065AA1B /* LaunchScreen.storyboard */; };
-		E2BBD3031E9A5D8100B285DB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BBD3021E9A5D8100B285DB /* Color.swift */; };
+		E2B0DFCB1EB5F962001B790C /* BackgroundPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B0DFCA1EB5F962001B790C /* BackgroundPagerView.swift */; };
 		E2BBD3051E9A694400B285DB /* Extensiton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BBD3041E9A694400B285DB /* Extensiton.swift */; };
-		E2E3930F1EA209EF005C5685 /* Writing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3930E1EA209EF005C5685 /* Writing.swift */; };
-		E2E393131EA23AD7005C5685 /* Yun.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E393121EA23AD7005C5685 /* Yun.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -683,18 +685,19 @@
 		E225121F1E53455700D062E8 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		E22512211E53456900D062E8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E22512231E53457D00D062E8 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		E27639981E06E46300078771 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
-		E276399A1E06E58000078771 /* shishi.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = shishi.db; sourceTree = SOURCE_ROOT; };
-		E276399C1E096ECA00078771 /* Poetry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poetry.swift; sourceTree = "<group>"; };
-		E276399E1E0C05FE00078771 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		E22869B11EBED7D100238DF8 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Author.swift; path = DB/Author.swift; sourceTree = "<group>"; };
+		E22869B21EBED7D100238DF8 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = DB/Color.swift; sourceTree = "<group>"; };
+		E22869B31EBED7D100238DF8 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBManager.swift; path = DB/DBManager.swift; sourceTree = "<group>"; };
+		E22869B41EBED7D100238DF8 /* Writing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Writing.swift; path = DB/Writing.swift; sourceTree = "<group>"; };
+		E22869B51EBED7D100238DF8 /* Yun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Yun.swift; path = DB/Yun.swift; sourceTree = "<group>"; };
+		E22869BB1EBED7FC00238DF8 /* Former.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Former.swift; path = DB/Former.swift; sourceTree = "<group>"; };
+		E22869BD1EBEDACB00238DF8 /* shishi.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = shishi.db; sourceTree = "<group>"; };
 		E29558CA1DD311720065AA1B /* 诗Shi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "诗Shi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29558CF1DD311720065AA1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E29558D21DD311720065AA1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E29558D71DD311720065AA1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E2BBD3021E9A5D8100B285DB /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		E2B0DFCA1EB5F962001B790C /* BackgroundPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundPagerView.swift; sourceTree = "<group>"; };
 		E2BBD3041E9A694400B285DB /* Extensiton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensiton.swift; sourceTree = "<group>"; };
-		E2E3930E1EA209EF005C5685 /* Writing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Writing.swift; sourceTree = "<group>"; };
-		E2E393121EA23AD7005C5685 /* Yun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yun.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1793,6 +1796,7 @@
 				756EFB6F1EB45A76006E65DF /* EditVC.xib */,
 				756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */,
 				756EFB241EB43EAD006E65DF /* PingzeView.swift */,
+				E2B0DFCA1EB5F962001B790C /* BackgroundPagerView.swift */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -1938,18 +1942,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		E276398D1E06D8E900078771 /* db */ = {
+		E22869B01EBED7BA00238DF8 /* DB */ = {
 			isa = PBXGroup;
 			children = (
-				E276399A1E06E58000078771 /* shishi.db */,
-				E27639981E06E46300078771 /* DBManager.swift */,
-				E276399C1E096ECA00078771 /* Poetry.swift */,
-				E276399E1E0C05FE00078771 /* Author.swift */,
-				E2BBD3021E9A5D8100B285DB /* Color.swift */,
-				E2E3930E1EA209EF005C5685 /* Writing.swift */,
-				E2E393121EA23AD7005C5685 /* Yun.swift */,
+				E22869BD1EBEDACB00238DF8 /* shishi.db */,
+				E22869B11EBED7D100238DF8 /* Author.swift */,
+				E22869B21EBED7D100238DF8 /* Color.swift */,
+				E22869B31EBED7D100238DF8 /* DBManager.swift */,
+				E22869B41EBED7D100238DF8 /* Writing.swift */,
+				E22869B51EBED7D100238DF8 /* Yun.swift */,
+				E22869BB1EBED7FC00238DF8 /* Former.swift */,
 			);
-			name = db;
+			name = DB;
 			sourceTree = "<group>";
 		};
 		E29558C11DD311720065AA1B = {
@@ -1973,6 +1977,7 @@
 		E29558CC1DD311720065AA1B /* shishi */ = {
 			isa = PBXGroup;
 			children = (
+				E22869B01EBED7BA00238DF8 /* DB */,
 				756EFB4A1EB44287006E65DF /* Data */,
 				756EFB3C1EB43EC0006E65DF /* Network */,
 				756EFB161EB43EAD006E65DF /* UI */,
@@ -1980,7 +1985,6 @@
 				751E086A1EACA64B00BAB696 /* App */,
 				751E06001EACA61C00BAB696 /* Library */,
 				751E05F61EACA51300BAB696 /* Supporting Files */,
-				E276398D1E06D8E900078771 /* db */,
 				E29558CF1DD311720065AA1B /* ViewController.swift */,
 				E29558D11DD311720065AA1B /* Main.storyboard */,
 				E2057C6F1DDBFE9200118080 /* MainView.xib */,
@@ -2026,7 +2030,7 @@
 				TargetAttributes = {
 					E29558C91DD311720065AA1B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = G5YJVZL9SU;
+						DevelopmentTeam = X8Q8BW44Z2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2058,6 +2062,7 @@
 				751E07CC1EACA61D00BAB696 /* UMComRegisterViewController.xib in Resources */,
 				751E07EB1EACA61D00BAB696 /* UMComPostReplyEditView.xib in Resources */,
 				751E05FF1EACA54200BAB696 /* Assets.xcassets in Resources */,
+				E22869BE1EBEDACB00238DF8 /* shishi.db in Resources */,
 				751E05FD1EACA51300BAB696 /* Info.plist in Resources */,
 				751E08421EACA61D00BAB696 /* UMComCommentTableViewCell.xib in Resources */,
 				751E085E1EACA61D00BAB696 /* UMSLoginViewController.xib in Resources */,
@@ -2071,7 +2076,6 @@
 				751E082A1EACA61D00BAB696 /* FZLanTingHei-L-GBK-M.TTF in Resources */,
 				756EFB711EB45A76006E65DF /* EditPagerView.xib in Resources */,
 				751E07E61EACA61D00BAB696 /* UMComLocationTableViewCell.xib in Resources */,
-				E276399B1E06E58000078771 /* shishi.db in Resources */,
 				751E08561EACA61D00BAB696 /* UMSocialLocalizable.strings in Resources */,
 				751E07B41EACA61D00BAB696 /* README.txt in Resources */,
 				756EFB541EB45929006E65DF /* AllAuthorVC.xib in Resources */,
@@ -2195,7 +2199,6 @@
 				756EFB871EBDCAF0006E65DF /* DuishiEditView.swift in Sources */,
 				751E08731EACA6B500BAB696 /* Utils.swift in Sources */,
 				756EFB801EBB8368006E65DF /* JSONAble.swift in Sources */,
-				E276399F1E0C05FE00078771 /* Author.swift in Sources */,
 				E2BBD3051E9A694400B285DB /* Extensiton.swift in Sources */,
 				751E08001EACA61D00BAB696 /* UMComAddedImageView.m in Sources */,
 				751E08021EACA61D00BAB696 /* UMComButton.m in Sources */,
@@ -2215,6 +2218,7 @@
 				751E081E1EACA61D00BAB696 /* UMComShareCollectionView.m in Sources */,
 				751E07EE1EACA61D00BAB696 /* UMComSysCommentCell.m in Sources */,
 				756EFB461EB44097006E65DF /* Network.swift in Sources */,
+				E22869B81EBED7D100238DF8 /* DBManager.swift in Sources */,
 				751E07C51EACA61D00BAB696 /* UMComUserListDataController.m in Sources */,
 				756EFB531EB45929006E65DF /* AllAuthorVC.swift in Sources */,
 				751E07FC1EACA61D00BAB696 /* UMComResourceManager.m in Sources */,
@@ -2248,14 +2252,14 @@
 				751E07F21EACA61D00BAB696 /* UMComProfileSettingController.m in Sources */,
 				756EFB451EB44097006E65DF /* HTTPProtocal.swift in Sources */,
 				751E07F71EACA61D00BAB696 /* UMComUserTableViewCell.m in Sources */,
-				E2BBD3031E9A5D8100B285DB /* Color.swift in Sources */,
+				E22869B71EBED7D100238DF8 /* Color.swift in Sources */,
+				E22869B91EBED7D100238DF8 /* Writing.swift in Sources */,
 				751E08281EACA61D00BAB696 /* UMComAvatarImageView.m in Sources */,
 				751E07B81EACA61D00BAB696 /* UMComFeedListDataController.m in Sources */,
 				751E07C31EACA61D00BAB696 /* UMComListDataController.m in Sources */,
 				756EFB781EBA28D1006E65DF /* SSStr.swift in Sources */,
 				751E08471EACA61D00BAB696 /* UMComHomeFeedViewController.m in Sources */,
 				751E081A1EACA61D00BAB696 /* UMImagePickerThumbnailView.m in Sources */,
-				E2E3930F1EA209EF005C5685 /* Writing.swift in Sources */,
 				751E08111EACA61D00BAB696 /* UMComMutiTextRun.m in Sources */,
 				751E07F61EACA61D00BAB696 /* UMComUserProfileDetailView.m in Sources */,
 				751E080F1EACA61D00BAB696 /* UMComMutiStyleTextView.m in Sources */,
@@ -2266,6 +2270,7 @@
 				751E07EA1EACA61D00BAB696 /* UMComPostReplyEditView.m in Sources */,
 				751E08191EACA61D00BAB696 /* UMImagePickerGroupCell.m in Sources */,
 				751E08491EACA61D00BAB696 /* UMComCommentTableViewController.m in Sources */,
+				E22869BC1EBED7FC00238DF8 /* Former.swift in Sources */,
 				751E07EF1EACA61D00BAB696 /* UMComSysCommonTableViewCell.m in Sources */,
 				751E07BA1EACA61D00BAB696 /* UMComNoticeListDataController..m in Sources */,
 				751E08451EACA61D00BAB696 /* UMComHtmlFeedStyle.m in Sources */,
@@ -2300,7 +2305,6 @@
 				751E08211EACA61D00BAB696 /* UMComiToast.m in Sources */,
 				751E081F1EACA61D00BAB696 /* UMComGridTableViewCell.m in Sources */,
 				756EFB851EBD9D08006E65DF /* Observable+Result.swift in Sources */,
-				E2E393131EA23AD7005C5685 /* Yun.swift in Sources */,
 				751E083B1EACA61D00BAB696 /* UMComFeedWithTopicTableViewController.m in Sources */,
 				751E08101EACA61D00BAB696 /* UMComMutiText.m in Sources */,
 				756EFB4C1EB4429C006E65DF /* DataContainer.swift in Sources */,
@@ -2317,11 +2321,13 @@
 				751E07CD1EACA61D00BAB696 /* UMComLoginHandler+weibo.m in Sources */,
 				751E07D01EACA61D00BAB696 /* UMComMessageManager.m in Sources */,
 				751E07B71EACA61D00BAB696 /* UMComFeedEditDataController.m in Sources */,
+				E22869BA1EBED7D100238DF8 /* Yun.swift in Sources */,
 				751E07FF1EACA61D00BAB696 /* UMComAddedImageCellView.m in Sources */,
 				756EFB721EB45A76006E65DF /* EditVC.swift in Sources */,
 				751E07C91EACA61D00BAB696 /* UMComLoginViewController.m in Sources */,
 				751E07F91EACA61D00BAB696 /* UMComUserTableViewController.m in Sources */,
 				751E07C61EACA61D00BAB696 /* UMComUserUpdateDataController.m in Sources */,
+				E2B0DFCB1EB5F962001B790C /* BackgroundPagerView.swift in Sources */,
 				751E07B61EACA61D00BAB696 /* UMComCommentListDataController.m in Sources */,
 				751E08201EACA61D00BAB696 /* UMComGridTableViewCellOne.m in Sources */,
 				751E080D1EACA61D00BAB696 /* UMComMedalImageView.m in Sources */,
@@ -2329,10 +2335,10 @@
 				751E084A1EACA61D00BAB696 /* UMComLikeTableViewController.m in Sources */,
 				751E083A1EACA61D00BAB696 /* UMComFeedTableViewController.m in Sources */,
 				751E08361EACA61D00BAB696 /* UMComFavouratesViewController.m in Sources */,
-				E27639991E06E46300078771 /* DBManager.swift in Sources */,
 				751E07F01EACA61D00BAB696 /* UMComSysLikeTableViewCell.m in Sources */,
 				751E07F51EACA61D00BAB696 /* UMComUserNearbyViewController.m in Sources */,
 				756EFB701EB45A76006E65DF /* EditPagerView.swift in Sources */,
+				E22869B61EBED7D100238DF8 /* Author.swift in Sources */,
 				751E08441EACA61D00BAB696 /* UMComFeedDetailViewHtmlBodyCell.m in Sources */,
 				751E08151EACA61D00BAB696 /* UMAssetsCollectionController.m in Sources */,
 				756EFB7C1EBB8109006E65DF /* UIVIewController+SS.swift in Sources */,
@@ -2479,7 +2485,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = G5YJVZL9SU;
+				DEVELOPMENT_TEAM = X8Q8BW44Z2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2517,7 +2523,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = G5YJVZL9SU;
+				DEVELOPMENT_TEAM = X8Q8BW44Z2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

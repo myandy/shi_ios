@@ -19,11 +19,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PD-ZK-K3F">
-                    <rect key="frame" x="0.0" y="540" width="80" height="60"/>
+                    <rect key="frame" x="0.0" y="607" width="80" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="mnY-id-fvL"/>
                         <constraint firstAttribute="width" constant="80" id="ort-e8-rHa"/>
@@ -35,7 +35,7 @@
                     </connections>
                 </button>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="edH-yF-mfH">
-                    <rect key="frame" x="228.5" y="556" width="143" height="29"/>
+                    <rect key="frame" x="116" y="623" width="143" height="29"/>
                     <segments>
                         <segment title="" image="layout_bg_edit"/>
                         <segment title="" image="layout_bg_paper"/>
@@ -46,7 +46,7 @@
                     </connections>
                 </segmentedControl>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPL-7N-acN">
-                    <rect key="frame" x="520" y="540" width="80" height="60"/>
+                    <rect key="frame" x="295" y="607" width="80" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="aus-wk-7bZ"/>
                         <constraint firstAttribute="height" constant="60" id="iCr-WS-U6g"/>

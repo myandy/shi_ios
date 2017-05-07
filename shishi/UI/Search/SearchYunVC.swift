@@ -11,10 +11,10 @@ import UIKit
 
 class SearchYunVC: BaseSearchVC{
     override func loadData() {
-        items = YunDB.getAll()
+        items = FormerDB.getAll()
     }
     override func onItemClick(pos: Int) {
-        let viewController = EditVC(yun:items[pos] as! Yun)
+        let viewController = EditVC(former:items[pos] as! Former)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
