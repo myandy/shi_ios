@@ -116,11 +116,26 @@ class DuishiVC: UIViewController {
             })
             .addDisposableTo(self.rx_disposeBag)
         
+        let backBtn = UIButton()
+        shangLianContainerView.addSubview(backBtn)
+        backBtn.setImage(UIImage(named:"back"), for: .normal)
+        backBtn.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(8)
+            make.top.bottom.equalToSuperview()
+            make.width.equalTo(backBtn.snp.height)
+        }
+        backBtn.rx.tap
+            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] in
+                self.onBackBtnClicked()
+            })
+            .addDisposableTo(self.rx_disposeBag)
+        
         self.shangLianTF = UITextField()
         shangLianContainerView.addSubview(self.shangLianTF)
         self.shangLianTF.backgroundColor = UIColor.white
         self.shangLianTF.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(20)
+            make.left.equalTo(backBtn.snp.right).offset(8)
             make.height.equalTo(self.searchBtn)
             make.centerY.equalToSuperview()
             make.right.equalTo(self.searchBtn.snp.left).offset(-20)
@@ -242,6 +257,10 @@ extension DuishiVC {
         }
     }
     
+    //返回按钮
+    fileprivate func onBackBtnClicked() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 
