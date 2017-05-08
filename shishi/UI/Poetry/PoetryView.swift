@@ -35,8 +35,6 @@ class PoetryView : UIView,Nibloadable{
             introLabel.text=nil
         }
         
-        let data = AuthorDB.getAuthor(name: poetry.author!)
-
         shareBtn.backgroundColor = color
         authorLable.text=poetry.author
         

@@ -104,21 +104,27 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
     }
     
     
+    func getItemColor(_ index:Int)->UIColor{
+        return getColor(index:self.items.count-1-index).toUIColor()
+    }
+    
+    func getItemData(_ index:Int)->Author{
+        return items[index%2==0 ? +1 : index-1] as! Author
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.navigationController?.popViewController(animated: true)
+        let vc=AuthorPagerVC(author:getItemData(indexPath.row),color:getItemColor(indexPath.row))
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell:AllAuthorCell  = cv.dequeueReusableCell(withReuseIdentifier: "AllAuthorCell", for: indexPath) as! AllAuthorCell
         
-        let data = items[indexPath.row%2==0 ? indexPath.row+1 : indexPath.row-1] as! Author
-        
+        let data = getItemData(indexPath.row)
         
         cell.lableDynasty.text =  data.dynasty![0..<1]
         
-        
-        let colorDB = getColor(index:self.items.count-1-indexPath.row)
-        let color = colorDB.toUIColor()
+        let color = getItemColor(indexPath.row)
         cell.top.backgroundColor = color
         cell.lableDynasty.textColor = color
         cell.lableDynasty.layer.borderColor = color.cgColor

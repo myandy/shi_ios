@@ -247,6 +247,8 @@
 		E22869BA1EBED7D100238DF8 /* Yun.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869B51EBED7D100238DF8 /* Yun.swift */; };
 		E22869BC1EBED7FC00238DF8 /* Former.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869BB1EBED7FC00238DF8 /* Former.swift */; };
 		E22869BE1EBEDACB00238DF8 /* shishi.db in Resources */ = {isa = PBXBuildFile; fileRef = E22869BD1EBEDACB00238DF8 /* shishi.db */; };
+		E22869C01EC0A2B300238DF8 /* AuthorPagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869BF1EC0A2B300238DF8 /* AuthorPagerVC.swift */; };
+		E22869C21EC0AF5900238DF8 /* PoetryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869C11EC0AF5900238DF8 /* PoetryCell.swift */; };
 		E284A7AA1DE4259A00252160 /* Pods_shishi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; };
 		E284A7AB1DE4259A00252160 /* Pods_shishi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E29558D01DD311720065AA1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29558CF1DD311720065AA1B /* ViewController.swift */; };
@@ -661,7 +663,7 @@
 		756EFB5B1EB4596C006E65DF /* BaseSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSearchCell.swift; sourceTree = "<group>"; };
 		756EFB5C1EB4596C006E65DF /* BaseSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSearchVC.swift; sourceTree = "<group>"; };
 		756EFB5D1EB4596C006E65DF /* BaseSearchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseSearchVC.xib; sourceTree = "<group>"; };
-		756EFB621EB459E2006E65DF /* Poetry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poetry.swift; sourceTree = "<group>"; };
+		756EFB621EB459E2006E65DF /* Poetry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Poetry.swift; path = UI/Poetry/Poetry.swift; sourceTree = "<group>"; };
 		756EFB631EB459E2006E65DF /* PoetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoetryView.swift; sourceTree = "<group>"; };
 		756EFB641EB459E2006E65DF /* PoetryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PoetryView.xib; sourceTree = "<group>"; };
 		756EFB651EB459E2006E65DF /* RandomPoetryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomPoetryVC.swift; path = ../Poetry/RandomPoetryVC.swift; sourceTree = "<group>"; };
@@ -692,6 +694,8 @@
 		E22869B51EBED7D100238DF8 /* Yun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Yun.swift; path = DB/Yun.swift; sourceTree = "<group>"; };
 		E22869BB1EBED7FC00238DF8 /* Former.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Former.swift; path = DB/Former.swift; sourceTree = "<group>"; };
 		E22869BD1EBEDACB00238DF8 /* shishi.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = shishi.db; sourceTree = "<group>"; };
+		E22869BF1EC0A2B300238DF8 /* AuthorPagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorPagerVC.swift; sourceTree = "<group>"; };
+		E22869C11EC0AF5900238DF8 /* PoetryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoetryCell.swift; sourceTree = "<group>"; };
 		E29558CA1DD311720065AA1B /* 诗Shi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "诗Shi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29558CF1DD311720065AA1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E29558D21DD311720065AA1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1870,9 +1874,10 @@
 		756EFB611EB459E2006E65DF /* Poetry */ = {
 			isa = PBXGroup;
 			children = (
-				756EFB621EB459E2006E65DF /* Poetry.swift */,
 				756EFB631EB459E2006E65DF /* PoetryView.swift */,
 				756EFB641EB459E2006E65DF /* PoetryView.xib */,
+				E22869BF1EC0A2B300238DF8 /* AuthorPagerVC.swift */,
+				E22869C11EC0AF5900238DF8 /* PoetryCell.swift */,
 			);
 			path = Poetry;
 			sourceTree = "<group>";
@@ -1946,6 +1951,7 @@
 			isa = PBXGroup;
 			children = (
 				E22869BD1EBEDACB00238DF8 /* shishi.db */,
+				756EFB621EB459E2006E65DF /* Poetry.swift */,
 				E22869B11EBED7D100238DF8 /* Author.swift */,
 				E22869B21EBED7D100238DF8 /* Color.swift */,
 				E22869B31EBED7D100238DF8 /* DBManager.swift */,
@@ -2254,6 +2260,7 @@
 				751E07F71EACA61D00BAB696 /* UMComUserTableViewCell.m in Sources */,
 				E22869B71EBED7D100238DF8 /* Color.swift in Sources */,
 				E22869B91EBED7D100238DF8 /* Writing.swift in Sources */,
+				E22869C01EC0A2B300238DF8 /* AuthorPagerVC.swift in Sources */,
 				751E08281EACA61D00BAB696 /* UMComAvatarImageView.m in Sources */,
 				751E07B81EACA61D00BAB696 /* UMComFeedListDataController.m in Sources */,
 				751E07C31EACA61D00BAB696 /* UMComListDataController.m in Sources */,
@@ -2263,6 +2270,7 @@
 				751E08111EACA61D00BAB696 /* UMComMutiTextRun.m in Sources */,
 				751E07F61EACA61D00BAB696 /* UMComUserProfileDetailView.m in Sources */,
 				751E080F1EACA61D00BAB696 /* UMComMutiStyleTextView.m in Sources */,
+				E22869C21EC0AF5900238DF8 /* PoetryCell.swift in Sources */,
 				751E07C21EACA61D00BAB696 /* UMComDataOperationErrorHandler.m in Sources */,
 				751E07D91EACA61D00BAB696 /* UMComNavigationController.m in Sources */,
 				751E080E1EACA61D00BAB696 /* UMComMenuControlView.m in Sources */,
