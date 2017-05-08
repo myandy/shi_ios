@@ -98,7 +98,21 @@ class PoetryDB{
         
     }
     
-    
+    public class func getAll()->NSMutableArray! {
+        let db = DBManager.shared.getDatabase()
+        let sql = "select * from ".appending(TABLE_NAME)
+        var array = NSMutableArray()
+        let rs : FMResultSet
+        do {
+            try rs = db.executeQuery(sql,values: [])
+            array = getList(rs: rs)!
+        }
+        catch{
+        }
+        
+        return array
+        
+    }
     
     
 }

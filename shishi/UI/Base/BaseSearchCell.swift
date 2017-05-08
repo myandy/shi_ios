@@ -29,8 +29,9 @@ public class BaseSearchCell: UITableViewCell {
         addSubview(title)
         title.snp.makeConstraints { (make) in
             make.top.equalTo(self).offset(0)
-            make.left.equalTo(self).offset(20)
+            make.left.equalTo(self).offset(15)
             make.height.equalTo(self)
+            make.width.equalTo(self).dividedBy(2)
         }
         desc = UILabel()
         desc.font=UIFont(name: FontsUtils.FONTS[0], size: 14)
@@ -38,8 +39,9 @@ public class BaseSearchCell: UITableViewCell {
         addSubview(desc)
         desc.snp.makeConstraints { (make) in
             make.top.equalTo(self)
-            make.right.equalTo(self).offset(-20)
+            make.right.equalTo(self).offset(-10)
             make.height.equalTo(self)
+            make.left.equalTo(title.snp.right).offset(20)
         }
         
     }

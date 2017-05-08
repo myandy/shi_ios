@@ -23,7 +23,7 @@ extension Author : SearchModel{
     }
     
     func getDesc() -> String {
-        return dynasty!
+        return dynasty!.appending(" ● ").appending(String(Int(pNum!)))
     }
 }
 
@@ -31,9 +31,9 @@ class AuthorDB{
     
     private static let TABLE_NAME="t_author"
     
-    private static let BY_PNUM = " order by p_num "
+    private static let BY_PNUM = " order by p_num"
     
-    private static let BY_DNUM = " order by d_num desc"
+    private static let BY_DNUM = " order by d_num"
 
     
     private class func getList(rs: FMResultSet)->NSMutableArray?{
