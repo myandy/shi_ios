@@ -249,6 +249,7 @@
 		E22869BE1EBEDACB00238DF8 /* shishi.db in Resources */ = {isa = PBXBuildFile; fileRef = E22869BD1EBEDACB00238DF8 /* shishi.db */; };
 		E22869C01EC0A2B300238DF8 /* AuthorPagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869BF1EC0A2B300238DF8 /* AuthorPagerVC.swift */; };
 		E22869C21EC0AF5900238DF8 /* PoetryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869C11EC0AF5900238DF8 /* PoetryCell.swift */; };
+		E22869C71EC2226B00238DF8 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869C61EC2226B00238DF8 /* SettingVC.swift */; };
 		E284A7AA1DE4259A00252160 /* Pods_shishi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; };
 		E284A7AB1DE4259A00252160 /* Pods_shishi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E29558D01DD311720065AA1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29558CF1DD311720065AA1B /* ViewController.swift */; };
@@ -696,6 +697,7 @@
 		E22869BD1EBEDACB00238DF8 /* shishi.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = shishi.db; sourceTree = "<group>"; };
 		E22869BF1EC0A2B300238DF8 /* AuthorPagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorPagerVC.swift; sourceTree = "<group>"; };
 		E22869C11EC0AF5900238DF8 /* PoetryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoetryCell.swift; sourceTree = "<group>"; };
+		E22869C61EC2226B00238DF8 /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingVC.swift; path = Setting/SettingVC.swift; sourceTree = "<group>"; };
 		E29558CA1DD311720065AA1B /* 诗Shi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "诗Shi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29558CF1DD311720065AA1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E29558D21DD311720065AA1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1759,6 +1761,7 @@
 		756EFB161EB43EAD006E65DF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E22869C31EC21C3A00238DF8 /* Setting */,
 				756EFB791EBB8109006E65DF /* Common */,
 				756EFB741EBA2494006E65DF /* Duishi */,
 				756EFB611EB459E2006E65DF /* Poetry */,
@@ -1960,6 +1963,14 @@
 				E22869BB1EBED7FC00238DF8 /* Former.swift */,
 			);
 			name = DB;
+			sourceTree = "<group>";
+		};
+		E22869C31EC21C3A00238DF8 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				E22869C61EC2226B00238DF8 /* SettingVC.swift */,
+			);
+			name = Setting;
 			sourceTree = "<group>";
 		};
 		E29558C11DD311720065AA1B = {
@@ -2346,6 +2357,7 @@
 				751E07F01EACA61D00BAB696 /* UMComSysLikeTableViewCell.m in Sources */,
 				751E07F51EACA61D00BAB696 /* UMComUserNearbyViewController.m in Sources */,
 				756EFB701EB45A76006E65DF /* EditPagerView.swift in Sources */,
+				E22869C71EC2226B00238DF8 /* SettingVC.swift in Sources */,
 				E22869B61EBED7D100238DF8 /* Author.swift in Sources */,
 				751E08441EACA61D00BAB696 /* UMComFeedDetailViewHtmlBodyCell.m in Sources */,
 				751E08151EACA61D00BAB696 /* UMAssetsCollectionController.m in Sources */,

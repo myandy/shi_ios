@@ -30,6 +30,10 @@ class SSTheme: NSObject {
         //分割线
         static let separator = UIColor.init(red: 0xcc / 255.0, green: 0xcc / 255.0, blue: 0xcc / 255.0, alpha: 1.0)
         
+        static let settingBack = UIColor.init(red: 0x33 / 255.0, green: 0x33 / 255.0, blue: 0x33 / 255.0, alpha: 1.0)
+        
+        static let settingLine = UIColor.init(red: 0x22 / 255.0, green: 0x22 / 255.0, blue: 0x22 / 255.0, alpha: 1.0)
+        
     }
     
     //尺寸
