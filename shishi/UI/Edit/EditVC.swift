@@ -13,7 +13,7 @@ class EditVC: UIViewController {
     
     var writing : Writing!
     
-    var editPagerView : EditPagerView?
+    var editPagerView : EditPagerView!
     
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
@@ -39,14 +39,14 @@ class EditVC: UIViewController {
         super.viewDidLoad()
 
         editPagerView = EditPagerView.loadNib()
-        editPagerView?.writing=writing
-        self.view.addSubview(editPagerView!)
+        editPagerView.writing=writing
+        self.view.addSubview(editPagerView)
         
         segmentedControl.tintColor=UIColor.clear
         segmentedControl.selectedSegmentIndex=0
         setSegmentedControlImage()
         
-        editPagerView?.snp.makeConstraints { (make) in
+        editPagerView.snp.makeConstraints { (make) in
                         make.top.equalTo( self.view)
                         make.bottom.equalTo(cancelBtn.snp.top)
                         make.left.equalTo(self.view)
