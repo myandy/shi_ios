@@ -58,19 +58,23 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
     var dynasty:Int = 0
     let userDefault = UserDefaults.standard
     var orderByNum:Bool = false
-    
+    var colors:NSMutableArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cv.dataSource = self
         cv.delegate = self
-        
+        colors=ColorDB.getAll()
         cv.register(AllAuthorCell.self, forCellWithReuseIdentifier: "AllAuthorCell")
         let height=cv.bounds.height/2-50
         NSLog(String(describing: height))
         vf.itemSize = CGSize(width:70,height:height)
         loadData()
         
+    }
+    
+    func getColor(index:Int)->Color{
+        return colors[index%colors.count] as! Color
     }
     
     func loadData(){
@@ -100,33 +104,39 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
     }
     
     
+    func getItemColor(_ index:Int)->UIColor{
+        return getColor(index:self.items.count-1-index).toUIColor()
+    }
+    
+    func getItemData(_ index:Int)->Author{
+        return items[index%2==0 ? +1 : index-1] as! Author
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.navigationController?.popViewController(animated: true)
+        let vc=AuthorPagerVC(author:getItemData(indexPath.row),color:getItemColor(indexPath.row))
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell:AllAuthorCell  = cv.dequeueReusableCell(withReuseIdentifier: "AllAuthorCell", for: indexPath) as! AllAuthorCell
         
-        let data = items[indexPath.row%2==0 ? indexPath.row+1 : indexPath.row-1] as! Author
-        
+        let data = getItemData(indexPath.row)
         
         cell.lableDynasty.text =  data.dynasty![0..<1]
         
-        
-        let cInt : Int32  = data.color as Int32!
-        let color = UIColor(intColor:Int(cInt))
+        let color = getItemColor(indexPath.row)
         cell.top.backgroundColor = color
         cell.lableDynasty.textColor = color
         cell.lableDynasty.layer.borderColor = color.cgColor
         
         cell.lableDynastyEn.text = data.enName
-        cell.lableDynastyEn.textColor = color
+        cell.lableDynastyEn.textColor = UIColor.white
         
         cell.lableNum.text = String(format: "%03d", Int(data.pNum!))
         cell.lableNum.textColor = color
         
         cell.lableAuthor.text = data.name
-        cell.lableAuthor.textColor = color
+        cell.lableAuthor.textColor = UIColor.white
         
         let options:NSStringDrawingOptions = .usesLineFragmentOrigin
         let boundingRect = data.name?.boundingRect(with: CGSize(width:30,height: 0), options: options, attributes:[NSFontAttributeName:cell.lableAuthor.font], context: nil)

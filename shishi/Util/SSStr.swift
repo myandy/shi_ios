@@ -13,4 +13,6 @@ class SSStr: NSObject {
         static var duishi                       : String { return NSLocalizedString("DUISHI", comment: "") }
         static var refresh                       : String { return NSLocalizedString("REFRESH", comment: "") }
     }
+    
+    static let YUN_TITLE="韵典"
 }

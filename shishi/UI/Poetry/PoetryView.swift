@@ -24,7 +24,7 @@ class PoetryView : UIView,Nibloadable{
         shareBtn.layer.cornerRadius = shareBtn.frame.size.width / 2
     }
     
-    func refresh(poetry:Poetry){
+    func refresh(poetry:Poetry,color:UIColor){
         titleLable.text=poetry.title
         contentLable.text=poetry.poetry
         
@@ -35,10 +35,6 @@ class PoetryView : UIView,Nibloadable{
             introLabel.text=nil
         }
         
-        let data = AuthorDB.getAuthor(name: poetry.author!)
-        
-        let cInt : Int32  = data!.color as Int32!
-        let color = UIColor(intColor:Int(cInt))
         shareBtn.backgroundColor = color
         authorLable.text=poetry.author
         

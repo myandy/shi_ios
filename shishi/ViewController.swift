@@ -32,6 +32,7 @@ class ViewController: UIViewController , iCarouselDataSource, iCarouselDelegate
     }
     @IBOutlet weak var btnAll: UIButton!
     @IBAction func settingClick(_ sender: Any) {
+        self.navigationController?.pushViewController(SettingVC(), animated: true)
     }
     
     @IBAction func searchClick(_ sender: Any) {

@@ -11,10 +11,14 @@ import UIKit
 
 class SearchYunVC: BaseSearchVC{
     override func loadData() {
-        items = YunDB.getAll()
+        orginItems = FormerDB.getAll()
     }
-    override func onItemClick(pos: Int) {
-        let viewController = EditVC(yun:items[pos] as! Yun)
+    override func onItemClick(_ pos: Int) {
+        let viewController = EditVC(former:items[pos] as! Former)
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    override func getHint() -> String {
+        return "搜索格律"
     }
 }

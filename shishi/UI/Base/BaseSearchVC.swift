@@ -61,13 +61,14 @@ class BaseSearchVC: UIViewController{
         search.barTintColor = UIColor(intColor: SSTheme.ColorInt.BACK)
         search.backgroundImage=UIImage()
         search.delegate=self
+        search.placeholder=getHint()
         
         table.backgroundColor = UIColor(intColor:SSTheme.ColorInt.BACK)
         cancel.backgroundColor = UIColor(intColor:SSTheme.ColorInt.BACK)
         divide.backgroundColor = UIColor(intColor:SSTheme.ColorInt.DIVIDE)
         
         loadData()
-        
+        items=orginItems
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -75,12 +76,16 @@ class BaseSearchVC: UIViewController{
 }
 
 extension BaseSearchVC {
-    public func loadData(){
-         orginItems=items
+    public  func loadData(){
+        
     }
     
-    public func onItemClick(pos:Int){
+    public func onItemClick(_ pos:Int){
         
+    }
+    
+    public func getHint()->String{
+        return ""
     }
 }
 
@@ -111,7 +116,7 @@ extension BaseSearchVC : UITableViewDelegate,UITableViewDataSource{
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onItemClick(pos: indexPath.row)
+        onItemClick(indexPath.row)
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{

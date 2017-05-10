@@ -15,6 +15,8 @@ class EditVC: UIViewController {
     
     var editPagerView : EditPagerView!
     
+    var backgroundPagerView : BackgroundPagerView?
+    
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
     
@@ -23,9 +25,9 @@ class EditVC: UIViewController {
     }
     @IBAction func confirmBtnClick(_ sender: Any) {
     }
-    init(yun : Yun) {
+    init(former : Former) {
         writing=Writing()
-        writing.yun=yun
+        writing.former=former
         super.init(nibName: nil, bundle: nil)
     }
     
