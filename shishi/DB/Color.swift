@@ -14,10 +14,10 @@ import FMDB
 public class Color{
     
     
-    var name:String?
-    var red:Int32?
-    var green:Int32?
-    var blue:Int32?
+    var name:String!
+    var red:Int32!
+    var green:Int32!
+    var blue:Int32!
     
 }
 

@@ -26,6 +26,10 @@ extension Former : SearchModel {
     func getDesc() -> String {
         return String(count!)
     }
+    
+    func getHint()-> String {
+        return String(count!)
+    }
 }
 
 

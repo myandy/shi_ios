@@ -15,6 +15,7 @@ class SSTheme: NSObject {
         public static let DIVIDE =  0xafafaf
     }
     
+
     //MARK:-颜色
     struct Color {
         
@@ -30,10 +31,11 @@ class SSTheme: NSObject {
         //分割线
         static let separator = UIColor.init(red: 0xcc / 255.0, green: 0xcc / 255.0, blue: 0xcc / 255.0, alpha: 1.0)
         
-        static let settingBack = UIColor.init(red: 0x33 / 255.0, green: 0x33 / 255.0, blue: 0x33 / 255.0, alpha: 1.0)
+        static let settingBack = UIColor(intColor:0x333333)
         
-        static let settingLine = UIColor.init(red: 0x22 / 255.0, green: 0x22 / 255.0, blue: 0x22 / 255.0, alpha: 1.0)
+        static let settingLine = UIColor(intColor:0x222222)
         
+        static let textHint = UIColor(intColor:0x666666)
     }
     
     //尺寸
@@ -42,3 +44,4 @@ class SSTheme: NSObject {
         static let separatorHeight: CGFloat = 1
     }
 }
+

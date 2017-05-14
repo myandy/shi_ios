@@ -14,7 +14,7 @@ class RandomPoetryVC: UIViewController {
     
     @IBOutlet weak var cancelBtn: UIButton!
     
-    var poetryView:PoetryView?
+    var poetryView: PoetryView!
     
     @IBAction func randomClick(_ sender: AnyObject) {
         refresh()
@@ -33,8 +33,8 @@ class RandomPoetryVC: UIViewController {
    
     override public func viewDidLoad() {
         poetryView = PoetryView.loadNib()
-        self.view.addSubview(poetryView!)
-        poetryView?.snp.makeConstraints { (make) in
+        self.view.addSubview(poetryView)
+        poetryView.snp.makeConstraints { (make) in
             make.top.equalTo(self.view)
             make.bottom.equalTo(cancelBtn.snp.top)
             make.left.equalTo(self.view)
@@ -46,8 +46,8 @@ class RandomPoetryVC: UIViewController {
     
     func refresh(){
         poetry = PoetryDB.getRandomPoetry()
-        let random=Int(arc4random_uniform(UInt32(colors.count)))
-        poetryView?.refresh(poetry: poetry,color:(colors[random] as! Color).toUIColor())
+        let random = Int(arc4random_uniform(UInt32(colors.count)))
+        poetryView.refresh(poetry: poetry,color:(colors[random]).toUIColor())
     }
     
     override func didReceiveMemoryWarning() {

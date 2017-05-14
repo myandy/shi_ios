@@ -10,11 +10,11 @@ import Foundation
 import FMDB
 
 class Author{
-    var name:String?
-    var enName:String?
-    var intro:String?
-    var dynasty:String?
-    var pNum:Int32?
+    var name:String!
+    var enName:String!
+    var intro:String!
+    var dynasty:String!
+    var pNum:Int32!
 }
 
 extension Author : SearchModel{
@@ -23,6 +23,10 @@ extension Author : SearchModel{
     }
     
     func getDesc() -> String {
+        return ""
+    }
+    
+    func getHint() -> String {
         return dynasty!.appending(" · ").appending(String(Int(pNum!)))
     }
 }
@@ -75,7 +79,7 @@ class AuthorDB{
     let db = DBManager.shared.getDatabase()
         var sql = "select * from ".appending(TABLE_NAME)
         if dynasty>0{
-            sql = sql.appending(" where d_dynasty like '").appending(DBManager.DYNASTYS[dynasty]).appending("'")
+            sql = sql.appending(" where d_dynasty like '").appending(SSStr.DYNASTYS[dynasty]).appending("'")
         }
         if byPNum{
             sql = sql.appending(BY_PNUM)

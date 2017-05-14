@@ -15,7 +15,7 @@ public class FontsUtils{
     
     public static let FONTS=["FZQingkeBenYueSongS-R-GB","fzsongkebenxiukai_fanti"]
     
-    public static func setFont( view : UIView){
+    public static func setFont(_ view : UIView){
         let userDefault = UserDefaults.standard
         let font = userDefault.integer(forKey: "font")
         if view is UILabel{
@@ -24,7 +24,7 @@ public class FontsUtils{
         }
         else {
             for subview in view.subviews{
-                setFont(view: subview)
+                setFont(subview)
             }
         }
     }

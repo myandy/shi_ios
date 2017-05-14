@@ -82,14 +82,11 @@ class ViewController: UIViewController , iCarouselDataSource, iCarouselDelegate
         carousel.currentItemIndex=carousel.numberOfItems-1
         
         
-        FontsUtils.setFont(view: view)
+        FontsUtils.setFont(view)
         
     }
     
     
-    override func viewWillLayoutSubviews() {
-        FontsUtils.setFont(view: self.view)
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -139,46 +136,6 @@ class ViewController: UIViewController , iCarouselDataSource, iCarouselDelegate
         }
         return value
     }
-    
-    
-
-    //
-    //    func loadSubViews() {
-    ////        scrollView.clipsToBounds = false
-    //
-    //        self.loadHomeView()
-    //
-    //        //self.mainView =  UINib(nibName: "MainView", bundle: Bundle.main).instantiate(withOwner: self, options: nil)[0] as! MainView
-    //
-    //        let screenWidth = UIScreen.main.bounds.width
-    //        let pageWidth = screenWidth
-    //
-    //        for index in 0...colors.count-1 {
-    //
-    //            var subView:UIView!
-    //
-    //            let subViewFrame: CGRect = CGRect(x: CGFloat(index) * pageWidth, y: 0, width: pageWidth, height: self.view.bounds.height)
-    //
-    //            if(index==colors.count-1){
-    //                subView = self.mainView
-    //            }
-    //            else {
-    //                subView = UIView()
-    //                subView.backgroundColor=colors[index]
-    //            }
-    //            self.scrollView.addSubview(subView)
-    //            subView.frame = subViewFrame
-    //
-    //
-    //        }
-    //
-    //        self.scrollView.contentSize = CGSize.init(width: pageWidth * CGFloat(colors.count), height: self.frame.size.height)
-    //    }
-    //
-    //    override func didReceiveMemoryWarning() {
-    //        super.didReceiveMemoryWarning()
-    //        // Dispose of any resources that can be recreated.
-    //    }
     
     
 }

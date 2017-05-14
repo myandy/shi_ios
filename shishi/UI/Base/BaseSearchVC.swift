@@ -18,7 +18,7 @@ class BaseSearchVC: UIViewController{
     
     convenience init() {
         
-        var nibNameOrNil = String?("BaseSearchVC")
+        let nibNameOrNil = String?("BaseSearchVC")
         
         //        //考虑到xib文件可能不存在或被删，故加入判断
         //
@@ -60,16 +60,16 @@ class BaseSearchVC: UIViewController{
         table.register(BaseSearchCell.self, forCellReuseIdentifier: "BaseSearchCell")
         
         search.barTintColor = UIColor(intColor: SSTheme.ColorInt.BACK)
-        search.backgroundImage=UIImage()
-        search.delegate=self
-        search.placeholder=getHint()
+        search.backgroundImage = UIImage()
+        search.delegate = self
+        search.placeholder = getHint()
         
         table.backgroundColor = UIColor(intColor:SSTheme.ColorInt.BACK)
         cancel.backgroundColor = UIColor(intColor:SSTheme.ColorInt.BACK)
         divide.backgroundColor = UIColor(intColor:SSTheme.ColorInt.DIVIDE)
         
         loadData()
-        items=orginItems
+        items = orginItems
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -125,8 +125,9 @@ extension BaseSearchVC : UITableViewDelegate,UITableViewDataSource{
         let data = items[indexPath.row] as! SearchModel
         cell.title.text = data.getTitle()
         cell.desc.text = data.getDesc()
-        cell.backgroundColor=UIColor.clear
-        FontsUtils.setFont(view: cell)
+        cell.hint.text = data.getHint()
+        cell.backgroundColor = UIColor.clear
+        FontsUtils.setFont(cell)
         return cell
     }
 }

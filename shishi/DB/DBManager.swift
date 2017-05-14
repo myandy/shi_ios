@@ -12,9 +12,7 @@ import FMDB
 
 public class DBManager: NSObject {
     
-    static let DYNASTYS = ["全部朝代","先秦","汉朝","魏晋","南北朝","唐朝","北宋","南宋","元朝","明朝","清朝","近代","当代"]
-    
-
+ 
     //创建单例对象
     public static let shared: DBManager = DBManager()
     
@@ -56,39 +54,5 @@ public class DBManager: NSObject {
     public func getDatabase()-> FMDatabase{
         return database
     }
-    
-//    ///查找一条数据
-//    func selectModel()->NSMutableArray? {
-//        openDatabase()
-//        let sql = "SELECT * FROM t_poetry"
-//        let array = NSMutableArray()
-//        let rs : FMResultSet
-//        do {
-//          try rs = database!.executeQuery(sql,values: [])
-//            while rs.next() {
-//                let model = Poetry()
-//                model.poetry = rs.string(forColumn: "d_poetry")
-//                model.title = rs.string(forColumn: "d_title")
-//                model.intro = rs.string(forColumn: "d_intro")
-//                model.author = rs.string(forColumn: "d_author")
-//                
-//                array.add(model)
-//            }
-//        }
-//        catch{
-//            
-//        }
-//
-//        database?.close()
-//        return array
-//      
-//    }
-    
-   
-    
 
-
-    
-    
-    
 }

@@ -36,13 +36,13 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
     @IBOutlet weak var vf: UICollectionViewFlowLayout!
     
     @IBAction func cancelClick(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController!.popViewController(animated: true)
     }
     @IBAction func chooseClick(_ sender: Any) {
-        let alertController = UIAlertController(title: "选择朝代", message: "", preferredStyle: UIAlertControllerStyle.alert) // 这里因为控件都不存在改变的可能，所以一律使用let类型
-        for  i in 0 ... DBManager.DYNASTYS.count-1 {
+        let alertController = UIAlertController(title: SSStr.CHOOSE_DYNASTY, message: "", preferredStyle: UIAlertControllerStyle.alert)
+        for  i in 0 ... SSStr.DYNASTYS.count-1 {
             
-            let alertView = UIAlertAction(title: DBManager.DYNASTYS[i], style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
+            let alertView = UIAlertAction(title: SSStr.DYNASTYS[i], style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
                 
                 if self.dynasty != i{
                     self.userDefault.set(i, forKey: "dynasty")
@@ -111,12 +111,12 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
     }
     
     func getItemData(_ index:Int)->Author{
-        return items[index%2==0 ? +1 : index-1] as! Author
+        return items[index%2 == 0 ? +1 : index-1]
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc=AuthorPagerVC(author:getItemData(indexPath.row),color:getItemColor(indexPath.row))
-        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = AuthorPagerVC(author:getItemData(indexPath.row),color:getItemColor(indexPath.row))
+        self.navigationController!.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
@@ -141,12 +141,12 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
         cell.lableAuthor.textColor = UIColor.white
         
         let options:NSStringDrawingOptions = .usesLineFragmentOrigin
-        let boundingRect = data.name?.boundingRect(with: CGSize(width:30,height: 0), options: options, attributes:[NSFontAttributeName:cell.lableAuthor.font], context: nil)
-        cell.lableAuthor.frame = CGRect(x:35,y:48,width:32,height:(boundingRect?.height)!)
+        let boundingRect = data.name.boundingRect(with: CGSize(width:30,height: 0), options: options, attributes:[NSFontAttributeName:cell.lableAuthor.font], context: nil)
+        cell.lableAuthor.frame = CGRect(x:35,y:48,width:32,height:(boundingRect.height))
         
         
         
-        FontsUtils.setFont(view: cell)
+        FontsUtils.setFont(cell)
         return cell
     }
     

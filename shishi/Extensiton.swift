@@ -102,6 +102,7 @@ extension UIViewController {
 }
 
 protocol SearchModel{
-    func getTitle() ->String
-    func getDesc() ->String
+    func getTitle() -> String
+    func getDesc() -> String
+    func getHint() -> String
 }

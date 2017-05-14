@@ -11,21 +11,12 @@ import FMDB
 
 public class Yun{
     
-    var id:Int32?
-    var name:String?
-    var yun:String?
-    var count:Int32?
+    var id:Int32!
+    var name:String!
+    var yun:String!
+    var count:Int32!
 }
 
-extension Yun : SearchModel{
-    func getTitle() -> String {
-        return name!
-    }
-    
-    func getDesc() -> String {
-        return String(count!)
-    }
-}
 
 class YunDB{
     private static let TABLE_NAME="t_yun"

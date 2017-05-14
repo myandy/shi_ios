@@ -10,20 +10,24 @@ import Foundation
 import FMDB
 
 class Poetry{
-    var poetry:String?
-    var author:String?
-    var intro:String?
-    var title:String?
-    var dNum:Int32?
+    var poetry:String!
+    var author:String!
+    var intro:String!
+    var title:String!
+    var dNum:Int32!
 }
 
 extension Poetry : SearchModel{
     func getTitle() -> String {
-        return title!
+        return title
     }
     
     func getDesc() -> String {
-        return poetry!
+        return poetry
+    }
+    
+    func getHint() -> String {
+        return poetry
     }
 }
 
