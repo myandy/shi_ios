@@ -33,30 +33,30 @@ public class ColorDB{
     
     static let BY_IDX = " where displayidx > 101  order by displayidx desc"
     
-    public class func getList(rs: FMResultSet)->NSMutableArray?{
-        let array = NSMutableArray()
+    public class func getArray(_ rs: FMResultSet)-> [Color] {
+        var array = [Color]()
         while rs.next() {
             let model = Color()
             model.name = rs.string(forColumn: "name")
             model.red = rs.int(forColumn: "red")
             model.green = rs.int(forColumn: "green")
             model.blue = rs.int(forColumn: "blue")
-            array.add(model)
+            array.append(model)
         }
         return array
     }
     
-    public class func getAll()->NSMutableArray! {
+    public class func getAll()-> [Color] {
         let db = DBManager.shared.getDatabase()
         var sql = "select * from ".appending(TABLE_NAME)
         
         sql = sql.appending(BY_IDX)
         
-        var array = NSMutableArray()
+        var array = [Color]()
         let rs : FMResultSet
         do {
             try rs = db.executeQuery(sql,values: [])
-            array = getList(rs: rs)!
+            array = getArray(rs)
             
         }
         catch{

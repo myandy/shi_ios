@@ -1,5 +1,5 @@
 //
-//  AuthorCell.swift
+//  PoetryCellVC.swift
 //  shishi
 //
 //  Created by andymao on 2017/5/8.
@@ -9,30 +9,37 @@
 import Foundation
 import UIKit
 
-class PoetryCell : UICollectionViewCell{
+class PoetryCellVC : UIViewController{
     
     lazy var poetryView: PoetryView = {
         let poetryView = PoetryView.loadNib()
-        self.addSubview(poetryView)
+        self.view.addSubview(poetryView)
         poetryView.snp.makeConstraints { (make) in
             make.left.top.right.bottom.equalToSuperview()
         }
         return poetryView
     }()
     
-    public override init(frame: CGRect) {
-     
-        super.init(frame: frame)
-         NSLog("PoetryCell init")
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addBackgroundImage()
+    }
+
+    
+    func refresh(poetry:Poetry,color:UIColor){
+      
+        NSLog("PoetryCell")
+    }
+    
+    init(poetry:Poetry,color:UIColor) {
+        super.init(nibName: nil, bundle: nil)
+
+        self.poetryView.refresh(poetry: poetry,color:color)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func refresh(poetry:Poetry,color:UIColor){
-        poetryView.refresh(poetry: poetry,color:color)
-        NSLog("PoetryCell")
-    }
+
  
 }

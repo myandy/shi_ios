@@ -23,7 +23,7 @@ extension Author : SearchModel{
     }
     
     func getDesc() -> String {
-        return dynasty!.appending(" ● ").appending(String(Int(pNum!)))
+        return dynasty!.appending(" · ").appending(String(Int(pNum!)))
     }
 }
 
@@ -36,8 +36,8 @@ class AuthorDB{
     private static let BY_DNUM = " order by d_num"
 
     
-    private class func getList(rs: FMResultSet)->NSMutableArray?{
-        let array = NSMutableArray()
+    private class func getArray(_ rs: FMResultSet)-> [Author] {
+        var array = [Author]()
         while rs.next() {
             let model = Author()
             model.intro = rs.string(forColumn: "d_intro")
@@ -45,7 +45,7 @@ class AuthorDB{
             model.enName = rs.string(forColumn: "en_name")
              model.dynasty = rs.string(forColumn: "d_dynasty")
             model.pNum = rs.int(forColumn: "p_num")
-            array.add(model)
+            array.append(model)
         }
         return array
     }
@@ -54,24 +54,24 @@ class AuthorDB{
     public class func getAuthor(name : String)->Author! {
         let db = DBManager.shared.getDatabase()
         let sql = "select * from ".appending(TABLE_NAME).appending (" where d_author like '").appending(name).appending("'")
-        var array = NSMutableArray()
+        var array = [Author]()
         let rs : FMResultSet
         do {
             try rs = db.executeQuery(sql,values: [])
-            array = getList(rs: rs)!
+            array = getArray(rs)
             
         }
         catch{
         }
-        if array.count>0{
-            return array[0] as! Author
+        if array.count > 0{
+            return array[0]
         }
         return nil
         
     }
 
 
-    public class func getAll(byPNum:Bool,dynasty:Int)->NSMutableArray! {
+    public class func getAll(byPNum:Bool,dynasty:Int)-> [Author] {
     let db = DBManager.shared.getDatabase()
         var sql = "select * from ".appending(TABLE_NAME)
         if dynasty>0{
@@ -83,18 +83,17 @@ class AuthorDB{
         else{
             sql = sql.appending(BY_DNUM)
         }
-        var array = NSMutableArray()
+        var array = [Author]()
         let rs : FMResultSet
         do {
             try rs = db.executeQuery(sql,values: [])
-            array = getList(rs: rs)!
+            array = getArray(rs)
             
         }
         catch{
         }
         if(array.count % 2 != 0){
-//            let data =  Author()
-            array.removeObject(at: 0)
+            array.remove(at: 0)
         }
         
         return array

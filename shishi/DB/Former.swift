@@ -10,15 +10,15 @@ import Foundation
 import FMDB
 class Former {
     
-    var id:Int32?
-    var name:String?
-    var source:String?
-    var pingze:String?
-    var count:Int32?
-    var type:Int32?
+    var id:Int32!
+    var name:String!
+    var source:String!
+    var pingze:String!
+    var count:Int32!
+    var type:Int32!
 }
 
-extension Former : SearchModel{
+extension Former : SearchModel {
     func getTitle() -> String {
         return name!
     }
@@ -34,8 +34,8 @@ class FormerDB{
     
     private static let BY_PNUM = " order by id resc "
     
-    public class func getList(rs: FMResultSet)->NSMutableArray?{
-        let array = NSMutableArray()
+    public class func getArray(_ rs: FMResultSet)-> [Former] {
+        var array = [Former]()
         while rs.next() {
             let model = Former()
             model.id = rs.int(forColumn: "id")
@@ -43,20 +43,20 @@ class FormerDB{
             model.source = rs.string(forColumn: "source")
             model.pingze = rs.string(forColumn: "pingze")
             model.count = rs.int(forColumn: "wordcount")
-            array.add(model)
+            array.append(model)
         }
         return array
     }
     
-    public class func getAll()->NSMutableArray! {
+    public class func getAll()-> [Former] {
         let db = DBManager.shared.getDatabase()
         let sql = "select * from ".appending(TABLE_NAME)
         
-        var array = NSMutableArray()
+        var array = [Former]()
         let rs : FMResultSet
         do {
             try rs = db.executeQuery(sql,values: [])
-            array = getList(rs: rs)!
+            array = getArray(rs)
             
         }
         catch{

@@ -33,8 +33,8 @@ class PoetryDB{
     
     private static let BY_PNUM = " order by p_num desc"
     
-    private class func getList(rs: FMResultSet)->NSMutableArray?{
-        let array = NSMutableArray()
+    private class func getArray(_ rs: FMResultSet)->[Poetry]{
+        var array = [Poetry]()
         while rs.next() {
             let model = Poetry()
             model.poetry = rs.string(forColumn: "d_poetry")
@@ -42,19 +42,20 @@ class PoetryDB{
             model.intro = rs.string(forColumn: "d_intro")
             model.title = rs.string(forColumn: "d_title")
             model.dNum = rs.int(forColumn: "d_num")
-            array.add(model)
+            array.append(model)
         }
         return array
     }
+
     
-    public class func getRandom100()->NSMutableArray! {
+    public class func getRandom100()->[Poetry]! {
         let db = DBManager.shared.getDatabase()
         let sql = "select * from ".appending(TABLE_NAME).appending (" order by random() limit 100")
-        var array = NSMutableArray()
+        var array = [Poetry]()
         let rs : FMResultSet
         do {
             try rs = db.executeQuery(sql,values: [])
-            array = getList(rs: rs)!
+            array = getArray(rs)
         }
         catch{
         }
@@ -66,30 +67,31 @@ class PoetryDB{
     public class func getRandomPoetry()->Poetry! {
         let db = DBManager.shared.getDatabase()
         let sql = "select * from ".appending(TABLE_NAME).appending (" order by random() limit 1")
-        var array = NSMutableArray()
+        var array = [Poetry]()
         let rs : FMResultSet
         do {
             try rs = db.executeQuery(sql,values: [])
-            array = getList(rs: rs)!
+            array = getArray(rs)
         }
         catch{
         }
         if array.count>0{
-            return array[0] as! Poetry
+            return array[0]
         }
         return nil
         
     }
     
     
-    public class func getAll(author:String)->NSMutableArray! {
+    
+    public class func getAll(author:String)-> [Poetry] {
         let db = DBManager.shared.getDatabase()
         let sql = "select * from ".appending(TABLE_NAME).appending (" where d_author = '").appending(author).appending("'")
-        var array = NSMutableArray()
+        var array = [Poetry]()
         let rs : FMResultSet
         do {
             try rs = db.executeQuery(sql,values: [])
-            array = getList(rs: rs)!
+            array = getArray(rs)
         }
         catch{
         }
@@ -97,15 +99,17 @@ class PoetryDB{
         return array
         
     }
+
+
     
-    public class func getAll()->NSMutableArray! {
+    public class func getAll()-> [Poetry] {
         let db = DBManager.shared.getDatabase()
         let sql = "select * from ".appending(TABLE_NAME)
-        var array = NSMutableArray()
+        var array = [Poetry]()
         let rs : FMResultSet
         do {
             try rs = db.executeQuery(sql,values: [])
-            array = getList(rs: rs)!
+            array = getArray(rs)
         }
         catch{
         }

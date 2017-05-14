@@ -18,14 +18,13 @@ class SearchAuthorVC: BaseSearchVC {
         return "搜索诗人"
     }
     
-    lazy var colors:NSArray={
-        
+    lazy var colors = {
         return ColorDB.getAll()
     }()
     
     override func onItemClick(_ pos: Int) {
         let random=Int(arc4random_uniform(UInt32(colors.count)))
-        let color=colors[random] as! Color
+        let color=colors[random]
         let vc=AuthorPagerVC(author:items[pos] as! Author,color:color.toUIColor())
         self.navigationController?.pushViewController(vc, animated: true)
     }

@@ -54,17 +54,19 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
         self.present(alertController, animated: true, completion: nil)
     }
     
-    var items:NSMutableArray = []
+    var items = [Author]()
     var dynasty:Int = 0
     let userDefault = UserDefaults.standard
     var orderByNum:Bool = false
-    var colors:NSMutableArray = []
+    lazy var colors = {
+        return ColorDB.getAll()
+    }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cv.dataSource = self
         cv.delegate = self
-        colors=ColorDB.getAll()
         cv.register(AllAuthorCell.self, forCellWithReuseIdentifier: "AllAuthorCell")
         let height=cv.bounds.height/2-50
         NSLog(String(describing: height))
@@ -74,7 +76,7 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
     }
     
     func getColor(index:Int)->Color{
-        return colors[index%colors.count] as! Color
+        return colors[index%colors.count]
     }
     
     func loadData(){

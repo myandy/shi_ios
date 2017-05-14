@@ -90,6 +90,17 @@ extension Nibloadable where Self : UIView{
     }
 }
 
+extension UIViewController {
+    func addBackgroundImage(){
+        let backgroundView = UIImageView()
+        backgroundView.image=UIImage(named:"launch_image")
+        self.view.addSubview(backgroundView)
+        backgroundView.snp.makeConstraints{ (make) in
+            make.left.top.right.bottom.equalToSuperview()
+        }
+    }
+}
+
 protocol SearchModel{
     func getTitle() ->String
     func getDesc() ->String

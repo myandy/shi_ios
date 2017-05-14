@@ -48,8 +48,9 @@ class BaseSearchVC: UIViewController{
         self.navigationController?.popViewController(animated: true)
     }
     
-    var items:NSMutableArray=[]
-    var orginItems:NSMutableArray=[]
+    var items: Array<Any>!
+    var orginItems: Array<Any>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -100,7 +101,7 @@ extension BaseSearchVC : UISearchBarDelegate{
             self.items = []
             for ctrl in self.orginItems {
                 if ((ctrl as! SearchModel).getTitle().lowercased().contains(searchText.lowercased())) {
-                    self.items.add(ctrl)
+                    self.items.append(ctrl)
                 }
             }
         }

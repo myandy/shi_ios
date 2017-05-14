@@ -248,7 +248,7 @@
 		E22869BC1EBED7FC00238DF8 /* Former.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869BB1EBED7FC00238DF8 /* Former.swift */; };
 		E22869BE1EBEDACB00238DF8 /* shishi.db in Resources */ = {isa = PBXBuildFile; fileRef = E22869BD1EBEDACB00238DF8 /* shishi.db */; };
 		E22869C01EC0A2B300238DF8 /* AuthorPagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869BF1EC0A2B300238DF8 /* AuthorPagerVC.swift */; };
-		E22869C21EC0AF5900238DF8 /* PoetryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869C11EC0AF5900238DF8 /* PoetryCell.swift */; };
+		E22869C21EC0AF5900238DF8 /* PoetryCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869C11EC0AF5900238DF8 /* PoetryCellVC.swift */; };
 		E22869C71EC2226B00238DF8 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869C61EC2226B00238DF8 /* SettingVC.swift */; };
 		E284A7AA1DE4259A00252160 /* Pods_shishi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; };
 		E284A7AB1DE4259A00252160 /* Pods_shishi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -696,7 +696,7 @@
 		E22869BB1EBED7FC00238DF8 /* Former.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Former.swift; path = DB/Former.swift; sourceTree = "<group>"; };
 		E22869BD1EBEDACB00238DF8 /* shishi.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = shishi.db; sourceTree = "<group>"; };
 		E22869BF1EC0A2B300238DF8 /* AuthorPagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorPagerVC.swift; sourceTree = "<group>"; };
-		E22869C11EC0AF5900238DF8 /* PoetryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoetryCell.swift; sourceTree = "<group>"; };
+		E22869C11EC0AF5900238DF8 /* PoetryCellVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoetryCellVC.swift; sourceTree = "<group>"; };
 		E22869C61EC2226B00238DF8 /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingVC.swift; path = Setting/SettingVC.swift; sourceTree = "<group>"; };
 		E29558CA1DD311720065AA1B /* 诗Shi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "诗Shi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29558CF1DD311720065AA1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -1880,7 +1880,7 @@
 				756EFB631EB459E2006E65DF /* PoetryView.swift */,
 				756EFB641EB459E2006E65DF /* PoetryView.xib */,
 				E22869BF1EC0A2B300238DF8 /* AuthorPagerVC.swift */,
-				E22869C11EC0AF5900238DF8 /* PoetryCell.swift */,
+				E22869C11EC0AF5900238DF8 /* PoetryCellVC.swift */,
 			);
 			path = Poetry;
 			sourceTree = "<group>";
@@ -2141,7 +2141,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7097152FEB5E7C67E5612575 /* [CP] Embed Pods Frameworks */ = {
@@ -2281,7 +2281,7 @@
 				751E08111EACA61D00BAB696 /* UMComMutiTextRun.m in Sources */,
 				751E07F61EACA61D00BAB696 /* UMComUserProfileDetailView.m in Sources */,
 				751E080F1EACA61D00BAB696 /* UMComMutiStyleTextView.m in Sources */,
-				E22869C21EC0AF5900238DF8 /* PoetryCell.swift in Sources */,
+				E22869C21EC0AF5900238DF8 /* PoetryCellVC.swift in Sources */,
 				751E07C21EACA61D00BAB696 /* UMComDataOperationErrorHandler.m in Sources */,
 				751E07D91EACA61D00BAB696 /* UMComNavigationController.m in Sources */,
 				751E080E1EACA61D00BAB696 /* UMComMenuControlView.m in Sources */,

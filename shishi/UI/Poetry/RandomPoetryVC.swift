@@ -27,7 +27,9 @@ class RandomPoetryVC: UIViewController {
     
     var poetry:Poetry!
     
-    var colors:NSMutableArray=[]
+    lazy var colors = {
+        return ColorDB.getAll()
+    }()
    
     override public func viewDidLoad() {
         poetryView = PoetryView.loadNib()
@@ -38,7 +40,6 @@ class RandomPoetryVC: UIViewController {
             make.left.equalTo(self.view)
             make.right.equalTo(self.view)
         }
-        colors=ColorDB.getAll()
         refresh()
         
     }
