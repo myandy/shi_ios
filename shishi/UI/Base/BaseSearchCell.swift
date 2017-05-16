@@ -33,6 +33,7 @@ public class BaseSearchCell: UITableViewCell {
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(15)
             make.width.equalToSuperview().dividedBy(2)
+            make.height.equalTo(70)
         }
         
         title = UILabel()
@@ -42,7 +43,7 @@ public class BaseSearchCell: UITableViewCell {
         }
         
         desc = UILabel()
-        desc.font=UIFont(name: FontsUtils.FONTS[0], size: 14)
+        desc.font = UIFont(name: FontsUtils.FONTS[0], size: 14)
         desc.textColor = SSTheme.Color.textHint
         leftView.addSubview(desc)
         desc.snp.makeConstraints { (make) in
@@ -51,7 +52,7 @@ public class BaseSearchCell: UITableViewCell {
         }
         
         hint = UILabel()
-        hint.font=UIFont(name: FontsUtils.FONTS[0], size: 14)
+        hint.font = UIFont(name: FontsUtils.FONTS[0], size: 14)
         hint.textColor = SSTheme.Color.textHint
         hint.textAlignment = NSTextAlignment.right
         addSubview(hint)
