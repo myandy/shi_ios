@@ -4,17 +4,16 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseSearchViewController" customModule="诗Shi" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseSearchVC" customModule="诗Shi" customModuleProvider="target">
             <connections>
                 <outlet property="cancel" destination="FVf-l7-qOb" id="53L-5M-LkK"/>
                 <outlet property="divide" destination="L6g-qg-pTP" id="xda-Uy-bhB"/>
-                <outlet property="search" destination="0LJ-us-DdR" id="dnL-IC-IAa"/>
-                <outlet property="table" destination="53f-KH-NBd" id="hqn-8H-PIn"/>
+                <outlet property="searchBar" destination="0LJ-us-DdR" id="wgF-XT-e41"/>
+                <outlet property="tableView" destination="53f-KH-NBd" id="nhJ-d9-CG5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

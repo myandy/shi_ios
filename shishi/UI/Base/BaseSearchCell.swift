@@ -28,13 +28,6 @@ public class BaseSearchCell: UITableViewCell {
         
         let leftView = UIView()
         addSubview(leftView)
-        leftView.snp.makeConstraints { (make) in
-//            make.top.bottom.equalToSuperview()
-            make.centerY.equalToSuperview()
-            make.left.equalToSuperview().offset(15)
-            make.width.equalToSuperview().dividedBy(2)
-            make.height.equalTo(70)
-        }
         
         title = UILabel()
         leftView.addSubview(title)
@@ -48,8 +41,16 @@ public class BaseSearchCell: UITableViewCell {
         leftView.addSubview(desc)
         desc.snp.makeConstraints { (make) in
             make.top.equalTo(title.snp.bottom).offset(5)
-            make.left.right.equalToSuperview()
+            make.left.right.bottom.equalToSuperview()
         }
+        
+        leftView.snp.makeConstraints { (make) in
+            make.centerY.equalToSuperview()
+            make.left.equalToSuperview().offset(15)
+            make.width.equalToSuperview().dividedBy(2)
+            make.height.greaterThanOrEqualTo(title.snp.height)
+        }
+
         
         hint = UILabel()
         hint.font = UIFont(name: FontsUtils.FONTS[0], size: 14)
@@ -62,6 +63,7 @@ public class BaseSearchCell: UITableViewCell {
             make.left.equalTo(leftView.snp.right).offset(20)
         }
 
+       
         
     }
     

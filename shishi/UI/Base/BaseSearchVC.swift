@@ -1,5 +1,5 @@
 //
-//  ChooseViewController.swift
+//  BaseSearchVC.swift
 //  shishi
 //
 //  Created by andymao on 2017/4/15.
@@ -20,13 +20,7 @@ class BaseSearchVC: UIViewController{
         
         let nibNameOrNil = String?("BaseSearchVC")
         
-        //        //考虑到xib文件可能不存在或被删，故加入判断
-        //
-        //        if Bundle.main.path(forResource: nibNameOrNil, ofType: "xib") == nil{
-        //
-        //            nibNameOrNil = nil
-        //
-        //        }
+    
         
         self.init(nibName: nibNameOrNil, bundle: nil)
         
@@ -35,11 +29,11 @@ class BaseSearchVC: UIViewController{
     required convenience init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
     
-    @IBOutlet weak var search: UISearchBar!
     
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var divide: UIView!
     
     @IBOutlet weak var cancel: UIButton!
@@ -54,17 +48,17 @@ class BaseSearchVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
-        table.dataSource = self
-        table.delegate = self
-        table.register(BaseSearchCell.self, forCellReuseIdentifier: "BaseSearchCell")
+        tableView.rowHeight = 60
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(BaseSearchCell.self, forCellReuseIdentifier: "BaseSearchCell")
         
-        search.barTintColor = UIColor(intColor: SSTheme.ColorInt.BACK)
-        search.backgroundImage = UIImage()
-        search.delegate = self
-        search.placeholder = getHint()
+        searchBar.barTintColor = UIColor(intColor: SSTheme.ColorInt.BACK)
+        searchBar.backgroundImage = UIImage()
+        searchBar.delegate = self
+        searchBar.placeholder = getHint()
         
-        table.backgroundColor = UIColor(intColor:SSTheme.ColorInt.BACK)
+        tableView.backgroundColor = UIColor(intColor:SSTheme.ColorInt.BACK)
         cancel.backgroundColor = UIColor(intColor:SSTheme.ColorInt.BACK)
         divide.backgroundColor = UIColor(intColor:SSTheme.ColorInt.DIVIDE)
         
@@ -73,7 +67,7 @@ class BaseSearchVC: UIViewController{
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-     }
+    }
 }
 
 extension BaseSearchVC {
@@ -106,12 +100,12 @@ extension BaseSearchVC : UISearchBarDelegate{
             }
         }
         
-        self.table.reloadData()
+        self.tableView.reloadData()
     }
-
+    
 }
 
-extension BaseSearchVC : UITableViewDelegate,UITableViewDataSource{
+extension BaseSearchVC : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -124,7 +118,14 @@ extension BaseSearchVC : UITableViewDelegate,UITableViewDataSource{
         let cell:BaseSearchCell  = tableView.dequeueReusableCell(withIdentifier: "BaseSearchCell", for: indexPath)as! BaseSearchCell
         let data = items[indexPath.row] as! SearchModel
         cell.title.text = data.getTitle()
-        cell.desc.text = data.getDesc()
+        
+        if data.getDesc().isEmpty{
+            cell.desc.removeFromSuperview()
+        }
+        else{
+            cell.desc.text = data.getDesc()
+        }
+        
         cell.hint.text = data.getHint()
         cell.backgroundColor = UIColor.clear
         FontsUtils.setFont(cell)

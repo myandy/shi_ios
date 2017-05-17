@@ -234,6 +234,8 @@
 		756EFB851EBD9D08006E65DF /* Observable+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB841EBD9D08006E65DF /* Observable+Result.swift */; };
 		756EFB871EBDCAF0006E65DF /* DuishiEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB861EBDCAF0006E65DF /* DuishiEditView.swift */; };
 		E2057C701DDBFE9200118080 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2057C6F1DDBFE9200118080 /* MainView.xib */; };
+		E20CB2BE1ECB52AD004298DA /* EditUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CB2BD1ECB52AD004298DA /* EditUtils.swift */; };
+		E20CB2C01ECB533D004298DA /* EditPagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CB2BF1ECB533D004298DA /* EditPagerCell.swift */; };
 		E2250FB11E533AEA00D062E8 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2250FB01E533AEA00D062E8 /* libsqlite3.tbd */; };
 		E225121C1E5343B100D062E8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E225121B1E5343B100D062E8 /* libz.tbd */; };
 		E225121E1E5343CF00D062E8 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E225121D1E5343CF00D062E8 /* libstdc++.tbd */; };
@@ -682,6 +684,8 @@
 		756EFB861EBDCAF0006E65DF /* DuishiEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuishiEditView.swift; sourceTree = "<group>"; };
 		86A3D6B6999EBD9A4ABA66B1 /* Pods-shishi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shishi.release.xcconfig"; path = "Pods/Target Support Files/Pods-shishi/Pods-shishi.release.xcconfig"; sourceTree = "<group>"; };
 		E2057C6F1DDBFE9200118080 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		E20CB2BD1ECB52AD004298DA /* EditUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUtils.swift; sourceTree = "<group>"; };
+		E20CB2BF1ECB533D004298DA /* EditPagerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPagerCell.swift; sourceTree = "<group>"; };
 		E2250FB01E533AEA00D062E8 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E225121B1E5343B100D062E8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E225121D1E5343CF00D062E8 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
@@ -1746,6 +1750,7 @@
 				751E08711EACA6B500BAB696 /* Utils.swift */,
 				751E08771EACA82C00BAB696 /* SSTheme.swift */,
 				756EFB771EBA28D1006E65DF /* SSStr.swift */,
+				E20CB2BD1ECB52AD004298DA /* EditUtils.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1804,6 +1809,7 @@
 				756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */,
 				756EFB241EB43EAD006E65DF /* PingzeView.swift */,
 				E2B0DFCA1EB5F962001B790C /* BackgroundPagerView.swift */,
+				E20CB2BF1ECB533D004298DA /* EditPagerCell.swift */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -2197,6 +2203,7 @@
 				751E07B51EACA61D00BAB696 /* UMComCommentDataController.m in Sources */,
 				751E07E71EACA61D00BAB696 /* UMComLocationView.m in Sources */,
 				751E07C41EACA61D00BAB696 /* UMComUserDataController.m in Sources */,
+				E20CB2C01ECB533D004298DA /* EditPagerCell.swift in Sources */,
 				751E080A1EACA61D00BAB696 /* UMComHorizonCollectionView.m in Sources */,
 				751E082F1EACA61D00BAB696 /* UMComEditTopicsTableViewCell.m in Sources */,
 				751E080C1EACA61D00BAB696 /* UMComLabel.m in Sources */,
@@ -2342,6 +2349,7 @@
 				751E07B71EACA61D00BAB696 /* UMComFeedEditDataController.m in Sources */,
 				E22869BA1EBED7D100238DF8 /* Yun.swift in Sources */,
 				751E07FF1EACA61D00BAB696 /* UMComAddedImageCellView.m in Sources */,
+				E20CB2BE1ECB52AD004298DA /* EditUtils.swift in Sources */,
 				756EFB721EB45A76006E65DF /* EditVC.swift in Sources */,
 				751E07C91EACA61D00BAB696 /* UMComLoginViewController.m in Sources */,
 				751E07F91EACA61D00BAB696 /* UMComUserTableViewController.m in Sources */,

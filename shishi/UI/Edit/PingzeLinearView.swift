@@ -10,18 +10,21 @@ import Foundation
 
 public class PingzeLinearView : UIView{
     
-    var code : String
+    var code : String!
     
-    public init(frame: CGRect, code: String) {
-        self.code = code
-        super.init(frame: frame)
-    }
-    
-    public required  init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    public init(frame: CGRect, code: String) {
+//        self.code = code
+//        super.init(frame: frame)
+//    }
+//    
+//    public required  init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     public override func draw(_ rect: CGRect) {
+        if code == nil{
+            return
+        }
         for i in 0...code.characters.count-1{
             
             let index = code.index(code.startIndex, offsetBy: i)
@@ -42,6 +45,11 @@ public class PingzeLinearView : UIView{
                 addSubview(label)
             }
         }
+    }
+    
+    public func refresh(code:String){
+        self.code = code
+        setNeedsDisplay()
     }
     
     public override func layoutSubviews() {
