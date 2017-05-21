@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchAuthorVC: BaseSearchVC {
+class SearchAuthorVC: NormalSearchVC {
 
     override func loadData() {
         orginItems = AuthorDB.getAll(byPNum: false, dynasty: 0)

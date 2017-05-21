@@ -213,10 +213,9 @@
 		756EFB541EB45929006E65DF /* AllAuthorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB511EB45929006E65DF /* AllAuthorVC.xib */; };
 		756EFB581EB45935006E65DF /* SearchAuthorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB551EB45935006E65DF /* SearchAuthorVC.swift */; };
 		756EFB591EB45935006E65DF /* SearchPoetryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB561EB45935006E65DF /* SearchPoetryVC.swift */; };
-		756EFB5A1EB45935006E65DF /* SearchYunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB571EB45935006E65DF /* SearchYunVC.swift */; };
-		756EFB5E1EB4596C006E65DF /* BaseSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB5B1EB4596C006E65DF /* BaseSearchCell.swift */; };
+		756EFB5A1EB45935006E65DF /* SearchFormerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB571EB45935006E65DF /* SearchFormerVC.swift */; };
+		756EFB5E1EB4596C006E65DF /* NormalSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB5B1EB4596C006E65DF /* NormalSearchCell.swift */; };
 		756EFB5F1EB4596C006E65DF /* BaseSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB5C1EB4596C006E65DF /* BaseSearchVC.swift */; };
-		756EFB601EB4596C006E65DF /* BaseSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB5D1EB4596C006E65DF /* BaseSearchVC.xib */; };
 		756EFB671EB459E2006E65DF /* Poetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB621EB459E2006E65DF /* Poetry.swift */; };
 		756EFB681EB459E2006E65DF /* PoetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB631EB459E2006E65DF /* PoetryView.swift */; };
 		756EFB691EB459E2006E65DF /* PoetryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB641EB459E2006E65DF /* PoetryView.xib */; };
@@ -236,6 +235,11 @@
 		E2057C701DDBFE9200118080 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2057C6F1DDBFE9200118080 /* MainView.xib */; };
 		E20CB2BE1ECB52AD004298DA /* EditUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CB2BD1ECB52AD004298DA /* EditUtils.swift */; };
 		E20CB2C01ECB533D004298DA /* EditPagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CB2BF1ECB533D004298DA /* EditPagerCell.swift */; };
+		E20CB2C41ECFF6F2004298DA /* SettingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CB2C31ECFF6F2004298DA /* SettingItemView.swift */; };
+		E20CB2C61ED01E5A004298DA /* SearchYunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CB2C51ED01E5A004298DA /* SearchYunVC.swift */; };
+		E20CB2C81ED05ABB004298DA /* UserDefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CB2C71ED05ABB004298DA /* UserDefaultUtils.swift */; };
+		E20CB2CA1ED06C55004298DA /* SearchYunCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CB2C91ED06C55004298DA /* SearchYunCell.swift */; };
+		E20CB2CC1ED06D10004298DA /* NormalSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CB2CB1ED06D10004298DA /* NormalSearchVC.swift */; };
 		E2250FB11E533AEA00D062E8 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2250FB01E533AEA00D062E8 /* libsqlite3.tbd */; };
 		E225121C1E5343B100D062E8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E225121B1E5343B100D062E8 /* libz.tbd */; };
 		E225121E1E5343CF00D062E8 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E225121D1E5343CF00D062E8 /* libstdc++.tbd */; };
@@ -662,10 +666,9 @@
 		756EFB511EB45929006E65DF /* AllAuthorVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllAuthorVC.xib; sourceTree = "<group>"; };
 		756EFB551EB45935006E65DF /* SearchAuthorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAuthorVC.swift; sourceTree = "<group>"; };
 		756EFB561EB45935006E65DF /* SearchPoetryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPoetryVC.swift; sourceTree = "<group>"; };
-		756EFB571EB45935006E65DF /* SearchYunVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchYunVC.swift; sourceTree = "<group>"; };
-		756EFB5B1EB4596C006E65DF /* BaseSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSearchCell.swift; sourceTree = "<group>"; };
+		756EFB571EB45935006E65DF /* SearchFormerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFormerVC.swift; sourceTree = "<group>"; };
+		756EFB5B1EB4596C006E65DF /* NormalSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalSearchCell.swift; sourceTree = "<group>"; };
 		756EFB5C1EB4596C006E65DF /* BaseSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSearchVC.swift; sourceTree = "<group>"; };
-		756EFB5D1EB4596C006E65DF /* BaseSearchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseSearchVC.xib; sourceTree = "<group>"; };
 		756EFB621EB459E2006E65DF /* Poetry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Poetry.swift; path = UI/Poetry/Poetry.swift; sourceTree = "<group>"; };
 		756EFB631EB459E2006E65DF /* PoetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoetryView.swift; sourceTree = "<group>"; };
 		756EFB641EB459E2006E65DF /* PoetryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PoetryView.xib; sourceTree = "<group>"; };
@@ -686,6 +689,11 @@
 		E2057C6F1DDBFE9200118080 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		E20CB2BD1ECB52AD004298DA /* EditUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUtils.swift; sourceTree = "<group>"; };
 		E20CB2BF1ECB533D004298DA /* EditPagerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPagerCell.swift; sourceTree = "<group>"; };
+		E20CB2C31ECFF6F2004298DA /* SettingItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingItemView.swift; path = Setting/SettingItemView.swift; sourceTree = "<group>"; };
+		E20CB2C51ED01E5A004298DA /* SearchYunVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchYunVC.swift; sourceTree = "<group>"; };
+		E20CB2C71ED05ABB004298DA /* UserDefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultUtils.swift; sourceTree = "<group>"; };
+		E20CB2C91ED06C55004298DA /* SearchYunCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchYunCell.swift; sourceTree = "<group>"; };
+		E20CB2CB1ED06D10004298DA /* NormalSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalSearchVC.swift; sourceTree = "<group>"; };
 		E2250FB01E533AEA00D062E8 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E225121B1E5343B100D062E8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E225121D1E5343CF00D062E8 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
@@ -1751,6 +1759,7 @@
 				751E08771EACA82C00BAB696 /* SSTheme.swift */,
 				756EFB771EBA28D1006E65DF /* SSStr.swift */,
 				E20CB2BD1ECB52AD004298DA /* EditUtils.swift */,
+				E20CB2C71ED05ABB004298DA /* UserDefaultUtils.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1792,9 +1801,9 @@
 		756EFB1B1EB43EAD006E65DF /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				756EFB5B1EB4596C006E65DF /* BaseSearchCell.swift */,
 				756EFB5C1EB4596C006E65DF /* BaseSearchVC.swift */,
-				756EFB5D1EB4596C006E65DF /* BaseSearchVC.xib */,
+				756EFB5B1EB4596C006E65DF /* NormalSearchCell.swift */,
+				E20CB2CB1ED06D10004298DA /* NormalSearchVC.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1828,7 +1837,9 @@
 			children = (
 				756EFB551EB45935006E65DF /* SearchAuthorVC.swift */,
 				756EFB561EB45935006E65DF /* SearchPoetryVC.swift */,
-				756EFB571EB45935006E65DF /* SearchYunVC.swift */,
+				756EFB571EB45935006E65DF /* SearchFormerVC.swift */,
+				E20CB2C51ED01E5A004298DA /* SearchYunVC.swift */,
+				E20CB2C91ED06C55004298DA /* SearchYunCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1975,6 +1986,7 @@
 			isa = PBXGroup;
 			children = (
 				E22869C61EC2226B00238DF8 /* SettingVC.swift */,
+				E20CB2C31ECFF6F2004298DA /* SettingItemView.swift */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -2126,7 +2138,6 @@
 				751E087C1EACAD5000BAB696 /* Localizable.strings in Resources */,
 				751E08671EACA61D00BAB696 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				751E08381EACA61D00BAB696 /* UMComFeedsTableViewCell.xib in Resources */,
-				756EFB601EB4596C006E65DF /* BaseSearchVC.xib in Resources */,
 				751E07E01EACA61D00BAB696 /* UMComFindTableViewCell.xib in Resources */,
 				E29558D31DD311720065AA1B /* Main.storyboard in Resources */,
 			);
@@ -2226,6 +2237,7 @@
 				E2BBD3051E9A694400B285DB /* Extensiton.swift in Sources */,
 				751E08001EACA61D00BAB696 /* UMComAddedImageView.m in Sources */,
 				751E08021EACA61D00BAB696 /* UMComButton.m in Sources */,
+				E20CB2C61ED01E5A004298DA /* SearchYunVC.swift in Sources */,
 				751E08391EACA61D00BAB696 /* UMComFeedStyle.m in Sources */,
 				751E07E51EACA61D00BAB696 /* UMComLocationTableViewCell.m in Sources */,
 				751E07DC1EACA61D00BAB696 /* UMComTableViewCell.m in Sources */,
@@ -2241,11 +2253,13 @@
 				751E07CB1EACA61D00BAB696 /* UMComRegisterViewController.m in Sources */,
 				751E081E1EACA61D00BAB696 /* UMComShareCollectionView.m in Sources */,
 				751E07EE1EACA61D00BAB696 /* UMComSysCommentCell.m in Sources */,
+				E20CB2CC1ED06D10004298DA /* NormalSearchVC.swift in Sources */,
 				756EFB461EB44097006E65DF /* Network.swift in Sources */,
 				E22869B81EBED7D100238DF8 /* DBManager.swift in Sources */,
 				751E07C51EACA61D00BAB696 /* UMComUserListDataController.m in Sources */,
 				756EFB531EB45929006E65DF /* AllAuthorVC.swift in Sources */,
 				751E07FC1EACA61D00BAB696 /* UMComResourceManager.m in Sources */,
+				E20CB2CA1ED06C55004298DA /* SearchYunCell.swift in Sources */,
 				751E08051EACA61D00BAB696 /* UMComEditTextView.m in Sources */,
 				756EFB6A1EB459E2006E65DF /* RandomPoetryVC.swift in Sources */,
 				756EFB441EB44097006E65DF /* DuishiAPI.swift in Sources */,
@@ -2264,12 +2278,13 @@
 				751E07FB1EACA61D00BAB696 /* UMComResouceDefines.m in Sources */,
 				751E08781EACA82C00BAB696 /* SSTheme.swift in Sources */,
 				751E07E41EACA61D00BAB696 /* UMComLocationListController.m in Sources */,
+				E20CB2C81ED05ABB004298DA /* UserDefaultUtils.swift in Sources */,
 				751E08271EACA61D00BAB696 /* UMComWebView.m in Sources */,
 				751E08311EACA61D00BAB696 /* UMComEditTopicsViewController.m in Sources */,
 				751E07FE1EACA61D00BAB696 /* UMComActionPickerAddView.m in Sources */,
 				751E08321EACA61D00BAB696 /* UMComEditViewController.m in Sources */,
 				751E08071EACA61D00BAB696 /* UMComGridViewerController.m in Sources */,
-				756EFB5E1EB4596C006E65DF /* BaseSearchCell.swift in Sources */,
+				756EFB5E1EB4596C006E65DF /* NormalSearchCell.swift in Sources */,
 				751E07DE1EACA61D00BAB696 /* UMComDiscoverViewController.m in Sources */,
 				751E07BF1EACA61D00BAB696 /* UMComTopicDataController.m in Sources */,
 				751E082E1EACA61D00BAB696 /* UMComFindViewController.m in Sources */,
@@ -2299,6 +2314,7 @@
 				E22869BC1EBED7FC00238DF8 /* Former.swift in Sources */,
 				751E07EF1EACA61D00BAB696 /* UMComSysCommonTableViewCell.m in Sources */,
 				751E07BA1EACA61D00BAB696 /* UMComNoticeListDataController..m in Sources */,
+				E20CB2C41ECFF6F2004298DA /* SettingItemView.swift in Sources */,
 				751E08451EACA61D00BAB696 /* UMComHtmlFeedStyle.m in Sources */,
 				751E07FA1EACA61D00BAB696 /* UMComWebViewController.m in Sources */,
 				751E07C11EACA61D00BAB696 /* UMComTopicListDataController.m in Sources */,
@@ -2316,7 +2332,7 @@
 				751E08221EACA61D00BAB696 /* UMComShowToast.m in Sources */,
 				751E083E1EACA61D00BAB696 /* UMComNearbyFeedViewController.m in Sources */,
 				751E081D1EACA61D00BAB696 /* UMComSegmentedControl.m in Sources */,
-				756EFB5A1EB45935006E65DF /* SearchYunVC.swift in Sources */,
+				756EFB5A1EB45935006E65DF /* SearchFormerVC.swift in Sources */,
 				751E07C01EACA61D00BAB696 /* UMComTopicGroupDataController.m in Sources */,
 				751E08551EACA61D00BAB696 /* UMComShareDelegateHandler.m in Sources */,
 				756EFB761EBA256D006E65DF /* DuishiVC.swift in Sources */,

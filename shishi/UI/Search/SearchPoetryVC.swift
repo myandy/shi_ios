@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchPoetryVC: BaseSearchVC{
+class SearchPoetryVC: NormalSearchVC{
     
     override func loadData() {
         orginItems = PoetryDB.getAll()

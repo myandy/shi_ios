@@ -23,38 +23,69 @@ class SettingVC: UIViewController{
         self.setupUI()
     }
     
-
+    lazy var scrollView: UIScrollView! = {
+        var scrollView = UIScrollView()
+        scrollView.isPagingEnabled = false
+        scrollView.alwaysBounceVertical = true
+        
+        self.view.addSubview(scrollView)
+        scrollView.snp.makeConstraints{ (make) in
+            make.edges.equalToSuperview()
+        }
+        return scrollView
+    }()
+    
+    lazy var backBtn: UIButton! = {
+        let backBtn = UIButton()
+        backBtn.setImage(UIImage(named:"back"), for: .normal)
+        self.scrollView.addSubview(backBtn)
+        backBtn.snp.makeConstraints{ (make) in
+            make.top.equalToSuperview().offset(30)
+            make.left.equalToSuperview().offset(20)
+            make.width.equalTo(backBtn.snp.height)
+            
+        }
+        backBtn.rx.tap
+            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] in
+                self.onBackBtnClicked()
+            })
+            .addDisposableTo(self.rx_disposeBag)
+        return backBtn
+    }()
     
     
     func setupUI(){
         addBackgroundImage()
-        addBackBtn()
+
         
         let card1 = getCardView()
-        self.view.addSubview(card1)
+        self.scrollView.addSubview(card1)
         card1.snp.makeConstraints{ (make) in
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
-            make.top.equalToSuperview().offset(100)
+            make.left.equalTo(scrollView).offset(20)
+            make.right.equalTo(self.view).offset(-20)
+            make.top.equalTo(backBtn).offset(80)
             make.height.equalTo(ITEM_HEIGHT * 2)
+
         }
 
-        let yunItem = getItemView(SSStr.Setting.YUN_TITLE, hint: SSStr.Setting.YUN_TITLE)
-        card1.addSubview(yunItem.item)
-        yunItem.item.snp.makeConstraints{ (make) in
+        let yunItem = SettingItemView()
+        card1.addSubview(yunItem)
+        yunItem.snp.makeConstraints{ (make) in
             make.left.right.top.equalToSuperview()
             make.height.equalTo(ITEM_HEIGHT)
         }
-//        yunItem.item.rx.tap
-//            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
-//            .subscribe(onNext: { [unowned self] in
-//                self.onBackBtnClicked()
-//            })
-//            .addDisposableTo(self.rx_disposeBag)
+        yunItem.title.text = SSStr.Setting.YUN_TITLE
+        yunItem.hint.text = SSStr.Setting.YUN_TITLE
+        yunItem.isUserInteractionEnabled = true
+        let tapGes = UITapGestureRecognizer(target: self, action: #selector(self.yunItemClick(_:)))
+        yunItem.addGestureRecognizer(tapGes)
+        
 
-        addDivideView(card1,topView:yunItem.item)
+        addDivideView(card1,topView:yunItem)
         
     }
+
     
     func addDivideView(_ subview:UIView,topView:UIView){
         let divideView = UIView()
@@ -69,60 +100,14 @@ class SettingVC: UIViewController{
     }
     
     
-    func addBackBtn(){
-        let backBtn = UIButton()
-        backBtn.setImage(UIImage(named:"back"), for: .normal)
-        self.view.addSubview(backBtn)
-        backBtn.snp.makeConstraints{ (make) in
-            make.top.equalTo(self.view).offset(30)
-            make.left.equalToSuperview().offset(20)
-            make.width.equalTo(backBtn.snp.height)
-
-        }
-        backBtn.rx.tap
-            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] in
-                self.onBackBtnClicked()
-            })
-            .addDisposableTo(self.rx_disposeBag)
-    }
-    
     func getCardView()->UIView{
         let cardView = UIView()
         cardView.backgroundColor = SSTheme.Color.settingBack
         cardView.layer.masksToBounds = true
-        cardView.layer.cornerRadius = 3
+        cardView.layer.cornerRadius = 5
         return cardView
     }
-    
-    func getItemView(_ title:String,hint:String) -> SettingItem{
-        
-        let item = SettingItem()
-        item.item = UIView()
-        let itemView = item.item!
-        
-        item.title = UIButton()
-        item.title.titleLabel?.textColor = UIColor.white
-        item.title.setTitle(title, for: .normal)
-        itemView.addSubview(item.title)
-        item.title.snp.makeConstraints{ (make) in
-            make.left.equalToSuperview().offset(20)
-            make.centerY.equalToSuperview()
-        }
-        
-        item.hint = UILabel()
-        item.hint.text = hint
-        item.hint.textColor = UIColor.white
-        itemView.addSubview(item.hint)
-        item.hint.snp.makeConstraints{ (make) in
-            make.right.equalToSuperview().offset(-20)
-            make.centerY.equalToSuperview()
-        }
-
-        return item
-    }
-    
-
+  
     
 }
 
@@ -133,11 +118,11 @@ extension SettingVC{
         self.navigationController?.popViewController(animated: true)
     }
 
+    
+    func yunItemClick(_ sender: Any){
+        //        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
-class SettingItem {
-    var item: UIView!
-    var title: UIButton!
-    var hint: UILabel!
-}
 

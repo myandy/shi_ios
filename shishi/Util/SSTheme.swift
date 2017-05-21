@@ -36,6 +36,10 @@ class SSTheme: NSObject {
         static let settingLine = UIColor(intColor:0x222222)
         
         static let textHint = UIColor(intColor:0x666666)
+        
+        static let divideColor = UIColor(intColor: ColorInt.DIVIDE)
+        
+        static let backColor = UIColor(intColor: ColorInt.BACK)
     }
     
     //尺寸

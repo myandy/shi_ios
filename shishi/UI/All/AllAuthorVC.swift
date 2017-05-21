@@ -45,7 +45,7 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
             let alertView = UIAlertAction(title: SSStr.DYNASTYS[i], style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
                 
                 if self.dynasty != i{
-                    self.userDefault.set(i, forKey: "dynasty")
+                    UserDefaultUtils.setDynasty(i)
                     self.loadData()
                 }
             }
@@ -80,7 +80,7 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
     }
     
     func loadData(){
-        dynasty = userDefault.integer(forKey: "dynasty")
+        dynasty = UserDefaultUtils.getDynasty()
         items = AuthorDB.getAll(byPNum: orderByNum, dynasty: dynasty)
         cv.reloadData()
         cv.layoutIfNeeded()
@@ -111,7 +111,7 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
     }
     
     func getItemData(_ index:Int)->Author{
-        return items[index%2 == 0 ? +1 : index-1]
+        return items[index%2 == 0 ? index+1 : index-1]
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

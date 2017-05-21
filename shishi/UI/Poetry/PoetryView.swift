@@ -19,7 +19,7 @@ class PoetryView : UIView,Nibloadable{
     }
     
     override func draw(_ rect: CGRect) {
-        self.backgroundColor=UIColor.clear
+//        self.backgroundColor=UIColor.clear
         FontsUtils.setFont(self)
         shareBtn.layer.cornerRadius = shareBtn.frame.size.width / 2
     }
