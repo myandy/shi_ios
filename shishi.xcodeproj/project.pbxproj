@@ -263,6 +263,9 @@
 		E29558D81DD311720065AA1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29558D61DD311720065AA1B /* LaunchScreen.storyboard */; };
 		E2B0DFCB1EB5F962001B790C /* BackgroundPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B0DFCA1EB5F962001B790C /* BackgroundPagerView.swift */; };
 		E2BBD3051E9A694400B285DB /* Extensiton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BBD3041E9A694400B285DB /* Extensiton.swift */; };
+		E2E14C6D1ED323AF0056009C /* YunSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C6C1ED323AF0056009C /* YunSettingVC.swift */; };
+		E2E14C6F1ED3241C0056009C /* BaseSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C6E1ED3241C0056009C /* BaseSettingVC.swift */; };
+		E2E14C711ED326470056009C /* SettingCheckItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C701ED326470056009C /* SettingCheckItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -716,6 +719,9 @@
 		E29558D71DD311720065AA1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2B0DFCA1EB5F962001B790C /* BackgroundPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundPagerView.swift; sourceTree = "<group>"; };
 		E2BBD3041E9A694400B285DB /* Extensiton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensiton.swift; sourceTree = "<group>"; };
+		E2E14C6C1ED323AF0056009C /* YunSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YunSettingVC.swift; path = Setting/YunSettingVC.swift; sourceTree = "<group>"; };
+		E2E14C6E1ED3241C0056009C /* BaseSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseSettingVC.swift; path = Setting/BaseSettingVC.swift; sourceTree = "<group>"; };
+		E2E14C701ED326470056009C /* SettingCheckItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingCheckItemView.swift; path = Setting/SettingCheckItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1987,6 +1993,9 @@
 			children = (
 				E22869C61EC2226B00238DF8 /* SettingVC.swift */,
 				E20CB2C31ECFF6F2004298DA /* SettingItemView.swift */,
+				E2E14C6C1ED323AF0056009C /* YunSettingVC.swift */,
+				E2E14C6E1ED3241C0056009C /* BaseSettingVC.swift */,
+				E2E14C701ED326470056009C /* SettingCheckItemView.swift */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -2205,6 +2214,7 @@
 				E29558D01DD311720065AA1B /* ViewController.swift in Sources */,
 				751E08241EACA61D00BAB696 /* UMComEmojiKeyBoardView.m in Sources */,
 				751E083C1EACA61D00BAB696 /* UMComFocusFeedTableViewController.m in Sources */,
+				E2E14C6D1ED323AF0056009C /* YunSettingVC.swift in Sources */,
 				751E084D1EACA61D00BAB696 /* UMComPrivateLetterTableViewController.m in Sources */,
 				751E07D71EACA61D00BAB696 /* UMComPhotoAlbumViewController.m in Sources */,
 				751E08331EACA61D00BAB696 /* UMComFriendTableViewCell.m in Sources */,
@@ -2357,6 +2367,7 @@
 				751E084C1EACA61D00BAB696 /* UMComPrivateChatTableViewController.m in Sources */,
 				751E07CE1EACA61D00BAB696 /* UMComLoginHandler.m in Sources */,
 				751E08161EACA61D00BAB696 /* UMAssetsCollectionGrid.m in Sources */,
+				E2E14C6F1ED3241C0056009C /* BaseSettingVC.swift in Sources */,
 				751E086D1EACA66A00BAB696 /* AppDelegate.swift in Sources */,
 				756EFB591EB45935006E65DF /* SearchPoetryVC.swift in Sources */,
 				751E08091EACA61D00BAB696 /* UMImageProgressView.m in Sources */,
@@ -2379,6 +2390,7 @@
 				751E083A1EACA61D00BAB696 /* UMComFeedTableViewController.m in Sources */,
 				751E08361EACA61D00BAB696 /* UMComFavouratesViewController.m in Sources */,
 				751E07F01EACA61D00BAB696 /* UMComSysLikeTableViewCell.m in Sources */,
+				E2E14C711ED326470056009C /* SettingCheckItemView.swift in Sources */,
 				751E07F51EACA61D00BAB696 /* UMComUserNearbyViewController.m in Sources */,
 				756EFB701EB45A76006E65DF /* EditPagerView.swift in Sources */,
 				E22869C71EC2226B00238DF8 /* SettingVC.swift in Sources */,

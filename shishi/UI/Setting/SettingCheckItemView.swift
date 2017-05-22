@@ -1,18 +1,18 @@
 //
-//  SettingItemView.swift
+//  SettingCheckItemView.swift
 //  shishi
 //
-//  Created by andymao on 2017/5/20.
+//  Created by andymao on 2017/5/22.
 //  Copyright © 2017年 andymao. All rights reserved.
 //
 
 import Foundation
 
-class SettingItemView : UIView {
+class SettingCheckItemView : UIView {
     
     public var title: UILabel!
-    public var hint: UILabel!
     
+    public var checkView: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,46 +35,27 @@ class SettingItemView : UIView {
             make.centerY.equalToSuperview()
         }
         
-        let rev = UIImageView()
-        rev.image = UIImage(named:"next_hl")
-        self.addSubview(rev)
-        rev.snp.makeConstraints{ (make) in
-            make.right.equalToSuperview()
+        checkView = UIImageView()
+        checkView.image = UIImage(named:"done")
+        self.addSubview(checkView)
+        checkView.snp.makeConstraints{ (make) in
+            make.right.equalToSuperview().offset(-20)
             make.centerY.equalToSuperview()
         }
-
-        
-        hint = UILabel()
-        hint.textColor = UIColor.white
-        self.addSubview(hint)
-        hint.snp.makeConstraints{ (make) in
-            make.right.equalTo(rev.snp.left)
-            make.centerY.equalToSuperview()
-        }
-
         
     }
-
-    
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.title.textColor = UIColor.white
-        self.hint.textColor = UIColor.white
     }
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.title.textColor = UIColor.gray
-        self.hint.textColor = UIColor.gray
-
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.title.textColor = UIColor.white
-        self.hint.textColor = UIColor.white
     }
-    
-
-    
 
 }
