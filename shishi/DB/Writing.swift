@@ -10,22 +10,22 @@ import Foundation
 
 import FMDB
 
-public class Writing{
+public class Writing {
     
-    var id:Int32!
-    var text:String!
-    var formerId:Int32!
-    var title:String!
-    var create_dt:Int32!
-    var update_dt:Int32!
-    var bgimg="0"
-    var author:String!
-    var former:Former!
+    var id: Int32!
+    var text: String!
+    var former Id:Int32!
+    var title: String!
+    var create_dt: Int32!
+    var update_dt: Int32!
+    var bgimg = "0"
+    var author: String!
+    var former: Former!
     
 }
 
 public class WritingDB{
-    static let TABLE_NAME="writing"
+    static let TABLE_NAME = "writing"
     
     static let BY_PNUM = " order by update_dt"
     

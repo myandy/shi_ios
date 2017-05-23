@@ -13,11 +13,10 @@ import UIKit
 let SEARCH_BAR_HEIGHT = 50
 
 class SearchYunVC : BaseSearchVC {
-    
-    
+
     var yunList = [Yun]()
     
-    static var searchString:String!
+    static var searchString: String!
     
     lazy var tableView: UITableView! = {
         let tableView = UITableView()

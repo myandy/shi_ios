@@ -10,12 +10,12 @@ import Foundation
 import FMDB
 class Former {
     
-    var id:Int32!
-    var name:String!
-    var source:String!
-    var pingze:String!
-    var count:Int32!
-    var type:Int32!
+    var id: Int32!
+    var name: String!
+    var source: String!
+    var pingze: String!
+    var count: Int32!
+    var type: Int32!
 }
 
 extension Former : SearchModel {
@@ -33,12 +33,12 @@ extension Former : SearchModel {
 }
 
 
-class FormerDB{
+class FormerDB {
     private static let TABLE_NAME="cipai"
     
     private static let BY_PNUM = " order by id resc "
     
-    public class func getArray(_ rs: FMResultSet)-> [Former] {
+    public class func getArray(_ rs: FMResultSet) -> [Former] {
         var array = [Former]()
         while rs.next() {
             let model = Former()
@@ -52,7 +52,7 @@ class FormerDB{
         return array
     }
     
-    public class func getAll()-> [Former] {
+    public class func getAll() -> [Former] {
         let db = DBManager.shared.getDatabase()
         let sql = "select * from ".appending(TABLE_NAME)
         
@@ -69,6 +69,4 @@ class FormerDB{
         return array
         
     }
-    
-    
 }

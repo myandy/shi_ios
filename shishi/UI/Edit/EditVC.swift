@@ -1,5 +1,5 @@
 //
-//  EditViewController.swift
+//  EditVC.swift
 //  shishi
 //
 //  Created by andymao on 2017/4/23.
@@ -9,8 +9,7 @@
 import UIKit
 
 class EditVC: UIViewController {
-    
-    
+
     var writing : Writing!
     
     var editPagerView : EditPagerView!
@@ -26,8 +25,8 @@ class EditVC: UIViewController {
     @IBAction func confirmBtnClick(_ sender: Any) {
     }
     init(former : Former) {
-        writing=Writing()
-        writing.former=former
+        writing = Writing()
+        writing.former = former
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -41,19 +40,17 @@ class EditVC: UIViewController {
         super.viewDidLoad()
 
         editPagerView = EditPagerView.loadNib()
-        editPagerView.writing=writing
+        editPagerView.writing = writing
         self.view.addSubview(editPagerView)
         
-        segmentedControl.tintColor=UIColor.clear
-        segmentedControl.selectedSegmentIndex=0
+        segmentedControl.tintColor = UIColor.clear
+        segmentedControl.selectedSegmentIndex = 0
         setSegmentedControlImage()
         
         editPagerView.snp.makeConstraints { (make) in
-                        make.top.equalTo( self.view)
+                        make.top.left.right.equalToSuperview()
                         make.bottom.equalTo(cancelBtn.snp.top)
-                        make.left.equalTo(self.view)
-            make.right.equalTo(self.view)
-                    }
+        }
 
     }
 
@@ -73,7 +70,6 @@ class EditVC: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }

@@ -8,31 +8,31 @@
 
 import Foundation
 
-class PoetryView : UIView,Nibloadable{
+class PoetryView : UIView, Nibloadable {
     @IBOutlet weak var introLabel: UILabel!
-    @IBOutlet weak var contentLable: UILabel!
-    @IBOutlet weak var titleLable: UILabel!
-    @IBOutlet weak var authorLable: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var shareBtn: UIButton!
     
     @IBAction func shareClick(_ sender: AnyObject) {
     }
     
     override func draw(_ rect: CGRect) {
-        self.backgroundColor=UIColor.clear
+        self.backgroundColor = UIColor.clear
         FontsUtils.setFont(view: self)
         shareBtn.layer.cornerRadius = shareBtn.frame.size.width / 2
     }
     
-    func refresh(poetry:Poetry){
-        titleLable.text=poetry.title
-        contentLable.text=poetry.poetry
+    func refresh(poetry: Poetry){
+        titleLabel.text = poetry.title
+        contentLabel.text = poetry.poetry
         
         if (poetry.intro?.characters.count)! > 5{
-            introLabel.text=poetry.intro
+            introLabel.text = poetry.intro
         }
         else{
-            introLabel.text=nil
+            introLabel.text = nil
         }
         
         let data = AuthorDB.getAuthor(name: poetry.author!)
@@ -40,7 +40,7 @@ class PoetryView : UIView,Nibloadable{
         let cInt : Int32  = data!.color as Int32!
         let color = UIColor(intColor:Int(cInt))
         shareBtn.backgroundColor = color
-        authorLable.text=poetry.author
+        authorLabel.text = poetry.author
         
     }
     public override func layoutSubviews() {

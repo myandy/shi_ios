@@ -19,15 +19,12 @@ class RandomPoetryVC: UIViewController {
     @IBAction func randomClick(_ sender: AnyObject) {
         refresh()
     }
-    
-    
+
     @IBAction func cancelClick(_ sender: AnyObject) {
         self.navigationController?.popViewController(animated: true)
     }
     
     var poetry:Poetry!
-    
-
     
     override public func viewDidLoad() {
         
@@ -40,7 +37,7 @@ class RandomPoetryVC: UIViewController {
             make.left.equalTo(self.view)
             make.right.equalTo(self.view)
         }
-                refresh()
+        refresh()
         
     }
     
@@ -49,8 +46,4 @@ class RandomPoetryVC: UIViewController {
         poetryView?.refresh(poetry: poetry)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }

@@ -12,17 +12,14 @@ import Foundation
 import FMDB
 
 public class Color{
-    
-    
-    var name:String!
-    var red:Int32!
-    var green:Int32!
-    var blue:Int32!
-    
+    var name: String!
+    var red: Int32!
+    var green: Int32!
+    var blue: Int32!
 }
 
-extension Color{
-    func toUIColor()->UIColor{
+extension Color {
+    func toUIColor() -> UIColor{
         return UIColor(red: CGFloat(red!)/255.0, green: CGFloat(green!)/255.0, blue: CGFloat(blue!)/255.0, alpha: 1.0)
     }
 }
@@ -33,7 +30,7 @@ public class ColorDB{
     
     static let BY_IDX = " where displayidx > 101  order by displayidx desc"
     
-    public class func getArray(_ rs: FMResultSet)-> [Color] {
+    public class func getArray(_ rs: FMResultSet) -> [Color] {
         var array = [Color]()
         while rs.next() {
             let model = Color()
@@ -65,6 +62,5 @@ public class ColorDB{
         return array
         
     }
-    
-    
+
 }

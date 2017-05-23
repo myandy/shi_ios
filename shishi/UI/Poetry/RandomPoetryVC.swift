@@ -19,17 +19,14 @@ class RandomPoetryVC: UIViewController {
     @IBAction func randomClick(_ sender: AnyObject) {
         refresh()
     }
-    
-    
+
     @IBAction func cancelClick(_ sender: AnyObject) {
         self.navigationController?.popViewController(animated: true)
     }
     
     var poetry:Poetry!
     
-    lazy var colors = {
-        return ColorDB.getAll()
-    }()
+    lazy var colors = ColorDB.getAll()
    
     override public func viewDidLoad() {
         poetryView = PoetryView.loadNib()
@@ -52,6 +49,5 @@ class RandomPoetryVC: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

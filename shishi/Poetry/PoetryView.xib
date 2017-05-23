@@ -87,11 +87,11 @@
                 <constraint firstItem="Nbh-BU-wSb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="zHR-oY-frC"/>
             </constraints>
             <connections>
-                <outlet property="authorLable" destination="OV5-6T-e53" id="pUe-wo-DI8"/>
-                <outlet property="contentLable" destination="xiu-Av-qjh" id="pve-QT-VAl"/>
+                <outlet property="authorLabel" destination="OV5-6T-e53" id="pUe-wo-DI8"/>
+                <outlet property="contentLabel" destination="xiu-Av-qjh" id="pve-QT-VAl"/>
                 <outlet property="introLabel" destination="rPV-Ra-82Y" id="Eyk-dI-Rmp"/>
                 <outlet property="shareBtn" destination="fbx-uK-pnT" id="vlY-AT-4sW"/>
-                <outlet property="titleLable" destination="X7c-Pr-6vn" id="Cbn-Aw-1pc"/>
+                <outlet property="titleLabel" destination="X7c-Pr-6vn" id="Cbn-Aw-1pc"/>
             </connections>
             <point key="canvasLocation" x="-222.5" y="-169.5"/>
         </view>

@@ -12,15 +12,6 @@ public class PingzeLinearView : UIView{
     
     var code : String!
     
-//    public init(frame: CGRect, code: String) {
-//        self.code = code
-//        super.init(frame: frame)
-//    }
-//    
-//    public required  init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
     public override func draw(_ rect: CGRect) {
         if code == nil{
             return
@@ -53,12 +44,6 @@ public class PingzeLinearView : UIView{
     }
     
     public override func layoutSubviews() {
-        
         self.backgroundColor = UIColor.clear
-
     }
-    
-     
-    
-    
 }

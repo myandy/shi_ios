@@ -20,10 +20,8 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
     
     var pageController: UIPageViewController!
     var controllers = [UIViewController]()
-    
-    
+
     var author : Author!
-    
     var color : UIColor!
     
     init(author : Author,color : UIColor) {
@@ -38,7 +36,6 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     private func setupUI(){
         
         pageController = UIPageViewController(transitionStyle: .pageCurl, navigationOrientation: .horizontal, options: nil)
@@ -52,16 +49,15 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[pageController]|", options: [], metrics: nil, views: views))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[pageController]|", options: [], metrics: nil, views: views))
         
-        for i in 0 ... poetrys.count-1 {
-            let vc = PoetryCellVC(poetry:poetrys[i],color:color)
+        for poetry in poetrys {
+            let vc = PoetryCellVC(poetry:poetry,color:color)
             controllers.append(vc)
         }
         
         pageController.setViewControllers([controllers[0]], direction: .forward, animated: false)
         
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,8 +88,6 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
         
         return nil
     }
-    
-    
 }
 
 

@@ -8,11 +8,11 @@
 
 import Foundation
 
-class PoetryView : UIView,Nibloadable{
+class PoetryView : UIView, Nibloadable {
     @IBOutlet weak var introLabel: UILabel!
-    @IBOutlet weak var contentLable: UILabel!
-    @IBOutlet weak var titleLable: UILabel!
-    @IBOutlet weak var authorLable: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var shareBtn: UIButton!
     
     @IBAction func shareClick(_ sender: AnyObject) {
@@ -25,8 +25,8 @@ class PoetryView : UIView,Nibloadable{
     }
     
     func refresh(poetry:Poetry,color:UIColor){
-        titleLable.text=poetry.title
-        contentLable.text=poetry.poetry
+        titleLabel.text=poetry.title
+        contentLabel.text=poetry.poetry
         
         if (poetry.intro?.characters.count)! > 5{
             introLabel.text=poetry.intro
@@ -36,7 +36,7 @@ class PoetryView : UIView,Nibloadable{
         }
         
         shareBtn.backgroundColor = color
-        authorLable.text=poetry.author
+        authorLabel.text=poetry.author
         
     }
     public override func layoutSubviews() {

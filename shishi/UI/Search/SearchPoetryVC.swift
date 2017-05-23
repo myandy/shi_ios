@@ -11,7 +11,7 @@ import UIKit
 class SearchPoetryVC: NormalSearchVC{
     
     override func loadData() {
-        orginItems = PoetryDB.getAll()
+        originItems = PoetryDB.getAll()
     }
     
     override func getHint() -> String {

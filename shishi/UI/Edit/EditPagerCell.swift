@@ -44,11 +44,6 @@ class EditPagerCell : UITableViewCell {
 //            make.height.equalTo(1)
 //        }
 
-        
-
-        
-        
-        
     }
     
     public required init?(coder aDecoder: NSCoder) {

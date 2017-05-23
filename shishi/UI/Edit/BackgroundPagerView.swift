@@ -1,5 +1,5 @@
 //
-//  EditBackgroundView.swift
+//  BackgroundPagerView.swift
 //  shishi
 //
 //  Created by andymao on 2017/4/30.
