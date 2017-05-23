@@ -9,7 +9,7 @@
 import Foundation
 
 //
-//  ChooseCollectionViewCell.swift
+//  NormalSearchCell.swift
 //  shishi
 //
 //  Created by andymao on 2017/4/15.
@@ -18,7 +18,7 @@ import Foundation
 
 import UIKit
 
-public class BaseSearchCell: UITableViewCell {
+public class NormalSearchCell: UITableViewCell {
     public var title: UILabel!
     public var desc: UILabel!
     public var hint: UILabel!

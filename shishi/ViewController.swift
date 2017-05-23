@@ -48,7 +48,7 @@ class ViewController: UIViewController , iCarouselDataSource, iCarouselDelegate
         self.present(alertController, animated: true, completion: nil)
     }
     @IBAction func addClick(_ sender: Any) {
-        self.navigationController?.pushViewController(SearchYunVC(), animated: true)
+        self.navigationController?.pushViewController(SearchFormerVC(), animated: true)
     }
     @IBOutlet weak var btnRandom: UIButton!
     @IBAction func allClick(_ sender: AnyObject) {

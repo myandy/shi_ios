@@ -123,7 +123,9 @@ public class EditPagerView : UIView,Nibloadable{
     }
     
     func keyboardClick(_ sender: Any){
-        self.endEditing(true)
+//        self.endEditing(true)
+        firstViewController()?.navigationController?.pushViewController(SearchYunVC(), animated: true)
+
     }
     
 }

@@ -38,11 +38,11 @@ extension UIColor {
         red = (intColor & 16711680) >> 16
         green = (intColor & 65280) >> 8
         blue = (intColor & 255)
-       
+        
         self.init(red: CGFloat(red)/255.0, green: CGFloat(green)/255.0, blue: CGFloat(blue)/255.0, alpha: 1.0)
     }
     
-  
+    
 }
 
 extension String {
@@ -105,4 +105,18 @@ protocol SearchModel{
     func getTitle() -> String
     func getDesc() -> String
     func getHint() -> String
+}
+
+extension UIView {
+    //返回该view所在VC
+    func firstViewController() -> UIViewController? {
+        for view in sequence(first: self.superview, next: { $0?.superview }) {
+            if let responder = view?.next {
+                if responder.isKind(of: UIViewController.self){
+                    return responder as? UIViewController
+                }
+            }
+        }
+        return nil
+    }
 }

@@ -6,133 +6,82 @@
 //  Copyright © 2017年 andymao. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import RxSwift
+import NSObject_Rx
 
 class BaseSearchVC: UIViewController{
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?){
+    
+    lazy var cancelBtn: UIButton! = {
+        let cancelBtn = UIButton()
+        cancelBtn.setImage(UIImage(named:"cancel"), for: .normal)
+        self.view.addSubview(cancelBtn)
+        cancelBtn.snp.makeConstraints { (make) in
+            make.top.left.equalToSuperview()
+            make.height.equalTo(SEARCH_BAR_HEIGHT)
+            make.left.equalToSuperview()
+            make.width.equalTo(cancelBtn.snp.height)
+        }
+        cancelBtn.rx.tap
+            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] in
+                self.onBackBtnClicked()
+            })
+            .addDisposableTo(self.rx_disposeBag)
         
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
+        return cancelBtn
+    }()
+    
+    
+    lazy var searchBar: UISearchBar! = {
+        let searchBar = UISearchBar()
+        self.view.addSubview(searchBar)
+        searchBar.barTintColor = UIColor(intColor: SSTheme.ColorInt.BACK)
+        searchBar.backgroundImage = UIImage()
+        searchBar.snp.makeConstraints { (make) in
+            make.top.right.equalToSuperview()
+            make.height.equalTo(SEARCH_BAR_HEIGHT)
+            make.left.equalTo(self.cancelBtn.snp.right)
+        }
+        return searchBar
+    }()
+    
+    lazy var lineView: UIView! = {
+        let lineView = UIView()
+        lineView.backgroundColor = SSTheme.Color.divideColor
+        self.view.addSubview(lineView)
+        lineView.snp.makeConstraints{ (make) in
+            make.height.equalTo(1)
+            make.left.right.equalToSuperview()
+            make.top.equalTo(self.searchBar.snp.bottom)
+        }
+        return lineView
+    }()
+    
+    override func viewDidLoad() {
+        self.view.backgroundColor = SSTheme.Color.backColor
     }
-    // to do 1.重名名完善2.搜索继承逻辑3.editView多个页面显示，是否使用collectionView
     
-    convenience init() {
-        
-        let nibNameOrNil = String?("BaseSearchVC")
-        
-    
-        
-        self.init(nibName: nibNameOrNil, bundle: nil)
-        
+    func hideKeyboardTapGesture(_ sender : Any){
+        searchBar.endEditing(true)
     }
     
-    required convenience init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        searchBar.endEditing(true)
     }
-    
-    
-    @IBOutlet weak var searchBar: UISearchBar!
-    
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var divide: UIView!
-    
-    @IBOutlet weak var cancel: UIButton!
-    
-    @IBAction func cancelClick(_ sender: Any) {
+}
+
+
+
+
+// MARK: - Action
+extension BaseSearchVC{
+    //返回按钮
+    fileprivate func onBackBtnClicked() {
         self.navigationController?.popViewController(animated: true)
     }
     
-    var items: Array<Any>!
-    var orginItems: Array<Any>!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.rowHeight = 60
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(BaseSearchCell.self, forCellReuseIdentifier: "BaseSearchCell")
-        
-        searchBar.barTintColor = UIColor(intColor: SSTheme.ColorInt.BACK)
-        searchBar.backgroundImage = UIImage()
-        searchBar.delegate = self
-        searchBar.placeholder = getHint()
-        
-        tableView.backgroundColor = UIColor(intColor:SSTheme.ColorInt.BACK)
-        cancel.backgroundColor = UIColor(intColor:SSTheme.ColorInt.BACK)
-        divide.backgroundColor = UIColor(intColor:SSTheme.ColorInt.DIVIDE)
-        
-        loadData()
-        items = orginItems
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-}
-
-extension BaseSearchVC {
-    public  func loadData(){
-        
-    }
-    
-    public func onItemClick(_ pos:Int){
-        
-    }
-    
-    public func getHint()->String{
-        return ""
-    }
-}
-
-extension BaseSearchVC : UISearchBarDelegate{
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
-        // 没有搜索内容时显示全部组件
-        if searchText.isEmpty {
-            self.items = self.orginItems
-        }
-        else {
-            self.items = []
-            for ctrl in self.orginItems {
-                if ((ctrl as! SearchModel).getTitle().lowercased().contains(searchText.lowercased())) {
-                    self.items.append(ctrl)
-                }
-            }
-        }
-        
-        self.tableView.reloadData()
-    }
     
 }
 
-extension BaseSearchVC : UITableViewDelegate,UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
-    
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onItemClick(indexPath.row)
-    }
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell:BaseSearchCell  = tableView.dequeueReusableCell(withIdentifier: "BaseSearchCell", for: indexPath)as! BaseSearchCell
-        let data = items[indexPath.row] as! SearchModel
-        cell.title.text = data.getTitle()
-        
-        if data.getDesc().isEmpty{
-            cell.desc.removeFromSuperview()
-        }
-        else{
-            cell.desc.text = data.getDesc()
-        }
-        
-        cell.hint.text = data.getHint()
-        cell.backgroundColor = UIColor.clear
-        FontsUtils.setFont(cell)
-        return cell
-    }
-}
-
-extension BaseSearchVC{
-    
-}
