@@ -39,10 +39,10 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
         self.navigationController!.popViewController(animated: true)
     }
     @IBAction func chooseClick(_ sender: Any) {
-        let alertController = UIAlertController(title: SSStr.CHOOSE_DYNASTY, message: "", preferredStyle: UIAlertControllerStyle.alert)
-        for  i in 0 ... SSStr.DYNASTYS.count-1 {
+        let alertController = UIAlertController(title: SSStr.All.CHOOSE_DYNASTY, message: "", preferredStyle: UIAlertControllerStyle.alert)
+        for  i in 0 ... SSStr.All.DYNASTIES.count-1 {
             
-            let alertView = UIAlertAction(title: SSStr.DYNASTYS[i], style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
+            let alertView = UIAlertAction(title: SSStr.All.DYNASTIES[i], style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
                 
                 if self.dynasty != i{
                     UserDefaultUtils.setDynasty(i)
@@ -115,7 +115,7 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
         cell.dynastyLabel.text =  data.dynasty![0..<1]
         
         let color = getItemColor(indexPath.row)
-        cell.top.backgroundColor = color
+        cell.topView.backgroundColor = color
         cell.dynastyLabel.textColor = color
         cell.dynastyLabel.layer.borderColor = color.cgColor
         

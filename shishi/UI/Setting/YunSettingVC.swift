@@ -42,7 +42,7 @@ class YunSettingVC : BaseSettingVC {
                 make.height.equalTo(ITEM_HEIGHT)
             }
             
-            yunItem.title.text = SSStr.Setting.YUN_CHOCICIES[i]
+            yunItem.title.text = SSStr.Setting.YUN_CHOICES[i]
             yunItem.isUserInteractionEnabled = true
             let tapGes = UITapGestureRecognizer(target: self, action: itemClickSelectors[i])
             yunItem.addGestureRecognizer(tapGes)

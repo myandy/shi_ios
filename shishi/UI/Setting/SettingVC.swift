@@ -48,7 +48,7 @@ class SettingVC: BaseSettingVC {
     }
     
     func refreshYun(){
-        self.yunItem.hint.text = SSStr.Setting.YUN_CHOCICIES[UserDefaultUtils.getYunshu()]
+        self.yunItem.hint.text = SSStr.Setting.YUN_CHOICES[UserDefaultUtils.getYunshu()]
     }
     
 }

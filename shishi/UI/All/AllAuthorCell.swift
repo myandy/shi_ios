@@ -39,7 +39,7 @@ public class AllAuthorCell: UICollectionViewCell {
         self.addSubview(numLabel)
         
         authorLabel=UILabel(frame:CGRect(x:35,y:30,width:30,height:120))
-        authorLabel.font= UIFont(name: FontsUtils.FONTS[0], size: 24)
+        authorLabel.font = UIFont(name: FontsUtils.FONTS[0], size: 24)
         authorLabel.numberOfLines = 0
         self.addSubview(authorLabel)
     }

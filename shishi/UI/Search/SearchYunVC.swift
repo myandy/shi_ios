@@ -39,7 +39,7 @@ class SearchYunVC : BaseSearchVC {
         super.viewDidLoad()
         
         searchBar.delegate = self
-        searchBar.placeholder = String(format:SSStr.Setting.YUN_SEARCH_HINT, SSStr.Setting.YUN_CHOCICIES[UserDefaultUtils.getYunshu()])
+        searchBar.placeholder = String(format:SSStr.Search.YUN_SEARCH_HINT, SSStr.Setting.YUN_CHOICES[UserDefaultUtils.getYunshu()])
         searchBar.text = SearchYunVC.searchString
         doSearch(SearchYunVC.searchString)
         self.tableView.estimatedRowHeight = 100

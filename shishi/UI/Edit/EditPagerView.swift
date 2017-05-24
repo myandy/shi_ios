@@ -66,7 +66,7 @@ public class EditPagerView : UIView,Nibloadable{
         
         let former = writing.former
         let slist = former!.pingze.characters.split(separator: "。").map(String.init)
-        clist = EditUtils.getCodeFrompingze(list: slist)
+        clist = EditUtils.getCodeFromPingze(list: slist)
         
 //        let srcollView = UIScrollView()
 //        srcollView.showsVerticalScrollIndicator=true

@@ -14,7 +14,7 @@ public class Writing {
     
     var id: Int32!
     var text: String!
-    var former Id:Int32!
+    var formerId:Int32!
     var title: String!
     var create_dt: Int32!
     var update_dt: Int32!

@@ -75,7 +75,7 @@ class AuthorDB{
        let db = DBManager.shared.getDatabase()
         var sql = "select * from ".appending(TABLE_NAME)
         if dynasty>0{
-            sql = sql.appending(" where d_dynasty like '").appending(SSStr.DYNASTIES[dynasty]).appending("'")
+            sql = sql.appending(" where d_dynasty like '").appending(SSStr.All.DYNASTIES[dynasty]).appending("'")
         }
         if byPNum{
             sql = sql.appending(BY_PNUM)
