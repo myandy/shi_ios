@@ -35,14 +35,20 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         self.navigationController?.pushViewController(SettingVC(), animated: true)
     }
     
+    
     @IBAction func searchClick(_ sender: Any) {
-        let alertController = UIAlertController(title: "搜索", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
         let alertView1 = UIAlertAction(title: "搜索诗", style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
+            
             self.navigationController?.pushViewController(SearchPoetryVC(), animated: true)
         }
+        
         let alertView2 = UIAlertAction(title: "搜索诗人", style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
             self.navigationController?.pushViewController(SearchAuthorVC(), animated: true)
         }
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
         alertController.addAction(alertView1)
         alertController.addAction(alertView2)
         self.present(alertController, animated: true, completion: nil)

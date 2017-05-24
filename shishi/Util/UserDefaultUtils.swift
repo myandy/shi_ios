@@ -29,4 +29,20 @@ public class UserDefaultUtils {
         userDefault.set(i, forKey: "yunshu")
     }
     
+    public static func getFont() -> Int {
+        return userDefault.integer(forKey: "font")
+    }
+    
+    public static func setFont(_ i: Int) {
+        userDefault.set(i, forKey: "font")
+    }
+    
+    public static func getCheckPingze() -> Int {
+        return userDefault.integer(forKey: "checkPingze")
+    }
+    
+    public static func setCheckPingze(_ i: Int) {
+        userDefault.set(i, forKey: "checkPingze")
+    }
+    
 }
