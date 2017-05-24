@@ -9,21 +9,21 @@
 import Foundation
 import FMDB
 
-public class Yun{
+public class Yun {
     
-    var tone:Int32!
-    var glys:String!
-    var section_desc:String!
-    var tone_name:String!
+    var tone: Int32!
+    var glys: String!
+    var section_desc: String!
+    var tone_name: String!
 }
 
 
-class YunDB{
+class YunDB {
     private static let YUNSHU = ["zhonghuaxinyun", "pingshuiyun", "cilinzhengyun"]
     
     private static var yunList = [Yun]()
     
-    public class func getArray(_ rs: FMResultSet)-> [Yun]{
+    public class func getArray(_ rs: FMResultSet) -> [Yun]{
         var array = [Yun]()
         while rs.next() {
             let model = Yun()
@@ -36,7 +36,7 @@ class YunDB{
         return array
     }
     
-    public class func getAll()-> [Yun] {
+    public class func getAll() -> [Yun] {
         let db = DBManager.shared.getDatabase()
         let sql = "select * from ".appending(YUNSHU[UserDefaultUtils.getYunshu()])
         
@@ -60,8 +60,6 @@ class YunDB{
         }
     }
     
-    
-    
     /**
      * 获取平仄
      */
@@ -82,7 +80,6 @@ class YunDB{
         
     }
     
-    
     /**
      * 获取同韵字
      */
@@ -96,6 +93,4 @@ class YunDB{
         }
         return yuns
     }
-    
-    
 }

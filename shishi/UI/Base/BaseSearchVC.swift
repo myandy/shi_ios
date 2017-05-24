@@ -11,7 +11,7 @@ import UIKit
 import RxSwift
 import NSObject_Rx
 
-class BaseSearchVC: UIViewController{
+class BaseSearchVC: UIViewController {
     
     lazy var cancelBtn: UIButton! = {
         let cancelBtn = UIButton()
@@ -72,16 +72,11 @@ class BaseSearchVC: UIViewController{
     }
 }
 
-
-
-
 // MARK: - Action
 extension BaseSearchVC{
     //返回按钮
     fileprivate func onBackBtnClicked() {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
 }
 

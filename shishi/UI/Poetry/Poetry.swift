@@ -10,11 +10,11 @@ import Foundation
 import FMDB
 
 class Poetry{
-    var poetry:String!
-    var author:String!
-    var intro:String!
-    var title:String!
-    var dNum:Int32!
+    var poetry: String!
+    var author: String!
+    var intro: String!
+    var title: String!
+    var dNum: Int32!
 }
 
 extension Poetry : SearchModel{
@@ -51,7 +51,6 @@ class PoetryDB{
         return array
     }
 
-    
     public class func getRandom100()->[Poetry]! {
         let db = DBManager.shared.getDatabase()
         let sql = "select * from ".appending(TABLE_NAME).appending (" order by random() limit 100")
@@ -86,8 +85,6 @@ class PoetryDB{
         
     }
     
-    
-    
     public class func getAll(author:String)-> [Poetry] {
         let db = DBManager.shared.getDatabase()
         let sql = "select * from ".appending(TABLE_NAME).appending (" where d_author = '").appending(author).appending("'")
@@ -101,11 +98,8 @@ class PoetryDB{
         }
         
         return array
-        
     }
 
-
-    
     public class func getAll()-> [Poetry] {
         let db = DBManager.shared.getDatabase()
         let sql = "select * from ".appending(TABLE_NAME)
@@ -119,8 +113,6 @@ class PoetryDB{
         }
         
         return array
-        
     }
-    
-    
+
 }

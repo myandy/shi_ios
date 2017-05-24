@@ -10,7 +10,7 @@ import Foundation
 
 class EditUtils {
     
-    public static func getCodeFrompingze(list:Array<String>)->Array<String>{
+    public static func getCodeFromPingze(list:Array<String>)->Array<String>{
         if(list.count==0){
             return list
         }
@@ -19,7 +19,7 @@ class EditUtils {
             size -= 1
         }
         var codes=Array<String>(repeating: "", count: size)
-        for i in 0...size-1{
+        for i in 0...size-1 {
             codes[i]=""
             for j in 0...list[i].characters.count-1{
                 let index = list[i].index(list[i].startIndex, offsetBy: j)

@@ -1,5 +1,5 @@
 //
-//  AllAuthorViewController.swift
+//  AllAuthorVC.swift
 //  shishi
 //
 //  Created by andymao on 2017/1/3.
@@ -58,11 +58,8 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
     var dynasty:Int = 0
     let userDefault = UserDefaults.standard
     var orderByNum:Bool = false
-    lazy var colors = {
-        return ColorDB.getAll()
-    }()
+    lazy var colors =  ColorDB.getAll()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         cv.dataSource = self
@@ -90,16 +87,7 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
     
     override func viewWillLayoutSubviews() {
         //        cv.setContentOffset(CGPoint(x:cv.contentSize.width-cv.bounds.size.width,y:0), animated: false)
-       
-        
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return self.items.count
@@ -124,27 +112,25 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
         
         let data = getItemData(indexPath.row)
         
-        cell.lableDynasty.text =  data.dynasty![0..<1]
+        cell.dynastyLabel.text =  data.dynasty![0..<1]
         
         let color = getItemColor(indexPath.row)
         cell.top.backgroundColor = color
-        cell.lableDynasty.textColor = color
-        cell.lableDynasty.layer.borderColor = color.cgColor
+        cell.dynastyLabel.textColor = color
+        cell.dynastyLabel.layer.borderColor = color.cgColor
         
-        cell.lableDynastyEn.text = data.enName
-        cell.lableDynastyEn.textColor = UIColor.white
+        cell.dynastyEnLabel.text = data.enName
+        cell.dynastyEnLabel.textColor = UIColor.white
         
-        cell.lableNum.text = String(format: "%03d", Int(data.pNum!))
-        cell.lableNum.textColor = color
+        cell.numLabel.text = String(format: "%03d", Int(data.pNum!))
+        cell.numLabel.textColor = color
         
-        cell.lableAuthor.text = data.name
-        cell.lableAuthor.textColor = UIColor.white
+        cell.authorLabel.text = data.name
+        cell.authorLabel.textColor = UIColor.white
         
         let options:NSStringDrawingOptions = .usesLineFragmentOrigin
-        let boundingRect = data.name.boundingRect(with: CGSize(width:30,height: 0), options: options, attributes:[NSFontAttributeName:cell.lableAuthor.font], context: nil)
-        cell.lableAuthor.frame = CGRect(x:35,y:48,width:32,height:(boundingRect.height))
-        
-        
+        let boundingRect = data.name.boundingRect(with: CGSize(width:30,height: 0), options: options, attributes:[NSFontAttributeName:cell.authorLabel.font], context: nil)
+        cell.authorLabel.frame = CGRect(x:35,y:48,width:32,height:(boundingRect.height))
         
         FontsUtils.setFont(cell)
         return cell

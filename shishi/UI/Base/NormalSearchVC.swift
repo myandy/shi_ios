@@ -11,7 +11,7 @@ import Foundation
 class NormalSearchVC : BaseSearchVC {
     
     var items: Array<Any>!
-    var orginItems: Array<Any>!
+    var originItems: Array<Any>!
     
     lazy var tableView: UITableView! = {
         let tableView = UITableView()
@@ -35,12 +35,10 @@ class NormalSearchVC : BaseSearchVC {
         
         tableView.rowHeight = 60
         loadData()
-        items = orginItems
+        items = originItems
     }
     
 }
-
-
 
 extension NormalSearchVC {
     public  func loadData(){
@@ -61,11 +59,11 @@ extension NormalSearchVC : UISearchBarDelegate{
         print(searchText)
         // 没有搜索内容时显示全部组件
         if searchText.isEmpty {
-            self.items = self.orginItems
+            self.items = self.originItems
         }
         else {
             self.items = []
-            for ctrl in self.orginItems {
+            for ctrl in self.originItems {
                 if ((ctrl as! SearchModel).getTitle().lowercased().contains(searchText.lowercased())) {
                     self.items.append(ctrl)
                 }

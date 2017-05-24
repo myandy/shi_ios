@@ -16,7 +16,6 @@ class SearchYunCell : UITableViewCell {
     
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
 
         title = UILabel()
         self.addSubview(title)
@@ -38,7 +37,6 @@ class SearchYunCell : UITableViewCell {
             make.bottom.equalToSuperview().offset(-5)
         }
 
-        
     }
     
     public required init?(coder aDecoder: NSCoder) {

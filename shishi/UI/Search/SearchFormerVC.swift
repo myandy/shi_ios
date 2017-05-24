@@ -11,7 +11,7 @@ import UIKit
 
 class SearchFormerVC: NormalSearchVC{
     override func loadData() {
-        orginItems = FormerDB.getAll()
+        originItems = FormerDB.getAll()
     }
     override func onItemClick(_ pos: Int) {
         let viewController = EditVC(former:items[pos] as! Former)

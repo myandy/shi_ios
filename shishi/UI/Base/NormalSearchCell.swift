@@ -1,21 +1,11 @@
 //
-//  BaseSearchTableViewCell.swift
-//  shishi
-//
-//  Created by andymao on 2017/4/17.
-//  Copyright © 2017年 andymao. All rights reserved.
-//
-
-import Foundation
-
-//
 //  NormalSearchCell.swift
 //  shishi
 //
 //  Created by andymao on 2017/4/15.
 //  Copyright © 2017年 andymao. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 public class NormalSearchCell: UITableViewCell {
@@ -51,7 +41,6 @@ public class NormalSearchCell: UITableViewCell {
             make.height.greaterThanOrEqualTo(title.snp.height)
         }
 
-        
         hint = UILabel()
         hint.font = UIFont(name: FontsUtils.FONTS[0], size: 14)
         hint.textColor = SSTheme.Color.textHint
@@ -62,9 +51,6 @@ public class NormalSearchCell: UITableViewCell {
             make.right.equalToSuperview().offset(-15)
             make.left.equalTo(leftView.snp.right).offset(20)
         }
-
-       
-        
     }
     
     public required init?(coder aDecoder: NSCoder) {

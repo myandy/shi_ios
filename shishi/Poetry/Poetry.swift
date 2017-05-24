@@ -10,11 +10,11 @@ import Foundation
 import FMDB
 
 class Poetry{
-    var poetry:String?
-    var author:String?
-    var intro:String?
-    var title:String?
-    var dNum:Int32?
+    var poetry: String?
+    var author: String?
+    var intro: String?
+    var title: String?
+    var dNum: Int32?
 }
 
 extension Poetry : SearchModel{
@@ -33,7 +33,7 @@ class PoetryDB{
     
     private static let BY_PNUM = " order by p_num desc"
     
-    private class func getList(rs: FMResultSet)->NSMutableArray?{
+    private class func getList(rs: FMResultSet) -> NSMutableArray?{
         let array = NSMutableArray()
         while rs.next() {
             let model = Poetry()
@@ -47,7 +47,7 @@ class PoetryDB{
         return array
     }
     
-    public class func getRandom100()->NSMutableArray! {
+    public class func getRandom100() -> NSMutableArray! {
         let db = DBManager.shared.getDatabase()
         let sql = "select * from ".appending(TABLE_NAME).appending (" order by random() limit 100")
         var array = NSMutableArray()
@@ -63,7 +63,7 @@ class PoetryDB{
         
     }
     
-    public class func getRandomPoetry()->Poetry! {
+    public class func getRandomPoetry() -> Poetry! {
         let db = DBManager.shared.getDatabase()
         let sql = "select * from ".appending(TABLE_NAME).appending (" order by random() limit 1")
         var array = NSMutableArray()
@@ -82,7 +82,7 @@ class PoetryDB{
     }
     
     
-    public class func getAll(author:String)->NSMutableArray! {
+    public class func getAll(author: String) -> NSMutableArray! {
         let db = DBManager.shared.getDatabase()
         let sql = "select * from ".appending(TABLE_NAME).appending (" where d_author = '").appending(author).appending("'")
         var array = NSMutableArray()
@@ -97,8 +97,4 @@ class PoetryDB{
         return array
         
     }
-    
-    
-    
-    
 }
