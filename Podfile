@@ -28,7 +28,6 @@ target ‘shishi’ do
     
     pod 'SwiftyImage'
     
-    pod 'SwipeView'
     pod 'Koloda'
 end
 

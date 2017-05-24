@@ -199,6 +199,10 @@
 		751E08761EACA7B200BAB696 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E08751EACA7B200BAB696 /* AppConfig.swift */; };
 		751E08781EACA82C00BAB696 /* SSTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E08771EACA82C00BAB696 /* SSTheme.swift */; };
 		751E087C1EACAD5000BAB696 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 751E087E1EACAD5000BAB696 /* Localizable.strings */; };
+		7549ABCD1ED5BF820043893A /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7549ABCB1ED5BF820043893A /* MainView.xib */; };
+		7549ABCE1ED5BF820043893A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABCC1ED5BF820043893A /* MainViewController.swift */; };
+		7549ABD01ED5D25C0043893A /* MainCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABCF1ED5D25C0043893A /* MainCardView.swift */; };
+		7549ABD31ED5D5BC0043893A /* SSUIUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABD21ED5D5BC0043893A /* SSUIUtil.swift */; };
 		756EFB351EB43EAD006E65DF /* PingzeLinearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */; };
 		756EFB361EB43EAD006E65DF /* PingzeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB241EB43EAD006E65DF /* PingzeView.swift */; };
 		756EFB441EB44097006E65DF /* DuishiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB3E1EB44097006E65DF /* DuishiAPI.swift */; };
@@ -232,7 +236,6 @@
 		756EFB831EBD9C92006E65DF /* Observable+DuiShi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB821EBD9C92006E65DF /* Observable+DuiShi.swift */; };
 		756EFB851EBD9D08006E65DF /* Observable+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB841EBD9D08006E65DF /* Observable+Result.swift */; };
 		756EFB871EBDCAF0006E65DF /* DuishiEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB861EBDCAF0006E65DF /* DuishiEditView.swift */; };
-		E2057C701DDBFE9200118080 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2057C6F1DDBFE9200118080 /* MainView.xib */; };
 		E20CB2BE1ECB52AD004298DA /* EditUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CB2BD1ECB52AD004298DA /* EditUtils.swift */; };
 		E20CB2C01ECB533D004298DA /* EditPagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CB2BF1ECB533D004298DA /* EditPagerCell.swift */; };
 		E20CB2C41ECFF6F2004298DA /* SettingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CB2C31ECFF6F2004298DA /* SettingItemView.swift */; };
@@ -258,7 +261,6 @@
 		E22869C71EC2226B00238DF8 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869C61EC2226B00238DF8 /* SettingVC.swift */; };
 		E284A7AA1DE4259A00252160 /* Pods_shishi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; };
 		E284A7AB1DE4259A00252160 /* Pods_shishi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E29558D01DD311720065AA1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29558CF1DD311720065AA1B /* ViewController.swift */; };
 		E29558D31DD311720065AA1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29558D11DD311720065AA1B /* Main.storyboard */; };
 		E29558D81DD311720065AA1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29558D61DD311720065AA1B /* LaunchScreen.storyboard */; };
 		E2B0DFCB1EB5F962001B790C /* BackgroundPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B0DFCA1EB5F962001B790C /* BackgroundPagerView.swift */; };
@@ -655,6 +657,10 @@
 		751E08771EACA82C00BAB696 /* SSTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTheme.swift; sourceTree = "<group>"; };
 		751E08801EACAD5600BAB696 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		751E08811EACAD7300BAB696 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7549ABCB1ED5BF820043893A /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		7549ABCC1ED5BF820043893A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7549ABCF1ED5D25C0043893A /* MainCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCardView.swift; sourceTree = "<group>"; };
+		7549ABD21ED5D5BC0043893A /* SSUIUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSUIUtil.swift; sourceTree = "<group>"; };
 		756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingzeLinearView.swift; sourceTree = "<group>"; };
 		756EFB241EB43EAD006E65DF /* PingzeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingzeView.swift; sourceTree = "<group>"; };
 		756EFB3E1EB44097006E65DF /* DuishiAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuishiAPI.swift; sourceTree = "<group>"; };
@@ -689,7 +695,6 @@
 		756EFB841EBD9D08006E65DF /* Observable+Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Result.swift"; sourceTree = "<group>"; };
 		756EFB861EBDCAF0006E65DF /* DuishiEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuishiEditView.swift; sourceTree = "<group>"; };
 		86A3D6B6999EBD9A4ABA66B1 /* Pods-shishi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shishi.release.xcconfig"; path = "Pods/Target Support Files/Pods-shishi/Pods-shishi.release.xcconfig"; sourceTree = "<group>"; };
-		E2057C6F1DDBFE9200118080 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		E20CB2BD1ECB52AD004298DA /* EditUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUtils.swift; sourceTree = "<group>"; };
 		E20CB2BF1ECB533D004298DA /* EditPagerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPagerCell.swift; sourceTree = "<group>"; };
 		E20CB2C31ECFF6F2004298DA /* SettingItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingItemView.swift; path = Setting/SettingItemView.swift; sourceTree = "<group>"; };
@@ -714,7 +719,6 @@
 		E22869C11EC0AF5900238DF8 /* PoetryCellVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoetryCellVC.swift; sourceTree = "<group>"; };
 		E22869C61EC2226B00238DF8 /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingVC.swift; path = Setting/SettingVC.swift; sourceTree = "<group>"; };
 		E29558CA1DD311720065AA1B /* 诗Shi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "诗Shi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E29558CF1DD311720065AA1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E29558D21DD311720065AA1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E29558D71DD311720065AA1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2B0DFCA1EB5F962001B790C /* BackgroundPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundPagerView.swift; sourceTree = "<group>"; };
@@ -1778,9 +1782,29 @@
 			path = Luanguage;
 			sourceTree = "<group>";
 		};
+		7549ABCA1ED5BF820043893A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7549ABCB1ED5BF820043893A /* MainView.xib */,
+				7549ABCC1ED5BF820043893A /* MainViewController.swift */,
+				7549ABCF1ED5D25C0043893A /* MainCardView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7549ABD11ED5D5A00043893A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				7549ABD21ED5D5BC0043893A /* SSUIUtil.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		756EFB161EB43EAD006E65DF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				7549ABD11ED5D5A00043893A /* Util */,
+				7549ABCA1ED5BF820043893A /* Main */,
 				E22869C31EC21C3A00238DF8 /* Setting */,
 				756EFB791EBB8109006E65DF /* Common */,
 				756EFB741EBA2494006E65DF /* Duishi */,
@@ -2029,9 +2053,7 @@
 				751E086A1EACA64B00BAB696 /* App */,
 				751E06001EACA61C00BAB696 /* Library */,
 				751E05F61EACA51300BAB696 /* Supporting Files */,
-				E29558CF1DD311720065AA1B /* ViewController.swift */,
 				E29558D11DD311720065AA1B /* Main.storyboard */,
-				E2057C6F1DDBFE9200118080 /* MainView.xib */,
 				E29558D61DD311720065AA1B /* LaunchScreen.storyboard */,
 				E2BBD3041E9A694400B285DB /* Extensiton.swift */,
 			);
@@ -2116,6 +2138,7 @@
 				751E085C1EACA61D00BAB696 /* UMShareEditViewController.xib in Resources */,
 				751E08641EACA61D00BAB696 /* WeiboSDK.bundle in Resources */,
 				751E07E21EACA61D00BAB696 /* UMComUserInfoBar.xib in Resources */,
+				7549ABCD1ED5BF820043893A /* MainView.xib in Resources */,
 				756EFB6B1EB459E2006E65DF /* RandomPoetryVC.xib in Resources */,
 				751E082A1EACA61D00BAB696 /* FZLanTingHei-L-GBK-M.TTF in Resources */,
 				756EFB711EB45A76006E65DF /* EditPagerView.xib in Resources */,
@@ -2140,7 +2163,6 @@
 				751E085B1EACA61D00BAB696 /* UMSCommentInputControlleriPad.xib in Resources */,
 				751E07CA1EACA61D00BAB696 /* UMComLoginViewController.xib in Resources */,
 				751E07DD1EACA61D00BAB696 /* UMComTableViewCell.xib in Resources */,
-				E2057C701DDBFE9200118080 /* MainView.xib in Resources */,
 				751E085A1EACA61D00BAB696 /* UMSCommentInputController.xib in Resources */,
 				751E082B1EACA61D00BAB696 /* UMCommunityStrings.strings in Resources */,
 				751E05FB1EACA51300BAB696 /* fzqkyuesong.ttf in Resources */,
@@ -2211,11 +2233,11 @@
 				751E08431EACA61D00BAB696 /* UMComFeedDetailViewController.m in Sources */,
 				756EFB491EB440EF006E65DF /* GlobalFunctions.swift in Sources */,
 				751E07ED1EACA61D00BAB696 /* UMComChatRecodTableViewCell.m in Sources */,
-				E29558D01DD311720065AA1B /* ViewController.swift in Sources */,
 				751E08241EACA61D00BAB696 /* UMComEmojiKeyBoardView.m in Sources */,
 				751E083C1EACA61D00BAB696 /* UMComFocusFeedTableViewController.m in Sources */,
 				E2E14C6D1ED323AF0056009C /* YunSettingVC.swift in Sources */,
 				751E084D1EACA61D00BAB696 /* UMComPrivateLetterTableViewController.m in Sources */,
+				7549ABD31ED5D5BC0043893A /* SSUIUtil.swift in Sources */,
 				751E07D71EACA61D00BAB696 /* UMComPhotoAlbumViewController.m in Sources */,
 				751E08331EACA61D00BAB696 /* UMComFriendTableViewCell.m in Sources */,
 				751E08351EACA61D00BAB696 /* UMComFriendTableViewController.m in Sources */,
@@ -2255,6 +2277,7 @@
 				751E07CF1EACA61D00BAB696 /* UMComLoginUser.m in Sources */,
 				756EFB581EB45935006E65DF /* SearchAuthorVC.swift in Sources */,
 				756EFB471EB44097006E65DF /* NetworkLogger.swift in Sources */,
+				7549ABD01ED5D25C0043893A /* MainCardView.swift in Sources */,
 				751E08121EACA61D00BAB696 /* UMComPageControlView.m in Sources */,
 				751E07BE1EACA61D00BAB696 /* UMComLocationListDataController.m in Sources */,
 				751E08231EACA61D00BAB696 /* UIView+UMComAddition.m in Sources */,
@@ -2282,6 +2305,7 @@
 				751E084F1EACA61D00BAB696 /* UMComMicroTopicSearchViewController.m in Sources */,
 				751E08761EACA7B200BAB696 /* AppConfig.swift in Sources */,
 				751E07F41EACA61D00BAB696 /* UMComCommonTopicTableViewCell.m in Sources */,
+				7549ABCE1ED5BF820043893A /* MainViewController.swift in Sources */,
 				751E08461EACA61D00BAB696 /* UMComMicLikeUserTableViewCell.m in Sources */,
 				756EFB361EB43EAD006E65DF /* PingzeView.swift in Sources */,
 				751E08081EACA61D00BAB696 /* UMComProgressView.m in Sources */,

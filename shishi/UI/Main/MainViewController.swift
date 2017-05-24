@@ -13,7 +13,7 @@ import UMCommunitySDK
 
 
 
-class ViewController: UIViewController , iCarouselDataSource, iCarouselDelegate
+class MainViewController: UIViewController , iCarouselDataSource, iCarouselDelegate
     
 {
     
@@ -39,7 +39,7 @@ class ViewController: UIViewController , iCarouselDataSource, iCarouselDelegate
         let alertController = UIAlertController(title: "搜索", message: "", preferredStyle: UIAlertControllerStyle.alert)
         let alertView1 = UIAlertAction(title: "搜索诗", style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
             self.navigationController?.pushViewController(SearchPoetryVC(), animated: true)
-         }
+        }
         let alertView2 = UIAlertAction(title: "搜索诗人", style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
             self.navigationController?.pushViewController(SearchAuthorVC(), animated: true)
         }
@@ -52,8 +52,8 @@ class ViewController: UIViewController , iCarouselDataSource, iCarouselDelegate
     }
     @IBOutlet weak var btnRandom: UIButton!
     @IBAction func allClick(_ sender: AnyObject) {
-         self.navigationController?.pushViewController(AllAuthorVC(), animated: true)
-     }
+        self.navigationController?.pushViewController(AllAuthorVC(), animated: true)
+    }
     
     @IBAction func randomClick(_ sender: Any) {
         self.navigationController?.pushViewController(RandomPoetryVC(), animated: true)
@@ -101,30 +101,31 @@ class ViewController: UIViewController , iCarouselDataSource, iCarouselDelegate
     }
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
-        var label: UILabel
+        //var label: UILabel
         var itemView: UIView
         
-
-        if(index<items.count-1){
-            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 800))
-            imageView.image = UIImage(named: "bg001.jpg")
-            imageView.contentMode = .center
-            
-            label = UILabel(frame: imageView.bounds)
-            label.textAlignment = .center
-            label.tag = 1
-            label.text="诗词"
-            imageView.addSubview(label)
-            itemView=imageView
-            
+        
+        if index < items.count - 1 {
+            //            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 800))
+            //            imageView.image = UIImage(named: "bg001.jpg")
+            //            imageView.contentMode = .center
+            //
+            //            label = UILabel(frame: imageView.bounds)
+            //            label.textAlignment = .center
+            //            label.tag = 1
+            //            label.text="诗词"
+            //            imageView.addSubview(label)
+            //            itemView=imageView
+            itemView = MainCardView(frame: CGRect(x: 0, y: 0, width: convertWidth(pix: 400), height: SCREEN_HEIGHT))
+            itemView.backgroundColor = UIColor.red
         }
         else{
-            if mainView==nil{
+            if mainView == nil{
                 mainView = UINib(nibName: "MainView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! UIView
             }
-            itemView=mainView
+            itemView = mainView
             
-          
+            
         }
         return itemView
         
@@ -136,7 +137,6 @@ class ViewController: UIViewController , iCarouselDataSource, iCarouselDelegate
         }
         return value
     }
-    
     
 }
 
