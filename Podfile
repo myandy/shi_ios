@@ -27,6 +27,9 @@ target ‘shishi’ do
     pod 'MBProgressHUD'
     
     pod 'SwiftyImage'
+    
+    pod 'SwipeView'
+    pod 'Koloda'
 end
 
 
