@@ -60,5 +60,8 @@ extension MainCardView: KolodaViewDataSource {
 
 // MARK: - KolodaViewDelegate
 extension MainCardView: KolodaViewDelegate {
-    
+    func koloda(koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        
+    }
+
 }
