@@ -9,7 +9,7 @@
 import UIKit
 
 class EditVC: UIViewController {
-
+    
     var writing : Writing!
     
     var editPagerView : EditPagerView!
@@ -20,7 +20,20 @@ class EditVC: UIViewController {
     @IBOutlet weak var confirmBtn: UIButton!
     
     @IBAction func cancelBtnClick(_ sender: Any) {
-         self.navigationController?.popViewController(animated: true)
+        let alertController = UIAlertController(title: "是否保存", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        let alertView1 = UIAlertAction(title: "保存", style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
+            WritingDB.addWriting(writing: self.writing)
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        let alertView2 = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel) { (UIAlertAction) -> Void in
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        alertController.addAction(alertView1)
+        alertController.addAction(alertView2)
+        self.present(alertController, animated: true, completion: nil)
+        
     }
     @IBAction func confirmBtnClick(_ sender: Any) {
     }
@@ -33,13 +46,13 @@ class EditVC: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        editPagerView = EditPagerView.loadNib()
+        
+        editPagerView = EditPagerView()
         editPagerView.writing = writing
         self.view.addSubview(editPagerView)
         
@@ -48,12 +61,12 @@ class EditVC: UIViewController {
         setSegmentedControlImage()
         
         editPagerView.snp.makeConstraints { (make) in
-                        make.top.left.right.equalToSuperview()
-                        make.bottom.equalTo(cancelBtn.snp.top)
+            make.top.left.right.equalToSuperview()
+            make.bottom.equalTo(cancelBtn.snp.top)
         }
-
+        
     }
-
+    
     @IBAction func pagedChanged(_ sender: Any) {
         setSegmentedControlImage()
     }
@@ -67,7 +80,7 @@ class EditVC: UIViewController {
         segmentedControl.setImage(UIImage(named: image3)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), forSegmentAt: 2)
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

@@ -14,7 +14,7 @@ class Author{
     var enName: String!
     var intro: String!
     var dynasty: String!
-    var pNum: Int32!
+    var pNum: Int!
 }
 
 extension Author : SearchModel {
@@ -47,7 +47,7 @@ class AuthorDB{
             model.name = rs.string(forColumn: "d_author")
             model.enName = rs.string(forColumn: "en_name")
              model.dynasty = rs.string(forColumn: "d_dynasty")
-            model.pNum = rs.int(forColumn: "p_num")
+            model.pNum = Int(rs.int(forColumn: "p_num"))
             array.append(model)
         }
         return array

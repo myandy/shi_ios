@@ -11,7 +11,7 @@ import FMDB
 
 public class Yun {
     
-    var tone: Int32!
+    var tone: Int!
     var glys: String!
     var section_desc: String!
     var tone_name: String!
@@ -27,7 +27,7 @@ class YunDB {
         var array = [Yun]()
         while rs.next() {
             let model = Yun()
-            model.tone = rs.int(forColumn: "tone")
+            model.tone = Int(rs.int(forColumn: "tone"))
             model.glys = rs.string(forColumn: "glys")
             model.section_desc = rs.string(forColumn: "section_desc")
             model.tone_name = rs.string(forColumn: "tone_name")

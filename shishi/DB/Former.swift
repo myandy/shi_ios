@@ -10,12 +10,12 @@ import Foundation
 import FMDB
 class Former {
     
-    var id: Int32!
+    var id: Int!
     var name: String!
     var source: String!
     var pingze: String!
-    var count: Int32!
-    var type: Int32!
+    var count: Int!
+    var type: Int!
 }
 
 extension Former : SearchModel {
@@ -42,11 +42,11 @@ class FormerDB {
         var array = [Former]()
         while rs.next() {
             let model = Former()
-            model.id = rs.int(forColumn: "id")
+            model.id = Int(rs.int(forColumn: "id"))
             model.name = rs.string(forColumn: "name")
             model.source = rs.string(forColumn: "source")
             model.pingze = rs.string(forColumn: "pingze")
-            model.count = rs.int(forColumn: "wordcount")
+            model.count = Int(rs.int(forColumn: "wordcount"))
             array.append(model)
         }
         return array

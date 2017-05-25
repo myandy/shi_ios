@@ -15,6 +15,7 @@ class EditPagerCell : UITableViewCell {
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.selectionStyle = UITableViewCellSelectionStyle.none
         pingzeLinearView = PingzeLinearView()
         addSubview(pingzeLinearView)
         pingzeLinearView.snp.makeConstraints{ (make) in
@@ -29,8 +30,9 @@ class EditPagerCell : UITableViewCell {
         addSubview(textField)
         textField.snp.makeConstraints{ (make) in
             make.left.equalToSuperview().offset(10)
-            make.right.top.equalToSuperview()
-            make.height.equalTo(20)
+            make.right.equalToSuperview()
+            make.top.equalTo(pingzeLinearView.snp.bottom)
+            make.bottom.equalToSuperview()
         }
 
         

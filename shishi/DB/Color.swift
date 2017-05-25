@@ -13,9 +13,9 @@ import FMDB
 
 public class Color{
     var name: String!
-    var red: Int32!
-    var green: Int32!
-    var blue: Int32!
+    var red: Int!
+    var green: Int!
+    var blue: Int!
 }
 
 extension Color {
@@ -35,9 +35,9 @@ public class ColorDB{
         while rs.next() {
             let model = Color()
             model.name = rs.string(forColumn: "name")
-            model.red = rs.int(forColumn: "red")
-            model.green = rs.int(forColumn: "green")
-            model.blue = rs.int(forColumn: "blue")
+            model.red = Int(rs.int(forColumn: "red"))
+            model.green = Int(rs.int(forColumn: "green"))
+            model.blue = Int(rs.int(forColumn: "blue"))
             array.append(model)
         }
         return array
