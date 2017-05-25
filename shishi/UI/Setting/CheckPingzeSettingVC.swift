@@ -1,20 +1,20 @@
 //
-//  YunSettingVC.swift
+//  CheckPingzeSettingVC.swift
 //  shishi
 //
-//  Created by andymao on 2017/5/22.
+//  Created by andymao on 2017/5/23.
 //  Copyright © 2017年 andymao. All rights reserved.
 //
 
 import Foundation
 
-class YunSettingVC : BaseSettingVC {
+class CheckPingzeSettingVC : BaseSettingVC {
     
     var changeSelector: (() -> Void)!
     
     var itemList = [SettingCheckItemView]()
     
-    let itemClickSelectors = [#selector(itemClickSelector1),#selector(itemClickSelector2),#selector(itemClickSelector3)]
+    let itemClickSelectors = [#selector(itemClickSelector1),#selector(itemClickSelector2)]
     
     override func setupUI() {
         
@@ -24,7 +24,7 @@ class YunSettingVC : BaseSettingVC {
             make.left.equalTo(scrollView).offset(20)
             make.right.equalTo(self.view).offset(-20)
             make.top.equalTo(backBtn).offset(TOP_OFFSET)
-            make.height.equalTo(ITEM_HEIGHT * 3)
+            make.height.equalTo(ITEM_HEIGHT * itemClickSelectors.count)
             
         }
         
@@ -42,14 +42,13 @@ class YunSettingVC : BaseSettingVC {
                 }
                 make.height.equalTo(ITEM_HEIGHT)
             }
-            item.title.text = SSStr.Setting.YUN_CHOICES[index]
+            item.title.text = SSStr.Setting.CHECK_CHOICES[index]
             item.isUserInteractionEnabled = true
             let tapGes = UITapGestureRecognizer(target: self, action: itemClickSelector)
             item.addGestureRecognizer(tapGes)
             
             if index != itemClickSelectors.count-1 {
                 addDivideView(card,topView:item)
-
             }
             
         }
@@ -58,13 +57,13 @@ class YunSettingVC : BaseSettingVC {
     }
     
     func refreshCheck(){
-        let check = UserDefaultUtils.getYunshu()
-        for i in 0...2 {
-            if i == check {
-                itemList[i].checkView.isHidden = false
+        let check = UserDefaultUtils.getCheckPingze()
+        for (index,item) in itemList.enumerated() {
+            if index == check {
+                item.checkView.isHidden = false
             }
             else{
-                itemList[i].checkView.isHidden = true
+                item.checkView.isHidden = true
             }
         }
     }
@@ -76,12 +75,9 @@ class YunSettingVC : BaseSettingVC {
     func itemClickSelector2(){
         changeSelector(1)
     }
-    func itemClickSelector3(){
-        changeSelector(2)
-    }
     
-    func changeSelector(_ pos: Int) {
-        UserDefaultUtils.setYunshu(pos)
+    func changeSelector(_ index: Int) {
+        UserDefaultUtils.setCheckPingze(index)
         refreshCheck()
         changeSelector()
     }

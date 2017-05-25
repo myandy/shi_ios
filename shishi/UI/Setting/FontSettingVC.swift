@@ -1,14 +1,14 @@
 //
-//  YunSettingVC.swift
+//  FontSettingVC.swift
 //  shishi
 //
-//  Created by andymao on 2017/5/22.
+//  Created by andymao on 2017/5/23.
 //  Copyright © 2017年 andymao. All rights reserved.
 //
 
 import Foundation
 
-class YunSettingVC : BaseSettingVC {
+class FontSettingVC : BaseSettingVC {
     
     var changeSelector: (() -> Void)!
     
@@ -29,6 +29,7 @@ class YunSettingVC : BaseSettingVC {
         }
         
         for (index,itemClickSelector) in itemClickSelectors.enumerated() {
+
             let item = SettingCheckItemView()
             itemList.append(item)
             card.addSubview(item)
@@ -42,14 +43,13 @@ class YunSettingVC : BaseSettingVC {
                 }
                 make.height.equalTo(ITEM_HEIGHT)
             }
-            item.title.text = SSStr.Setting.YUN_CHOICES[index]
+            item.title.text = SSStr.Setting.FONT_CHOICES[index]
             item.isUserInteractionEnabled = true
             let tapGes = UITapGestureRecognizer(target: self, action: itemClickSelector)
             item.addGestureRecognizer(tapGes)
             
             if index != itemClickSelectors.count-1 {
                 addDivideView(card,topView:item)
-
             }
             
         }
@@ -58,7 +58,7 @@ class YunSettingVC : BaseSettingVC {
     }
     
     func refreshCheck(){
-        let check = UserDefaultUtils.getYunshu()
+        let check = UserDefaultUtils.getFont()
         for i in 0...2 {
             if i == check {
                 itemList[i].checkView.isHidden = false
@@ -81,7 +81,7 @@ class YunSettingVC : BaseSettingVC {
     }
     
     func changeSelector(_ pos: Int) {
-        UserDefaultUtils.setYunshu(pos)
+        UserDefaultUtils.setFont(pos)
         refreshCheck()
         changeSelector()
     }

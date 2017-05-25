@@ -23,10 +23,14 @@ class SSStr: NSObject {
     struct Setting {
         static let YUN_TITLE = "韵典"
         static let YUN_CHOICES = ["中华新韵","平水韵","词林正韵"]
-        static let FONT_TITLE = "字体切换"
-        static let FONT_CHOICES = ["简体","繁体","默认字体"]
+
         static let CHECK_TITLE = "检查平仄"
         static let CHECK_CHOICES = ["自动检查","不自动检查"]
+
+        static let FONT_TITLE = "字体"
+        static let FONT_CHOICES = ["简体","繁体","默认字体"]
+        
+        static let YUN_SEARCH_HINT = "在 %@ 中搜索"
 
     }
 

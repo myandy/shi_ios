@@ -268,6 +268,8 @@
 		E2E14C6D1ED323AF0056009C /* YunSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C6C1ED323AF0056009C /* YunSettingVC.swift */; };
 		E2E14C6F1ED3241C0056009C /* BaseSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C6E1ED3241C0056009C /* BaseSettingVC.swift */; };
 		E2E14C711ED326470056009C /* SettingCheckItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C701ED326470056009C /* SettingCheckItemView.swift */; };
+		E2E14C731ED3B44C0056009C /* FontSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C721ED3B44C0056009C /* FontSettingVC.swift */; };
+		E2E14C751ED489140056009C /* CheckPingzeSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C741ED489140056009C /* CheckPingzeSettingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -726,6 +728,8 @@
 		E2E14C6C1ED323AF0056009C /* YunSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YunSettingVC.swift; path = Setting/YunSettingVC.swift; sourceTree = "<group>"; };
 		E2E14C6E1ED3241C0056009C /* BaseSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseSettingVC.swift; path = Setting/BaseSettingVC.swift; sourceTree = "<group>"; };
 		E2E14C701ED326470056009C /* SettingCheckItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingCheckItemView.swift; path = Setting/SettingCheckItemView.swift; sourceTree = "<group>"; };
+		E2E14C721ED3B44C0056009C /* FontSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontSettingVC.swift; path = Setting/FontSettingVC.swift; sourceTree = "<group>"; };
+		E2E14C741ED489140056009C /* CheckPingzeSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckPingzeSettingVC.swift; path = Setting/CheckPingzeSettingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2020,6 +2024,8 @@
 				E2E14C6C1ED323AF0056009C /* YunSettingVC.swift */,
 				E2E14C6E1ED3241C0056009C /* BaseSettingVC.swift */,
 				E2E14C701ED326470056009C /* SettingCheckItemView.swift */,
+				E2E14C721ED3B44C0056009C /* FontSettingVC.swift */,
+				E2E14C741ED489140056009C /* CheckPingzeSettingVC.swift */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -2189,7 +2195,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7097152FEB5E7C67E5612575 /* [CP] Embed Pods Frameworks */ = {
@@ -2335,6 +2341,7 @@
 				751E08471EACA61D00BAB696 /* UMComHomeFeedViewController.m in Sources */,
 				751E081A1EACA61D00BAB696 /* UMImagePickerThumbnailView.m in Sources */,
 				751E08111EACA61D00BAB696 /* UMComMutiTextRun.m in Sources */,
+				E2E14C731ED3B44C0056009C /* FontSettingVC.swift in Sources */,
 				751E07F61EACA61D00BAB696 /* UMComUserProfileDetailView.m in Sources */,
 				751E080F1EACA61D00BAB696 /* UMComMutiStyleTextView.m in Sources */,
 				E22869C21EC0AF5900238DF8 /* PoetryCellVC.swift in Sources */,
@@ -2418,6 +2425,7 @@
 				751E07F51EACA61D00BAB696 /* UMComUserNearbyViewController.m in Sources */,
 				756EFB701EB45A76006E65DF /* EditPagerView.swift in Sources */,
 				E22869C71EC2226B00238DF8 /* SettingVC.swift in Sources */,
+				E2E14C751ED489140056009C /* CheckPingzeSettingVC.swift in Sources */,
 				E22869B61EBED7D100238DF8 /* Author.swift in Sources */,
 				751E08441EACA61D00BAB696 /* UMComFeedDetailViewHtmlBodyCell.m in Sources */,
 				751E08151EACA61D00BAB696 /* UMAssetsCollectionController.m in Sources */,

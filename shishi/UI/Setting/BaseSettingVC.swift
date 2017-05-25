@@ -82,8 +82,8 @@ class BaseSettingVC : UIViewController {
 
 
     //返回按钮
-    fileprivate func onBackBtnClicked() {
-        self.navigationController?.popViewController(animated: true)
+    func onBackBtnClicked() {
+
     }
 
 }
