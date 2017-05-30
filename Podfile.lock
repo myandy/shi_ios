@@ -1,14 +1,9 @@
 PODS:
   - Alamofire (4.2.0)
-  - EVReflection (4.9.1):
-    - EVReflection/Core (= 4.9.1)
-  - EVReflection/Core (4.9.1)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
   - iCarousel (1.8.3)
-  - Koloda (4.1):
-    - pop (~> 1.0)
   - MBProgressHUD (1.0.0)
   - Moya (8.0.3):
     - Moya/Core (= 8.0.3)
@@ -38,7 +33,6 @@ PODS:
   - SnapKit (3.0.2)
   - SwiftyImage (1.1.0)
   - SwiftyJSON (3.1.4)
-  - SwipeView (1.3.2)
   - XCGLogger (5.0.1):
     - XCGLogger/Core (= 5.0.1)
   - XCGLogger/Core (5.0.1):
@@ -46,15 +40,14 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.2.0)
-  - EVReflection (~> 4.9.1)
   - FMDB
   - iCarousel (~> 1.8.3)
-  - Koloda
   - MBProgressHUD
   - Moya (~> 8.0.3)
   - Moya-SwiftyJSONMapper/RxSwift
   - Moya/RxSwift
   - NSObject+Rx
+  - pop
   - ReachabilitySwift
   - Result
   - RxCocoa
@@ -62,15 +55,12 @@ DEPENDENCIES:
   - SnapKit (~> 3.0.2)
   - SwiftyImage
   - SwiftyJSON
-  - SwipeView
   - XCGLogger
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
-  EVReflection: f656ab71b7ed34c0922c6c4836bb77e9b33ca66c
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
-  Koloda: 6c4fa3ce9a68776a8ef973311e53fdda432799a8
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
   Moya-SwiftyJSONMapper: 03c9d3e562c9025c8c00fa3ec97ae1da61a2be37
@@ -84,9 +74,8 @@ SPEC CHECKSUMS:
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SwiftyImage: 4d3feb0211beb7217b39ac553e3ee64ceb72d611
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  SwipeView: bd67cfaf7760c036438446b3ccb28a3b84fce009
   XCGLogger: 0b43697155d41e4a1b15fc776f319c2141646b09
 
-PODFILE CHECKSUM: 4fc763c7b716b1a591bd9b669848e1562b71c358
+PODFILE CHECKSUM: 402185e5be8f70a892ca1a48ac234de4dc58ce75
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1

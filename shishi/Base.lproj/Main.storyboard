@@ -40,7 +40,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8u-0H-nxJ" customClass="iCarousel">
-                                <rect key="frame" x="0.0" y="72" width="375" height="587"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="527"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="um5-86-bx3"/>
@@ -83,7 +83,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iCb-jE-CgN" firstAttribute="top" secondItem="3wQ-k6-c1t" secondAttribute="bottom" id="0e3-BT-pOu"/>
-                            <constraint firstItem="iCb-jE-CgN" firstAttribute="top" secondItem="g8u-0H-nxJ" secondAttribute="bottom" constant="8" id="4md-wr-iWP"/>
                             <constraint firstItem="ouB-fW-byp" firstAttribute="trailing" secondItem="g8u-0H-nxJ" secondAttribute="trailing" id="5Wn-DU-GhZ"/>
                             <constraint firstItem="3wQ-k6-c1t" firstAttribute="top" secondItem="HU3-AU-Aav" secondAttribute="bottom" id="5t7-7I-6FH"/>
                             <constraint firstItem="iCb-jE-CgN" firstAttribute="top" secondItem="3wQ-k6-c1t" secondAttribute="bottom" id="7Jt-R1-ECP"/>
@@ -92,6 +91,7 @@
                             <constraint firstItem="3wQ-k6-c1t" firstAttribute="leading" secondItem="B4b-aF-26o" secondAttribute="leading" id="BGf-EC-Fdh"/>
                             <constraint firstAttribute="trailing" secondItem="3wQ-k6-c1t" secondAttribute="trailing" id="Los-nJ-BAD"/>
                             <constraint firstItem="3wQ-k6-c1t" firstAttribute="top" secondItem="HU3-AU-Aav" secondAttribute="bottom" id="Oku-w4-m2C"/>
+                            <constraint firstItem="CzI-z9-HcF" firstAttribute="top" secondItem="g8u-0H-nxJ" secondAttribute="bottom" constant="8" id="Td7-9C-CKt"/>
                             <constraint firstItem="g8u-0H-nxJ" firstAttribute="top" secondItem="HU3-AU-Aav" secondAttribute="bottom" constant="8" id="UQV-pf-uwK"/>
                             <constraint firstItem="CzI-z9-HcF" firstAttribute="top" secondItem="ouB-fW-byp" secondAttribute="top" id="Zf9-ea-kNr"/>
                             <constraint firstAttribute="trailing" secondItem="g8u-0H-nxJ" secondAttribute="trailing" id="aeG-f7-71e"/>

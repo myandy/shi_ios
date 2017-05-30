@@ -7,41 +7,83 @@
 //
 
 import UIKit
-import Koloda
+//import Koloda
 
 class MainCardView: UIView {
+    
+    lazy var cipaiLabel: UILabel = {
+       let label = UILabel()
+        self.addSubview(label)
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.numberOfLines = 0
+        label.textColor = UIColor.white
+        label.snp.makeConstraints({ (make) in
+            make.top.equalToSuperview().offset(convertHeight(pix: 100))
+            make.centerX.equalToSuperview()
+            make.width.lessThanOrEqualToSuperview()
+        })
+        
+        return label
+    }()
+    
+    lazy var dateLabel: UILabel = {
+        let label = UILabel()
+        self.addSubview(label)
+        label.textColor = UIColor.gray
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.snp.makeConstraints({ (make) in
+            make.top.equalTo(self.cipaiLabel.snp.bottom)
+            make.centerX.equalToSuperview()
+        })
+        return label
+    }()
+    
+    var contentArray = [String]()
+    
     lazy var kolodaView: KolodaView = {
         let kolodaView = KolodaView()
+        kolodaView.backgroundColor = UIColor.white
         kolodaView.dataSource = self
         kolodaView.delegate = self
         self.addSubview(kolodaView)
+        
+        
         return kolodaView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.setupSubviews()
+//        self.setupSubviews()
+        
+        
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func setupData(cipai: String, dateString: String, contentArray: [String]) {
+        self.cipaiLabel.text = cipai
+        self.dateLabel.text = dateString
+        self.contentArray = contentArray
+        
+        self.setupSubviews()
+    }
+    
     private func setupSubviews() {
         self.kolodaView.snp.makeConstraints { (make) in
-            make.width.centerY.centerX.equalToSuperview()
-            make.height.equalToSuperview()
+            make.width.bottom.centerX.equalToSuperview()
+            make.top.equalTo(self.dateLabel.snp.bottom)
         }
-        
-        self.kolodaView.backgroundColor = UIColor.green.withAlphaComponent(0.3)
     }
 }
 
 // MARK: - KolodaViewDataSource
 extension MainCardView: KolodaViewDataSource {
     func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
-        return 5
+        return self.contentArray.count
     }
     
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
@@ -49,7 +91,18 @@ extension MainCardView: KolodaViewDataSource {
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        return UIImageView(image: UIImage(named: "bg001.jpg"))
+        let cardView = UIView()
+        cardView.backgroundColor = UIColor.white
+        
+        let label = UILabel(frame: koloda.bounds)
+        cardView.addSubview(label)
+        label.text = self.contentArray[index]
+        label.snp.makeConstraints { (make) in
+            make.left.top.width.equalToSuperview()
+        }
+        label.numberOfLines = 0
+        
+        return cardView
     }
     
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
@@ -60,8 +113,8 @@ extension MainCardView: KolodaViewDataSource {
 
 // MARK: - KolodaViewDelegate
 extension MainCardView: KolodaViewDelegate {
-    func koloda(koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
-        
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        log.debug()
     }
 
 }

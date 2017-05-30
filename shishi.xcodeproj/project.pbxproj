@@ -203,6 +203,13 @@
 		7549ABCE1ED5BF820043893A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABCC1ED5BF820043893A /* MainViewController.swift */; };
 		7549ABD01ED5D25C0043893A /* MainCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABCF1ED5D25C0043893A /* MainCardView.swift */; };
 		7549ABD31ED5D5BC0043893A /* SSUIUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABD21ED5D5BC0043893A /* SSUIUtil.swift */; };
+		7549ABDD1EDD87920043893A /* DraggableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABD61EDD87920043893A /* DraggableCardView.swift */; };
+		7549ABDE1EDD87920043893A /* KolodaCardStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABD71EDD87920043893A /* KolodaCardStorage.swift */; };
+		7549ABDF1EDD87920043893A /* KolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABD81EDD87920043893A /* KolodaView.swift */; };
+		7549ABE01EDD87920043893A /* KolodaViewAnimatior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABD91EDD87920043893A /* KolodaViewAnimatior.swift */; };
+		7549ABE11EDD87920043893A /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABDB1EDD87920043893A /* OverlayView.swift */; };
+		7549ABE21EDD87920043893A /* SwipeResultDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABDC1EDD87920043893A /* SwipeResultDirection.swift */; };
+		7549ABE41EDD88B00043893A /* VerticalDraggableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABE31EDD88B00043893A /* VerticalDraggableCardView.swift */; };
 		756EFB351EB43EAD006E65DF /* PingzeLinearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */; };
 		756EFB361EB43EAD006E65DF /* PingzeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB241EB43EAD006E65DF /* PingzeView.swift */; };
 		756EFB441EB44097006E65DF /* DuishiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB3E1EB44097006E65DF /* DuishiAPI.swift */; };
@@ -663,6 +670,13 @@
 		7549ABCC1ED5BF820043893A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7549ABCF1ED5D25C0043893A /* MainCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCardView.swift; sourceTree = "<group>"; };
 		7549ABD21ED5D5BC0043893A /* SSUIUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSUIUtil.swift; sourceTree = "<group>"; };
+		7549ABD61EDD87920043893A /* DraggableCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableCardView.swift; sourceTree = "<group>"; };
+		7549ABD71EDD87920043893A /* KolodaCardStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KolodaCardStorage.swift; sourceTree = "<group>"; };
+		7549ABD81EDD87920043893A /* KolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KolodaView.swift; sourceTree = "<group>"; };
+		7549ABD91EDD87920043893A /* KolodaViewAnimatior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KolodaViewAnimatior.swift; sourceTree = "<group>"; };
+		7549ABDB1EDD87920043893A /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		7549ABDC1EDD87920043893A /* SwipeResultDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeResultDirection.swift; sourceTree = "<group>"; };
+		7549ABE31EDD88B00043893A /* VerticalDraggableCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalDraggableCardView.swift; sourceTree = "<group>"; };
 		756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingzeLinearView.swift; sourceTree = "<group>"; };
 		756EFB241EB43EAD006E65DF /* PingzeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingzeView.swift; sourceTree = "<group>"; };
 		756EFB3E1EB44097006E65DF /* DuishiAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuishiAPI.swift; sourceTree = "<group>"; };
@@ -786,6 +800,7 @@
 		751E06001EACA61C00BAB696 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				7549ABD41EDD87920043893A /* Koloda */,
 				751E06011EACA61C00BAB696 /* UMCommunitySDK */,
 			);
 			path = Library;
@@ -1792,6 +1807,7 @@
 				7549ABCB1ED5BF820043893A /* MainView.xib */,
 				7549ABCC1ED5BF820043893A /* MainViewController.swift */,
 				7549ABCF1ED5D25C0043893A /* MainCardView.swift */,
+				7549ABE31EDD88B00043893A /* VerticalDraggableCardView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1802,6 +1818,35 @@
 				7549ABD21ED5D5BC0043893A /* SSUIUtil.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		7549ABD41EDD87920043893A /* Koloda */ = {
+			isa = PBXGroup;
+			children = (
+				7549ABD51EDD87920043893A /* DraggableCardView */,
+				7549ABD71EDD87920043893A /* KolodaCardStorage.swift */,
+				7549ABD81EDD87920043893A /* KolodaView.swift */,
+				7549ABD91EDD87920043893A /* KolodaViewAnimatior.swift */,
+				7549ABDA1EDD87920043893A /* OverlayView */,
+				7549ABDC1EDD87920043893A /* SwipeResultDirection.swift */,
+			);
+			path = Koloda;
+			sourceTree = "<group>";
+		};
+		7549ABD51EDD87920043893A /* DraggableCardView */ = {
+			isa = PBXGroup;
+			children = (
+				7549ABD61EDD87920043893A /* DraggableCardView.swift */,
+			);
+			path = DraggableCardView;
+			sourceTree = "<group>";
+		};
+		7549ABDA1EDD87920043893A /* OverlayView */ = {
+			isa = PBXGroup;
+			children = (
+				7549ABDB1EDD87920043893A /* OverlayView.swift */,
+			);
+			path = OverlayView;
 			sourceTree = "<group>";
 		};
 		756EFB161EB43EAD006E65DF /* UI */ = {
@@ -2195,7 +2240,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7097152FEB5E7C67E5612575 /* [CP] Embed Pods Frameworks */ = {
@@ -2236,6 +2281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				751E08011EACA61D00BAB696 /* UMComBarButtonItem.m in Sources */,
+				7549ABE11EDD87920043893A /* OverlayView.swift in Sources */,
 				751E08431EACA61D00BAB696 /* UMComFeedDetailViewController.m in Sources */,
 				756EFB491EB440EF006E65DF /* GlobalFunctions.swift in Sources */,
 				751E07ED1EACA61D00BAB696 /* UMComChatRecodTableViewCell.m in Sources */,
@@ -2259,6 +2305,7 @@
 				756EFB671EB459E2006E65DF /* Poetry.swift in Sources */,
 				751E07C81EACA61D00BAB696 /* UMComLoginManager.m in Sources */,
 				751E08521EACA61D00BAB696 /* UMComLoginHandler+Social.m in Sources */,
+				7549ABDF1EDD87920043893A /* KolodaView.swift in Sources */,
 				756EFB521EB45929006E65DF /* AllAuthorCell.swift in Sources */,
 				751E08141EACA61D00BAB696 /* UMAssetsCollectionCheckMarkView.m in Sources */,
 				756EFB831EBD9C92006E65DF /* Observable+DuiShi.swift in Sources */,
@@ -2320,6 +2367,7 @@
 				751E07E41EACA61D00BAB696 /* UMComLocationListController.m in Sources */,
 				E20CB2C81ED05ABB004298DA /* UserDefaultUtils.swift in Sources */,
 				751E08271EACA61D00BAB696 /* UMComWebView.m in Sources */,
+				7549ABE21EDD87920043893A /* SwipeResultDirection.swift in Sources */,
 				751E08311EACA61D00BAB696 /* UMComEditTopicsViewController.m in Sources */,
 				751E07FE1EACA61D00BAB696 /* UMComActionPickerAddView.m in Sources */,
 				751E08321EACA61D00BAB696 /* UMComEditViewController.m in Sources */,
@@ -2338,9 +2386,11 @@
 				751E07B81EACA61D00BAB696 /* UMComFeedListDataController.m in Sources */,
 				751E07C31EACA61D00BAB696 /* UMComListDataController.m in Sources */,
 				756EFB781EBA28D1006E65DF /* SSStr.swift in Sources */,
+				7549ABDE1EDD87920043893A /* KolodaCardStorage.swift in Sources */,
 				751E08471EACA61D00BAB696 /* UMComHomeFeedViewController.m in Sources */,
 				751E081A1EACA61D00BAB696 /* UMImagePickerThumbnailView.m in Sources */,
 				751E08111EACA61D00BAB696 /* UMComMutiTextRun.m in Sources */,
+				7549ABE41EDD88B00043893A /* VerticalDraggableCardView.swift in Sources */,
 				E2E14C731ED3B44C0056009C /* FontSettingVC.swift in Sources */,
 				751E07F61EACA61D00BAB696 /* UMComUserProfileDetailView.m in Sources */,
 				751E080F1EACA61D00BAB696 /* UMComMutiStyleTextView.m in Sources */,
@@ -2371,6 +2421,7 @@
 				751E07F11EACA61D00BAB696 /* UMComSysPrivateLetterCell.m in Sources */,
 				756EFB351EB43EAD006E65DF /* PingzeLinearView.swift in Sources */,
 				751E08221EACA61D00BAB696 /* UMComShowToast.m in Sources */,
+				7549ABE01EDD87920043893A /* KolodaViewAnimatior.swift in Sources */,
 				751E083E1EACA61D00BAB696 /* UMComNearbyFeedViewController.m in Sources */,
 				751E081D1EACA61D00BAB696 /* UMComSegmentedControl.m in Sources */,
 				756EFB5A1EB45935006E65DF /* SearchFormerVC.swift in Sources */,
@@ -2407,6 +2458,7 @@
 				751E07B71EACA61D00BAB696 /* UMComFeedEditDataController.m in Sources */,
 				E22869BA1EBED7D100238DF8 /* Yun.swift in Sources */,
 				751E07FF1EACA61D00BAB696 /* UMComAddedImageCellView.m in Sources */,
+				7549ABDD1EDD87920043893A /* DraggableCardView.swift in Sources */,
 				E20CB2BE1ECB52AD004298DA /* EditUtils.swift in Sources */,
 				756EFB721EB45A76006E65DF /* EditVC.swift in Sources */,
 				751E07C91EACA61D00BAB696 /* UMComLoginViewController.m in Sources */,

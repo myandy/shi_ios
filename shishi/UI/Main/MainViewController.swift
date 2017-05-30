@@ -71,7 +71,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        for i in 0 ... 9 {
+        for i in 0 ... 3 {
             items.append(i)
         }
     }
@@ -84,8 +84,9 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
             return
         }
         
+        carousel.superview?.layoutIfNeeded()
         carousel.type = .linear
-        carousel.currentItemIndex=carousel.numberOfItems-1
+        carousel.currentItemIndex = carousel.numberOfItems-1
         
         
         FontsUtils.setFont(view)
@@ -122,8 +123,13 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
             //            label.text="诗词"
             //            imageView.addSubview(label)
             //            itemView=imageView
-            itemView = MainCardView(frame: CGRect(x: 0, y: 0, width: convertWidth(pix: 400), height: SCREEN_HEIGHT))
-            itemView.backgroundColor = UIColor.red
+            let cardView = MainCardView(frame: CGRect(x: 0, y: 0, width: convertWidth(pix: 400), height: self.carousel.bounds.size.height))
+            
+            cardView.setupData(cipai: "临江仙", dateString: "17-05-07", contentArray: ["ABCDEFG\nrewqre\nfds", "1234567"])
+            
+            itemView = cardView
+//            itemView.backgroundColor = UIColor.white
+//            log.debug(self.carousel.bounds.size.height)
         }
         else{
             if mainView == nil{

@@ -13,7 +13,7 @@ target ‘shishi’ do
     
     pod 'Moya', '~>8.0.3'
     pod 'Moya/RxSwift'
-    pod 'EVReflection', '~>4.9.1'
+#    pod 'EVReflection', '~>4.9.1'
     pod 'SwiftyJSON'
     pod 'Moya-SwiftyJSONMapper/RxSwift'
     
@@ -28,7 +28,8 @@ target ‘shishi’ do
     
     pod 'SwiftyImage'
     
-    pod 'Koloda'
+#    pod 'Koloda'
+    pod 'pop'
 end
 
 
