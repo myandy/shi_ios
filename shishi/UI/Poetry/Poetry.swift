@@ -14,7 +14,7 @@ class Poetry{
     var author: String!
     var intro: String!
     var title: String!
-    var dNum: Int32!
+    var dNum: Int!
 }
 
 extension Poetry : SearchModel{
@@ -45,7 +45,7 @@ class PoetryDB{
             model.author = rs.string(forColumn: "d_author")
             model.intro = rs.string(forColumn: "d_intro")
             model.title = rs.string(forColumn: "d_title")
-            model.dNum = rs.int(forColumn: "d_num")
+            model.dNum = Int(rs.int(forColumn: "d_num"))
             array.append(model)
         }
         return array
