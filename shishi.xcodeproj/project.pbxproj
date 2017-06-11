@@ -243,6 +243,9 @@
 		756EFB831EBD9C92006E65DF /* Observable+DuiShi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB821EBD9C92006E65DF /* Observable+DuiShi.swift */; };
 		756EFB851EBD9D08006E65DF /* Observable+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB841EBD9D08006E65DF /* Observable+Result.swift */; };
 		756EFB871EBDCAF0006E65DF /* DuishiEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB861EBDCAF0006E65DF /* DuishiEditView.swift */; };
+		E202C09B1EE4070C0099FCCC /* ShareEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */; };
+		E202C09D1EE83E2D0099FCCC /* FormerIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C09C1EE83E2D0099FCCC /* FormerIntroVC.swift */; };
+		E202C09F1EE848810099FCCC /* intro.html in Resources */ = {isa = PBXBuildFile; fileRef = E202C09E1EE848810099FCCC /* intro.html */; };
 		E20CB2BE1ECB52AD004298DA /* EditUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CB2BD1ECB52AD004298DA /* EditUtils.swift */; };
 		E20CB2C01ECB533D004298DA /* EditPagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CB2BF1ECB533D004298DA /* EditPagerCell.swift */; };
 		E20CB2C41ECFF6F2004298DA /* SettingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CB2C31ECFF6F2004298DA /* SettingItemView.swift */; };
@@ -711,6 +714,9 @@
 		756EFB841EBD9D08006E65DF /* Observable+Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Result.swift"; sourceTree = "<group>"; };
 		756EFB861EBDCAF0006E65DF /* DuishiEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuishiEditView.swift; sourceTree = "<group>"; };
 		86A3D6B6999EBD9A4ABA66B1 /* Pods-shishi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shishi.release.xcconfig"; path = "Pods/Target Support Files/Pods-shishi/Pods-shishi.release.xcconfig"; sourceTree = "<group>"; };
+		E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareEditVC.swift; path = Share/ShareEditVC.swift; sourceTree = "<group>"; };
+		E202C09C1EE83E2D0099FCCC /* FormerIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormerIntroVC.swift; sourceTree = "<group>"; };
+		E202C09E1EE848810099FCCC /* intro.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = intro.html; sourceTree = "<group>"; };
 		E20CB2BD1ECB52AD004298DA /* EditUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUtils.swift; sourceTree = "<group>"; };
 		E20CB2BF1ECB533D004298DA /* EditPagerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPagerCell.swift; sourceTree = "<group>"; };
 		E20CB2C31ECFF6F2004298DA /* SettingItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingItemView.swift; path = Setting/SettingItemView.swift; sourceTree = "<group>"; };
@@ -779,6 +785,7 @@
 		751E05F61EACA51300BAB696 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E202C09E1EE848810099FCCC /* intro.html */,
 				751E08791EACAC3300BAB696 /* Luanguage */,
 				751E08741EACA6DC00BAB696 /* shishi-Bridging-Header.h */,
 				751E05FE1EACA54200BAB696 /* Assets.xcassets */,
@@ -1852,6 +1859,7 @@
 		756EFB161EB43EAD006E65DF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E202C0961EE4064E0099FCCC /* Share */,
 				7549ABD11ED5D5A00043893A /* Util */,
 				7549ABCA1ED5BF820043893A /* Main */,
 				E22869C31EC21C3A00238DF8 /* Setting */,
@@ -1977,6 +1985,7 @@
 				756EFB641EB459E2006E65DF /* PoetryView.xib */,
 				E22869BF1EC0A2B300238DF8 /* AuthorPagerVC.swift */,
 				E22869C11EC0AF5900238DF8 /* PoetryCellVC.swift */,
+				E202C09C1EE83E2D0099FCCC /* FormerIntroVC.swift */,
 			);
 			path = Poetry;
 			sourceTree = "<group>";
@@ -2044,6 +2053,14 @@
 				86A3D6B6999EBD9A4ABA66B1 /* Pods-shishi.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E202C0961EE4064E0099FCCC /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */,
+			);
+			name = Share;
 			sourceTree = "<group>";
 		};
 		E22869B01EBED7BA00238DF8 /* DB */ = {
@@ -2218,6 +2235,7 @@
 				751E082B1EACA61D00BAB696 /* UMCommunityStrings.strings in Resources */,
 				751E05FB1EACA51300BAB696 /* fzqkyuesong.ttf in Resources */,
 				751E087C1EACAD5000BAB696 /* Localizable.strings in Resources */,
+				E202C09F1EE848810099FCCC /* intro.html in Resources */,
 				751E08671EACA61D00BAB696 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				751E08381EACA61D00BAB696 /* UMComFeedsTableViewCell.xib in Resources */,
 				751E07E01EACA61D00BAB696 /* UMComFindTableViewCell.xib in Resources */,
@@ -2240,7 +2258,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7097152FEB5E7C67E5612575 /* [CP] Embed Pods Frameworks */ = {
@@ -2326,6 +2344,7 @@
 				751E08391EACA61D00BAB696 /* UMComFeedStyle.m in Sources */,
 				751E07E51EACA61D00BAB696 /* UMComLocationTableViewCell.m in Sources */,
 				751E07DC1EACA61D00BAB696 /* UMComTableViewCell.m in Sources */,
+				E202C09B1EE4070C0099FCCC /* ShareEditVC.swift in Sources */,
 				751E08501EACA61D00BAB696 /* UMComTopicsTableViewController.m in Sources */,
 				751E07CF1EACA61D00BAB696 /* UMComLoginUser.m in Sources */,
 				756EFB581EB45935006E65DF /* SearchAuthorVC.swift in Sources */,
@@ -2481,6 +2500,7 @@
 				E22869B61EBED7D100238DF8 /* Author.swift in Sources */,
 				751E08441EACA61D00BAB696 /* UMComFeedDetailViewHtmlBodyCell.m in Sources */,
 				751E08151EACA61D00BAB696 /* UMAssetsCollectionController.m in Sources */,
+				E202C09D1EE83E2D0099FCCC /* FormerIntroVC.swift in Sources */,
 				756EFB7C1EBB8109006E65DF /* UIVIewController+SS.swift in Sources */,
 				751E083D1EACA61D00BAB696 /* UMComHotFeedMenuViewController.m in Sources */,
 				751E07BB1EACA61D00BAB696 /* UMComPrivateLetterListDataController.m in Sources */,
