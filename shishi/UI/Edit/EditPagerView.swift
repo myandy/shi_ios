@@ -177,7 +177,7 @@ public class EditPagerView : UIView{
     }
     
     func infoClick(){
-        firstViewController()?.navigationController?.pushViewController(SearchYunVC(), animated: true)
+        firstViewController()?.navigationController?.pushViewController(FormerIntroVC(former:writing.former), animated: true)
     }
     
     func dictClick(){

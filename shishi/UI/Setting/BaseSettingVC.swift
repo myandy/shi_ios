@@ -30,7 +30,6 @@ class BaseSettingVC : UIViewController {
         var scrollView = UIScrollView()
         scrollView.isPagingEnabled = false
         scrollView.alwaysBounceVertical = true
-        
         self.view.addSubview(scrollView)
         scrollView.snp.makeConstraints{ (make) in
             make.edges.equalToSuperview()
