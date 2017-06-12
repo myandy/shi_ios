@@ -75,7 +75,7 @@ class MainCardView: UIView {
     private func setupSubviews() {
         self.kolodaView.snp.makeConstraints { (make) in
             make.width.bottom.centerX.equalToSuperview()
-            make.top.equalTo(self.dateLabel.snp.bottom)
+            make.top.equalTo(self.dateLabel.snp.bottom).offset(20)
         }
     }
 }

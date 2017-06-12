@@ -30,6 +30,8 @@ target ‘shishi’ do
     
 #    pod 'Koloda'
     pod 'pop'
+    
+#    pod 'FCModel'
 end
 
 

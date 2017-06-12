@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         copyDbToSandy()
         
+        UserDBManager.default.configure()
+        
         UMCommunitySDK.setAppkey("58a306bdb27b0a1e7f000d5f", withAppSecret: "2afbfe1210241b0baeb9d09524ebcce7")
        
 

@@ -61,6 +61,7 @@ public class WritingDB{
             
         }
         catch{
+            print(error)
         }
         
         return array
@@ -77,6 +78,7 @@ public class WritingDB{
             try  db.executeUpdate(sql,values: [writing.id,writing.text,writing.formerId,writing.title,date,date,writing.bgimg,writing.author])
         }
         catch{
+            print(error)
         }
         
     }
@@ -91,6 +93,7 @@ public class WritingDB{
             try db.executeUpdate(sql,values:[writing.id])
         }
         catch{
+            print(error)
         }
     }
     

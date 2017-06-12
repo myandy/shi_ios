@@ -17,3 +17,7 @@
 #import "UMSocialSinaSSOHandler.h"
 #import "UMSocialWechatHandler.h"
 //#import "UMComLoginManager.h"
+
+#import "FCModel.h"
+//#import <FMDB/FMDatabase.h>
+#import "Writting.h"

@@ -19,6 +19,8 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     
     var items: [Int] = []
     
+    var writtingArray = [Writting]()
+    
     @IBOutlet var carousel: iCarousel!
     var mainView: UIView!
     
@@ -84,6 +86,10 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
             return
         }
         
+        //test 
+//        self.testShare()
+        
+        
         carousel.superview?.layoutIfNeeded()
         carousel.type = .linear
         carousel.currentItemIndex = carousel.numberOfItems-1
@@ -93,11 +99,58 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         
     }
     
+    func testDB() {
+        //        self.addWrittingData()
+        //        self.loadWrttingData()
+
+    }
+    
+    func addWrittingData() {
+        for i in 0...10 {
+            let writting = Writting()
+            writting.id = i + 1000
+            writting.title = "title\(i)"
+            writting.text = "text\(i)"
+            writting.formerId = i + 10
+            writting.bgImg = 0
+            writting.author = "author\(i)"
+            //WritingDB.addWriting(writing: writting)
+            writting.save() {
+                
+            }
+        }
+    }
+    
+    func testShare() {
+//        let myShare = "test share"
+//        let image: UIImage = UIImage(named: "back")!
+//        
+//        let shareVC: UIActivityViewController = UIActivityViewController(activityItems: [ myShare], applicationActivities: nil)
+//        self.present(shareVC, animated: true, completion: nil)
+        SSShareUtil.default.shareToSystem(controller: self, image: UIImage(named: "back")!, message: "test share")
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden=true
+        
+    }
+    
+    private func loadWrttingData() {
+        //self.writtingArray = WritingDB.getAll()
+        let array = Writting.allInstances()
+        self.writtingArray = array as! [Writting]
+        for item in self.writtingArray {
+            log.debug(item.id)
+            log.debug(item.title)
+            log.debug(item.text)
+            log.debug(item.formerId)
+            log.debug(item.bgImg)
+            log.debug(item.author)
+            log.debug(item.create_dt)
+            log.debug(item.update_dt)
+        }
         
     }
     
