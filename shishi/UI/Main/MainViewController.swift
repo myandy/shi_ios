@@ -88,7 +88,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         
         //test 
 //        self.testShare()
-        
+        self.testDB()
         
         carousel.superview?.layoutIfNeeded()
         carousel.type = .linear
@@ -101,7 +101,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     
     func testDB() {
         //        self.addWrittingData()
-        //        self.loadWrttingData()
+        self.loadWrttingData()
 
     }
     
