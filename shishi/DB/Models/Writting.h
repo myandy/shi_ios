@@ -7,9 +7,9 @@
 //
 
 //#import <FCModel/FCModel.h>
-#import "FCModel.h"
+#import "BaseDBModel.h"
 
-@interface Writting : FCModel
+@interface Writting : BaseDBModel
 
 @property (nonatomic, assign) int64_t id;
 @property (nonatomic, copy) NSString *text;

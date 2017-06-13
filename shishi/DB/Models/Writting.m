@@ -28,15 +28,16 @@
 
 - (BOOL)customValue:(nullable id)value forKey:(NSString *)key {
     if ([key isEqualToString:@"create_dt"]) {
-        NSNumber *numberValue = (NSNumber*)value;
-        self.create_dt = [NSDate dateWithTimeIntervalSince1970:[numberValue floatValue]];
+        self.create_dt = [self customDateWithValue:value];
         return YES;
     }
     else if ([key isEqualToString:@"update_dt"]) {
-        NSNumber *numberValue = (NSNumber*)value;
-        self.update_dt = [NSDate dateWithTimeIntervalSince1970:[numberValue floatValue]];
+        self.update_dt = [self customDateWithValue:value];
         return YES;
     }
     return NO;
 }
+
+
+
 @end

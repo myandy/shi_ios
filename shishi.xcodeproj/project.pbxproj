@@ -253,6 +253,7 @@
 		75BE6EF81EEEF72B00A578B2 /* FCModelCachedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BE6EF21EEEF72B00A578B2 /* FCModelCachedObject.m */; };
 		75BE6EF91EEEF72B00A578B2 /* FCModelDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BE6EF41EEEF72B00A578B2 /* FCModelDatabase.m */; };
 		75BE6EFA1EEEF72B00A578B2 /* FCModelNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BE6EF61EEEF72B00A578B2 /* FCModelNotificationCenter.m */; };
+		75BE6EFD1EF0364600A578B2 /* BaseDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BE6EFC1EF0364600A578B2 /* BaseDBModel.m */; };
 		E202C09B1EE4070C0099FCCC /* ShareEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */; };
 		E202C09D1EE83E2D0099FCCC /* FormerIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C09C1EE83E2D0099FCCC /* FormerIntroVC.swift */; };
 		E202C09F1EE848810099FCCC /* intro.html in Resources */ = {isa = PBXBuildFile; fileRef = E202C09E1EE848810099FCCC /* intro.html */; };
@@ -738,6 +739,8 @@
 		75BE6EF41EEEF72B00A578B2 /* FCModelDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCModelDatabase.m; sourceTree = "<group>"; };
 		75BE6EF51EEEF72B00A578B2 /* FCModelNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCModelNotificationCenter.h; sourceTree = "<group>"; };
 		75BE6EF61EEEF72B00A578B2 /* FCModelNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCModelNotificationCenter.m; sourceTree = "<group>"; };
+		75BE6EFB1EF0364600A578B2 /* BaseDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDBModel.h; sourceTree = "<group>"; };
+		75BE6EFC1EF0364600A578B2 /* BaseDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDBModel.m; sourceTree = "<group>"; };
 		86A3D6B6999EBD9A4ABA66B1 /* Pods-shishi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shishi.release.xcconfig"; path = "Pods/Target Support Files/Pods-shishi/Pods-shishi.release.xcconfig"; sourceTree = "<group>"; };
 		E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareEditVC.swift; path = Share/ShareEditVC.swift; sourceTree = "<group>"; };
 		E202C09C1EE83E2D0099FCCC /* FormerIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormerIntroVC.swift; sourceTree = "<group>"; };
@@ -2074,6 +2077,8 @@
 			children = (
 				75BE6EEB1EEEED3C00A578B2 /* Writting.h */,
 				75BE6EEC1EEEED3C00A578B2 /* Writting.m */,
+				75BE6EFB1EF0364600A578B2 /* BaseDBModel.h */,
+				75BE6EFC1EF0364600A578B2 /* BaseDBModel.m */,
 			);
 			name = Models;
 			path = DB/Models;
@@ -2510,6 +2515,7 @@
 				751E08371EACA61D00BAB696 /* UMComFeedsTableViewCell.m in Sources */,
 				751E07E91EACA61D00BAB696 /* UMComHorizontalTableView.m in Sources */,
 				756EFB681EB459E2006E65DF /* PoetryView.swift in Sources */,
+				75BE6EFD1EF0364600A578B2 /* BaseDBModel.m in Sources */,
 				751E07F11EACA61D00BAB696 /* UMComSysPrivateLetterCell.m in Sources */,
 				756EFB351EB43EAD006E65DF /* PingzeLinearView.swift in Sources */,
 				751E08221EACA61D00BAB696 /* UMComShowToast.m in Sources */,
