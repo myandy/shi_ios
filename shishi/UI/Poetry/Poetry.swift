@@ -61,6 +61,7 @@ class PoetryDB{
             array = getArray(rs)
         }
         catch{
+            print(error)
         }
         
         return array
@@ -77,6 +78,7 @@ class PoetryDB{
             array = getArray(rs)
         }
         catch{
+            print(error)
         }
         if array.count>0{
             return array[0]
@@ -95,6 +97,7 @@ class PoetryDB{
             array = getArray(rs)
         }
         catch{
+            print(error)
         }
         
         return array
@@ -110,6 +113,7 @@ class PoetryDB{
             array = getArray(rs)
         }
         catch{
+            print(error)
         }
         
         return array

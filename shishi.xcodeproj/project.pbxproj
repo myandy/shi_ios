@@ -280,6 +280,8 @@
 		E22869C01EC0A2B300238DF8 /* AuthorPagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869BF1EC0A2B300238DF8 /* AuthorPagerVC.swift */; };
 		E22869C21EC0AF5900238DF8 /* PoetryCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869C11EC0AF5900238DF8 /* PoetryCellVC.swift */; };
 		E22869C71EC2226B00238DF8 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869C61EC2226B00238DF8 /* SettingVC.swift */; };
+		E278E42C1EF17CD20046324D /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E278E42B1EF17CD20046324D /* AboutVC.swift */; };
+		E278E42E1EF190820046324D /* TouchEffectLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E278E42D1EF190820046324D /* TouchEffectLabel.swift */; };
 		E284A7AA1DE4259A00252160 /* Pods_shishi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; };
 		E284A7AB1DE4259A00252160 /* Pods_shishi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E29558D31DD311720065AA1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29558D11DD311720065AA1B /* Main.storyboard */; };
@@ -768,6 +770,8 @@
 		E22869BF1EC0A2B300238DF8 /* AuthorPagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorPagerVC.swift; sourceTree = "<group>"; };
 		E22869C11EC0AF5900238DF8 /* PoetryCellVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoetryCellVC.swift; sourceTree = "<group>"; };
 		E22869C61EC2226B00238DF8 /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingVC.swift; path = Setting/SettingVC.swift; sourceTree = "<group>"; };
+		E278E42B1EF17CD20046324D /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		E278E42D1EF190820046324D /* TouchEffectLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEffectLabel.swift; sourceTree = "<group>"; };
 		E29558CA1DD311720065AA1B /* 诗Shi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "诗Shi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29558D21DD311720065AA1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E29558D71DD311720065AA1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -1928,6 +1932,7 @@
 		756EFB1B1EB43EAD006E65DF /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				E278E42D1EF190820046324D /* TouchEffectLabel.swift */,
 				756EFB5C1EB4596C006E65DF /* BaseSearchVC.swift */,
 				756EFB5B1EB4596C006E65DF /* NormalSearchCell.swift */,
 				E20CB2CB1ED06D10004298DA /* NormalSearchVC.swift */,
@@ -2158,6 +2163,7 @@
 				E2E14C701ED326470056009C /* SettingCheckItemView.swift */,
 				E2E14C721ED3B44C0056009C /* FontSettingVC.swift */,
 				E2E14C741ED489140056009C /* CheckPingzeSettingVC.swift */,
+				E278E42B1EF17CD20046324D /* AboutVC.swift */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -2234,7 +2240,7 @@
 				TargetAttributes = {
 					E29558C91DD311720065AA1B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = G5YJVZL9SU;
+						DevelopmentTeam = X8Q8BW44Z2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2437,6 +2443,7 @@
 				E22869B81EBED7D100238DF8 /* DBManager.swift in Sources */,
 				751E07C51EACA61D00BAB696 /* UMComUserListDataController.m in Sources */,
 				756EFB531EB45929006E65DF /* AllAuthorVC.swift in Sources */,
+				E278E42C1EF17CD20046324D /* AboutVC.swift in Sources */,
 				751E07FC1EACA61D00BAB696 /* UMComResourceManager.m in Sources */,
 				E20CB2CA1ED06C55004298DA /* SearchYunCell.swift in Sources */,
 				751E08051EACA61D00BAB696 /* UMComEditTextView.m in Sources */,
@@ -2520,6 +2527,7 @@
 				756EFB351EB43EAD006E65DF /* PingzeLinearView.swift in Sources */,
 				751E08221EACA61D00BAB696 /* UMComShowToast.m in Sources */,
 				7549ABE01EDD87920043893A /* KolodaViewAnimatior.swift in Sources */,
+				E278E42E1EF190820046324D /* TouchEffectLabel.swift in Sources */,
 				751E083E1EACA61D00BAB696 /* UMComNearbyFeedViewController.m in Sources */,
 				751E081D1EACA61D00BAB696 /* UMComSegmentedControl.m in Sources */,
 				756EFB5A1EB45935006E65DF /* SearchFormerVC.swift in Sources */,
@@ -2726,7 +2734,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = G5YJVZL9SU;
+				DEVELOPMENT_TEAM = X8Q8BW44Z2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2736,7 +2744,7 @@
 					"$(PROJECT_DIR)/shishi/Library/UMCommunitySDK/UMComThirdComponent/UMSocial_Sdk/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/shishi/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2764,7 +2772,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = G5YJVZL9SU;
+				DEVELOPMENT_TEAM = X8Q8BW44Z2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2774,7 +2782,7 @@
 					"$(PROJECT_DIR)/shishi/Library/UMCommunitySDK/UMComThirdComponent/UMSocial_Sdk/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/shishi/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

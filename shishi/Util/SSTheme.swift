@@ -40,6 +40,9 @@ class SSTheme: NSObject {
         static let divideColor = UIColor(intColor: ColorInt.DIVIDE)
         
         static let backColor = UIColor(intColor: ColorInt.BACK)
+        
+        static let whiteHint = UIColor(intColor: 0x9a9a9a)
+
     }
     
     //尺寸

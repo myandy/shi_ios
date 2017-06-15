@@ -13,6 +13,12 @@ class SSStr: NSObject {
         static var duishi                       : String { return NSLocalizedString("DUISHI", comment: "") }
         static var refresh                       : String { return NSLocalizedString("REFRESH", comment: "") }
     }
+    
+    struct Common {
+        static let CONFIRM = "确定"
+        static let CANCEL = "取消"
+
+    }
 
     struct All {
          static let DYNASTIES = ["全部朝代","先秦","汉朝","魏晋","南北朝","唐朝","北宋","南宋","元朝","明朝","清朝","近代","当代"]
@@ -30,7 +36,23 @@ class SSStr: NSObject {
         static let FONT_TITLE = "字体"
         static let FONT_CHOICES = ["简体","繁体","默认字体"]
         
-        static let YUN_SEARCH_HINT = "在 %@ 中搜索"
+        static let AUTHOR_TITLE = "作者名"
+        
+        static let ABOUT_TITLE = "关于"
+        static let MARK_TITLE = "给我打分"
+        static let WEIBO_TITLE = "关注微博"
+        
+        static let ABOUT_LABEL = "关于诗Shi"
+        static let ABOUT_QQ = "官方QQ群：305395176"
+        static let ABOUT_INTRO = "本应用为非盈利个人应用，设计风格借鉴于词Ci。之前开发了词Ci android版，应用户的建议再开发了本应用。"
+        static let ABOUT_EMAIL = "有建议或者bug请联系：\n".appending(ABOUT_EMAIL_VALUE)
+        static let ABOUT_EMAIL_VALUE = "andymao1991@gmail.com"
+        static let ABOUT_WEXIN = "微信公众号：天涯共词Ci"
+        static let ABOUT_VERSION = "当前版本："
+
+        static let USERNAME_TITLE = "作者名"
+        static let USERNAME_CONTENT = "请输入作者名"
+        static let USERNAME_HINT = "作者名"
 
     }
 

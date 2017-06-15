@@ -64,6 +64,7 @@ class FormerDB {
             
         }
         catch{
+            print(error)
         }
         
         return array

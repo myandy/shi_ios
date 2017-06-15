@@ -86,8 +86,8 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
             return
         }
         
-        //test 
-//        self.testShare()
+        //test
+        //        self.testShare()
         self.testDB()
         
         carousel.superview?.layoutIfNeeded()
@@ -97,12 +97,15 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         
         FontsUtils.setFont(view)
         
+        testDB()
+        
     }
     
     func testDB() {
+        
         //        self.addWrittingData()
         self.loadWrttingData()
-
+        
     }
     
     func addWrittingData() {
@@ -122,11 +125,11 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     }
     
     func testShare() {
-//        let myShare = "test share"
-//        let image: UIImage = UIImage(named: "back")!
-//        
-//        let shareVC: UIActivityViewController = UIActivityViewController(activityItems: [ myShare], applicationActivities: nil)
-//        self.present(shareVC, animated: true, completion: nil)
+        //        let myShare = "test share"
+        //        let image: UIImage = UIImage(named: "back")!
+        //
+        //        let shareVC: UIActivityViewController = UIActivityViewController(activityItems: [ myShare], applicationActivities: nil)
+        //        self.present(shareVC, animated: true, completion: nil)
         SSShareUtil.default.shareToSystem(controller: self, image: UIImage(named: "back")!, message: "test share")
     }
     
@@ -148,8 +151,8 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
             log.debug(item.formerId)
             log.debug(item.bgImg)
             log.debug(item.author)
-            log.debug(item.create_dt)
-            log.debug(item.update_dt)
+            //            log.debug(item.create_dt)
+            //            log.debug(item.update_dt)
         }
         
     }
@@ -181,8 +184,8 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
             cardView.setupData(cipai: "临江仙", dateString: "17-05-07", contentArray: ["ABCDEFG\nrewqre\nfds", "1234567"])
             
             itemView = cardView
-//            itemView.backgroundColor = UIColor.white
-//            log.debug(self.carousel.bounds.size.height)
+            //            itemView.backgroundColor = UIColor.white
+            //            log.debug(self.carousel.bounds.size.height)
         }
         else{
             if mainView == nil{

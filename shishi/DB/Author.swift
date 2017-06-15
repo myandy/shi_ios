@@ -91,6 +91,7 @@ class AuthorDB{
             
         }
         catch{
+            print(error)
         }
         if(array.count % 2 != 0){
             array.remove(at: 0)
