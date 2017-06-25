@@ -86,10 +86,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
             return
         }
         
-        //test 
-//        self.testShare()
-//        self.testDB()
-        self.testGenImage()
+
         
         carousel.superview?.layoutIfNeeded()
         carousel.type = .linear
@@ -98,12 +95,17 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         
         FontsUtils.setFont(view)
         
+        //test
+        //        self.testShare()
+        //        self.testDB()
+//        self.testGenImage()
     }
     
     func testDB() {
-        self.addWrittingData()
+        
+        //        self.addWrittingData()
         self.loadWrttingData()
-
+        
     }
     
     func addWrittingData() {
@@ -128,7 +130,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     
     
     func testGenImage() {
-        SSImageUtil.genShiImage(nil, "title 11", content: "content00")
+        let image = SSImageUtil.genShiImage(UIImage(named:"bg001"), "title 11", content: "content\n0033333333\n444444444444444444445555555555555555555522222222222222222222223333333333333\nqqqqqqqqqqqqqqqwwwwwwwwwwwwwwwwww")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -181,8 +183,8 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
             cardView.setupData(cipai: "临江仙", dateString: "17-05-07", contentArray: ["ABCDEFG\nrewqre\nfds", "1234567"])
             
             itemView = cardView
-//            itemView.backgroundColor = UIColor.white
-//            log.debug(self.carousel.bounds.size.height)
+            //            itemView.backgroundColor = UIColor.white
+            //            log.debug(self.carousel.bounds.size.height)
         }
         else{
             if mainView == nil{

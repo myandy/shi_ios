@@ -24,18 +24,24 @@ class SettingVC: BaseSettingVC {
     
     lazy var checkPingzeItem: SettingItemView = SettingItemView()
     
-    lazy var selectorList = [#selector(yunItemClick),#selector(fontItemClick),#selector(checkItemClick)]
+    lazy var authorItem: SettingItemView = SettingItemView()
     
-    lazy var titleList = [SSStr.Setting.YUN_TITLE,SSStr.Setting.FONT_TITLE,SSStr.Setting.CHECK_TITLE]
+    lazy var selectorList = [#selector(yunItemClick),#selector(fontItemClick),#selector(checkItemClick),#selector(writingItemClick)]
+    
+    lazy var titleList = [SSStr.Setting.YUN_TITLE,SSStr.Setting.FONT_TITLE,SSStr.Setting.CHECK_TITLE,SSStr.Setting.AUTHOR_TITLE]
+    
+    lazy var selectorList2 = [#selector(aboutItemClick),#selector(marktemClick),#selector(weiboItemClick)]
+    
+    lazy var titleList2 = [SSStr.Setting.ABOUT_TITLE,SSStr.Setting.MARK_TITLE,SSStr.Setting.WEIBO_TITLE]
     
     override func setupUI(){
         
         let card1 = getCardView()
         self.scrollView.addSubview(card1)
-        var itemList = [yunItem,fontItem,checkPingzeItem]
+        var itemList = [yunItem,fontItem,checkPingzeItem,authorItem]
 
         card1.snp.makeConstraints{ (make) in
-            make.left.equalTo(scrollView).offset(20)
+            make.left.equalToSuperview().offset(20)
             make.right.equalTo(self.view).offset(-20)
             make.top.equalTo(backBtn).offset(80)
             make.height.equalTo(ITEM_HEIGHT * itemList.count)
@@ -68,6 +74,39 @@ class SettingVC: BaseSettingVC {
         refreshYun()
         refreshFont()
         refreshCheckPingze()
+        refreshUsername()
+        
+        let card2 = getCardView()
+        self.scrollView.addSubview(card2)
+        var itemList2 = [SettingItemView(),SettingItemView(),SettingItemView()]
+
+        card2.snp.makeConstraints{ (make) in
+            make.left.equalToSuperview().offset(20)
+            make.right.equalTo(self.view).offset(-20)
+            make.top.equalTo(card1.snp.bottom).offset(20)
+            make.height.equalTo(ITEM_HEIGHT * itemList2.count)
+        }
+        for (index,item) in itemList2.enumerated() {
+            card2.addSubview(item)
+            item.snp.makeConstraints{ (make) in
+                make.left.right.equalToSuperview()
+                make.height.equalTo(ITEM_HEIGHT)
+                if index == 0 {
+                    make.top.equalToSuperview()
+                }
+                else {
+                    make.top.equalTo(itemList2[index-1].snp.bottom).offset(1)
+                }
+            }
+            item.title.text = titleList2[index]
+            item.isUserInteractionEnabled = true
+            let tapGes = UITapGestureRecognizer(target: self, action: selectorList2[index])
+            item.addGestureRecognizer(tapGes)
+            if index > 0 && index < itemList.count {
+                addDivideView(card2,topView:itemList2[index-1])
+            }
+        }
+
         
     }
     
@@ -81,6 +120,10 @@ class SettingVC: BaseSettingVC {
     
     func refreshCheckPingze(){
         self.checkPingzeItem.hint.text = SSStr.Setting.CHECK_CHOICES[UserDefaultUtils.getCheckPingze()]
+    }
+    
+    func refreshUsername(){
+        self.authorItem.hint.text = UserDefaultUtils.getUsername()
     }
     
     override func onBackBtnClicked() {
@@ -115,6 +158,43 @@ extension SettingVC{
             self.refreshCheckPingze()
         }
         self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    func writingItemClick(){
+        let alert = UIAlertController(title: SSStr.Setting.USERNAME_TITLE, message: SSStr.Setting.USERNAME_CONTENT, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addTextField {
+            (textField: UITextField!) -> Void in
+            let username = UserDefaultUtils.getUsername()
+            if username != nil && !(username?.isEmpty)! {
+                textField.text = username
+            }
+            textField.placeholder = SSStr.Setting.USERNAME_HINT
+        }
+        let alertView1 = UIAlertAction(title: SSStr.Common.CANCEL, style: UIAlertActionStyle.cancel)
+        
+        let alertView2 = UIAlertAction(title: SSStr.Common.CONFIRM, style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
+            UserDefaultUtils.setUsername((alert.textFields?.first?.text)!)
+            self.refreshUsername()
+        }
+        alert.addAction(alertView1)
+        alert.addAction(alertView2)
+
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func aboutItemClick(){
+        self.navigationController?.pushViewController(AboutVC(), animated: false)
+    }
+    
+    func marktemClick(){
+        let urlString = "itms-apps://itunes.apple.com/app/id444934666"
+        let url = URL(string: urlString)
+        UIApplication.shared.open(url!)
+    }
+    
+    func weiboItemClick(){
+        UIApplication.shared.open(URL(string: "http://www.weibo.com/anddymao")!)
     }
   
 }

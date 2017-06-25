@@ -57,6 +57,7 @@ public class ColorDB{
             
         }
         catch{
+            print(error)
         }
         
         return array

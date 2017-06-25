@@ -20,6 +20,7 @@ class BaseSettingVC : UIViewController {
         super.viewDidLoad()
         addBackgroundImage()
         self.setupUI()
+        FontsUtils.setFont(self.view)
     }
     
     func setupUI(){

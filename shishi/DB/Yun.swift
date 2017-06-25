@@ -48,6 +48,7 @@ class YunDB {
             
         }
         catch{
+            print(error)
         }
         
         return array

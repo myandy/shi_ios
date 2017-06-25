@@ -45,4 +45,12 @@ public class UserDefaultUtils {
         userDefault.set(i, forKey: "checkPingze")
     }
     
+    public static func getUsername() -> String? {
+        return userDefault.string(forKey: "username")
+    }
+    
+    public static func setUsername(_ i: String) {
+        userDefault.set(i, forKey: "username")
+    }
+    
 }

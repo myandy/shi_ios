@@ -22,7 +22,7 @@ class EditVC: UIViewController {
     @IBAction func cancelBtnClick(_ sender: Any) {
         let alertController = UIAlertController(title: "是否保存", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         let alertView1 = UIAlertAction(title: "保存", style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
-            WritingDB.addWriting(writing: self.writing)
+//            WritingDB.addWriting(writing: self.writing)
             self.navigationController?.popViewController(animated: true)
         }
         
