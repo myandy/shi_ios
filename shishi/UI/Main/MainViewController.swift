@@ -88,7 +88,8 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         
         //test 
 //        self.testShare()
-        self.testDB()
+//        self.testDB()
+        self.testGenImage()
         
         carousel.superview?.layoutIfNeeded()
         carousel.type = .linear
@@ -100,7 +101,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     }
     
     func testDB() {
-        //        self.addWrittingData()
+        self.addWrittingData()
         self.loadWrttingData()
 
     }
@@ -108,7 +109,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     func addWrittingData() {
         for i in 0...10 {
             let writting = Writting()
-            writting.id = i + 1000
+//            writting.id = i + 1000
             writting.title = "title\(i)"
             writting.text = "text\(i)"
             writting.formerId = i + 10
@@ -122,14 +123,13 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     }
     
     func testShare() {
-//        let myShare = "test share"
-//        let image: UIImage = UIImage(named: "back")!
-//        
-//        let shareVC: UIActivityViewController = UIActivityViewController(activityItems: [ myShare], applicationActivities: nil)
-//        self.present(shareVC, animated: true, completion: nil)
-        SSShareUtil.default.shareToSystem(controller: self, image: UIImage(named: "back")!, message: "test share")
+        SSShareUtil.default.shareToSystem(controller: self, image: UIImage(named: "back")!)
     }
     
+    
+    func testGenImage() {
+        SSImageUtil.genShiImage(nil, "title 11", content: "content00")
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -142,14 +142,14 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         let array = Writting.allInstances()
         self.writtingArray = array as! [Writting]
         for item in self.writtingArray {
-            log.debug(item.id)
-            log.debug(item.title)
-            log.debug(item.text)
-            log.debug(item.formerId)
-            log.debug(item.bgImg)
-            log.debug(item.author)
-            log.debug(item.create_dt)
-            log.debug(item.update_dt)
+            log.debug("id:\(item.id)")
+            log.debug("title:\(item.title)")
+            log.debug("text:\(item.text)")
+            log.debug("formerId:\(item.formerId)")
+            log.debug("bgImg:\(item.bgImg)")
+            log.debug("author:\(item.author)")
+            log.debug("create_dt:\(item.create_dt)")
+            log.debug("update_dt:\(item.update_dt)")
         }
         
     }

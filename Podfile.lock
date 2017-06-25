@@ -1,32 +1,33 @@
 PODS:
   - Alamofire (4.2.0)
-  - FMDB (2.6.2):
-    - FMDB/standard (= 2.6.2)
-  - FMDB/standard (2.6.2)
+  - Bugly (2.4.8)
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
   - iCarousel (1.8.3)
   - MBProgressHUD (1.0.0)
-  - Moya (8.0.3):
-    - Moya/Core (= 8.0.3)
+  - Moya (8.0.5):
+    - Moya/Core (= 8.0.5)
   - Moya-SwiftyJSONMapper/Core (2.2.0):
     - Moya (~> 8.0.0)
     - SwiftyJSON
   - Moya-SwiftyJSONMapper/RxSwift (2.2.0):
     - Moya-SwiftyJSONMapper/Core
     - Moya/RxSwift
-  - Moya/Core (8.0.3):
+  - Moya/Core (8.0.5):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - Moya/RxSwift (8.0.3):
+  - Moya/RxSwift (8.0.5):
     - Moya/Core
     - RxSwift (~> 3.0)
-  - NSObject+Rx (2.1.0):
-    - RxSwift
+  - NSObject+Rx (2.3.0):
+    - RxSwift (~> 3.0)
   - ObjcExceptionBridging (1.0.1):
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
   - pop (1.0.9)
   - ReachabilitySwift (3)
-  - Result (3.2.1)
+  - Result (3.2.3)
   - RxCocoa (3.2.0):
     - RxSwift (~> 3.1)
   - RxSwift (3.1.0)
@@ -40,6 +41,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.2.0)
+  - Bugly
   - FMDB
   - iCarousel (~> 1.8.3)
   - MBProgressHUD
@@ -59,16 +61,17 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
-  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  Bugly: da3c02408c14838d498429320545a8e439392978
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
+  Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
   Moya-SwiftyJSONMapper: 03c9d3e562c9025c8c00fa3ec97ae1da61a2be37
-  NSObject+Rx: 09277ba78aa12a8e454c82429eb4e31bfb413131
+  NSObject+Rx: 38170f84b948152c05c57260cb853e387a5519d1
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
-  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
+  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
@@ -76,6 +79,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XCGLogger: 0b43697155d41e4a1b15fc776f319c2141646b09
 
-PODFILE CHECKSUM: 80c15645c19db2185717ede138c7d06d3f5f74e8
+PODFILE CHECKSUM: be9b929a59a379eac982239bb273a27abdc68586
 
 COCOAPODS: 1.2.1

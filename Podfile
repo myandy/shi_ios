@@ -32,6 +32,7 @@ target ‘shishi’ do
     pod 'pop'
     
 #    pod 'FCModel'
+    pod 'Bugly'
 end
 
 

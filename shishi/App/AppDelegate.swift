@@ -8,6 +8,7 @@
 
 import UIKit
 import UMCommunitySDK
+import Bugly
 
 
 @UIApplicationMain
@@ -30,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UMSocialSinaSSOHandler.openNewSinaSSO(withAppKey: "944955993", secret: "4b6e97140e9417bec7b225bc4477262d", redirectURL: "http://sns.whalecloud.com/sina2/callback")
 
         
+        Bugly.start(withAppId: "8511d2df86", config: nil)
+
         return true
     }
     
