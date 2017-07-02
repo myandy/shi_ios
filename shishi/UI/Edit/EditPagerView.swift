@@ -36,7 +36,9 @@ public class EditPagerView : UIView{
     //列表
     var tableView: UITableView!
     
-    var clist:Array<String>!
+    var clist: Array<String>!
+    
+    var title: UILabel!
     
     public override func draw(_ rect: CGRect) {
         
@@ -48,9 +50,8 @@ public class EditPagerView : UIView{
         setupHeadView()
         
         
-        
         let backgroundImage=UIImageView()
-            backgroundImage.image=UIImage(named: EditPagerView.bgimgList[Int(writing.bgimg)])
+        backgroundImage.image=UIImage(named: EditPagerView.bgimgList[Int(writing.bgimg)])
         self.addSubview(backgroundImage)
         backgroundImage.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(TOP_HEIGHT)
@@ -62,13 +63,6 @@ public class EditPagerView : UIView{
         let slist = former!.pingze.characters.split(separator: "。").map(String.init)
         clist = EditUtils.getCodeFromPingze(list: slist)
         
-        //        let srcollView = UIScrollView()
-        //        srcollView.showsVerticalScrollIndicator=true
-        //        srcollView.isScrollEnabled = true // 可以上下滚动
-        //        srcollView.scrollsToTop = true // 点击状态栏时，可以滚动回顶端
-        //        srcollView.bounces = true // 反弹效果，即在最顶端或最底端时，仍然可以滚动，且释放后有动画返回效果
-        //        srcollView.contentSize = CGSize(width:srcollView.bounds.width,height: 100)
-        //        self.addSubview(srcollView)
         
         tableView = UITableView()
         tableView.dataSource = self
@@ -81,36 +75,7 @@ public class EditPagerView : UIView{
             make.bottom.left.right.equalToSuperview()
         }
         
-        //        self.tableView.reloadData()
         
-        //        var lastItemBottom:CGFloat = 0
-        //        for i in 0...clist.count-1{
-        //            let itemTop: CGFloat = CGFloat(70*i+10)
-        //            let frame = CGRect(x:10,y: itemTop, width:self.bounds.width - 10,height:20)
-        //            let linearView = PingzeLinearView(frame: frame, code: clist[i].trimmingCharacters(in:NSCharacterSet.newlines))
-        //            srcollView.addSubview(linearView)
-        //            let frame1 = CGRect(x:10,y:itemTop+30,width:self.bounds.width - 10, height:20)
-        //            let textField=UITextField(frame:frame1)
-        //            textField.textColor=UIColor.lightGray
-        //            textField.tintColor=UIColor.lightGray
-        //            srcollView.addSubview(textField)
-        //
-        //            let lineView = UIView(frame:CGRect(x:10,y:itemTop+49,width:self.bounds.width - 10,height:1))
-        //            lineView.backgroundColor = UIColor.lightGray
-        //            srcollView.addSubview(lineView)
-        //
-        //            lastItemBottom = itemTop + 49 + 1
-        //        }
-        
-        
-        
-        //        srcollView.snp.makeConstraints { (make) in
-        //            make.top.equalTo( self.ivTop.snp.bottom)
-        //            make.bottom.equalTo(self)
-        //            make.left.equalTo(self)
-        //            make.right.equalTo(self)
-        //            make.height.equalTo(lastItemBottom)
-        //        }
         
     }
     
@@ -134,13 +99,14 @@ public class EditPagerView : UIView{
             make.width.equalTo(60)
         }
         
-        let title = UILabel()
-        title.text = "标题"
-        self.addSubview(title)
-        title.snp.makeConstraints{ (make) in
-            make.top.equalToSuperview()
-            make.height.equalTo(60)
-            make.left.right.equalTo(keyboard.snp.right)
+        let dict = UIImageView()
+        ivTop.addSubview(dict)
+        dict.image = UIImage(named:"dict")
+        dict.contentMode = UIViewContentMode.center
+        dict.snp.makeConstraints{ (make) in
+            make.top.bottom.equalToSuperview()
+            make.right.equalToSuperview().offset(-10)
+            make.width.equalTo(45)
         }
         
         let info = UIImageView()
@@ -149,17 +115,23 @@ public class EditPagerView : UIView{
         info.contentMode = UIViewContentMode.center
         info.snp.makeConstraints{ (make) in
             make.top.bottom.equalToSuperview()
-            make.width.equalTo(60)
-            make.right.equalToSuperview().offset(-60)
+            make.width.equalTo(45)
+            make.right.equalTo(dict.snp.left)
         }
         
-        let dict = UIImageView()
-        ivTop.addSubview(dict)
-        dict.image = UIImage(named:"dict")
-        dict.contentMode = UIViewContentMode.center
-        dict.snp.makeConstraints{ (make) in
-            make.top.right.bottom.equalToSuperview()
-            make.width.equalTo(60)
+        
+        title = UILabel()
+        if writing.title==nil {
+            writing.title = writing.former.name
+        }
+        title.textColor = UIColor.black
+        title.text = writing.title
+        ivTop.addSubview(title)
+        title.snp.makeConstraints{ (make) in
+            make.width.greaterThanOrEqualTo(100)
+            make.right.equalTo(info.snp.left)
+            make.top.height.equalToSuperview()
+            make.left.equalTo(keyboard.snp.right)
         }
         
         keyboard.isUserInteractionEnabled = true
@@ -170,6 +142,34 @@ public class EditPagerView : UIView{
         
         dict.isUserInteractionEnabled = true
         dict.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dictClick)))
+        
+        title.isUserInteractionEnabled = true
+        title.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.titleClick)))
+        
+        FontsUtils.setFont(title)
+    }
+    
+    func titleClick(){
+        let alert = UIAlertController(title: SSStr.Edit.INPUT_TITLE, message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addTextField {
+            (textField: UITextField!) -> Void in
+            textField.text = self.writing.title
+            textField.placeholder = SSStr.Edit.INPUT_TITLE
+        }
+        let alertView1 = UIAlertAction(title: SSStr.Common.CANCEL, style: UIAlertActionStyle.cancel)
+        let alertView2 = UIAlertAction(title: SSStr.Common.CONFIRM, style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
+            self.writing.title = (alert.textFields?.first?.text)!
+            self.refreshTitle()
+        }
+        alert.addAction(alertView1)
+        alert.addAction(alertView2)
+        
+        firstViewController()?.navigationController?.present(alert, animated: true, completion: nil)
+    }
+    
+    func refreshTitle(){
+        title.text = writing.title
     }
     
     func keyboardClick(){
@@ -193,7 +193,7 @@ extension EditPagerView: UITableViewDataSource,UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: editCellIdentifier, for: indexPath) as! EditPagerCell
-        cell.pingzeLinearView.refresh(code: clist[indexPath.row])
+        cell.refresh(code: clist[indexPath.row])
         return cell
     }
     

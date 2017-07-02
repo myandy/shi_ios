@@ -65,7 +65,7 @@ class YunDB {
      * 获取平仄
      */
     
-    public class func getWordStone(_ word: Character) ->Int {
+    public class func getWordStone(_ word: Character) -> Int {
         getYunList()
         var tones=[Int]()
         for item in yunList{

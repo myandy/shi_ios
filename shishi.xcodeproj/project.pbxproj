@@ -195,7 +195,7 @@
 		751E08691EACA61D00BAB696 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 751E07AF1EACA61D00BAB696 /* libWeChatSDK.a */; };
 		751E086D1EACA66A00BAB696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E086B1EACA66A00BAB696 /* AppDelegate.swift */; };
 		751E08721EACA6B500BAB696 /* FontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E08701EACA6B500BAB696 /* FontUtils.swift */; };
-		751E08731EACA6B500BAB696 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E08711EACA6B500BAB696 /* Utils.swift */; };
+		751E08731EACA6B500BAB696 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E08711EACA6B500BAB696 /* StringUtils.swift */; };
 		751E08761EACA7B200BAB696 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E08751EACA7B200BAB696 /* AppConfig.swift */; };
 		751E08781EACA82C00BAB696 /* SSTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E08771EACA82C00BAB696 /* SSTheme.swift */; };
 		751E087C1EACAD5000BAB696 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 751E087E1EACAD5000BAB696 /* Localizable.strings */; };
@@ -238,7 +238,6 @@
 		756EFB6A1EB459E2006E65DF /* RandomPoetryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB651EB459E2006E65DF /* RandomPoetryVC.swift */; };
 		756EFB6B1EB459E2006E65DF /* RandomPoetryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB661EB459E2006E65DF /* RandomPoetryVC.xib */; };
 		756EFB701EB45A76006E65DF /* EditPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB6C1EB45A76006E65DF /* EditPagerView.swift */; };
-		756EFB711EB45A76006E65DF /* EditPagerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB6D1EB45A76006E65DF /* EditPagerView.xib */; };
 		756EFB721EB45A76006E65DF /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB6E1EB45A76006E65DF /* EditVC.swift */; };
 		756EFB731EB45A76006E65DF /* EditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB6F1EB45A76006E65DF /* EditVC.xib */; };
 		756EFB761EBA256D006E65DF /* DuishiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB751EBA256D006E65DF /* DuishiVC.swift */; };
@@ -680,7 +679,7 @@
 		751E07B31EACA61D00BAB696 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		751E086B1EACA66A00BAB696 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		751E08701EACA6B500BAB696 /* FontUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontUtils.swift; sourceTree = "<group>"; };
-		751E08711EACA6B500BAB696 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		751E08711EACA6B500BAB696 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		751E08741EACA6DC00BAB696 /* shishi-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "shishi-Bridging-Header.h"; sourceTree = "<group>"; };
 		751E08751EACA7B200BAB696 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		751E08771EACA82C00BAB696 /* SSTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTheme.swift; sourceTree = "<group>"; };
@@ -725,7 +724,6 @@
 		756EFB651EB459E2006E65DF /* RandomPoetryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomPoetryVC.swift; path = ../Poetry/RandomPoetryVC.swift; sourceTree = "<group>"; };
 		756EFB661EB459E2006E65DF /* RandomPoetryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RandomPoetryVC.xib; path = ../Poetry/RandomPoetryVC.xib; sourceTree = "<group>"; };
 		756EFB6C1EB45A76006E65DF /* EditPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPagerView.swift; sourceTree = "<group>"; };
-		756EFB6D1EB45A76006E65DF /* EditPagerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditPagerView.xib; sourceTree = "<group>"; };
 		756EFB6E1EB45A76006E65DF /* EditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		756EFB6F1EB45A76006E65DF /* EditVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditVC.xib; sourceTree = "<group>"; };
 		756EFB751EBA256D006E65DF /* DuishiVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuishiVC.swift; sourceTree = "<group>"; };
@@ -1840,7 +1838,7 @@
 			children = (
 				7549ABE71EE6F1340043893A /* AssetsLibraryUtil.swift */,
 				751E08701EACA6B500BAB696 /* FontUtils.swift */,
-				751E08711EACA6B500BAB696 /* Utils.swift */,
+				751E08711EACA6B500BAB696 /* StringUtils.swift */,
 				751E08771EACA82C00BAB696 /* SSTheme.swift */,
 				756EFB771EBA28D1006E65DF /* SSStr.swift */,
 				E20CB2BD1ECB52AD004298DA /* EditUtils.swift */,
@@ -1959,7 +1957,6 @@
 			isa = PBXGroup;
 			children = (
 				756EFB6C1EB45A76006E65DF /* EditPagerView.swift */,
-				756EFB6D1EB45A76006E65DF /* EditPagerView.xib */,
 				756EFB6E1EB45A76006E65DF /* EditVC.swift */,
 				756EFB6F1EB45A76006E65DF /* EditVC.xib */,
 				756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */,
@@ -2260,7 +2257,7 @@
 				TargetAttributes = {
 					E29558C91DD311720065AA1B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = G5YJVZL9SU;
+						DevelopmentTeam = X8Q8BW44Z2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2305,7 +2302,6 @@
 				7549ABCD1ED5BF820043893A /* MainView.xib in Resources */,
 				756EFB6B1EB459E2006E65DF /* RandomPoetryVC.xib in Resources */,
 				751E082A1EACA61D00BAB696 /* FZLanTingHei-L-GBK-M.TTF in Resources */,
-				756EFB711EB45A76006E65DF /* EditPagerView.xib in Resources */,
 				751E07E61EACA61D00BAB696 /* UMComLocationTableViewCell.xib in Resources */,
 				751E08561EACA61D00BAB696 /* UMSocialLocalizable.strings in Resources */,
 				751E07B41EACA61D00BAB696 /* README.txt in Resources */,
@@ -2447,7 +2443,7 @@
 				751E08481EACA61D00BAB696 /* UMComCommentMenuViewController.m in Sources */,
 				751E080B1EACA61D00BAB696 /* UMComHorizonMenuView.m in Sources */,
 				756EFB871EBDCAF0006E65DF /* DuishiEditView.swift in Sources */,
-				751E08731EACA6B500BAB696 /* Utils.swift in Sources */,
+				751E08731EACA6B500BAB696 /* StringUtils.swift in Sources */,
 				756EFB801EBB8368006E65DF /* JSONAble.swift in Sources */,
 				E2BBD3051E9A694400B285DB /* Extensiton.swift in Sources */,
 				751E08001EACA61D00BAB696 /* UMComAddedImageView.m in Sources */,
@@ -2768,7 +2764,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = G5YJVZL9SU;
+				DEVELOPMENT_TEAM = X8Q8BW44Z2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2807,7 +2803,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = G5YJVZL9SU;
+				DEVELOPMENT_TEAM = X8Q8BW44Z2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

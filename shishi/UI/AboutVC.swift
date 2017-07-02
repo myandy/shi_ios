@@ -67,7 +67,6 @@ class AboutVC: BaseSettingVC {
                 let range               = (string as NSString).range(of: SSStr.Setting.ABOUT_EMAIL_VALUE)
                 let attributedString    = NSMutableAttributedString(string: string)
                 
-                //                attributedString.addAttribute(NSLinkAttributeName, value: NSURL(string:"http://www.apple.com")!, range: range)
                 attributedString.addAttribute(NSUnderlineStyleAttributeName, value: NSNumber(value: 1), range: range)
                 
                 

@@ -10,7 +10,9 @@ import Foundation
 
 class EditPagerCell : UITableViewCell {
     
-    public var pingzeLinearView: PingzeLinearView!
+    private var pingzeLinearView: PingzeLinearView!
+    
+    var code: String!
     
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -20,22 +22,25 @@ class EditPagerCell : UITableViewCell {
         addSubview(pingzeLinearView)
         pingzeLinearView.snp.makeConstraints{ (make) in
             make.left.equalToSuperview().offset(10)
-            make.right.top.equalToSuperview()
+            make.right.equalToSuperview()
+            make.top.equalToSuperview().offset(10)
             make.height.equalTo(30)
         }
 
         let textField = UITextField()
-        textField.textColor = UIColor.lightGray
-        textField.tintColor = UIColor.lightGray
+        textField.textColor = UIColor.black
+        textField.tintColor = UIColor.black
         addSubview(textField)
         textField.snp.makeConstraints{ (make) in
-            make.left.equalToSuperview().offset(10)
+            make.left.equalToSuperview().offset(14)
             make.right.equalToSuperview()
             make.top.equalTo(pingzeLinearView.snp.bottom)
             make.bottom.equalToSuperview()
         }
-
         
+        textField.delegate = self
+
+        FontsUtils.setFont(textField)
 //        let lineView = UIView()
 //        lineView.backgroundColor = UIColor.lightGray
 //        addSubview(lineView)
@@ -48,8 +53,21 @@ class EditPagerCell : UITableViewCell {
 
     }
     
+    public func refresh(code:String){
+        self.code = code
+        pingzeLinearView.refresh(code: code)
+    }
+    
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+}
+
+extension EditPagerCell : UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+
+        EditUtils.checkTextFiled(textFiled: textField,code: self.code)
+        NSLog("test","")
+    }
 }

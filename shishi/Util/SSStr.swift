@@ -70,5 +70,10 @@ class SSStr: NSObject {
          static let manual = "自定义"
          static let no_limit = "不限"
     }
+    
+    struct Edit {
+        static let INPUT_TITLE = "输入标题"
+    }
+
 
 }

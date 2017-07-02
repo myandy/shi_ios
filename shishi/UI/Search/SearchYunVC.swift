@@ -49,7 +49,7 @@ class SearchYunVC : BaseSearchVC {
     
     func doSearch(_ searchText:String?){
         if searchText != nil {
-            let word = getLastChinese(searchText!)
+            let word = StringUtils.getLastChinese(searchText!)
             if word != nil {
                 yunList = YunDB.getSameYun(word!)
                 tableView.reloadData()
@@ -85,14 +85,7 @@ extension SearchYunVC : UITableViewDelegate,UITableViewDataSource {
 }
 
 
-private func getLastChinese(_ string :String) -> Character?{
-    for value in string.characters.reversed() {
-        if ("\u{4E00}" <= value  && value <= "\u{9FA5}") {
-            return value
-        }
-    }
-    return nil
-}
+
 
 
 

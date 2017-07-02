@@ -23,7 +23,7 @@ public class PingzeLinearView : UIView{
             
             NSLog(String(c))
             let frame = CGRect(x:i*20,y:0,width:20,height:20)
-            if Utils.isPurnInt(string:String(c)){
+            if StringUtils.isPurnInt(string:String(c)){
                 let pingze = PingzeView(frame: frame ,shape:Int(String(c))!)
                 pingze.backgroundColor=UIColor.clear
                 addSubview(pingze)

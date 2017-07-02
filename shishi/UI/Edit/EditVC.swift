@@ -74,10 +74,9 @@ class EditVC: UIViewController {
     func setSegmentedControlImage(){
         let image1=segmentedControl.selectedSegmentIndex==0 ? "layout_bg_edit_selected":"layout_bg_edit"
         let image2=segmentedControl.selectedSegmentIndex==1 ? "layout_bg_paper_selected":"layout_bg_paper"
-        let image3=segmentedControl.selectedSegmentIndex==2 ? "layout_bg_album_selected":"layout_bg_album"
         segmentedControl.setImage(UIImage(named: image1)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), forSegmentAt: 0)
         segmentedControl.setImage(UIImage(named: image2)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), forSegmentAt: 1)
-        segmentedControl.setImage(UIImage(named: image3)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), forSegmentAt: 2)
+
     }
     
     

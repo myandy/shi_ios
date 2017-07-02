@@ -64,4 +64,65 @@ class EditUtils {
         return codes
     }
     
+    /**
+     * 1验证成功 0验证失败 2 多音
+     *
+     * @param hanzi
+     * @param code
+     * @return
+     */
+    public static func checkPingze(_ word: Character,code: Character) -> Int{
+        var intCode = Int(String(code))!
+        while intCode > 3 {
+            intCode -= 3
+        }
+        if (intCode == 1 || intCode == 3) {
+            let charCode = YunDB.getWordStone(word)
+            
+            if charCode == 30 {
+                return 2
+            } else if (charCode == 10 && intCode == 1) {
+                return 1
+            } else if (charCode == 20 && intCode == 3) {
+                return 1
+            } else {
+                return 0
+            }
+        } else {
+            return 1
+        }
+    }
+    
+    public static func checkTextFiled(textFiled: UITextField,code: String) {
+        let code = StringUtils.getIntFromString(str: code)
+        var pos = -1
+        let text = textFiled.text!
+        let attributedString = NSMutableAttributedString(string: text)
+        
+        for (index,value) in text.characters.enumerated() {
+            if pos >= code.characters.count-1 {
+                break
+            }
+            if ("\u{4E00}" <= value  && value <= "\u{9FA5}") {
+                pos += 1
+                let codeIndex = code.index(code.startIndex, offsetBy: pos)
+                let checkCode = checkPingze(value,code: code[codeIndex])
+                
+                if checkCode == 0 {
+                    let myRange = NSRange(location: index, length: 1)
+                    attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: myRange)
+                }
+                else if checkCode == 2 {
+                    let myRange = NSRange(location: index, length: 1)
+                    attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.green, range: myRange)
+                    
+                }
+                
+            }
+            
+        }
+        
+        textFiled.attributedText = attributedString
+    }
+    
 }
