@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class RandomPoetryVC: UIViewController {
     
@@ -39,6 +40,12 @@ class RandomPoetryVC: UIViewController {
         }
         refresh()
         
+        self.poetryView.shareBtn.rx.tap
+            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] in
+                self.onShareBtnClick()
+            })
+            .addDisposableTo(self.rx_disposeBag)
     }
     
     func refresh(){
@@ -49,5 +56,11 @@ class RandomPoetryVC: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    internal func onShareBtnClick() {
+        let shareController = ShareEditVC()
+        shareController.poetry = self.poetry
+        self.navigationController?.pushViewController(shareController, animated: true)
     }
 }

@@ -23,6 +23,8 @@ class SSImageUtil: NSObject {
             make.width.equalTo(maxWidth)
         }
         
+        let widthOffset = convertWidth(pix: 20)
+        
         let titleLabel = UILabel()
         drawView.addSubview(titleLabel)
         titleLabel.text = title
@@ -31,6 +33,7 @@ class SSImageUtil: NSObject {
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(convertWidth(pix: 20))
             make.centerX.equalToSuperview()
+            make.width.lessThanOrEqualToSuperview().offset(-widthOffset)
         }
         
         let contentLabel = UILabel()
@@ -43,6 +46,7 @@ class SSImageUtil: NSObject {
             make.left.equalToSuperview().offset(convertWidth(pix: 20))
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().offset(convertWidth(pix: -20))
+            make.width.lessThanOrEqualToSuperview().offset(-widthOffset)
         }
         
         

@@ -235,8 +235,6 @@
 		756EFB671EB459E2006E65DF /* Poetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB621EB459E2006E65DF /* Poetry.swift */; };
 		756EFB681EB459E2006E65DF /* PoetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB631EB459E2006E65DF /* PoetryView.swift */; };
 		756EFB691EB459E2006E65DF /* PoetryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB641EB459E2006E65DF /* PoetryView.xib */; };
-		756EFB6A1EB459E2006E65DF /* RandomPoetryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB651EB459E2006E65DF /* RandomPoetryVC.swift */; };
-		756EFB6B1EB459E2006E65DF /* RandomPoetryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB661EB459E2006E65DF /* RandomPoetryVC.xib */; };
 		756EFB701EB45A76006E65DF /* EditPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB6C1EB45A76006E65DF /* EditPagerView.swift */; };
 		756EFB721EB45A76006E65DF /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB6E1EB45A76006E65DF /* EditVC.swift */; };
 		756EFB731EB45A76006E65DF /* EditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756EFB6F1EB45A76006E65DF /* EditVC.xib */; };
@@ -257,6 +255,11 @@
 		75BE6F041EF96CE900A578B2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BE6F031EF96CE900A578B2 /* Security.framework */; };
 		75BE6F081EF96D1000A578B2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BE6F071EF96D1000A578B2 /* libc++.tbd */; };
 		75DE1DE61EFF681F00AB354A /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DE1DE51EFF681F00AB354A /* Bugly.framework */; };
+		75DE1E0C1F10DB8D00AB354A /* RandomPoetryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E0A1F10DB8D00AB354A /* RandomPoetryVC.swift */; };
+		75DE1E0D1F10DB8D00AB354A /* RandomPoetryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75DE1E0B1F10DB8D00AB354A /* RandomPoetryVC.xib */; };
+		75DE1E111F12414C00AB354A /* PoetryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E101F12414C00AB354A /* PoetryImage.swift */; };
+		75DE1E131F12512B00AB354A /* SharePoetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E121F12512B00AB354A /* SharePoetryView.swift */; };
+		75DE1E151F12514600AB354A /* ShareImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E141F12514600AB354A /* ShareImageCollectionViewCell.swift */; };
 		E202C09B1EE4070C0099FCCC /* ShareEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */; };
 		E202C09D1EE83E2D0099FCCC /* FormerIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C09C1EE83E2D0099FCCC /* FormerIntroVC.swift */; };
 		E202C09F1EE848810099FCCC /* intro.html in Resources */ = {isa = PBXBuildFile; fileRef = E202C09E1EE848810099FCCC /* intro.html */; };
@@ -721,8 +724,6 @@
 		756EFB621EB459E2006E65DF /* Poetry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Poetry.swift; path = UI/Poetry/Poetry.swift; sourceTree = "<group>"; };
 		756EFB631EB459E2006E65DF /* PoetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoetryView.swift; sourceTree = "<group>"; };
 		756EFB641EB459E2006E65DF /* PoetryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PoetryView.xib; sourceTree = "<group>"; };
-		756EFB651EB459E2006E65DF /* RandomPoetryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomPoetryVC.swift; path = ../Poetry/RandomPoetryVC.swift; sourceTree = "<group>"; };
-		756EFB661EB459E2006E65DF /* RandomPoetryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RandomPoetryVC.xib; path = ../Poetry/RandomPoetryVC.xib; sourceTree = "<group>"; };
 		756EFB6C1EB45A76006E65DF /* EditPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPagerView.swift; sourceTree = "<group>"; };
 		756EFB6E1EB45A76006E65DF /* EditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		756EFB6F1EB45A76006E65DF /* EditVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditVC.xib; sourceTree = "<group>"; };
@@ -751,6 +752,11 @@
 		75BE6F051EF96CFF00A578B2 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		75BE6F071EF96D1000A578B2 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		75DE1DE51EFF681F00AB354A /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bugly.framework; path = ../../Pods/Bugly/Bugly.framework; sourceTree = "<group>"; };
+		75DE1E0A1F10DB8D00AB354A /* RandomPoetryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomPoetryVC.swift; sourceTree = "<group>"; };
+		75DE1E0B1F10DB8D00AB354A /* RandomPoetryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RandomPoetryVC.xib; sourceTree = "<group>"; };
+		75DE1E101F12414C00AB354A /* PoetryImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoetryImage.swift; sourceTree = "<group>"; };
+		75DE1E121F12512B00AB354A /* SharePoetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharePoetryView.swift; path = Share/SharePoetryView.swift; sourceTree = "<group>"; };
+		75DE1E141F12514600AB354A /* ShareImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareImageCollectionViewCell.swift; path = Share/ShareImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		86A3D6B6999EBD9A4ABA66B1 /* Pods-shishi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shishi.release.xcconfig"; path = "Pods/Target Support Files/Pods-shishi/Pods-shishi.release.xcconfig"; sourceTree = "<group>"; };
 		E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareEditVC.swift; path = Share/ShareEditVC.swift; sourceTree = "<group>"; };
 		E202C09C1EE83E2D0099FCCC /* FormerIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormerIntroVC.swift; sourceTree = "<group>"; };
@@ -1916,6 +1922,7 @@
 		756EFB161EB43EAD006E65DF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				75DE1E091F10DB8D00AB354A /* Random */,
 				E202C0961EE4064E0099FCCC /* Share */,
 				7549ABD11ED5D5A00043893A /* Util */,
 				7549ABCA1ED5BF820043893A /* Main */,
@@ -1926,7 +1933,6 @@
 				756EFB171EB43EAD006E65DF /* All */,
 				756EFB1B1EB43EAD006E65DF /* Base */,
 				756EFB1F1EB43EAD006E65DF /* Edit */,
-				756EFB251EB43EAD006E65DF /* Random */,
 				756EFB281EB43EAD006E65DF /* Search */,
 			);
 			path = UI;
@@ -1965,15 +1971,6 @@
 				E20CB2BF1ECB533D004298DA /* EditPagerCell.swift */,
 			);
 			path = Edit;
-			sourceTree = "<group>";
-		};
-		756EFB251EB43EAD006E65DF /* Random */ = {
-			isa = PBXGroup;
-			children = (
-				756EFB651EB459E2006E65DF /* RandomPoetryVC.swift */,
-				756EFB661EB459E2006E65DF /* RandomPoetryVC.xib */,
-			);
-			path = Random;
 			sourceTree = "<group>";
 		};
 		756EFB281EB43EAD006E65DF /* Search */ = {
@@ -2031,6 +2028,7 @@
 			isa = PBXGroup;
 			children = (
 				756EFB4B1EB4429C006E65DF /* DataContainer.swift */,
+				75DE1E101F12414C00AB354A /* PoetryImage.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -2116,6 +2114,15 @@
 			path = FCModel;
 			sourceTree = "<group>";
 		};
+		75DE1E091F10DB8D00AB354A /* Random */ = {
+			isa = PBXGroup;
+			children = (
+				75DE1E0A1F10DB8D00AB354A /* RandomPoetryVC.swift */,
+				75DE1E0B1F10DB8D00AB354A /* RandomPoetryVC.xib */,
+			);
+			path = Random;
+			sourceTree = "<group>";
+		};
 		AB45D9C395F61C097FCE8636 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2146,7 +2153,9 @@
 		E202C0961EE4064E0099FCCC /* Share */ = {
 			isa = PBXGroup;
 			children = (
+				75DE1E141F12514600AB354A /* ShareImageCollectionViewCell.swift */,
 				E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */,
+				75DE1E121F12512B00AB354A /* SharePoetryView.swift */,
 			);
 			name = Share;
 			sourceTree = "<group>";
@@ -2257,7 +2266,7 @@
 				TargetAttributes = {
 					E29558C91DD311720065AA1B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = X8Q8BW44Z2;
+						DevelopmentTeam = G5YJVZL9SU;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2291,6 +2300,7 @@
 				751E05FF1EACA54200BAB696 /* Assets.xcassets in Resources */,
 				E22869BE1EBEDACB00238DF8 /* shishi.db in Resources */,
 				751E05FD1EACA51300BAB696 /* Info.plist in Resources */,
+				75DE1E0D1F10DB8D00AB354A /* RandomPoetryVC.xib in Resources */,
 				751E08421EACA61D00BAB696 /* UMComCommentTableViewCell.xib in Resources */,
 				751E085E1EACA61D00BAB696 /* UMSLoginViewController.xib in Resources */,
 				751E08611EACA61D00BAB696 /* UMSocialSDKResourcesNew.bundle in Resources */,
@@ -2300,7 +2310,6 @@
 				751E08641EACA61D00BAB696 /* WeiboSDK.bundle in Resources */,
 				751E07E21EACA61D00BAB696 /* UMComUserInfoBar.xib in Resources */,
 				7549ABCD1ED5BF820043893A /* MainView.xib in Resources */,
-				756EFB6B1EB459E2006E65DF /* RandomPoetryVC.xib in Resources */,
 				751E082A1EACA61D00BAB696 /* FZLanTingHei-L-GBK-M.TTF in Resources */,
 				751E07E61EACA61D00BAB696 /* UMComLocationTableViewCell.xib in Resources */,
 				751E08561EACA61D00BAB696 /* UMSocialLocalizable.strings in Resources */,
@@ -2477,7 +2486,6 @@
 				751E07FC1EACA61D00BAB696 /* UMComResourceManager.m in Sources */,
 				E20CB2CA1ED06C55004298DA /* SearchYunCell.swift in Sources */,
 				751E08051EACA61D00BAB696 /* UMComEditTextView.m in Sources */,
-				756EFB6A1EB459E2006E65DF /* RandomPoetryVC.swift in Sources */,
 				75BE6EF91EEEF72B00A578B2 /* FCModelDatabase.m in Sources */,
 				756EFB441EB44097006E65DF /* DuishiAPI.swift in Sources */,
 				751E07C71EACA61D00BAB696 /* UMComUserAlbumDataController.m in Sources */,
@@ -2497,6 +2505,7 @@
 				751E08081EACA61D00BAB696 /* UMComProgressView.m in Sources */,
 				751E07FB1EACA61D00BAB696 /* UMComResouceDefines.m in Sources */,
 				751E08781EACA82C00BAB696 /* SSTheme.swift in Sources */,
+				75DE1E131F12512B00AB354A /* SharePoetryView.swift in Sources */,
 				751E07E41EACA61D00BAB696 /* UMComLocationListController.m in Sources */,
 				E20CB2C81ED05ABB004298DA /* UserDefaultUtils.swift in Sources */,
 				751E08271EACA61D00BAB696 /* UMComWebView.m in Sources */,
@@ -2514,6 +2523,7 @@
 				756EFB451EB44097006E65DF /* HTTPProtocal.swift in Sources */,
 				751E07F71EACA61D00BAB696 /* UMComUserTableViewCell.m in Sources */,
 				E22869B71EBED7D100238DF8 /* Color.swift in Sources */,
+				75DE1E151F12514600AB354A /* ShareImageCollectionViewCell.swift in Sources */,
 				E22869B91EBED7D100238DF8 /* Writing.swift in Sources */,
 				E22869C01EC0A2B300238DF8 /* AuthorPagerVC.swift in Sources */,
 				751E08281EACA61D00BAB696 /* UMComAvatarImageView.m in Sources */,
@@ -2525,6 +2535,7 @@
 				751E081A1EACA61D00BAB696 /* UMImagePickerThumbnailView.m in Sources */,
 				751E08111EACA61D00BAB696 /* UMComMutiTextRun.m in Sources */,
 				7549ABE41EDD88B00043893A /* VerticalDraggableCardView.swift in Sources */,
+				75DE1E111F12414C00AB354A /* PoetryImage.swift in Sources */,
 				E2E14C731ED3B44C0056009C /* FontSettingVC.swift in Sources */,
 				751E07F61EACA61D00BAB696 /* UMComUserProfileDetailView.m in Sources */,
 				751E080F1EACA61D00BAB696 /* UMComMutiStyleTextView.m in Sources */,
@@ -2552,6 +2563,7 @@
 				751E08371EACA61D00BAB696 /* UMComFeedsTableViewCell.m in Sources */,
 				751E07E91EACA61D00BAB696 /* UMComHorizontalTableView.m in Sources */,
 				756EFB681EB459E2006E65DF /* PoetryView.swift in Sources */,
+				75DE1E0C1F10DB8D00AB354A /* RandomPoetryVC.swift in Sources */,
 				75BE6EFD1EF0364600A578B2 /* BaseDBModel.m in Sources */,
 				751E07F11EACA61D00BAB696 /* UMComSysPrivateLetterCell.m in Sources */,
 				756EFB351EB43EAD006E65DF /* PingzeLinearView.swift in Sources */,
@@ -2764,7 +2776,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = X8Q8BW44Z2;
+				DEVELOPMENT_TEAM = G5YJVZL9SU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2803,7 +2815,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = X8Q8BW44Z2;
+				DEVELOPMENT_TEAM = G5YJVZL9SU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
