@@ -26,7 +26,7 @@ class EditPagerCell : UITableViewCell {
             make.top.equalToSuperview().offset(10)
             make.height.equalTo(30)
         }
-
+        
         let textField = UITextField()
         textField.textColor = UIColor.black
         textField.tintColor = UIColor.black
@@ -39,18 +39,18 @@ class EditPagerCell : UITableViewCell {
         }
         
         textField.delegate = self
-
+        
         FontsUtils.setFont(textField)
-//        let lineView = UIView()
-//        lineView.backgroundColor = UIColor.lightGray
-//        addSubview(lineView)
-//        lineView.snp.makeConstraints{ (make) in
-//            make.left.equalToSuperview().offset(10)
-//            make.right.equalToSuperview()
-//            make.top.equalToSuperview().offset(<#T##amount: ConstraintOffsetTarget##ConstraintOffsetTarget#>)
-//            make.height.equalTo(1)
-//        }
-
+        //        let lineView = UIView()
+        //        lineView.backgroundColor = UIColor.lightGray
+        //        addSubview(lineView)
+        //        lineView.snp.makeConstraints{ (make) in
+        //            make.left.equalToSuperview().offset(10)
+        //            make.right.equalToSuperview()
+        //            make.top.equalToSuperview().offset(<#T##amount: ConstraintOffsetTarget##ConstraintOffsetTarget#>)
+        //            make.height.equalTo(1)
+        //        }
+        
     }
     
     public func refresh(code:String){
@@ -61,13 +61,15 @@ class EditPagerCell : UITableViewCell {
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
 }
 
 extension EditPagerCell : UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-
-        EditUtils.checkTextFiled(textFiled: textField,code: self.code)
-        NSLog("test","")
+        
+        if UserDefaultUtils.isCheckPingze() {
+            EditUtils.checkTextFiled(textFiled: textField,code: self.code)
+        }
+        
     }
 }
