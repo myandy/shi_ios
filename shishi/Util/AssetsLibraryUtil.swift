@@ -132,6 +132,7 @@ class AssetsLibraryUtil: NSObject {
                 handle?(nil, nil, error)
             }
         })
+        
     }
 
     

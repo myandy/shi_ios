@@ -33,6 +33,8 @@ target ‘shishi’ do
     
 #    pod 'FCModel'
     pod 'Bugly'
+    
+    pod 'FXBlurView'
 end
 
 

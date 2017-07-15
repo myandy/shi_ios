@@ -24,3 +24,5 @@
 
 #import <Bugly/Bugly.h>
 
+#import "FXBlurView.h"
+

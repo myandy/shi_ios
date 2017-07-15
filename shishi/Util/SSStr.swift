@@ -75,5 +75,17 @@ class SSStr: NSObject {
         static let INPUT_TITLE = "输入标题"
     }
 
-
+    struct Share {
+        static let SHARE = "分享"
+        static let COPY_TEXT = "复制文本"
+        static let SAVE_IMAGE = "保存图片"
+        static let INCREASE_FONTSIZE = "增大字体"
+        static let REDUCE_FONTSIZE = "减小字体"
+        static let SAVE_SUC = "保存成功"
+        static let SAVE_FAIL = "保存失败"
+        static let TEXT_ALIGN = "文字居中/居左"
+        static let CONTENT_MOVELEFT = "内容左移"
+        static let CONTENT_MOVERIGHT = "内容右移"
+        static let HIDE_AHTHOR = "隐藏作者"
+    }
 }

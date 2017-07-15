@@ -10,7 +10,7 @@ import UIKit
 import ReachabilitySwift
 import MBProgressHUD
 
-
+private let toastDuration: TimeInterval = 2
 
 //  显示错误信息
 extension UIViewController {
@@ -24,6 +24,23 @@ extension UIViewController {
 
 
 extension UIViewController {
+    
+    public func showToast(message: String, addToView: UIView? = nil) {
+        var needCreate = true
+        if let hud = self.hud, hud.mode == .text{
+            needCreate = false
+        }
+        
+        if needCreate {
+            self.hideProgressHUD()
+            
+            self.hud = MBProgressHUD.showAdded(to: addToView ?? self.view, animated: true)
+            self.hud!.mode = .text
+        }
+        self.hud!.label.text = message
+        self.hud!.hide(animated: true, afterDelay: toastDuration)
+    }
+    
     //显示进度条
     public func showProgressHUD(){
 

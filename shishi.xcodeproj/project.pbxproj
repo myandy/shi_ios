@@ -260,6 +260,10 @@
 		75DE1E111F12414C00AB354A /* PoetryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E101F12414C00AB354A /* PoetryImage.swift */; };
 		75DE1E131F12512B00AB354A /* SharePoetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E121F12512B00AB354A /* SharePoetryView.swift */; };
 		75DE1E151F12514600AB354A /* ShareImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E141F12514600AB354A /* ShareImageCollectionViewCell.swift */; };
+		75DE1E171F174CAE00AB354A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DE1E161F174CAE00AB354A /* Accelerate.framework */; };
+		75DE1E191F174CC300AB354A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DE1E181F174CC300AB354A /* QuartzCore.framework */; };
+		75DE1E1D1F1750FC00AB354A /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E1C1F1750FC00AB354A /* FXBlurView.m */; };
+		75DE1E1F1F1761CB00AB354A /* ShareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E1E1F1761CB00AB354A /* ShareVC.swift */; };
 		E202C09B1EE4070C0099FCCC /* ShareEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */; };
 		E202C09D1EE83E2D0099FCCC /* FormerIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C09C1EE83E2D0099FCCC /* FormerIntroVC.swift */; };
 		E202C09F1EE848810099FCCC /* intro.html in Resources */ = {isa = PBXBuildFile; fileRef = E202C09E1EE848810099FCCC /* intro.html */; };
@@ -757,6 +761,11 @@
 		75DE1E101F12414C00AB354A /* PoetryImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoetryImage.swift; sourceTree = "<group>"; };
 		75DE1E121F12512B00AB354A /* SharePoetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharePoetryView.swift; path = Share/SharePoetryView.swift; sourceTree = "<group>"; };
 		75DE1E141F12514600AB354A /* ShareImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareImageCollectionViewCell.swift; path = Share/ShareImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		75DE1E161F174CAE00AB354A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		75DE1E181F174CC300AB354A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		75DE1E1B1F1750FC00AB354A /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		75DE1E1C1F1750FC00AB354A /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		75DE1E1E1F1761CB00AB354A /* ShareVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareVC.swift; path = Share/ShareVC.swift; sourceTree = "<group>"; };
 		86A3D6B6999EBD9A4ABA66B1 /* Pods-shishi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shishi.release.xcconfig"; path = "Pods/Target Support Files/Pods-shishi/Pods-shishi.release.xcconfig"; sourceTree = "<group>"; };
 		E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareEditVC.swift; path = Share/ShareEditVC.swift; sourceTree = "<group>"; };
 		E202C09C1EE83E2D0099FCCC /* FormerIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormerIntroVC.swift; sourceTree = "<group>"; };
@@ -803,6 +812,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75DE1E191F174CC300AB354A /* QuartzCore.framework in Frameworks */,
+				75DE1E171F174CAE00AB354A /* Accelerate.framework in Frameworks */,
 				75BE6F081EF96D1000A578B2 /* libc++.tbd in Frameworks */,
 				75BE6F041EF96CE900A578B2 /* Security.framework in Frameworks */,
 				E22512221E53456900D062E8 /* SystemConfiguration.framework in Frameworks */,
@@ -857,6 +868,7 @@
 		751E06001EACA61C00BAB696 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				75DE1E1A1F1750FC00AB354A /* FXBlurView */,
 				75DE1DE51EFF681F00AB354A /* Bugly.framework */,
 				75BE6EEE1EEEF72B00A578B2 /* FCModel */,
 				7549ABD41EDD87920043893A /* Koloda */,
@@ -2123,9 +2135,20 @@
 			path = Random;
 			sourceTree = "<group>";
 		};
+		75DE1E1A1F1750FC00AB354A /* FXBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				75DE1E1B1F1750FC00AB354A /* FXBlurView.h */,
+				75DE1E1C1F1750FC00AB354A /* FXBlurView.m */,
+			);
+			path = FXBlurView;
+			sourceTree = "<group>";
+		};
 		AB45D9C395F61C097FCE8636 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75DE1E181F174CC300AB354A /* QuartzCore.framework */,
+				75DE1E161F174CAE00AB354A /* Accelerate.framework */,
 				75BE6F071EF96D1000A578B2 /* libc++.tbd */,
 				75BE6F051EF96CFF00A578B2 /* libc++.1.tbd */,
 				75BE6F031EF96CE900A578B2 /* Security.framework */,
@@ -2156,6 +2179,7 @@
 				75DE1E141F12514600AB354A /* ShareImageCollectionViewCell.swift */,
 				E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */,
 				75DE1E121F12512B00AB354A /* SharePoetryView.swift */,
+				75DE1E1E1F1761CB00AB354A /* ShareVC.swift */,
 			);
 			name = Share;
 			sourceTree = "<group>";
@@ -2441,6 +2465,7 @@
 				7549ABEA1EED2DA50043893A /* DBMigration.swift in Sources */,
 				7549ABDF1EDD87920043893A /* KolodaView.swift in Sources */,
 				756EFB521EB45929006E65DF /* AllAuthorCell.swift in Sources */,
+				75DE1E1D1F1750FC00AB354A /* FXBlurView.m in Sources */,
 				751E08141EACA61D00BAB696 /* UMAssetsCollectionCheckMarkView.m in Sources */,
 				756EFB831EBD9C92006E65DF /* Observable+DuiShi.swift in Sources */,
 				756EFB5F1EB4596C006E65DF /* BaseSearchVC.swift in Sources */,
@@ -2560,6 +2585,7 @@
 				751E07D81EACA61D00BAB696 /* UIViewController+UMComAddition.m in Sources */,
 				751E08061EACA61D00BAB696 /* UMComGridView.m in Sources */,
 				751E08181EACA61D00BAB696 /* UMImagePickerController.m in Sources */,
+				75DE1E1F1F1761CB00AB354A /* ShareVC.swift in Sources */,
 				751E08371EACA61D00BAB696 /* UMComFeedsTableViewCell.m in Sources */,
 				751E07E91EACA61D00BAB696 /* UMComHorizontalTableView.m in Sources */,
 				756EFB681EB459E2006E65DF /* PoetryView.swift in Sources */,

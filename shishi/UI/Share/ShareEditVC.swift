@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import Photos
 
 private let cellIdentifier = "cellIdentifier"
 
@@ -58,6 +59,33 @@ class ShareEditVC : UIViewController {
         return imageView
     }()
     
+    internal lazy var paperBtn: UIButton = {
+       let btn = UIButton()
+        btn.setImage(UIImage(named: "share_btn_paper_n"), for: .normal)
+        btn.setImage(UIImage(named: "share_btn_paper_s"), for: .selected)
+        btn.isSelected = true
+        return btn
+    }()
+    
+    internal lazy var albumBtn: UIButton = {
+        let btn = UIButton()
+        btn.setImage(UIImage(named: "share_btn_album_n"), for: .normal)
+        btn.setImage(UIImage(named: "share_btn_album_s"), for: .selected)
+        return btn
+    }()
+    
+    //滑动条父视图
+    internal lazy var sliderContainerView: UIView = {
+        let containerView = UIView()
+        return containerView
+    }()
+    
+    internal lazy var brightnessSlider = UISlider()
+    
+    internal lazy var blurSlider = UISlider()
+    
+    internal var albumImage: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,7 +93,44 @@ class ShareEditVC : UIViewController {
         
         self.poetryContainerView.setupData(title: self.poetry.title, author: self.poetry.author, content: self.poetry.poetry)
         
+        self.showFirstBGImage()
+        
+        if PHPhotoLibrary.authorizationStatus() != .authorized {
+            PHPhotoLibrary.requestAuthorization({ [unowned self] (status) in
+                if status == .authorized {
+                    self.resoveFirstAlbumImage()
+                }
+            })
+        }
+        else {
+            self.resoveFirstAlbumImage()
+        }
+    }
+    
+    //显示第一张背景图
+    internal func showFirstBGImage() {
         self.poetryContainerView.setupBGImage(image: self.bgImageArray[0].image())
+    }
+    
+   
+    
+    //获取相册第一张图片
+    internal func resoveFirstAlbumImage() {
+        let fetchOptions = PHFetchOptions()
+        let smartAlbums:PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+        smartAlbums.enumerateObjects({ [weak self] (asset, index, isStop) in
+            let imageManager = PHImageManager.default()
+            let requestOptions = PHImageRequestOptions()
+            requestOptions.isSynchronous = true
+            let size = CGSize(width: 720, height: 1280)
+            isStop.pointee = true
+            imageManager.requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: requestOptions) { image, info in
+                if let image = image {
+                    self?.albumImage = image
+                    
+                }
+            }
+        })
     }
     
     internal func setupUI() {
@@ -74,6 +139,8 @@ class ShareEditVC : UIViewController {
         self.setupConstraints()
         
         self.setupPoetryView()
+        
+        self.hiddenSliderView(isHidden: true)
     }
     
     internal func setupViews() {
@@ -84,11 +151,15 @@ class ShareEditVC : UIViewController {
         
         self.view.addSubview(self.poetryScrollView)
         
-        
         self.view.addSubview(self.collectionView)
         
-        self.view.addSubview(self.bottomBar)
+        self.setupBottomView()
         
+        self.setupSliderView()
+    }
+    
+    internal func setupBottomView() {
+        self.view.addSubview(self.bottomBar)
         
         let cancleBtn = UIButton()
         self.bottomBar.addSubview(cancleBtn)
@@ -118,7 +189,30 @@ class ShareEditVC : UIViewController {
                 self.onConfirmBtnClick()
             })
             .addDisposableTo(self.rx_disposeBag)
-
+        
+        self.bottomBar.addSubview(self.paperBtn)
+        self.paperBtn.snp.makeConstraints { (make) in
+            make.bottom.width.height.equalTo(cancleBtn)
+            make.right.equalTo(self.bottomBar.snp.centerX)
+        }
+        self.paperBtn.rx.tap
+            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] in
+                self.onPaperBtnClick()
+            })
+            .addDisposableTo(self.rx_disposeBag)
+        
+        self.bottomBar.addSubview(self.albumBtn)
+        self.albumBtn.snp.makeConstraints { (make) in
+            make.bottom.width.height.equalTo(cancleBtn)
+            make.left.equalTo(self.paperBtn.snp.right)
+        }
+        self.albumBtn.rx.tap
+            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] in
+                self.onAlbumBtnClick()
+            })
+            .addDisposableTo(self.rx_disposeBag)
     }
     
     internal func setupPoetryView() {
@@ -126,9 +220,44 @@ class ShareEditVC : UIViewController {
         
         self.poetryContainerView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
-            make.width.equalToSuperview()
+            make.width.equalToSuperview().offset(convertWidth(pix: -20))
             make.height.greaterThanOrEqualToSuperview()
         }
+    }
+    
+    internal func setupSliderView() {
+        self.view.addSubview(self.sliderContainerView)
+        self.sliderContainerView.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().offset(convertWidth(pix: -30))
+            make.top.bottom.equalTo(self.collectionView)
+        }
+        
+        
+        self.sliderContainerView.addSubview(brightnessSlider)
+        brightnessSlider.isContinuous = false
+        brightnessSlider.value = 0.5
+        brightnessSlider.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().offset(convertWidth(pix: -20))
+            make.top.equalToSuperview().offset(convertWidth(pix: 20))
+        }
+        brightnessSlider.rx.controlEvent(.valueChanged).subscribe(onNext: { [unowned self] _ in
+            self.onBrightnessSliderChange(value: self.brightnessSlider.value)
+        }).addDisposableTo(self.rx_disposeBag)
+        
+        
+        self.sliderContainerView.addSubview(blurSlider)
+        blurSlider.isContinuous = false
+        blurSlider.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().offset(convertWidth(pix: -20))
+            make.top.equalTo(brightnessSlider.snp.bottom).offset(convertWidth(pix: 20))
+        }
+        blurSlider.rx.controlEvent(.valueChanged).subscribe(onNext: { [unowned self] _ in
+            self.onBlurSliderChange(value: self.blurSlider.value)
+        }).addDisposableTo(self.rx_disposeBag)
+
     }
     
     internal func setupConstraints() {
@@ -143,10 +272,9 @@ class ShareEditVC : UIViewController {
             make.height.equalTo(self.poetryScrollView.snp.width)
         }
         
-        
-        
         self.collectionView.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().offset(convertWidth(pix: -10))
             make.top.equalTo(self.poetryScrollView.snp.bottom).offset(convertWidth(pix: 40))
             make.height.equalTo(convertWidth(pix: 250))
         }
@@ -156,14 +284,108 @@ class ShareEditVC : UIViewController {
             make.top.equalTo(self.collectionView.snp.bottom)
         }
     }
+    
+    //显示图片列表
+    internal func hiddenBgImageCollectionView(isHidden: Bool) {
+        self.collectionView.isHidden = isHidden
+    }
+    
+    //显示图片属性调节视图
+    internal func hiddenSliderView(isHidden: Bool) {
+        self.sliderContainerView.isHidden = isHidden
+    }
+    
+    internal func imageUpdate(image: UIImage, blur: Float, brightness: Float) -> UIImage {
+        let blurImage = self.imageUpdateBlur(image: image, value: blur)
+        return self.imageUpdateBrightness(image: blurImage, value: brightness)
+    }
+    
+    internal func imageUpdateBlur(image: UIImage, value: Float) -> UIImage {
+        let radius: CGFloat = CGFloat(40 * value)
+        let iterations: UInt = UInt(10 * value)
+        let blurImage = image.blurredImage(withRadius: radius, iterations: iterations, tintColor: nil)!
+        //self.poetryContainerView.setupBGImage(image: blurImage)
+        return blurImage
+    }
+    
+    internal func imageUpdateBrightness(image: UIImage, value: Float) -> UIImage {
+        let context = CIContext(options: nil)
+        let superImage = CIImage(cgImage:image.cgImage!)
+        let lighten = CIFilter(name:"CIColorControls")
+        lighten?.setValue(superImage, forKey: kCIInputImageKey)
+        // 修改亮度   -1---1   数越大越亮
+        let brightnessValue = (2 * value - 1)/2
+        lighten?.setValue(brightnessValue, forKey: "inputBrightness")
+        let result:CIImage = lighten?.value(forKey: kCIOutputImageKey) as! CIImage
+        let cgImage:CGImage = context.createCGImage(result, from: superImage.extent)!
+        
+        // 得到修改后的图片
+        let myImage = UIImage(cgImage: cgImage)
+        
+        // 释放对象
+        //            CGImageRelease(cgImage);
+        
+        return myImage
+        //            self.poetryContainerView.setupBGImage(image: myImage)
+    }
 }
 
 //action
 extension ShareEditVC {
     internal func onConfirmBtnClick() {
-        let bgImage = self.poetryContainerView.bgImageView.image!
-        let shareImage = SSImageUtil.genShiImage(bgImage, self.poetry.title, content: self.poetry.poetry)
-        SSShareUtil.default.shareToSystem(controller: self, image: shareImage)
+//        let bgImage = self.poetryContainerView.bgImageView.image!
+//        let shareImage = SSImageUtil.genShiImage(bgImage, self.poetry.title, content: self.poetry.poetry)
+//        SSShareUtil.default.shareToSystem(controller: self, image: shareImage)
+        
+        let shareController = ShareVC()
+        shareController.poetry = self.poetry
+        shareController.bgImage = self.poetryContainerView.bgImageView.image
+        self.navigationController?.pushViewController(shareController, animated: true)
+    }
+    
+    internal func onPaperBtnClick() {
+        self.paperBtn.isSelected = true
+        self.albumBtn.isSelected = false
+        self.hiddenSliderView(isHidden: true)
+        self.hiddenBgImageCollectionView(isHidden: false)
+        
+//        self.poetryContainerView.bgImageView.setContentHuggingPriority(500, for: .vertical)
+        
+        self.showFirstBGImage()
+    }
+    
+    internal func onAlbumBtnClick() {
+        self.paperBtn.isSelected = false
+        self.albumBtn.isSelected = true
+        self.hiddenSliderView(isHidden: false)
+        self.hiddenBgImageCollectionView(isHidden: true)
+        self.updateImageWithSlider()
+        
+//        self.poetryContainerView.bgImageView.setContentHuggingPriority(UILayoutPriorityDefaultHigh, for: .vertical)
+        
+    }
+    
+    internal func updateImageWithSlider() {
+        if let image = self.albumImage {
+            let resultImage = self.imageUpdate(image: image, blur: self.blurSlider.value, brightness: self.brightnessSlider.value)
+            self.poetryContainerView.setupBGImage(image: resultImage)
+        }
+    }
+    
+    internal func onBrightnessSliderChange(value: Float) {
+//        if let image = self.albumImage {
+//            let resultImage = self.imageUpdate(image: image, blur: self.blurSlider.value, brightness: value)
+//            self.poetryContainerView.setupBGImage(image: resultImage)
+//        }
+        self.updateImageWithSlider()
+    }
+    
+    internal func onBlurSliderChange(value: Float) {
+//        if let image = self.albumImage {
+//            let resultImage = self.imageUpdate(image: image, blur: value, brightness: self.brightnessSlider.value)
+//            self.poetryContainerView.setupBGImage(image: resultImage)
+//        }
+        self.updateImageWithSlider()
     }
 }
 

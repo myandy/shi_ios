@@ -8,7 +8,24 @@
 
 import UIKit
 
+private let increaseFontStep: CGFloat = 2
+private let minFontSize: CGFloat = 10
+private let maxFontSize: CGFloat = 50
+private let contentHorizonalMoveStep: CGFloat = convertWidth(pix: 10)
+
 class SharePoetryView: UIView {
+    
+    public var bgImage: UIImage!
+    
+    //内容水平方向偏移
+    internal var contentHorizonalOffset: CGFloat = 0
+    
+    public var textAlignment: NSTextAlignment = .center {
+        didSet {
+            self.setupConstraints()
+        }
+    }
+    
     lazy var contentLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 20)
@@ -32,9 +49,9 @@ class SharePoetryView: UIView {
     
     lazy var bgImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .center
         return imageView
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,9 +69,18 @@ class SharePoetryView: UIView {
         self.setupSubviews()
         self.setupConstraints()
         
-        self.titleLabel.setContentHuggingPriority(UILayoutPriorityDefaultHigh, for: .vertical)
-        self.authorLabel.setContentHuggingPriority(UILayoutPriorityDefaultHigh, for: .vertical)
-        self.contentLabel.setContentHuggingPriority(UILayoutPriorityDefaultHigh, for: .vertical)
+        
+        
+        self.titleLabel.setContentHuggingPriority(1000, for: .vertical)
+        self.authorLabel.setContentHuggingPriority(1000, for: .vertical)
+        self.contentLabel.setContentHuggingPriority(1000, for: .vertical)
+        
+        self.titleLabel.setContentCompressionResistancePriority(750, for: .vertical)
+        self.authorLabel.setContentCompressionResistancePriority(750, for: .vertical)
+        self.contentLabel.setContentCompressionResistancePriority(750, for: .vertical)
+        
+//        self.bgImageView.setContentHuggingPriority(1000, for: .vertical)
+//        self.bgImageView.setContentCompressionResistancePriority(50, for: .vertical)
         
         //test
 //        self.titleLabel.backgroundColor = UIColor.green.withAlphaComponent(0.3)
@@ -70,30 +96,52 @@ class SharePoetryView: UIView {
         
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.bgImageView.frame = self.bounds
+        
+        let resizedImage = self.resizedImage(size: self.bounds.size)
+        self.bgImageView.image = resizedImage
+    }
+    
     internal func setupConstraints() {
-        
-        self.bgImageView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview().priority(750)
-        }
-        
         let verticalOffset = convertWidth(pix: 50)
         
-        self.titleLabel.snp.makeConstraints { (make) in
+        self.titleLabel.snp.remakeConstraints { (make) in
             make.top.equalToSuperview().offset(verticalOffset)
-            make.centerX.equalToSuperview()
+            
             make.width.lessThanOrEqualToSuperview()
+            if self.textAlignment == .center {
+                make.centerX.equalToSuperview().offset(contentHorizonalOffset)
+            }
+            else {
+                make.left.equalToSuperview().offset(contentHorizonalOffset)
+            }
         }
         
-        self.authorLabel.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
+        self.authorLabel.snp.remakeConstraints { (make) in
+            if self.textAlignment == .center {
+                make.centerX.equalToSuperview().offset(contentHorizonalOffset)
+            }
+            else {
+                make.left.equalToSuperview().offset(contentHorizonalOffset)
+            }
             make.width.lessThanOrEqualToSuperview()
             make.top.equalTo(self.titleLabel.snp.bottom).offset(convertWidth(pix: 10))
+            if self.authorLabel.isHidden {
+                make.height.equalTo(0)
+            }
         }
         
-        self.contentLabel.snp.makeConstraints { (make) in
+        self.contentLabel.snp.remakeConstraints { (make) in
             make.top.equalTo(self.authorLabel.snp.bottom).offset(convertWidth(pix: 10))
-            make.centerX.equalToSuperview()
             make.width.lessThanOrEqualToSuperview()
+            if self.textAlignment == .center {
+                make.centerX.equalToSuperview().offset(contentHorizonalOffset)
+            }
+            else {
+                make.left.equalToSuperview().offset(contentHorizonalOffset)
+            }
             
             make.bottom.equalToSuperview().offset(-verticalOffset).priority(750)
         }
@@ -108,6 +156,88 @@ class SharePoetryView: UIView {
     }
     
     public func setupBGImage(image: UIImage) {
-        self.bgImageView.image = image
+//        self.bgImageView.contentMode = contentMode
+        //self.bgImageView.image = image
+        self.bgImage = image
+        self.setNeedsLayout()
+    }
+    
+    public func increaseFontSize() {
+        self.updateFont(pointSizeStep: increaseFontStep)
+    }
+    
+    public func reduceFontSize() {
+        self.updateFont(pointSizeStep: -increaseFontStep)
+    }
+    
+    public func switchTextAlign() {
+        if self.textAlignment == .center {
+            self.textAlignment = .left
+        }
+        else {
+            self.textAlignment = .center
+        }
+    }
+    
+    public func contentMoveLeft() {
+        self.contentHorizonalOffset -= contentHorizonalMoveStep
+        self.setupConstraints()
+    }
+    
+    public func contentMoveRight() {
+        self.contentHorizonalOffset += contentHorizonalMoveStep
+        self.setupConstraints()
+    }
+    
+    public func toggleAuthorHidden() {
+        self.authorLabel.isHidden = !self.authorLabel.isHidden
+        self.setupConstraints()
+    }
+    
+    public func updateFont(pointSizeStep: CGFloat) {
+        var pointSize = self.pointSize(with: self.titleLabel.font.pointSize, increaseSize: pointSizeStep)
+        self.titleLabel.font = UIFont(name: self.titleLabel.font.fontName, size: pointSize)
+        
+        pointSize = self.pointSize(with: self.authorLabel.font.pointSize, increaseSize: pointSizeStep)
+        self.authorLabel.font = UIFont(name: self.authorLabel.font.fontName, size: pointSize)
+        
+        pointSize = self.pointSize(with: self.contentLabel.font.pointSize, increaseSize: pointSizeStep)
+        self.contentLabel.font = UIFont(name: self.contentLabel.font.fontName, size: pointSize)
+    }
+    
+    internal func pointSize(with rawSize: CGFloat, increaseSize: CGFloat) -> CGFloat {
+        let tarSize = rawSize + increaseSize
+        if tarSize < minFontSize {
+            return minFontSize
+        }
+        else if tarSize > maxFontSize {
+            return maxFontSize
+        }
+        return tarSize
+    }
+    
+    internal func resizedImage(size: CGSize) -> UIImage {
+        if self.bgImage.size.width >= size.width && self.bgImage.size.height >= size.height {
+            return self.bgImage
+        }
+        
+        let ratio = fmax(size.height / self.bgImage.size.height, size.width / self.bgImage.size.width)
+        
+        let resizeSize = CGSize(width: self.bgImage.size.width * ratio, height: self.bgImage.size.height * ratio)
+        
+        return self.bgImage.imageScaledToSize(newSize: resizeSize)
+    }
+}
+
+internal extension UIImage {
+    func imageScaledToSize(newSize:CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(newSize, false, self.scale)
+        self.draw(in: CGRect(x:0, y:0, width:newSize.width, height:newSize.height))
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return image!
     }
 }

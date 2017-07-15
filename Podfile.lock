@@ -4,6 +4,7 @@ PODS:
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
+  - FXBlurView (1.6.4)
   - iCarousel (1.8.3)
   - MBProgressHUD (1.0.0)
   - Moya (8.0.5):
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.2.0)
   - Bugly
   - FMDB
+  - FXBlurView
   - iCarousel (~> 1.8.3)
   - MBProgressHUD
   - Moya (~> 8.0.3)
@@ -63,6 +65,7 @@ SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   Bugly: da3c02408c14838d498429320545a8e439392978
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
@@ -79,6 +82,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XCGLogger: 0b43697155d41e4a1b15fc776f319c2141646b09
 
-PODFILE CHECKSUM: be9b929a59a379eac982239bb273a27abdc68586
+PODFILE CHECKSUM: 1be968da488bffce607cf2facfb57773c2bf8f50
 
 COCOAPODS: 1.2.1

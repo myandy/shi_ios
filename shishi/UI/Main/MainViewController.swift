@@ -99,6 +99,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         //        self.testShare()
         //        self.testDB()
 //        self.testGenImage()
+        
     }
     
     func testDB() {
