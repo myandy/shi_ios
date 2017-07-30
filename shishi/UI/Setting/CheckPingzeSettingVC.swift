@@ -57,7 +57,7 @@ class CheckPingzeSettingVC : BaseSettingVC {
     }
     
     func refreshCheck(){
-        let check = UserDefaultUtils.getCheckPingze()
+        let check = UserDefaultUtils.isCheckPingze() ? 0 : 1
         for (index,item) in itemList.enumerated() {
             if index == check {
                 item.checkView.isHidden = false
@@ -70,14 +70,14 @@ class CheckPingzeSettingVC : BaseSettingVC {
     
     
     func itemClickSelector1(){
-        changeSelector(0)
+        changeSelector(true)
     }
     func itemClickSelector2(){
-        changeSelector(1)
+        changeSelector(false)
     }
     
-    func changeSelector(_ index: Int) {
-        UserDefaultUtils.setCheckPingze(index)
+    func changeSelector(_ bool: Bool) {
+        UserDefaultUtils.setCheckPingze(bool)
         refreshCheck()
         changeSelector()
     }

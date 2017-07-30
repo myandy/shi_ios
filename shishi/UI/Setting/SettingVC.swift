@@ -119,7 +119,7 @@ class SettingVC: BaseSettingVC {
     }
     
     func refreshCheckPingze(){
-        self.checkPingzeItem.hint.text = SSStr.Setting.CHECK_CHOICES[UserDefaultUtils.getCheckPingze()]
+        self.checkPingzeItem.hint.text = SSStr.Setting.CHECK_CHOICES[UserDefaultUtils.isCheckPingze() ? 0 : 1]
     }
     
     func refreshUsername(){

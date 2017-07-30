@@ -37,12 +37,12 @@ public class UserDefaultUtils {
         userDefault.set(i, forKey: "font")
     }
     
-    public static func getCheckPingze() -> Int {
-        return userDefault.integer(forKey: "checkPingze")
+    public static func isCheckPingze() -> Bool {
+        return userDefault.bool(forKey: "checkPingze")
     }
     
-    public static func setCheckPingze(_ i: Int) {
-        userDefault.set(i, forKey: "checkPingze")
+    public static func setCheckPingze(_ bool: Bool) {
+        userDefault.set(bool, forKey: "checkPingze")
     }
     
     public static func getUsername() -> String? {
