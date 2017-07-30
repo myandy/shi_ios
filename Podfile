@@ -35,6 +35,8 @@ target ‘shishi’ do
     pod 'Bugly'
     
     pod 'FXBlurView'
+    
+    pod 'FTPopOverMenu_Swift'
 end
 
 

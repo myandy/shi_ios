@@ -9,6 +9,8 @@
 import UIKit
 
 class ShareImageCollectionViewCell: UICollectionViewCell {
+    public var isItemSelected = false
+    
     public lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         return imageView
@@ -25,11 +27,14 @@ class ShareImageCollectionViewCell: UICollectionViewCell {
     }
     
     internal func setupUI() {
+        self.contentView.clipsToBounds = true
+        
         self.setupViews()
         self.setupConstraints()
     }
     
     internal func setupViews() {
+        self.contentView.backgroundColor = UIColor(hexColor: "A9A9AB")
         self.contentView.addSubview(self.imageView)
     }
     
@@ -37,5 +42,23 @@ class ShareImageCollectionViewCell: UICollectionViewCell {
         self.imageView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+    }
+    
+    public func updateSelectedStatus(isSelected: Bool) {
+        if self.isItemSelected == isSelected {
+            return
+        }
+        self.isItemSelected = isSelected
+        
+        let insets = self.isItemSelected ? UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3) : UIEdgeInsets.zero
+        
+        UIView.animate(withDuration: 0.25) { [weak self] () in
+            
+            self?.imageView.snp.remakeConstraints { (make) in
+                make.edges.equalToSuperview().inset(insets)
+            }
+            self?.contentView.layoutIfNeeded()
+        }
+        
     }
 }

@@ -264,6 +264,7 @@
 		75DE1E191F174CC300AB354A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DE1E181F174CC300AB354A /* QuartzCore.framework */; };
 		75DE1E1D1F1750FC00AB354A /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E1C1F1750FC00AB354A /* FXBlurView.m */; };
 		75DE1E1F1F1761CB00AB354A /* ShareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E1E1F1761CB00AB354A /* ShareVC.swift */; };
+		75DE1E251F2E211A00AB354A /* MirrorLoaderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E241F2E211900AB354A /* MirrorLoaderLayer.swift */; };
 		E202C09B1EE4070C0099FCCC /* ShareEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */; };
 		E202C09D1EE83E2D0099FCCC /* FormerIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C09C1EE83E2D0099FCCC /* FormerIntroVC.swift */; };
 		E202C09F1EE848810099FCCC /* intro.html in Resources */ = {isa = PBXBuildFile; fileRef = E202C09E1EE848810099FCCC /* intro.html */; };
@@ -766,6 +767,7 @@
 		75DE1E1B1F1750FC00AB354A /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
 		75DE1E1C1F1750FC00AB354A /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		75DE1E1E1F1761CB00AB354A /* ShareVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareVC.swift; path = Share/ShareVC.swift; sourceTree = "<group>"; };
+		75DE1E241F2E211900AB354A /* MirrorLoaderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MirrorLoaderLayer.swift; path = Share/MirrorLoaderLayer.swift; sourceTree = "<group>"; };
 		86A3D6B6999EBD9A4ABA66B1 /* Pods-shishi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shishi.release.xcconfig"; path = "Pods/Target Support Files/Pods-shishi/Pods-shishi.release.xcconfig"; sourceTree = "<group>"; };
 		E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareEditVC.swift; path = Share/ShareEditVC.swift; sourceTree = "<group>"; };
 		E202C09C1EE83E2D0099FCCC /* FormerIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormerIntroVC.swift; sourceTree = "<group>"; };
@@ -2180,6 +2182,7 @@
 				E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */,
 				75DE1E121F12512B00AB354A /* SharePoetryView.swift */,
 				75DE1E1E1F1761CB00AB354A /* ShareVC.swift */,
+				75DE1E241F2E211900AB354A /* MirrorLoaderLayer.swift */,
 			);
 			name = Share;
 			sourceTree = "<group>";
@@ -2463,6 +2466,7 @@
 				751E07C81EACA61D00BAB696 /* UMComLoginManager.m in Sources */,
 				751E08521EACA61D00BAB696 /* UMComLoginHandler+Social.m in Sources */,
 				7549ABEA1EED2DA50043893A /* DBMigration.swift in Sources */,
+				75DE1E251F2E211A00AB354A /* MirrorLoaderLayer.swift in Sources */,
 				7549ABDF1EDD87920043893A /* KolodaView.swift in Sources */,
 				756EFB521EB45929006E65DF /* AllAuthorCell.swift in Sources */,
 				75DE1E1D1F1750FC00AB354A /* FXBlurView.m in Sources */,

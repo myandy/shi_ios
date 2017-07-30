@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import iCarousel
 import UMCommunitySDK
-
+import FTPopOverMenu_Swift
 
 
 class MainViewController: UIViewController , iCarouselDataSource, iCarouselDelegate
@@ -95,11 +95,28 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         
         FontsUtils.setFont(view)
         
+        self.setupPopMenu()
+        
         //test
         //        self.testShare()
         //        self.testDB()
 //        self.testGenImage()
         
+    }
+    
+    internal func setupPopMenu() {
+        let configuration = FTConfiguration.shared
+        configuration.menuRowHeight = 50
+        configuration.menuWidth = 140
+        configuration.textColor = UIColor.white
+        configuration.textFont = FontsUtils.fontFromUserDefault(pointSize: 18)
+        //        configuration.tintColor = UIColor(red: 80/255, green: 80/255, blue: 80/255, alpha: 1)
+        //        configuration.borderColor = ...
+        //        configuration.borderWidth = ...
+        configuration.textAlignment = .center
+        //            configuration.ignoreImageOriginalColor = ...;
+        configuration.menuSeparatorColor = UIColor(red: 80/255, green: 80/255, blue: 80/255, alpha: 1)
+        configuration.backgoundTintColor = UIColor(red: 36/255, green: 36/255, blue: 36/255, alpha: 1)
     }
     
     func testDB() {
@@ -206,5 +223,8 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         return value
     }
     
+    public func carousel(_ carousel: iCarousel, didSelectItemAt index: Int) {
+        
+    }
 }
 

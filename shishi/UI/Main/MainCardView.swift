@@ -8,6 +8,7 @@
 
 import UIKit
 //import Koloda
+import FTPopOverMenu_Swift
 
 class MainCardView: UIView {
     
@@ -78,6 +79,31 @@ class MainCardView: UIView {
             make.top.equalTo(self.dateLabel.snp.bottom).offset(20)
         }
     }
+    
+    fileprivate func showMenu(index: Int) {
+        var senderFrame = UIScreen.main.bounds
+        senderFrame.origin.y = senderFrame.size.height / 2
+        senderFrame.size.height = senderFrame.size.height / 2
+        FTPopOverMenu.showFromSenderFrame(senderFrame: senderFrame,
+                                    with: [SSStr.Share.SHARE, SSStr.Common.EDIT, SSStr.Common.DELETE],
+                                    done: { [unowned self] (selectedIndex) -> () in
+                                        switch selectedIndex {
+//                                        case 0:
+                                            
+                                            
+                                        default:
+                                            break
+                                        }
+        }) {
+            
+        }
+    }
+    
+//    internal func showShareEditVC() {
+//        let shareController = ShareEditVC()
+//        shareController.poetry = self.poetry
+//        self.navigationController?.pushViewController(shareController, animated: true)
+//    }
 }
 
 // MARK: - KolodaViewDataSource
@@ -101,7 +127,14 @@ extension MainCardView: KolodaViewDataSource {
             make.left.top.width.equalToSuperview()
         }
         label.numberOfLines = 0
+        let tapGuesture = UITapGestureRecognizer()
+        tapGuesture.rx.event
+            .subscribe(onNext: { [weak self] _ in
+                self?.showMenu(index: index)
+            })
+            .addDisposableTo(self.rx_disposeBag)
         
+        cardView.addGestureRecognizer(tapGuesture)
         return cardView
     }
     

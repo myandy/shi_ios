@@ -17,7 +17,8 @@ class SSStr: NSObject {
     struct Common {
         static let CONFIRM = "确定"
         static let CANCEL = "取消"
-
+        static let DELETE = "删除"
+        static let EDIT = "编辑"
     }
 
     struct All {

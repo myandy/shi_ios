@@ -8,27 +8,35 @@
 
 import UIKit
 
+//字体变化每次步径
 private let increaseFontStep: CGFloat = 2
 private let minFontSize: CGFloat = 10
 private let maxFontSize: CGFloat = 50
-private let contentHorizonalMoveStep: CGFloat = convertWidth(pix: 10)
+
+//每次水平移动距离
+private let contentHorizonalMoveStep: CGFloat = 2
+
+//左对齐时的初始间距
+private let contentHorizonalMinOffset: CGFloat = 10
 
 class SharePoetryView: UIView {
     
-    public var bgImage: UIImage!
+    fileprivate var bgImage: UIImage!
     
     //内容水平方向偏移
     internal var contentHorizonalOffset: CGFloat = 0
     
     public var textAlignment: NSTextAlignment = .center {
         didSet {
-            self.setupConstraints()
+            self.remakeConstraints()
         }
     }
     
+    lazy var textContentView: UIView = UIView()
+    
     lazy var contentLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 0
         return label
     }()
@@ -43,25 +51,45 @@ class SharePoetryView: UIView {
     lazy var authorLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
     
     lazy var bgImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .center
+//        imageView.contentMode = .center
         return imageView
     }()
+    
+    internal var mirrorLayer: MirrorLoaderLayer = MirrorLoaderLayer()
+    
+    var isMirrorView: Bool! {
+        didSet {
+            if self.isMirrorView {
+                self.bgImageView.isHidden = true
+                self.mirrorLayer.isHidden = false
+            }
+            else {
+                self.bgImageView.isHidden = false
+                self.mirrorLayer.isHidden = true
+            }
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.setupUI()
+        self.isMirrorView = true
+        self.bgImageView.isHidden = true
+        self.mirrorLayer.isHidden = false
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     
     internal func setupUI() {
         self.backgroundColor = UIColor.white
@@ -89,10 +117,15 @@ class SharePoetryView: UIView {
     }
     
     internal func setupSubviews() {
+        self.layer.addSublayer(self.mirrorLayer)
+        
         self.addSubview(self.bgImageView)
-        self.addSubview(self.titleLabel)
-        self.addSubview(self.authorLabel)
-        self.addSubview(self.contentLabel)
+        
+        self.addSubview(self.textContentView)
+        
+        self.textContentView.addSubview(self.titleLabel)
+        self.textContentView.addSubview(self.authorLabel)
+        self.textContentView.addSubview(self.contentLabel)
         
     }
     
@@ -102,9 +135,23 @@ class SharePoetryView: UIView {
         
         let resizedImage = self.resizedImage(size: self.bounds.size)
         self.bgImageView.image = resizedImage
+        
+        self.mirrorLayer.frame = self.bounds
+        self.mirrorLayer.setNeedsDisplay()
     }
     
     internal func setupConstraints() {
+        self.textContentView.snp.makeConstraints { (make) in
+            make.top.greaterThanOrEqualToSuperview().priority(750)
+            make.bottom.lessThanOrEqualToSuperview().priority(750)
+            make.centerY.left.right.equalToSuperview()
+        }
+        
+        self.remakeConstraints()
+    }
+    
+    internal func remakeConstraints() {
+        
         let verticalOffset = convertWidth(pix: 50)
         
         self.titleLabel.snp.remakeConstraints { (make) in
@@ -115,7 +162,7 @@ class SharePoetryView: UIView {
                 make.centerX.equalToSuperview().offset(contentHorizonalOffset)
             }
             else {
-                make.left.equalToSuperview().offset(contentHorizonalOffset)
+                make.left.equalToSuperview().offset(contentHorizonalOffset + contentHorizonalMinOffset)
             }
         }
         
@@ -124,23 +171,23 @@ class SharePoetryView: UIView {
                 make.centerX.equalToSuperview().offset(contentHorizonalOffset)
             }
             else {
-                make.left.equalToSuperview().offset(contentHorizonalOffset)
+                make.left.equalToSuperview().offset(contentHorizonalOffset + contentHorizonalMinOffset)
             }
             make.width.lessThanOrEqualToSuperview()
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(convertWidth(pix: 10))
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(5)
             if self.authorLabel.isHidden {
                 make.height.equalTo(0)
             }
         }
         
         self.contentLabel.snp.remakeConstraints { (make) in
-            make.top.equalTo(self.authorLabel.snp.bottom).offset(convertWidth(pix: 10))
+            make.top.equalTo(self.authorLabel.snp.bottom).offset(10)
             make.width.lessThanOrEqualToSuperview()
             if self.textAlignment == .center {
                 make.centerX.equalToSuperview().offset(contentHorizonalOffset)
             }
             else {
-                make.left.equalToSuperview().offset(contentHorizonalOffset)
+                make.left.equalToSuperview().offset(contentHorizonalOffset + contentHorizonalMinOffset)
             }
             
             make.bottom.equalToSuperview().offset(-verticalOffset).priority(750)
@@ -150,16 +197,23 @@ class SharePoetryView: UIView {
     }
     
     public func setupData(title: String, author: String, content: String) {
-        self.titleLabel.text = title
+        self.titleLabel.text = StringUtils.titleTextFilter(poerityTitle: title)
         self.authorLabel.text = author
-        self.contentLabel.text = content
+        self.contentLabel.text = StringUtils.contentTextFilter(poerityTitle: content)
     }
     
     public func setupBGImage(image: UIImage) {
 //        self.bgImageView.contentMode = contentMode
         //self.bgImageView.image = image
         self.bgImage = image
+        self.mirrorLayer.image = image
         self.setNeedsLayout()
+    }
+    
+    public func updateTextColor(textColor: UIColor) {
+        self.titleLabel.textColor = textColor
+        self.authorLabel.textColor = textColor
+        self.contentLabel.textColor = textColor
     }
     
     public func increaseFontSize() {
@@ -181,17 +235,17 @@ class SharePoetryView: UIView {
     
     public func contentMoveLeft() {
         self.contentHorizonalOffset -= contentHorizonalMoveStep
-        self.setupConstraints()
+        self.remakeConstraints()
     }
     
     public func contentMoveRight() {
         self.contentHorizonalOffset += contentHorizonalMoveStep
-        self.setupConstraints()
+        self.remakeConstraints()
     }
     
     public func toggleAuthorHidden() {
         self.authorLabel.isHidden = !self.authorLabel.isHidden
-        self.setupConstraints()
+        self.remakeConstraints()
     }
     
     public func updateFont(pointSizeStep: CGFloat) {
@@ -217,7 +271,7 @@ class SharePoetryView: UIView {
     }
     
     internal func resizedImage(size: CGSize) -> UIImage {
-        if self.bgImage.size.width >= size.width && self.bgImage.size.height >= size.height {
+        if self.bgImage.size.width == size.width && self.bgImage.size.height == size.height {
             return self.bgImage
         }
         

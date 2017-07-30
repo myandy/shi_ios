@@ -38,4 +38,28 @@ public class StringUtils {
         scanner.scanInt(&number)
         return String(number)
     }
+    
+    //过滤标题中的注释
+    public class func titleTextFilter(poerityTitle: String) -> String {
+        let pattern = "\\(.*\\)|（.*）"
+        let range = Range(poerityTitle.startIndex..<poerityTitle.endIndex)
+        let regex = try! NSRegularExpression(pattern: pattern, options: [])
+        return regex.stringByReplacingMatches(in: poerityTitle, options: [], range: poerityTitle.nsRange(from: range), withTemplate: "")
+    }
+    
+    //过滤内容中的注释
+    public class func contentTextFilter(poerityTitle: String) -> String {
+        let pattern = "\\[.*\\]|【.*】"
+        let range = Range(poerityTitle.startIndex..<poerityTitle.endIndex)
+        let regex = try! NSRegularExpression(pattern: pattern, options: [])
+        return regex.stringByReplacingMatches(in: poerityTitle, options: [], range: poerityTitle.nsRange(from: range), withTemplate: "")
+    }
+}
+
+extension String {
+    func nsRange(from range: Range<Index>) -> NSRange {
+        let lower = UTF16View.Index(range.lowerBound, within: utf16)
+        let upper = UTF16View.Index(range.upperBound, within: utf16)
+        return NSRange(location: utf16.startIndex.distance(to: lower), length: lower.distance(to: upper))
+    }
 }
