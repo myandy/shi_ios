@@ -26,3 +26,5 @@
 
 #import "FXBlurView.h"
 
+#include "UIImage+Rotate.h"
+

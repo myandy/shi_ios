@@ -215,6 +215,7 @@
 		7549ABEA1EED2DA50043893A /* DBMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABE91EED2DA50043893A /* DBMigration.swift */; };
 		7549ABEC1EED359D0043893A /* UserDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABEB1EED359C0043893A /* UserDBManager.swift */; };
 		7549ABEF1EEED67A0043893A /* user_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = 7549ABEE1EEED67A0043893A /* user_1.sql */; };
+		756C77B01F374EEE00B9FF54 /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 756C77AF1F374EEE00B9FF54 /* UIImage+Rotate.m */; };
 		756EFB351EB43EAD006E65DF /* PingzeLinearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */; };
 		756EFB361EB43EAD006E65DF /* PingzeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB241EB43EAD006E65DF /* PingzeView.swift */; };
 		756EFB441EB44097006E65DF /* DuishiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB3E1EB44097006E65DF /* DuishiAPI.swift */; };
@@ -709,6 +710,8 @@
 		7549ABE91EED2DA50043893A /* DBMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMigration.swift; sourceTree = "<group>"; };
 		7549ABEB1EED359C0043893A /* UserDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDBManager.swift; sourceTree = "<group>"; };
 		7549ABEE1EEED67A0043893A /* user_1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = user_1.sql; sourceTree = "<group>"; };
+		756C77AE1F374EEE00B9FF54 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
+		756C77AF1F374EEE00B9FF54 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
 		756EFB231EB43EAD006E65DF /* PingzeLinearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingzeLinearView.swift; sourceTree = "<group>"; };
 		756EFB241EB43EAD006E65DF /* PingzeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingzeView.swift; sourceTree = "<group>"; };
 		756EFB3E1EB44097006E65DF /* DuishiAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuishiAPI.swift; sourceTree = "<group>"; };
@@ -1864,6 +1867,8 @@
 				E20CB2BD1ECB52AD004298DA /* EditUtils.swift */,
 				E20CB2C71ED05ABB004298DA /* UserDefaultUtils.swift */,
 				7549ABE51EE6F06F0043893A /* SSShareUtil.swift */,
+				756C77AE1F374EEE00B9FF54 /* UIImage+Rotate.h */,
+				756C77AF1F374EEE00B9FF54 /* UIImage+Rotate.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -2293,7 +2298,7 @@
 				TargetAttributes = {
 					E29558C91DD311720065AA1B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = X8Q8BW44Z2;
+						DevelopmentTeam = G5YJVZL9SU;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2640,6 +2645,7 @@
 				751E07FF1EACA61D00BAB696 /* UMComAddedImageCellView.m in Sources */,
 				7549ABDD1EDD87920043893A /* DraggableCardView.swift in Sources */,
 				E20CB2BE1ECB52AD004298DA /* EditUtils.swift in Sources */,
+				756C77B01F374EEE00B9FF54 /* UIImage+Rotate.m in Sources */,
 				756EFB721EB45A76006E65DF /* EditVC.swift in Sources */,
 				751E07C91EACA61D00BAB696 /* UMComLoginViewController.m in Sources */,
 				751E07F91EACA61D00BAB696 /* UMComUserTableViewController.m in Sources */,
@@ -2806,7 +2812,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = X8Q8BW44Z2;
+				DEVELOPMENT_TEAM = G5YJVZL9SU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2845,7 +2851,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = X8Q8BW44Z2;
+				DEVELOPMENT_TEAM = G5YJVZL9SU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
