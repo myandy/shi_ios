@@ -15,7 +15,7 @@ class SearchAuthorVC: NormalSearchVC {
     }
     
     override func getHint() -> String {
-        return "搜索诗人"
+        return SSStr.Search.SEARCH_AUTHOR_HINT
     }
     
     lazy var colors = {

@@ -40,19 +40,31 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     
     @IBAction func searchClick(_ sender: Any) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
-        let alertView1 = UIAlertAction(title: "搜索诗", style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
+        let alertView1 = UIAlertAction(title: SSStr.Search.SEARCH_POETRY_HINT, style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
             
             self.navigationController?.pushViewController(SearchPoetryVC(), animated: true)
         }
         
-        let alertView2 = UIAlertAction(title: "搜索诗人", style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
+        let alertView2 = UIAlertAction(title: SSStr.Search.SEARCH_AUTHOR_HINT, style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
             self.navigationController?.pushViewController(SearchAuthorVC(), animated: true)
         }
+        
+        let alertView3 = UIAlertAction(title: SSStr.Search.SEARCH_WRITING_HINT, style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
+            
+            self.navigationController?.pushViewController(SearchWritingVC(), animated: true)
+        }
+        
+        let alertView4 = UIAlertAction(title: SSStr.Search.SEARCH_COLLECT_HINT, style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
+            self.navigationController?.pushViewController(SearchAuthorVC(), animated: true)
+        }
+
         let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
         alertController.addAction(cancelAction)
         
         alertController.addAction(alertView1)
         alertController.addAction(alertView2)
+        alertController.addAction(alertView3)
+        alertController.addAction(alertView4)
         self.present(alertController, animated: true, completion: nil)
     }
     @IBAction func addClick(_ sender: Any) {

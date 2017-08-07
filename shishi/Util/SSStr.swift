@@ -72,6 +72,9 @@ class SSStr: NSObject {
          static let SEARCH_AUTHOR_HINT = "搜索诗人"
          static let SEARCH_POETRY_HINT = "搜索诗"
          static let YUN_SEARCH_HINT = "在 %@ 中搜索"
+        
+        static let SEARCH_WRITING_HINT = "搜索作品"
+        static let SEARCH_COLLECT_HINT = "搜索收藏夹"
     }
 
     struct FormerEdit {

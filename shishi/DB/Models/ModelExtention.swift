@@ -20,3 +20,17 @@ extension Writting {
         return self.text.components(separatedBy: type(of: self).textSeparator)
     }
 }
+
+extension Writting : SearchModel{
+    func getTitle() -> String {
+        return title
+    }
+    
+    func getDesc() -> String {
+        return text
+    }
+    
+    func getHint() -> String {
+        return ""
+    }
+}

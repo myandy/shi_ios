@@ -25,18 +25,18 @@ class PoetryView : UIView, Nibloadable {
     }
     
     func refresh(poetry:Poetry,color:UIColor){
-        titleLabel.text=poetry.title
-        contentLabel.text=poetry.poetry
+        titleLabel.text = poetry.title
+        contentLabel.text = poetry.poetry
         
         if (poetry.intro?.characters.count)! > 5{
             introLabel.text=poetry.intro
         }
         else{
-            introLabel.text=nil
+            introLabel.text = nil
         }
         
         shareBtn.backgroundColor = color
-        authorLabel.text=poetry.author
+        authorLabel.text = poetry.author
         
     }
     public override func layoutSubviews() {
