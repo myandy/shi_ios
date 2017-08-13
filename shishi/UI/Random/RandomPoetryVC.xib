@@ -25,9 +25,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcg-Pn-fv6">
-                    <rect key="frame" x="295" y="607" width="80" height="60"/>
+                    <rect key="frame" x="255" y="607" width="60" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="80" id="2JQ-Co-qkR"/>
+                        <constraint firstAttribute="width" constant="60" id="2JQ-Co-qkR"/>
                         <constraint firstAttribute="height" constant="60" id="eWN-s8-q1a"/>
                     </constraints>
                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
@@ -48,6 +48,18 @@
                         <action selector="cancelClick:" destination="-1" eventType="touchUpInside" id="IXh-Th-DeP"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZv-qO-gnm">
+                    <rect key="frame" x="315" y="607" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="5hQ-Jf-yUf"/>
+                        <constraint firstAttribute="height" constant="60" id="cUq-Xs-HjB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
+                    <state key="normal" image="setting"/>
+                    <connections>
+                        <action selector="onEditBtnClick:" destination="-1" eventType="touchUpInside" id="gSk-ha-BUd"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -55,9 +67,11 @@
                 <constraint firstItem="hlr-bj-D6U" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="288-TW-Vzj"/>
                 <constraint firstAttribute="bottom" secondItem="hlr-bj-D6U" secondAttribute="bottom" id="2S4-go-Gcb"/>
                 <constraint firstItem="jcg-Pn-fv6" firstAttribute="bottom" secondItem="hlr-bj-D6U" secondAttribute="bottom" id="9PV-ps-U9D"/>
+                <constraint firstAttribute="trailing" secondItem="JZv-qO-gnm" secondAttribute="trailing" id="F6s-P6-I6n"/>
+                <constraint firstAttribute="bottom" secondItem="JZv-qO-gnm" secondAttribute="bottom" id="UeK-1k-J0G"/>
                 <constraint firstAttribute="bottom" secondItem="bl3-KK-o0k" secondAttribute="bottom" id="X0p-Rd-P0n"/>
+                <constraint firstItem="JZv-qO-gnm" firstAttribute="leading" secondItem="jcg-Pn-fv6" secondAttribute="trailing" id="hWQ-X7-3Vv"/>
                 <constraint firstAttribute="trailing" secondItem="hlr-bj-D6U" secondAttribute="trailing" id="k3k-MB-MQw"/>
-                <constraint firstItem="jcg-Pn-fv6" firstAttribute="trailing" secondItem="hlr-bj-D6U" secondAttribute="trailing" id="kFT-j5-Oc0"/>
                 <constraint firstItem="bl3-KK-o0k" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zvw-sa-mfC"/>
             </constraints>
             <point key="canvasLocation" x="-222.5" y="-169.5"/>
@@ -67,5 +81,6 @@
         <image name="cancel" width="15" height="15"/>
         <image name="launch_image" width="320" height="480"/>
         <image name="random" width="27" height="27"/>
+        <image name="setting" width="44" height="44"/>
     </resources>
 </document>

@@ -184,6 +184,8 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         //var label: UILabel
         var itemView: UIView
         
+        let horizonalSpace:CGFloat = 40
+        let cardViewWidth = self.carousel.bounds.size.width - horizonalSpace * 2
         
         if index < items.count - 1 {
             //            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 800))
@@ -196,7 +198,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
             //            label.text="诗词"
             //            imageView.addSubview(label)
             //            itemView=imageView
-            let cardView = MainCardView(frame: CGRect(x: 0, y: 0, width: convertWidth(pix: 400), height: self.carousel.bounds.size.height))
+            let cardView = MainCardView(frame: CGRect(x: 0, y: 0, width: cardViewWidth, height: self.carousel.bounds.size.height))
             
             cardView.setupData(cipai: "临江仙", dateString: "17-05-07", contentArray: ["ABCDEFG\nrewqre\nfds", "1234567"])
             
@@ -218,7 +220,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     
     func carousel(_ carousel: iCarousel, valueFor option: iCarouselOption, withDefault value: CGFloat) -> CGFloat {
         if (option == .spacing) {
-            return value * 1.2
+            return value * 1.1
         }
         return value
     }

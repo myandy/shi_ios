@@ -21,7 +21,7 @@ private let contentHorizonalMinOffset: CGFloat = 10
 
 class SharePoetryView: UIView {
     
-    fileprivate var bgImage: UIImage!
+    fileprivate var bgImage: UIImage?
     
     //内容水平方向偏移
     internal var contentHorizonalOffset: CGFloat = 0
@@ -270,16 +270,19 @@ class SharePoetryView: UIView {
         return tarSize
     }
     
-    internal func resizedImage(size: CGSize) -> UIImage {
-        if self.bgImage.size.width == size.width && self.bgImage.size.height == size.height {
-            return self.bgImage
+    internal func resizedImage(size: CGSize) -> UIImage? {
+        guard let bgImage = self.bgImage else {
+            return nil
+        }
+        if bgImage.size.width == size.width && bgImage.size.height == size.height {
+            return bgImage
         }
         
-        let ratio = fmax(size.height / self.bgImage.size.height, size.width / self.bgImage.size.width)
+        let ratio = fmax(size.height / bgImage.size.height, size.width / bgImage.size.width)
         
-        let resizeSize = CGSize(width: self.bgImage.size.width * ratio, height: self.bgImage.size.height * ratio)
+        let resizeSize = CGSize(width: bgImage.size.width * ratio, height: bgImage.size.height * ratio)
         
-        return self.bgImage.imageScaledToSize(newSize: resizeSize)
+        return bgImage.imageScaledToSize(newSize: resizeSize)
     }
 }
 

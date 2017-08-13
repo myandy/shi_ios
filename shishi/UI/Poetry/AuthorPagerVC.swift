@@ -14,6 +14,8 @@ private let poetryCellReuseIdentifier = "poetryCellReuseIdentifier"
 
 private let authorCellReuseIdentifier = "authorCellReuseIdentifier"
 
+private let UserDefaultsKeyLoadTimes = "UserDefaultsKeyLoadTimes"
+
 class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     var poetrys = [Poetry]()
@@ -23,6 +25,30 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
 
     var author : Author!
     var color : UIColor!
+    
+    fileprivate lazy var tipView:UIView = {
+        let tipView = UIView()
+        return tipView
+    }()
+    
+    fileprivate lazy var tipTitleView:UILabel = {
+        let titleView = UILabel()
+        titleView.text = SSStr.Tips.AUTHOR_SLIDE
+        titleView.textColor = UIColor.white
+        return titleView
+    }()
+    
+    fileprivate lazy var tipImageView:UIImageView = {
+        let imageView = UIImageView()
+        var images = [UIImage]()
+        let formatName = "left_slip_guide_%03d"
+        for index in 0...24 {
+            let imageName = String(format: formatName, index)
+            images.append(UIImage(named: imageName)!)
+        }
+        imageView.animationImages = images
+        return imageView
+    }()
     
     init(author : Author,color : UIColor) {
         self.author = author
@@ -63,6 +89,44 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
         
         setupUI()
         
+        if UserDefaults.standard.value(forKey: UserDefaultsKeyLoadTimes) == nil {
+            UserDefaults.standard.setValue(true, forKey: UserDefaultsKeyLoadTimes)
+            self.showTip()
+        }
+        
+    }
+    
+    fileprivate func showTip() {
+        if self.tipView.superview == nil {
+            self.view.addSubview(self.tipView)
+            self.tipView.snp.makeConstraints({ (make) in
+                make.right.centerY.equalToSuperview()
+            })
+            
+            self.tipView.addSubview(self.tipImageView)
+            self.tipImageView.snp.makeConstraints({ (make) in
+                make.centerX.top.equalToSuperview()
+                make.width.height.equalTo(120)
+            })
+            self.tipImageView.startAnimating()
+            
+            self.tipView.addSubview(self.tipTitleView)
+            self.tipTitleView.snp.makeConstraints({ (make) in
+                make.left.greaterThanOrEqualToSuperview()
+                make.right.lessThanOrEqualToSuperview()
+                make.bottom.equalToSuperview()
+                make.top.equalTo(self.tipImageView.snp.bottom)
+            })
+    
+            let tapGuesture = UITapGestureRecognizer()
+            self.tipView.addGestureRecognizer(tapGuesture)
+            tapGuesture.rx.event
+                .subscribe(onNext: { [unowned self] _ in
+                    self.tipView.removeFromSuperview()
+                })
+                .addDisposableTo(self.rx_disposeBag)
+            
+        }
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {

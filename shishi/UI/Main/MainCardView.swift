@@ -43,7 +43,7 @@ class MainCardView: UIView {
     
     lazy var kolodaView: KolodaView = {
         let kolodaView = KolodaView()
-        kolodaView.backgroundColor = UIColor.white
+//        kolodaView.backgroundColor = UIColor.white
         kolodaView.dataSource = self
         kolodaView.delegate = self
         self.addSubview(kolodaView)
@@ -135,6 +135,9 @@ extension MainCardView: KolodaViewDataSource {
             .addDisposableTo(self.rx_disposeBag)
         
         cardView.addGestureRecognizer(tapGuesture)
+//        let cardView = MainKolodaView()
+//        //cardView.contentTe
+//        cardView.backgroundColor = UIColor.red
         return cardView
     }
     

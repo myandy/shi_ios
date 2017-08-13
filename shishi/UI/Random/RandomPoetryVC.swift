@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import FTPopOverMenu_Swift
 
 class RandomPoetryVC: UIViewController {
     
@@ -17,13 +18,7 @@ class RandomPoetryVC: UIViewController {
     
     var poetryView: PoetryView!
     
-    @IBAction func randomClick(_ sender: AnyObject) {
-        refresh()
-    }
-
-    @IBAction func cancelClick(_ sender: AnyObject) {
-        self.navigationController?.popViewController(animated: true)
-    }
+    
     
     var poetry:Poetry!
     
@@ -63,4 +58,31 @@ class RandomPoetryVC: UIViewController {
         shareController.poetry = self.poetry
         self.navigationController?.pushViewController(shareController, animated: true)
     }
+}
+
+//action
+extension RandomPoetryVC {
+    @IBAction func randomClick(_ sender: AnyObject) {
+        refresh()
+    }
+    
+    @IBAction func cancelClick(_ sender: AnyObject) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func onEditBtnClick(_ sender: AnyObject) {
+        FTPopOverMenu.showForSender(sender: sender as! UIView,
+                                    with: [SSStr.Share.INCREASE_FONTSIZE, SSStr.All.FAVORITE, SSStr.All.DIRECTORY, SSStr.All.COPY_CONTENT, SSStr.All.SPEAK_CONTENT, SSStr.All.AUTHOR_PEDIA, SSStr.All.CONTENT_PEDIA],
+                                    done: { [unowned self] (selectedIndex) -> () in
+                                        switch selectedIndex {
+                                        case 0:
+                                            break
+                                        default:
+                                            break
+                                        }
+        }) {
+            
+        }
+    }
+    
 }

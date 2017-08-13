@@ -25,6 +25,17 @@ class SSStr: NSObject {
          static let DYNASTIES = ["全部朝代","先秦","汉朝","魏晋","南北朝","唐朝","北宋","南宋","元朝","明朝","清朝","近代","当代"]
          static let CHOOSE_DYNASTY = "选择朝代"
          static let SORT_ORDER = ["默认排序","按诗数量排序"]
+        
+        static let FAVORITE = "收藏"
+        static let DIRECTORY = "目录"
+        static let COPY_CONTENT = "复制内容"
+        static let SPEAK_CONTENT = "语音朗读"
+        static let AUTHOR_PEDIA = "作者百科"
+        static let CONTENT_PEDIA = "内容百科"
+    }
+    
+    struct Tips {
+        static let AUTHOR_SLIDE = "左滑可以关闭，右滑看下一页"
     }
 
     struct Setting {

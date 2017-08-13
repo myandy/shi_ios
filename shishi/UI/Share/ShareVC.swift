@@ -141,7 +141,7 @@ class ShareVC: UIViewController {
         editBtn.rx.tap
             .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [unowned self] in
-                self.onEditBtnClidk()
+                self.onEditBtnClik()
             })
             .addDisposableTo(self.rx_disposeBag)
         
@@ -183,7 +183,7 @@ class ShareVC: UIViewController {
 
 //action
 extension ShareVC {
-    internal func onEditBtnClidk() {
+    internal func onEditBtnClik() {
         FTPopOverMenu.showForSender(sender: self.editBtn,
                                     with: [SSStr.Share.INCREASE_FONTSIZE, SSStr.Share.REDUCE_FONTSIZE, SSStr.Share.TEXT_ALIGN, SSStr.Share.CONTENT_MOVELEFT, SSStr.Share.CONTENT_MOVERIGHT, SSStr.Share.HIDE_AHTHOR],
                                     done: { [unowned self] (selectedIndex) -> () in
