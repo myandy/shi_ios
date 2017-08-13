@@ -55,7 +55,9 @@ class RandomPoetryVC: UIViewController {
     
     internal func onShareBtnClick() {
         let shareController = ShareEditVC()
-        shareController.poetry = self.poetry
+        shareController.poetryTitle = self.poetry.title
+        shareController.poetryAuthor = self.poetry.author
+        shareController.poetryContent = self.poetry.poetry
         self.navigationController?.pushViewController(shareController, animated: true)
     }
 }

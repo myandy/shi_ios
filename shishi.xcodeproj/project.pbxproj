@@ -293,6 +293,8 @@
 		75DE1E1D1F1750FC00AB354A /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E1C1F1750FC00AB354A /* FXBlurView.m */; };
 		75DE1E1F1F1761CB00AB354A /* ShareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E1E1F1761CB00AB354A /* ShareVC.swift */; };
 		75DE1E251F2E211A00AB354A /* MirrorLoaderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E241F2E211900AB354A /* MirrorLoaderLayer.swift */; };
+		75F8074B1F4022A700759C2F /* ModelExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F8074A1F4022A700759C2F /* ModelExtention.swift */; };
+		75F8074D1F40293300759C2F /* SSNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F8074C1F40293300759C2F /* SSNotificationCenter.swift */; };
 		E202C09B1EE4070C0099FCCC /* ShareEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */; };
 		E202C09D1EE83E2D0099FCCC /* FormerIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C09C1EE83E2D0099FCCC /* FormerIntroVC.swift */; };
 		E202C09F1EE848810099FCCC /* intro.html in Resources */ = {isa = PBXBuildFile; fileRef = E202C09E1EE848810099FCCC /* intro.html */; };
@@ -825,6 +827,8 @@
 		75DE1E1C1F1750FC00AB354A /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		75DE1E1E1F1761CB00AB354A /* ShareVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareVC.swift; path = Share/ShareVC.swift; sourceTree = "<group>"; };
 		75DE1E241F2E211900AB354A /* MirrorLoaderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MirrorLoaderLayer.swift; path = Share/MirrorLoaderLayer.swift; sourceTree = "<group>"; };
+		75F8074A1F4022A700759C2F /* ModelExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelExtention.swift; sourceTree = "<group>"; };
+		75F8074C1F40293300759C2F /* SSNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSNotificationCenter.swift; sourceTree = "<group>"; };
 		86A3D6B6999EBD9A4ABA66B1 /* Pods-shishi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shishi.release.xcconfig"; path = "Pods/Target Support Files/Pods-shishi/Pods-shishi.release.xcconfig"; sourceTree = "<group>"; };
 		E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareEditVC.swift; path = Share/ShareEditVC.swift; sourceTree = "<group>"; };
 		E202C09C1EE83E2D0099FCCC /* FormerIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormerIntroVC.swift; sourceTree = "<group>"; };
@@ -1924,6 +1928,7 @@
 				7549ABE51EE6F06F0043893A /* SSShareUtil.swift */,
 				756C77AE1F374EEE00B9FF54 /* UIImage+Rotate.h */,
 				756C77AF1F374EEE00B9FF54 /* UIImage+Rotate.m */,
+				75F8074C1F40293300759C2F /* SSNotificationCenter.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -2210,6 +2215,7 @@
 				75BE6EEC1EEEED3C00A578B2 /* Writting.m */,
 				75BE6EFB1EF0364600A578B2 /* BaseDBModel.h */,
 				75BE6EFC1EF0364600A578B2 /* BaseDBModel.m */,
+				75F8074A1F4022A700759C2F /* ModelExtention.swift */,
 			);
 			name = Models;
 			path = DB/Models;
@@ -2651,6 +2657,7 @@
 				751E07DA1EACA61D00BAB696 /* UMComRequestTableViewController.m in Sources */,
 				751E08411EACA61D00BAB696 /* UMComCommentTableViewCell.m in Sources */,
 				751E08251EACA61D00BAB696 /* UMComEmojiPageView.m in Sources */,
+				75F8074D1F40293300759C2F /* SSNotificationCenter.swift in Sources */,
 				751E07FD1EACA61D00BAB696 /* UMComActionDeleteView.m in Sources */,
 				751E084F1EACA61D00BAB696 /* UMComMicroTopicSearchViewController.m in Sources */,
 				7549ABEC1EED359D0043893A /* UserDBManager.swift in Sources */,
@@ -2696,6 +2703,7 @@
 				E2E14C731ED3B44C0056009C /* FontSettingVC.swift in Sources */,
 				751E07F61EACA61D00BAB696 /* UMComUserProfileDetailView.m in Sources */,
 				751E080F1EACA61D00BAB696 /* UMComMutiStyleTextView.m in Sources */,
+				75F8074B1F4022A700759C2F /* ModelExtention.swift in Sources */,
 				E22869C21EC0AF5900238DF8 /* PoetryCellVC.swift in Sources */,
 				751E07C21EACA61D00BAB696 /* UMComDataOperationErrorHandler.m in Sources */,
 				751E07D91EACA61D00BAB696 /* UMComNavigationController.m in Sources */,

@@ -31,12 +31,15 @@ public class EditPagerView : UIView{
                                         "bg084_small", "bg096_small",
                                         "bg118_small"]
     
-    public var writing: Writing!
+    public var writing: Writting!
     
     //列表
     var tableView: UITableView!
     
     var clist: Array<String>!
+    
+    //已经输入的内容
+    var contentArray: [String?]!
     
     var title: UILabel!
     
@@ -44,14 +47,14 @@ public class EditPagerView : UIView{
         
         //测试代码
         if writing == nil{
-            writing = Writing()
+            writing = Writting()
         }
         
         setupHeadView()
         
         
         let backgroundImage=UIImageView()
-        backgroundImage.image=UIImage(named: EditPagerView.bgimgList[Int(writing.bgimg)])
+        backgroundImage.image=UIImage(named: EditPagerView.bgimgList[Int(writing.bgImg)])
         self.addSubview(backgroundImage)
         backgroundImage.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(TOP_HEIGHT)
@@ -60,8 +63,10 @@ public class EditPagerView : UIView{
         
         
         let former = writing.former
-        let slist = former!.pingze.characters.split(separator: "。").map(String.init)
+        let slist = former.pingze.characters.split(separator: "。").map(String.init)
         clist = EditUtils.getCodeFromPingze(list: slist)
+        
+        self.contentArray = Array.init(repeating: nil, count: clist.count)
         
         
         tableView = UITableView()
@@ -88,7 +93,7 @@ public class EditPagerView : UIView{
         }
         ivTop.backgroundColor=UIColor.clear
         ivTop.isUserInteractionEnabled = true
-        ivTop.image = UIImage(named: EditPagerView.bgimgList[writing.bgimg])
+        ivTop.image = UIImage(named: EditPagerView.bgimgList[Int(writing.bgImg)])
         
         let keyboard = UIImageView()
         ivTop.addSubview(keyboard)
@@ -184,6 +189,19 @@ public class EditPagerView : UIView{
         firstViewController()?.navigationController?.pushViewController(SearchYunVC(), animated: true)
     }
     
+    //生成输入的内容
+    func mergeContent() -> String {
+        var content = ""
+        for item in self.contentArray {
+            if let item = item {
+                if !content.isEmpty {
+                    content += Writting.textSeparator
+                }
+                content += item
+            }
+        }
+        return content
+    }
 }
 
 extension EditPagerView: UITableViewDataSource,UITableViewDelegate {
@@ -193,7 +211,12 @@ extension EditPagerView: UITableViewDataSource,UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: editCellIdentifier, for: indexPath) as! EditPagerCell
-        cell.refresh(code: clist[indexPath.row])
+        let textArray = self.writing.textArray
+        let content: String? = textArray.count > indexPath.row ? textArray[indexPath.row] : nil
+        cell.refresh(code: clist[indexPath.row], content: content)
+        cell.editHandler = { [unowned self] content in
+            self.contentArray[indexPath.row] = content
+        }
         return cell
     }
     

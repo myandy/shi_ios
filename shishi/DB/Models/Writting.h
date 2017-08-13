@@ -11,14 +11,18 @@
 
 @interface Writting : BaseDBModel
 
++ (int64_t)indexValueForNewInstance;
+
 @property (nonatomic, assign) int64_t id;
-@property (nonatomic, copy) NSString *text;
-@property (nonatomic, assign) int formerId;
+//用于排序
+@property (nonatomic, assign) int64_t index;
+@property (nonatomic, copy, nonnull) NSString *text;
+@property (nonatomic, assign) int64_t formerId;
 @property (nonatomic, copy) NSString *title;
 
 @property (nonatomic) NSDate *create_dt;
 @property (nonatomic) NSDate *update_dt;
-@property (nonatomic, assign) int bgImg;
-@property (nonatomic, copy) NSString *author;
+@property (nonatomic, assign) int64_t bgImg;
+@property (nonatomic, copy, nullable) NSString *author;
 
 @end

@@ -13,7 +13,10 @@ import FTPopOverMenu_Swift
 
 class ShareVC: UIViewController {
     
-    var poetry:Poetry!
+    //var poetry:Poetry!
+    var poetryTitle: String!
+    var poetryAuthor: String!
+    var poetryContent: String!
     
     //背景图片
     internal var bgImage:UIImage!
@@ -48,7 +51,7 @@ class ShareVC: UIViewController {
         // Do any additional setup after loading the view.
         
         self.setupUI()
-        self.poetryContainerView.setupData(title: self.poetry.title, author: self.poetry.author, content: self.poetry.poetry)
+        self.poetryContainerView.setupData(title: self.poetryTitle, author: self.poetryAuthor, content: self.poetryContent)
         self.poetryContainerView.setupBGImage(image: self.bgImage)
     }
 
@@ -215,7 +218,7 @@ extension ShareVC {
                                         switch selectedIndex {
                                         case 0:
                                             let pasteBoard = UIPasteboard.general
-                                            pasteBoard.string = self.poetry.title + "\n" + self.poetry.author + "\n" + self.poetry.poetry
+                                            pasteBoard.string = self.poetryTitle + "\n" + self.poetryAuthor + "\n" + self.poetryContent
                                         case 1:
                                             let image = SSImageUtil.image(with: self.poetryContainerView)
                                             PHPhotoLibrary.shared().performChanges({

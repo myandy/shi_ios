@@ -13,7 +13,10 @@ import Photos
 private let cellIdentifier = "cellIdentifier"
 
 class ShareEditVC : UIViewController {
-    var poetry:Poetry!
+    //var poetry:Poetry!
+    var poetryTitle: String!
+    var poetryAuthor: String!
+    var poetryContent: String!
     
     //背景图片
     internal var bgImageArray = PoetryImage.allValues
@@ -93,7 +96,8 @@ class ShareEditVC : UIViewController {
         
         self.setupUI()
         
-        self.poetryContainerView.setupData(title: self.poetry.title, author: self.poetry.author, content: self.poetry.poetry)
+        //self.poetryContainerView.setupData(title: self.poetry.title, author: self.poetry.author, content: self.poetry.poetry)
+        self.poetryContainerView.setupData(title: self.poetryTitle, author: self.poetryAuthor, content: self.poetryContent)
         self.poetryContainerView.updateTextColor(textColor: UIColor(hexColor: "A9A9AB"))
         
         self.showFirstBGImage()
@@ -364,7 +368,10 @@ extension ShareEditVC {
 //        SSShareUtil.default.shareToSystem(controller: self, image: shareImage)
         
         let shareController = ShareVC()
-        shareController.poetry = self.poetry
+        //shareController.poetry = self.poetry
+        shareController.poetryTitle = self.poetryTitle
+        shareController.poetryAuthor = self.poetryAuthor
+        shareController.poetryContent = self.poetryContent
         shareController.bgImage = self.poetryContainerView.bgImageView.image
         self.navigationController?.pushViewController(shareController, animated: true)
     }

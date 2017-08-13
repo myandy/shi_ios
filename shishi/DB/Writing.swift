@@ -10,20 +10,20 @@ import Foundation
 
 import FMDB
 
-public class Writing {
-    
-    var id: Int!
-    var text: String!
-    var formerId:Int!
-    var title: String!
-    var create_dt: CLong!
-    var update_dt: CLong!
-    var bgimg = 0
-    var author: String!
-    var former: Former!
-    
-}
-
+//public class Writing {
+//    
+//    var id: Int!
+//    var text: String!
+//    var formerId:Int!
+//    var title: String!
+//    var create_dt: CLong!
+//    var update_dt: CLong!
+//    var bgimg = 0
+//    var author: String!
+//    var former: Former!
+//    
+//}
+//
 //public class WritingDB{
 //    static let TABLE_NAME = "writing"
 //    

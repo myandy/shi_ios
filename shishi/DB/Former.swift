@@ -10,7 +10,7 @@ import Foundation
 import FMDB
 class Former {
     
-    var id: Int!
+    var id: Int64!
     var name: String!
     var source: String!
     var pingze: String!
@@ -42,7 +42,7 @@ class FormerDB {
         var array = [Former]()
         while rs.next() {
             let model = Former()
-            model.id = Int(rs.int(forColumn: "id"))
+            model.id = Int64(rs.int(forColumn: "id"))
             model.name = rs.string(forColumn: "name")
             model.source = rs.string(forColumn: "source")
             model.pingze = rs.string(forColumn: "pingze")
@@ -69,5 +69,12 @@ class FormerDB {
         
         return array
         
+    }
+    
+    public class func getFormer(with formerId: Int64) -> Former? {
+        let allFormer = getAll()
+        return allFormer.first { (former) -> Bool in
+            return former.id == formerId
+        }
     }
 }

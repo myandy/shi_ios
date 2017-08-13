@@ -8,6 +8,9 @@
 
 #import "BaseDBModel.h"
 
+
+
+
 @implementation BaseDBModel
 
 - (BOOL)customValue:(nullable id)value forKey:(NSString *)key {
@@ -18,5 +21,7 @@
     NSNumber *numberValue = (NSNumber*)value;
     return [NSDate dateWithTimeIntervalSince1970:[numberValue floatValue]];
 }
+
+
 
 @end

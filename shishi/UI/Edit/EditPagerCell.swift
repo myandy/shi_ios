@@ -12,7 +12,11 @@ class EditPagerCell : UITableViewCell {
     
     private var pingzeLinearView: PingzeLinearView!
     
+    private var textField: UITextField!
+    
     var code: String!
+    
+    public var editHandler: ((String?) -> Void)!
     
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -27,7 +31,7 @@ class EditPagerCell : UITableViewCell {
             make.height.equalTo(30)
         }
         
-        let textField = UITextField()
+        self.textField = UITextField()
         textField.textColor = UIColor.black
         textField.tintColor = UIColor.black
         addSubview(textField)
@@ -53,9 +57,10 @@ class EditPagerCell : UITableViewCell {
         
     }
     
-    public func refresh(code:String){
+    public func refresh(code:String, content: String?){
         self.code = code
         pingzeLinearView.refresh(code: code)
+        self.textField.text = content
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -71,5 +76,6 @@ extension EditPagerCell : UITextFieldDelegate {
             EditUtils.checkTextFiled(textFiled: textField,code: self.code)
         }
         
+        self.editHandler(textField.text)
     }
 }

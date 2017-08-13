@@ -10,7 +10,7 @@ import UIKit
 
 class EditVC: UIViewController {
     
-    var writing : Writing!
+    var writing : Writting!
     
     var editPagerView : EditPagerView!
     
@@ -22,8 +22,13 @@ class EditVC: UIViewController {
     @IBAction func cancelBtnClick(_ sender: Any) {
         let alertController = UIAlertController(title: "是否保存", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         let alertView1 = UIAlertAction(title: "保存", style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
-//            WritingDB.addWriting(writing: self.writing)
+//            Writing.addWriting(writing: self.writing)
+            let content = self.editPagerView.mergeContent()
+            self.writing.text = content
+            self.writing.save(nil)
+            SSNotificationCenter.default.post(name: SSNotificationCenter.Names.addWritting, object: nil)
             self.navigationController?.popViewController(animated: true)
+            
         }
         
         let alertView2 = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel) { (UIAlertAction) -> Void in
@@ -38,8 +43,13 @@ class EditVC: UIViewController {
     @IBAction func confirmBtnClick(_ sender: Any) {
     }
     init(former : Former) {
-        writing = Writing()
-        writing.former = former
+        writing = Writting()
+        writing.formerId = former.id
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    init(writting : Writting) {
+        self.writing = writting
         super.init(nibName: nil, bundle: nil)
     }
     

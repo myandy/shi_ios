@@ -8,14 +8,45 @@
 
 #import "Writting.h"
 
+
 @implementation Writting
+
+
++ (int64_t)indexValueForNewInstance
+{
+    NSArray *allValues = [Writting allInstances];
+    
+    NSArray *sortValues = [allValues sortedArrayWithOptions:0
+                          usingComparator:^NSComparisonResult(id obj1, id obj2)
+    {
+        Writting* writting1 = obj1;
+        Writting* writting2 = obj2;
+        return writting1.index > writting2.index;
+    }];
+    
+    int64_t newIndex = allValues.count == 0 ? 0 : (((Writting*)[sortValues lastObject]).index + 1);
+    return newIndex;
+}
 
 - (BOOL)save:(void (^)())modificiationsBlock
 {
+//    if (!self.existsInDatabase) {
+//        self.id = (int64_t)[[self class] primaryKeyValueForNewInstance];
+//    }
+    
+    if (!self.existsInDatabase) {
+        self.index = [self.class indexValueForNewInstance];
+    }
+    
     return [super save:^{
         if (self.hasUnsavedChanges) self.create_dt = [NSDate date];
-        if (! self.existsInDatabase) self.update_dt = [NSDate date];
-        modificiationsBlock();
+        if (!self.existsInDatabase) {
+            self.update_dt = [NSDate date];
+        }
+        if (modificiationsBlock != nil) {
+            modificiationsBlock();
+        }
+        
     }];
 }
 

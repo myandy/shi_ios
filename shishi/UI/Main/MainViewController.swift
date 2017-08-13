@@ -17,7 +17,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     
 {
     
-    var items: [Int] = []
+    var formerItems = [[Writting]]()
     
     var writtingArray = [Writting]()
     
@@ -73,9 +73,9 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        for i in 0 ... 3 {
-            items.append(i)
-        }
+//        for i in 0 ... 3 {
+//            items.append(i)
+//        }
     }
     
     override func viewDidLoad() {
@@ -87,7 +87,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         }
         
 
-        
+        self.reloadData()
         carousel.superview?.layoutIfNeeded()
         carousel.type = .linear
         carousel.currentItemIndex = carousel.numberOfItems-1
@@ -101,6 +101,14 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         //        self.testShare()
         //        self.testDB()
 //        self.testGenImage()
+        
+        _ = SSNotificationCenter.default.rx
+            .notification(SSNotificationCenter.Names.addWritting)
+            .subscribe(onNext: { [unowned self] notification in
+            self.reloadData()
+        })
+        .addDisposableTo(self.rx_disposeBag)
+        
         
     }
     
@@ -126,6 +134,13 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         
     }
     
+    func reloadData() {
+        self.loadWrttingData()
+        self.genFormers()
+        self.carousel.reloadData()
+    }
+    
+    
     func addWrittingData() {
         for i in 0...10 {
             let writting = Writting()
@@ -140,6 +155,25 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
                 
             }
         }
+    }
+    
+    fileprivate func genFormers() {
+        var items = [[Writting]]()
+        //var formerIdArray = [Int]()
+        for writting in self.writtingArray {
+            let index = items.index(where: { (writtingArray) -> Bool in
+                writtingArray.count > 0 && writtingArray[0].formerId == writting.formerId
+            })
+            
+            if let index = index {
+                items[index].append(writting)
+            }
+            else {
+                items.append([writting])
+            }
+        }
+        
+        self.formerItems = items
     }
     
     func testShare() {
@@ -157,12 +191,16 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         
     }
     
-    private func loadWrttingData() {
+    fileprivate func loadWrttingData() {
         //self.writtingArray = WritingDB.getAll()
         let array = Writting.allInstances()
         self.writtingArray = array as! [Writting]
+        self.writtingArray = self.writtingArray.sorted(by: { (obj0, ojb1) -> Bool in
+            return obj0.index < ojb1.index
+        })
         for item in self.writtingArray {
             log.debug("id:\(item.id)")
+            log.debug("index:\(item.index)")
             log.debug("title:\(item.title)")
             log.debug("text:\(item.text)")
             log.debug("formerId:\(item.formerId)")
@@ -174,11 +212,23 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         
     }
     
+    fileprivate func dateString(with date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yy-MM-dd"
+        
+        return formatter.string(from: date)
+    }
     
+    //视图位置对应的数据位置
+    //倒序显示
+    fileprivate func formerIndex(with cardViewIndex: Int) -> Int {
+        return formerItems.count - 1 - cardViewIndex
+    }
     
     public func numberOfItems(in carousel: iCarousel) -> Int {
-        return items.count
+        return formerItems.count + 1
     }
+
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         //var label: UILabel
@@ -187,20 +237,22 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         let horizonalSpace:CGFloat = 40
         let cardViewWidth = self.carousel.bounds.size.width - horizonalSpace * 2
         
-        if index < items.count - 1 {
-            //            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 800))
-            //            imageView.image = UIImage(named: "bg001.jpg")
-            //            imageView.contentMode = .center
-            //
-            //            label = UILabel(frame: imageView.bounds)
-            //            label.textAlignment = .center
-            //            label.tag = 1
-            //            label.text="诗词"
-            //            imageView.addSubview(label)
-            //            itemView=imageView
+        let isLast = (index == formerItems.count)
+        if !isLast {
             let cardView = MainCardView(frame: CGRect(x: 0, y: 0, width: cardViewWidth, height: self.carousel.bounds.size.height))
             
-            cardView.setupData(cipai: "临江仙", dateString: "17-05-07", contentArray: ["ABCDEFG\nrewqre\nfds", "1234567"])
+            let formerIndex = self.formerIndex(with: index)
+            cardView.tag = formerIndex
+            cardView.delegate = self
+            
+            let formerItem = self.formerItems[formerIndex]
+            let formerName = formerItem.first!.former.name!
+            let updateDate = formerItem.last!.update_dt
+            let dateString = self.dateString(with: updateDate!)
+            let contentArray = formerItem.map({ (writting) -> String in
+                return writting.text
+            })
+            cardView.setupData(cipai: formerName, dateString: dateString, contentArray: contentArray)
             
             itemView = cardView
             //            itemView.backgroundColor = UIColor.white
@@ -211,8 +263,6 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
                 mainView = UINib(nibName: "MainView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! UIView
             }
             itemView = mainView
-            
-            
         }
         return itemView
         
@@ -227,6 +277,84 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     
     public func carousel(_ carousel: iCarousel, didSelectItemAt index: Int) {
         
+    }
+}
+
+extension MainViewController: MainCardViewDelegate {
+    func mainCard(_ mainCardView: MainCardView, didTapCell cell: UIView, forRowAt index: Int) {
+        var senderFrame = UIScreen.main.bounds
+        senderFrame.origin.y = senderFrame.size.height / 2
+        senderFrame.size.height = senderFrame.size.height / 2
+        FTPopOverMenu.showFromSenderFrame(senderFrame: senderFrame,
+                                          with: [SSStr.Share.SHARE, SSStr.Common.EDIT, SSStr.Common.DELETE],
+                                          done: { [unowned self] (selectedIndex) -> () in
+                                            
+                                            let cardIndex = mainCardView.tag
+                                            //var formerItem = self.formerItems[cardIndex]
+                                            
+                                            switch selectedIndex {
+                                            case 0:
+                                                self.showShareViewController(cardViewIndex: cardIndex, poetryIndex: index)
+                                            case 2:
+                                                self.deleteItem(cardViewIndex: cardIndex, poetryIndex: index)
+                                                
+                                            case 1:
+                                                self.showEditViewController(cardViewIndex: cardIndex, poetryIndex: index)
+                                                
+                                            default:
+                                                break
+                                            }
+        }) {
+            
+        }
+    }
+    
+    func mainCard(_ mainCardView: MainCardView, didSwipeCardAt index: Int) {
+        let cardIndex = mainCardView.tag
+        guard self.formerItems[cardIndex].count > 0 else {
+            return
+        }
+        
+        let newWrittingIndex = Writting.indexValueForNewInstance()
+        let writting = self.formerItems[cardIndex].remove(at: index)
+        //writting.delete()
+        writting.index = newWrittingIndex
+        writting.save(nil)
+        
+        self.formerItems[cardIndex].append(writting)
+        
+        let viewIndex = self.formerIndex(with: cardIndex)
+        self.carousel.reloadItem(at: viewIndex, animated: true)
+    }
+    
+    internal func deleteItem(cardViewIndex: Int, poetryIndex: Int) {
+        let writting = self.formerItems[cardViewIndex].remove(at: poetryIndex)
+        writting.delete()
+        if self.formerItems[cardViewIndex].count > 0 {
+            let viewIndex = self.formerIndex(with: cardViewIndex)
+            self.carousel.reloadItem(at: viewIndex, animated: true)
+        }
+        else {
+            self.formerItems.remove(at: cardViewIndex)
+            self.carousel.reloadData()
+        }
+
+    }
+    
+    internal func showShareViewController(cardViewIndex: Int, poetryIndex: Int) {
+        let writting = self.formerItems[cardViewIndex][poetryIndex]
+        let shareController = ShareEditVC()
+        //shareController.poetry = poetry
+        shareController.poetryTitle = writting.title
+        shareController.poetryAuthor = writting.author ?? ""
+        shareController.poetryContent = writting.text
+        self.navigationController?.pushViewController(shareController, animated: true)
+    }
+    
+    internal func showEditViewController(cardViewIndex: Int, poetryIndex: Int) {
+        let writting = self.formerItems[cardViewIndex][poetryIndex]
+        let viewController = EditVC(writting:writting)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

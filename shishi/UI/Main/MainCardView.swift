@@ -10,6 +10,11 @@ import UIKit
 //import Koloda
 import FTPopOverMenu_Swift
 
+protocol MainCardViewDelegate: class {
+    func mainCard(_ mainCardView: MainCardView, didTapCell cell: UIView, forRowAt index: Int)
+    func mainCard(_ mainCardView: MainCardView, didSwipeCardAt index: Int)
+}
+
 class MainCardView: UIView {
     
     lazy var cipaiLabel: UILabel = {
@@ -52,6 +57,8 @@ class MainCardView: UIView {
         return kolodaView
     }()
     
+    public weak var delegate: MainCardViewDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -80,24 +87,30 @@ class MainCardView: UIView {
         }
     }
     
-    fileprivate func showMenu(index: Int) {
-        var senderFrame = UIScreen.main.bounds
-        senderFrame.origin.y = senderFrame.size.height / 2
-        senderFrame.size.height = senderFrame.size.height / 2
-        FTPopOverMenu.showFromSenderFrame(senderFrame: senderFrame,
-                                    with: [SSStr.Share.SHARE, SSStr.Common.EDIT, SSStr.Common.DELETE],
-                                    done: { [unowned self] (selectedIndex) -> () in
-                                        switch selectedIndex {
-//                                        case 0:
-                                            
-                                            
-                                        default:
-                                            break
-                                        }
-        }) {
-            
+    fileprivate func onKolodaViewClick(view: UIView, index: Int) {
+        if let delegate = self.delegate {
+            delegate.mainCard(self, didTapCell: view, forRowAt: index)
         }
     }
+    
+//    fileprivate func showMenu(index: Int) {
+//        var senderFrame = UIScreen.main.bounds
+//        senderFrame.origin.y = senderFrame.size.height / 2
+//        senderFrame.size.height = senderFrame.size.height / 2
+//        FTPopOverMenu.showFromSenderFrame(senderFrame: senderFrame,
+//                                    with: [SSStr.Share.SHARE, SSStr.Common.EDIT, SSStr.Common.DELETE],
+//                                    done: { [unowned self] (selectedIndex) -> () in
+//                                        switch selectedIndex {
+////                                        case 0:
+//                                            
+//                                            
+//                                        default:
+//                                            break
+//                                        }
+//        }) {
+//            
+//        }
+//    }
     
 //    internal func showShareEditVC() {
 //        let shareController = ShareEditVC()
@@ -130,7 +143,8 @@ extension MainCardView: KolodaViewDataSource {
         let tapGuesture = UITapGestureRecognizer()
         tapGuesture.rx.event
             .subscribe(onNext: { [weak self] _ in
-                self?.showMenu(index: index)
+                //self?.showMenu(index: index)
+                self?.onKolodaViewClick(view: cardView, index: index)
             })
             .addDisposableTo(self.rx_disposeBag)
         
@@ -151,6 +165,9 @@ extension MainCardView: KolodaViewDataSource {
 extension MainCardView: KolodaViewDelegate {
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         log.debug()
+        if let delegate = self.delegate {
+            delegate.mainCard(self, didSwipeCardAt: index)
+        }
     }
 
 }
