@@ -35,12 +35,9 @@ class RandomPoetryVC: UIViewController {
         }
         refresh()
         
-        self.poetryView.shareBtn.rx.tap
-            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] in
-                self.onShareBtnClick()
-            })
-            .addDisposableTo(self.rx_disposeBag)
+        self.poetryView.shareBtn.addTapHandler { [unowned self] in
+            self.onShareBtnClick()
+        }
     }
     
     func refresh(){

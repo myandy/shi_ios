@@ -23,12 +23,9 @@ class BaseSearchVC: UIViewController {
             make.left.equalToSuperview()
             make.width.equalTo(cancelBtn.snp.height)
         }
-        cancelBtn.rx.tap
-            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] in
-                self.onBackBtnClicked()
-            })
-            .addDisposableTo(self.rx_disposeBag)
+        cancelBtn.addTapHandler(handle: { [unowned self] in
+            self.onBackBtnClicked()
+        })
         
         return cancelBtn
     }()

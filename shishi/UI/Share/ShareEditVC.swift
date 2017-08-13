@@ -193,12 +193,9 @@ class ShareEditVC : UIViewController {
             make.bottom.equalToSuperview().offset(convertWidth(pix: -20))
             make.height.width.equalTo(convertWidth(pix: 90))
         }
-        cancleBtn.rx.tap
-            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] in
-                self.navigationController?.popViewController(animated: true)
-            })
-            .addDisposableTo(self.rx_disposeBag)
+        cancleBtn.addTapHandler { [unowned self] in
+            self.navigationController?.popViewController(animated: true)
+        }
         
         let confirmBtn = UIButton()
         self.bottomBar.addSubview(confirmBtn)
@@ -207,36 +204,27 @@ class ShareEditVC : UIViewController {
             make.right.equalToSuperview().offset(convertWidth(pix: -20))
             make.bottom.height.width.equalTo(cancleBtn)
         }
-        confirmBtn.rx.tap
-            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] in
-                self.onConfirmBtnClick()
-            })
-            .addDisposableTo(self.rx_disposeBag)
+        confirmBtn.addTapHandler { [unowned self] in
+            self.onConfirmBtnClick()
+        }
         
         self.bottomBar.addSubview(self.paperBtn)
         self.paperBtn.snp.makeConstraints { (make) in
             make.bottom.width.height.equalTo(cancleBtn)
             make.right.equalTo(self.bottomBar.snp.centerX)
         }
-        self.paperBtn.rx.tap
-            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] in
-                self.onPaperBtnClick()
-            })
-            .addDisposableTo(self.rx_disposeBag)
+        self.paperBtn.addTapHandler { [unowned self] in
+            self.onPaperBtnClick()
+        }
         
         self.bottomBar.addSubview(self.albumBtn)
         self.albumBtn.snp.makeConstraints { (make) in
             make.bottom.width.height.equalTo(cancleBtn)
             make.left.equalTo(self.paperBtn.snp.right)
         }
-        self.albumBtn.rx.tap
-            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] in
-                self.onAlbumBtnClick()
-            })
-            .addDisposableTo(self.rx_disposeBag)
+        self.albumBtn.addTapHandler { [unowned self] in
+            self.onAlbumBtnClick()
+        }
     }
     
     internal func setupPoetryView() {

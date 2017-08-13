@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import iCarousel
+import FTPopOverMenu_Swift
+
 
 private let poetryCellReuseIdentifier = "poetryCellReuseIdentifier"
 
@@ -50,6 +52,16 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
         return imageView
     }()
     
+    internal var editBtn: UIButton!
+    
+    internal lazy var bottomBar: UIView = {
+        let bottomBar = UIView()
+        return bottomBar
+    }()
+    
+    //滑动到最左边退出当前页面
+    var canSwapExit = true
+    
     init(author : Author,color : UIColor) {
         self.author = author
         self.color = color
@@ -75,13 +87,21 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[pageController]|", options: [], metrics: nil, views: views))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[pageController]|", options: [], metrics: nil, views: views))
         
+        if self.canSwapExit {
+            let imageViewController = ImageViewContoller()
+            let parentImage = SSImageUtil.image(with: self.parent!.view)
+            imageViewController.image = parentImage
+            controllers.append(imageViewController)
+        }
+        
         for poetry in poetrys {
             let vc = PoetryCellVC(poetry:poetry,color:color)
             controllers.append(vc)
         }
         
-        pageController.setViewControllers([controllers[0]], direction: .forward, animated: false)
+        //pageController.setViewControllers([controllers[0]], direction: .forward, animated: false)
         
+        self.setupBottomView()
     }
 
     override func viewDidLoad() {
@@ -89,9 +109,48 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
         
         setupUI()
         
+        if self.canSwapExit {
+            pageController.setViewControllers([controllers[1]], direction: .forward, animated: false)
+        }
+        
+        
         if UserDefaults.standard.value(forKey: UserDefaultsKeyLoadTimes) == nil {
             UserDefaults.standard.setValue(true, forKey: UserDefaultsKeyLoadTimes)
             self.showTip()
+        }
+        
+    }
+    
+    internal func setupBottomView() {
+        self.view.addSubview(self.bottomBar)
+        
+        self.bottomBar.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalToSuperview()
+            make.height.equalTo(convertWidth(pix: 100))
+        }
+        
+        let cancleBtn = UIButton()
+        self.bottomBar.addSubview(cancleBtn)
+        cancleBtn.setImage(UIImage(named:"cancel"), for: .normal)
+        cancleBtn.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(convertWidth(pix: 20))
+            make.bottom.equalToSuperview().offset(convertWidth(pix: -20))
+            make.height.width.equalTo(convertWidth(pix: 90))
+        }
+        cancleBtn.addTapHandler { [unowned self] in
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        
+        self.editBtn = UIButton()
+        self.bottomBar.addSubview(editBtn)
+        editBtn.setImage(UIImage(named:"setting"), for: .normal)
+        editBtn.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(convertWidth(pix: -20))
+            make.bottom.height.width.equalTo(cancleBtn)
+        }
+        editBtn.addTapHandler { [unowned self] in
+            self.showMenu()
         }
         
     }
@@ -122,9 +181,31 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
             self.tipView.addGestureRecognizer(tapGuesture)
             tapGuesture.rx.event
                 .subscribe(onNext: { [unowned self] _ in
-                    self.tipView.removeFromSuperview()
+                    self.hideTip()
                 })
                 .addDisposableTo(self.rx_disposeBag)
+            
+        }
+    }
+    
+    fileprivate func hideTip() {
+        if self.tipView.superview != nil {
+            self.tipView.removeFromSuperview()
+        }
+        
+    }
+    
+    fileprivate func showMenu() {
+        FTPopOverMenu.showForSender(sender: self.editBtn,
+                                    with: [SSStr.Share.INCREASE_FONTSIZE, SSStr.Share.REDUCE_FONTSIZE],
+                                    done: { [unowned self] (selectedIndex) -> () in
+                                        switch selectedIndex {
+                                        case 0:
+                                            break
+                                        default:
+                                            break
+                                        }
+        }) {
             
         }
     }
@@ -151,6 +232,33 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
         }
         
         return nil
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        if completed {
+            self.hideTip()
+            
+            if self.canSwapExit && pageViewController.viewControllers!.first is ImageViewContoller {
+                self.navigationController?.popViewController(animated: false)
+            }
+        }
+        
+        
+    }
+}
+
+class ImageViewContoller: UIViewController {
+    var image: UIImage!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let imageView = UIImageView(image: self.image)
+        self.view.addSubview(imageView)
+        imageView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
     }
 }
 

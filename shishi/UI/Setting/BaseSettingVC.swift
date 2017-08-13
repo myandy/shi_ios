@@ -48,12 +48,10 @@ class BaseSettingVC : UIViewController {
             make.width.equalTo(backBtn.snp.height)
             
         }
-        backBtn.rx.tap
-            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] in
-                self.onBackBtnClicked()
-            })
-            .addDisposableTo(self.rx_disposeBag)
+        backBtn.addTapHandler(handle: { [unowned self] in
+            self.onBackBtnClicked()
+        })
+        
         return backBtn
     }()
     

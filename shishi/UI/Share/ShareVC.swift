@@ -127,12 +127,9 @@ class ShareVC: UIViewController {
             make.bottom.equalToSuperview().offset(convertWidth(pix: -20))
             make.height.width.equalTo(convertWidth(pix: 90))
         }
-        cancleBtn.rx.tap
-            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] in
-                self.navigationController?.popViewController(animated: true)
-            })
-            .addDisposableTo(self.rx_disposeBag)
+        cancleBtn.addTapHandler { [unowned self] in
+            self.navigationController?.popViewController(animated: true)
+        }
         
         self.editBtn = UIButton()
         self.bottomBar.addSubview(editBtn)
@@ -141,12 +138,9 @@ class ShareVC: UIViewController {
             make.right.equalToSuperview().offset(convertWidth(pix: -20))
             make.bottom.height.width.equalTo(cancleBtn)
         }
-        editBtn.rx.tap
-            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] in
-                self.onEditBtnClik()
-            })
-            .addDisposableTo(self.rx_disposeBag)
+        editBtn.addTapHandler { [unowned self] in
+            self.onEditBtnClik()
+        }
         
         self.shareBtn = UIButton()
         self.bottomBar.addSubview(shareBtn)
@@ -155,12 +149,9 @@ class ShareVC: UIViewController {
             make.bottom.width.height.equalTo(cancleBtn)
             make.right.equalTo(editBtn.snp.left).offset(convertWidth(pix: -20))
         }
-        shareBtn.rx.tap
-            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] in
-                self.onShareBtnClidk()
-            })
-            .addDisposableTo(self.rx_disposeBag)
+        shareBtn.addTapHandler { [unowned self] in
+            self.onShareBtnClidk()
+        }
         
     }
     

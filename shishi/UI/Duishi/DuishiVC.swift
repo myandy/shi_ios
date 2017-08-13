@@ -109,12 +109,9 @@ class DuishiVC: UIViewController {
             make.width.equalTo(60)
             make.height.equalToSuperview().offset(-16)
         }
-        self.searchBtn.rx.tap
-            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] in
-                self.onSearchBtnClicked()
-            })
-            .addDisposableTo(self.rx_disposeBag)
+        self.searchBtn.addTapHandler { [unowned self] in
+            self.onSearchBtnClicked()
+        }
         
         let backBtn = UIButton()
         shangLianContainerView.addSubview(backBtn)
@@ -124,12 +121,9 @@ class DuishiVC: UIViewController {
             make.top.bottom.equalToSuperview()
             make.width.equalTo(backBtn.snp.height)
         }
-        backBtn.rx.tap
-            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] in
-                self.onBackBtnClicked()
-            })
-            .addDisposableTo(self.rx_disposeBag)
+        backBtn.addTapHandler { [unowned self] in
+            self.onBackBtnClicked()
+        }
         
         self.shangLianTF = UITextField()
         shangLianContainerView.addSubview(self.shangLianTF)
@@ -170,14 +164,9 @@ class DuishiVC: UIViewController {
             make.width.equalTo(60)
             make.height.equalToSuperview().offset(-16)
         }
-        self.refreshBtn.rx.tap
-            .throttle(AppConfig.Constants.TAP_THROTTLE, latest: false, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] in
-                self.onRefreshBtnClicked()
-            })
-            .addDisposableTo(self.rx_disposeBag)
-        
-        
+        self.refreshBtn.addTapHandler { [unowned self] in
+            self.onRefreshBtnClicked()
+        }
         
         return lockerView
     }

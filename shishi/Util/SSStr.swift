@@ -35,7 +35,7 @@ class SSStr: NSObject {
     }
     
     struct Tips {
-        static let AUTHOR_SLIDE = "左滑可以关闭，右滑看下一页"
+        static let AUTHOR_SLIDE = "右滑可以关闭，左滑看下一页"
     }
 
     struct Setting {
