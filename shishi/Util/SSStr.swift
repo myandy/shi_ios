@@ -9,6 +9,11 @@
 import UIKit
 
 class SSStr: NSObject {
+    struct Toast {
+        static var COPY_SUCCESS : String { return NSLocalizedString("文本已经复制到剪切板", comment: "") }
+        static var COLLECTION_SUCCESS: String { return NSLocalizedString("收藏成功", comment: "") }
+        static var CANCEL_COLLECTION_SUCCESS: String { return NSLocalizedString("取消收藏成功", comment: "") }
+    }
     struct Duishi {
         static var duishi                       : String { return NSLocalizedString("DUISHI", comment: "") }
         static var refresh                       : String { return NSLocalizedString("REFRESH", comment: "") }
@@ -99,5 +104,9 @@ class SSStr: NSObject {
         static let CONTENT_MOVELEFT = "内容左移"
         static let CONTENT_MOVERIGHT = "内容右移"
         static let HIDE_AHTHOR = "隐藏作者"
+    }
+    
+    struct AuthorPager {
+        
     }
 }

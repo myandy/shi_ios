@@ -26,18 +26,24 @@ extension UIViewController {
 extension UIViewController {
     
     public func showToast(message: String, addToView: UIView? = nil) {
-        var needCreate = true
-        if let hud = self.hud, hud.mode == .text{
-            needCreate = false
-        }
-        
-        if needCreate {
-            self.hideProgressHUD()
-            
-            self.hud = MBProgressHUD.showAdded(to: addToView ?? self.view, animated: true)
-            self.hud!.mode = .text
-        }
+//        var needCreate = true
+//        if let hud = self.hud, hud.mode == .text{
+//            needCreate = false
+//        }
+//        
+//        if needCreate {
+//            self.hideProgressHUD()
+//            
+//            self.hud = MBProgressHUD.showAdded(to: addToView ?? self.view, animated: true)
+//            self.hud!.mode = .text
+//        }
+//        else {
+//            self.hud!.show(animated: true)
+//        }
+        self.hud = MBProgressHUD.showAdded(to: addToView ?? self.view, animated: true)
+        self.hud!.mode = .text
         self.hud!.label.text = message
+        
         self.hud!.hide(animated: true, afterDelay: toastDuration)
     }
     

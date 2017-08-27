@@ -30,6 +30,10 @@ class DBMigration: NSObject {
                 self.migrationTo1(db: db!)
                 schemaVersion!.pointee = 1
             }
+            if value < 2 {
+                self.migrationTo2(db: db!)
+                schemaVersion!.pointee = 2
+            }
         }
         
     }
@@ -48,6 +52,10 @@ class DBMigration: NSObject {
     
     private func migrationTo1(db: FMDatabase) {
         self.migration(db: db, fileName: "user_1")
+    }
+    
+    private func migrationTo2(db: FMDatabase) {
+        self.migration(db: db, fileName: "user_2")
     }
     
     private func migration(db: FMDatabase, fileName: String) {

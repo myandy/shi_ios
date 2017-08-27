@@ -248,7 +248,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
             let formerItem = self.formerItems[formerIndex]
             let formerName = formerItem.first!.former.name!
             let updateDate = formerItem.last!.update_dt
-            let dateString = self.dateString(with: updateDate!)
+            let dateString = self.dateString(with: updateDate)
             let contentArray = formerItem.map({ (writting) -> String in
                 return writting.text
             })

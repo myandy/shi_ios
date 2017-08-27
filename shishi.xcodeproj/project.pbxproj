@@ -215,6 +215,11 @@
 		7549ABEA1EED2DA50043893A /* DBMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABE91EED2DA50043893A /* DBMigration.swift */; };
 		7549ABEC1EED359D0043893A /* UserDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABEB1EED359C0043893A /* UserDBManager.swift */; };
 		7549ABEF1EEED67A0043893A /* user_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = 7549ABEE1EEED67A0043893A /* user_1.sql */; };
+		755C781E1F52D87000AD8E45 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C781D1F52D87000AD8E45 /* WebViewController.swift */; };
+		755C78201F52F8FF00AD8E45 /* SSControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C781F1F52F8FF00AD8E45 /* SSControllerHelper.swift */; };
+		755C78221F53015B00AD8E45 /* SpeechUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C78211F53015B00AD8E45 /* SpeechUtil.swift */; };
+		755C78251F53193400AD8E45 /* UserCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 755C78241F53193400AD8E45 /* UserCollection.m */; };
+		755C78271F5322C300AD8E45 /* user_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = 755C78261F5322C300AD8E45 /* user_2.sql */; };
 		756C77B01F374EEE00B9FF54 /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 756C77AF1F374EEE00B9FF54 /* UIImage+Rotate.m */; };
 		756C77CC1F37632000B9FF54 /* left_slip_guide_000@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 756C77B31F37632000B9FF54 /* left_slip_guide_000@3x.png */; };
 		756C77CD1F37632000B9FF54 /* left_slip_guide_001@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 756C77B41F37632000B9FF54 /* left_slip_guide_001@3x.png */; };
@@ -740,6 +745,12 @@
 		7549ABE91EED2DA50043893A /* DBMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMigration.swift; sourceTree = "<group>"; };
 		7549ABEB1EED359C0043893A /* UserDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDBManager.swift; sourceTree = "<group>"; };
 		7549ABEE1EEED67A0043893A /* user_1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = user_1.sql; sourceTree = "<group>"; };
+		755C781D1F52D87000AD8E45 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		755C781F1F52F8FF00AD8E45 /* SSControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSControllerHelper.swift; sourceTree = "<group>"; };
+		755C78211F53015B00AD8E45 /* SpeechUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechUtil.swift; sourceTree = "<group>"; };
+		755C78231F53193400AD8E45 /* UserCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCollection.h; sourceTree = "<group>"; };
+		755C78241F53193400AD8E45 /* UserCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCollection.m; sourceTree = "<group>"; };
+		755C78261F5322C300AD8E45 /* user_2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = user_2.sql; sourceTree = "<group>"; };
 		756C77AE1F374EEE00B9FF54 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
 		756C77AF1F374EEE00B9FF54 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
 		756C77B31F37632000B9FF54 /* left_slip_guide_000@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_slip_guide_000@3x.png"; sourceTree = "<group>"; };
@@ -1931,6 +1942,7 @@
 				756C77AE1F374EEE00B9FF54 /* UIImage+Rotate.h */,
 				756C77AF1F374EEE00B9FF54 /* UIImage+Rotate.m */,
 				75F8074C1F40293300759C2F /* SSNotificationCenter.swift */,
+				755C78211F53015B00AD8E45 /* SpeechUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1997,9 +2009,18 @@
 		7549ABED1EEED6490043893A /* sql */ = {
 			isa = PBXGroup;
 			children = (
+				755C78261F5322C300AD8E45 /* user_2.sql */,
 				7549ABEE1EEED67A0043893A /* user_1.sql */,
 			);
 			path = sql;
+			sourceTree = "<group>";
+		};
+		755C781C1F52D85600AD8E45 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				755C781D1F52D87000AD8E45 /* WebViewController.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		756C77B11F37632000B9FF54 /* Tips */ = {
@@ -2045,6 +2066,7 @@
 		756EFB161EB43EAD006E65DF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				755C781C1F52D85600AD8E45 /* WebView */,
 				75DE1E091F10DB8D00AB354A /* Random */,
 				E202C0961EE4064E0099FCCC /* Share */,
 				7549ABD11ED5D5A00043893A /* Util */,
@@ -2182,6 +2204,7 @@
 			isa = PBXGroup;
 			children = (
 				756EFB7A1EBB8109006E65DF /* Category */,
+				755C781F1F52F8FF00AD8E45 /* SSControllerHelper.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -2219,6 +2242,8 @@
 				75BE6EFB1EF0364600A578B2 /* BaseDBModel.h */,
 				75BE6EFC1EF0364600A578B2 /* BaseDBModel.m */,
 				75F8074A1F4022A700759C2F /* ModelExtention.swift */,
+				755C78231F53193400AD8E45 /* UserCollection.h */,
+				755C78241F53193400AD8E45 /* UserCollection.m */,
 			);
 			name = Models;
 			path = DB/Models;
@@ -2482,6 +2507,7 @@
 				751E085F1EACA61D00BAB696 /* UMSnsAccountViewController.xib in Resources */,
 				756C77CD1F37632000B9FF54 /* left_slip_guide_001@3x.png in Resources */,
 				756C77D31F37632000B9FF54 /* left_slip_guide_007@3x.png in Resources */,
+				755C78271F5322C300AD8E45 /* user_2.sql in Resources */,
 				756C77CE1F37632000B9FF54 /* left_slip_guide_002@3x.png in Resources */,
 				751E07F81EACA61D00BAB696 /* UMComUserTableViewCell.xib in Resources */,
 				751E085B1EACA61D00BAB696 /* UMSCommentInputControlleriPad.xib in Resources */,
@@ -2625,6 +2651,7 @@
 				751E08001EACA61D00BAB696 /* UMComAddedImageView.m in Sources */,
 				751E08021EACA61D00BAB696 /* UMComButton.m in Sources */,
 				E20CB2C61ED01E5A004298DA /* SearchYunVC.swift in Sources */,
+				755C78221F53015B00AD8E45 /* SpeechUtil.swift in Sources */,
 				751E08391EACA61D00BAB696 /* UMComFeedStyle.m in Sources */,
 				751E07E51EACA61D00BAB696 /* UMComLocationTableViewCell.m in Sources */,
 				751E07DC1EACA61D00BAB696 /* UMComTableViewCell.m in Sources */,
@@ -2651,6 +2678,7 @@
 				756EFB531EB45929006E65DF /* AllAuthorVC.swift in Sources */,
 				E278E42C1EF17CD20046324D /* AboutVC.swift in Sources */,
 				751E07FC1EACA61D00BAB696 /* UMComResourceManager.m in Sources */,
+				755C78201F52F8FF00AD8E45 /* SSControllerHelper.swift in Sources */,
 				E20CB2CA1ED06C55004298DA /* SearchYunCell.swift in Sources */,
 				751E08051EACA61D00BAB696 /* UMComEditTextView.m in Sources */,
 				75BE6EF91EEEF72B00A578B2 /* FCModelDatabase.m in Sources */,
@@ -2700,6 +2728,7 @@
 				756EFB781EBA28D1006E65DF /* SSStr.swift in Sources */,
 				7549ABDE1EDD87920043893A /* KolodaCardStorage.swift in Sources */,
 				751E08471EACA61D00BAB696 /* UMComHomeFeedViewController.m in Sources */,
+				755C78251F53193400AD8E45 /* UserCollection.m in Sources */,
 				751E081A1EACA61D00BAB696 /* UMImagePickerThumbnailView.m in Sources */,
 				751E08111EACA61D00BAB696 /* UMComMutiTextRun.m in Sources */,
 				7549ABE41EDD88B00043893A /* VerticalDraggableCardView.swift in Sources */,
@@ -2799,6 +2828,7 @@
 				751E07F51EACA61D00BAB696 /* UMComUserNearbyViewController.m in Sources */,
 				756EFB701EB45A76006E65DF /* EditPagerView.swift in Sources */,
 				E22869C71EC2226B00238DF8 /* SettingVC.swift in Sources */,
+				755C781E1F52D87000AD8E45 /* WebViewController.swift in Sources */,
 				E2E14C751ED489140056009C /* CheckPingzeSettingVC.swift in Sources */,
 				E22869B61EBED7D100238DF8 /* Author.swift in Sources */,
 				751E08441EACA61D00BAB696 /* UMComFeedDetailViewHtmlBodyCell.m in Sources */,

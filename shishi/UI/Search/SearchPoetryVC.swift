@@ -10,8 +10,15 @@ import UIKit
 
 class SearchPoetryVC: NormalSearchVC{
     
+    public var author: String?
+    
     override func loadData() {
-        originItems = PoetryDB.getAll()
+        if let author = self.author {
+            originItems = PoetryDB.getAll(author: author)
+        }
+        else {
+            originItems = PoetryDB.getAll()
+        }
     }
     
     override func getHint() -> String {

@@ -21,6 +21,7 @@
 #import "FCModel.h"
 //#import <FMDB/FMDatabase.h>
 #import "Writting.h"
+#import "UserCollection.h"
 
 #import <Bugly/Bugly.h>
 

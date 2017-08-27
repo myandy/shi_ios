@@ -18,10 +18,10 @@
 @property (nonatomic, assign) int64_t index;
 @property (nonatomic, copy, nonnull) NSString *text;
 @property (nonatomic, assign) int64_t formerId;
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString * _Nonnull title;
 
-@property (nonatomic) NSDate *create_dt;
-@property (nonatomic) NSDate *update_dt;
+@property (nonatomic) NSDate * _Nonnull create_dt;
+@property (nonatomic) NSDate * _Nonnull update_dt;
 @property (nonatomic, assign) int64_t bgImg;
 @property (nonatomic, copy, nullable) NSString *author;
 

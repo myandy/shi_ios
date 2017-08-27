@@ -10,13 +10,20 @@ import Foundation
 import UIKit
 import iCarousel
 import FTPopOverMenu_Swift
-
+import SnapKit
+import RxSwift
 
 private let poetryCellReuseIdentifier = "poetryCellReuseIdentifier"
 
 private let authorCellReuseIdentifier = "authorCellReuseIdentifier"
 
 private let UserDefaultsKeyLoadTimes = "UserDefaultsKeyLoadTimes"
+
+private let bootimBarHeight = convertWidth(pix: 100)
+
+//字体变化每次步径
+private let increaseFontStep: CGFloat = AppConfig.Constants.increaseFontStep
+
 
 class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
@@ -27,6 +34,7 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
 
     var author : Author!
     var color : UIColor!
+    
     
     fileprivate lazy var tipView:UIView = {
         let tipView = UIView()
@@ -61,6 +69,13 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
     
     //滑动到最左边退出当前页面
     var canSwapExit = true
+    
+    var bottomBarConstraint: Constraint!
+    var isBottomBarHidden = true
+    
+    deinit {
+        
+    }
     
     init(author : Author,color : UIColor) {
         self.author = author
@@ -106,26 +121,28 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
-        
         if self.canSwapExit {
             pageController.setViewControllers([controllers[1]], direction: .forward, animated: false)
         }
-        
         
         if UserDefaults.standard.value(forKey: UserDefaultsKeyLoadTimes) == nil {
             UserDefaults.standard.setValue(true, forKey: UserDefaultsKeyLoadTimes)
             self.showTip()
         }
-        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        SpeechUtil.default.stop()
     }
     
     internal func setupBottomView() {
         self.view.addSubview(self.bottomBar)
         
         self.bottomBar.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalToSuperview()
+            make.left.right.equalToSuperview()
+            self.bottomBarConstraint = make.bottom.equalToSuperview().offset(bootimBarHeight).constraint
             make.height.equalTo(convertWidth(pix: 100))
         }
         
@@ -153,6 +170,25 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
             self.showMenu()
         }
         
+        
+        let tapGestrue = UITapGestureRecognizer()
+        self.view.addGestureRecognizer(tapGestrue)
+        tapGestrue.rx.event
+            .subscribe(onNext: { [weak self] x in
+                self?.toggleBottomView()
+            })
+            .addDisposableTo(self.rx_disposeBag)
+    }
+    
+    internal func toggleBottomView() {
+        let targetOffset = self.isBottomBarHidden ? 0 : bootimBarHeight
+        
+        UIView.animate(withDuration: 0.5) { 
+            self.bottomBarConstraint.update(offset: targetOffset)
+            self.bottomBar.superview?.layoutIfNeeded()
+        }
+        
+        self.isBottomBarHidden = !self.isBottomBarHidden
     }
     
     fileprivate func showTip() {
@@ -195,20 +231,7 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
         
     }
     
-    fileprivate func showMenu() {
-        FTPopOverMenu.showForSender(sender: self.editBtn,
-                                    with: [SSStr.Share.INCREASE_FONTSIZE, SSStr.Share.REDUCE_FONTSIZE],
-                                    done: { [unowned self] (selectedIndex) -> () in
-                                        switch selectedIndex {
-                                        case 0:
-                                            break
-                                        default:
-                                            break
-                                        }
-        }) {
-            
-        }
-    }
+    
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         if let index = controllers.index(of: viewController) {
@@ -245,6 +268,94 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
         }
         
         
+    }
+}
+
+//menu
+extension AuthorPagerVC {
+    public func currentPoetry() -> Poetry {
+        let pageContentViewController = self.pageController.viewControllers![0]
+        let index = self.controllers.index(of: pageContentViewController)
+        let offset = self.canSwapExit ? 1 : 0
+        let poetry = self.poetrys[index! - offset]
+        return poetry
+    }
+    
+    fileprivate func showMenu() {
+        FTPopOverMenu.showForSender(sender: self.editBtn,
+                                    with: [SSStr.Share.INCREASE_FONTSIZE, SSStr.Share.REDUCE_FONTSIZE, SSStr.All.FAVORITE, SSStr.All.DIRECTORY, SSStr.All.COPY_CONTENT, SSStr.All.SPEAK_CONTENT, SSStr.All.AUTHOR_PEDIA, SSStr.All.CONTENT_PEDIA],
+                                    done: { [unowned self] (selectedIndex) -> () in
+                                        switch selectedIndex {
+                                        case 0:
+                                            self.updateFont(pointSizeStep: increaseFontStep)
+                                        case 1:
+                                            self.updateFont(pointSizeStep: -increaseFontStep)
+                                        case 2:
+                                            let poetry = self.currentPoetry()
+                                            self.toggleCollection(poetry: poetry)
+                                        case 3:
+                                            let poetry = self.currentPoetry()
+//                                            let searchController = SearchPoetryVC()
+//                                            searchController.author = poetry.author
+//                                            self.navigationController?.pushViewController(searchController, animated: true)
+                                            SSControllerHelper.showDirectoryContoller(controller: self, author: poetry.author)
+                                        case 4:
+                                            let poetry = self.currentPoetry()
+
+                                            UIPasteboard.general.string = StringUtils.contentTextFilter(poerityTitle: poetry.poetry)
+                                            self.showToast(message: SSStr.Toast.COPY_SUCCESS)
+                                            
+                                        case 5:
+                                            let poetry = self.currentPoetry()
+                                            self.speech(poetry: poetry)
+                                            
+                                        case 6:
+                                            let poetry = self.currentPoetry()
+                                            SSControllerHelper.showBaikeContoller(controller: self, word: poetry.author)
+                                        case 7:
+                                            let poetry = self.currentPoetry()
+                                            SSControllerHelper.showBaikeContoller(controller: self, word: poetry.title)
+                                        default:
+                                            break
+                                        }
+        }) {
+            
+        }
+    }
+    
+    fileprivate func updateFont(pointSizeStep: CGFloat) {
+        self.controllers.forEach { (controller) in
+            if let poetryCellVC = controller as? PoetryCellVC {
+                poetryCellVC.updateFont(pointSizeStep: pointSizeStep)
+            }
+        }
+    }
+    
+    fileprivate func speech(poetry: Poetry) {
+        let title = StringUtils.titleTextFilter(poerityTitle: poetry.title)
+        let content = StringUtils.contentTextFilter(poerityTitle: poetry.poetry)
+        SpeechUtil.default.speech(text: title + content)
+    }
+    
+    fileprivate func toggleCollection(poetry: Poetry) {
+        let collectionArray = UserCollection.allInstances() as! [UserCollection]
+        let itemIndex = collectionArray.index { (userCollection) -> Bool in
+            return Int(userCollection.poetryId) == poetry.dNum && userCollection.poetryName == poetry.title
+        }
+        if let item = itemIndex {
+            collectionArray[item].delete()
+            self.showToast(message: SSStr.Toast.CANCEL_COLLECTION_SUCCESS)
+        }
+        else {
+            let userCollection = UserCollection()
+            userCollection.poetryId = Int64(poetry.dNum)
+            userCollection.poetryName = poetry.title
+            userCollection.userId = ""
+            userCollection.save({ 
+                
+            })
+            self.showToast(message: SSStr.Toast.COLLECTION_SUCCESS)
+        }
     }
 }
 

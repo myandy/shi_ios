@@ -14,6 +14,9 @@ class AppConfig {
         
        
         static let TAP_THROTTLE:Double = 0.3
+        
+        //字体变化每次步径
+        static let increaseFontStep: CGFloat = 2
     }
     
     

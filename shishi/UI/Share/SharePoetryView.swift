@@ -9,7 +9,7 @@
 import UIKit
 
 //字体变化每次步径
-private let increaseFontStep: CGFloat = 2
+private let increaseFontStep: CGFloat = AppConfig.Constants.increaseFontStep
 private let minFontSize: CGFloat = 10
 private let maxFontSize: CGFloat = 50
 

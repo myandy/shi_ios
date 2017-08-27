@@ -38,7 +38,7 @@ class MainCardView: UIView {
         label.textColor = UIColor.gray
         label.font = UIFont.systemFont(ofSize: 14)
         label.snp.makeConstraints({ (make) in
-            make.top.equalTo(self.cipaiLabel.snp.bottom)
+            make.top.equalTo(self.cipaiLabel.snp.bottom).offset(convertWidth(pix:20))
             make.centerX.equalToSuperview()
         })
         return label
@@ -137,7 +137,10 @@ extension MainCardView: KolodaViewDataSource {
         cardView.addSubview(label)
         label.text = self.contentArray[index]
         label.snp.makeConstraints { (make) in
-            make.left.top.width.equalToSuperview()
+            let inset = convertWidth(pix: 20)
+            make.left.equalToSuperview().offset(inset * 1.5)
+            make.top.equalToSuperview().offset(inset)
+            make.right.equalToSuperview().offset(-inset * 1.5)
         }
         label.numberOfLines = 0
         let tapGuesture = UITapGestureRecognizer()

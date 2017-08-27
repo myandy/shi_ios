@@ -13,9 +13,12 @@ class PoetryView : UIView, Nibloadable {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var shareBtn: UIButton!
+    @IBOutlet fileprivate weak var shareBtn: UIButton!
+    
+    var actionHandel: ((UIButton) -> Void)!
     
     @IBAction func shareClick(_ sender: AnyObject) {
+        self.actionHandel(sender as! UIButton)
     }
     
     override func draw(_ rect: CGRect) {

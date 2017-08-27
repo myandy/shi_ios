@@ -9,3 +9,5 @@ CREATE TABLE IF NOT EXISTS "Writting" (
 "bgImg" integer(128) NOT NULL,
 "author" text(128)
 );
+
+

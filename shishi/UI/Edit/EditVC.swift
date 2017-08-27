@@ -19,16 +19,14 @@ class EditVC: UIViewController {
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
     
+    fileprivate var bgImage = PoetryImage.bg001.image()
+    
     @IBAction func cancelBtnClick(_ sender: Any) {
         let alertController = UIAlertController(title: "是否保存", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         let alertView1 = UIAlertAction(title: "保存", style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
-//            Writing.addWriting(writing: self.writing)
-            let content = self.editPagerView.mergeContent()
-            self.writing.text = content
-            self.writing.save(nil)
-            SSNotificationCenter.default.post(name: SSNotificationCenter.Names.addWritting, object: nil)
-            self.navigationController?.popViewController(animated: true)
-            
+            if self.saveWritting() {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
         
         let alertView2 = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel) { (UIAlertAction) -> Void in
@@ -41,7 +39,13 @@ class EditVC: UIViewController {
         
     }
     @IBAction func confirmBtnClick(_ sender: Any) {
+        if self.saveWritting() {
+            SSControllerHelper.showShareContoller(controller: self, poetryTitle: self.writing.title, poetryAuthor: self.writing.author ?? "", poetryContent: self.writing.text, bgImage: self.bgImage)
+        }
     }
+    
+    
+    
     init(former : Former) {
         writing = Writting()
         writing.formerId = former.id
@@ -94,4 +98,19 @@ class EditVC: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    fileprivate func saveWritting() -> Bool {
+        if self.writing.title.isEmpty {
+            self.showToast(message: "标题不能为空")
+            return false
+        }
+        let content = self.editPagerView.mergeContent()
+        if content.isEmpty {
+            self.showToast(message: "内容不能为空")
+            return false
+        }
+        self.writing.text = content
+        self.writing.save(nil)
+        SSNotificationCenter.default.post(name: SSNotificationCenter.Names.addWritting, object: nil)
+        return true
+    }
 }

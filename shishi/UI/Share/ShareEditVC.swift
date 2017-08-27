@@ -355,13 +355,13 @@ extension ShareEditVC {
 //        let shareImage = SSImageUtil.genShiImage(bgImage, self.poetry.title, content: self.poetry.poetry)
 //        SSShareUtil.default.shareToSystem(controller: self, image: shareImage)
         
-        let shareController = ShareVC()
-        //shareController.poetry = self.poetry
-        shareController.poetryTitle = self.poetryTitle
-        shareController.poetryAuthor = self.poetryAuthor
-        shareController.poetryContent = self.poetryContent
-        shareController.bgImage = self.poetryContainerView.bgImageView.image
-        self.navigationController?.pushViewController(shareController, animated: true)
+//        let shareController = ShareVC()
+//        shareController.poetryTitle = self.poetryTitle
+//        shareController.poetryAuthor = self.poetryAuthor
+//        shareController.poetryContent = self.poetryContent
+//        shareController.bgImage = self.poetryContainerView.bgImageView.image
+//        self.navigationController?.pushViewController(shareController, animated: true)
+        SSControllerHelper.showShareContoller(controller: self, poetryTitle: self.poetryTitle, poetryAuthor: self.poetryAuthor, poetryContent: self.poetryContent, bgImage: self.poetryContainerView.bgImageView.image)
     }
     
     internal func onPaperBtnClick() {

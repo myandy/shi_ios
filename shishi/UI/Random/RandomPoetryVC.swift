@@ -35,7 +35,8 @@ class RandomPoetryVC: UIViewController {
         }
         refresh()
         
-        self.poetryView.shareBtn.addTapHandler { [unowned self] in
+       
+        self.poetryView.actionHandel = { [unowned self] _ in
             self.onShareBtnClick()
         }
     }
@@ -71,11 +72,28 @@ extension RandomPoetryVC {
     
     @IBAction func onEditBtnClick(_ sender: AnyObject) {
         FTPopOverMenu.showForSender(sender: sender as! UIView,
-                                    with: [SSStr.Share.INCREASE_FONTSIZE, SSStr.All.FAVORITE, SSStr.All.DIRECTORY, SSStr.All.COPY_CONTENT, SSStr.All.SPEAK_CONTENT, SSStr.All.AUTHOR_PEDIA, SSStr.All.CONTENT_PEDIA],
+                                    with: [SSStr.Share.INCREASE_FONTSIZE, SSStr.Share.REDUCE_FONTSIZE, SSStr.All.FAVORITE, SSStr.All.DIRECTORY, SSStr.All.COPY_CONTENT, SSStr.All.SPEAK_CONTENT, SSStr.All.AUTHOR_PEDIA, SSStr.All.CONTENT_PEDIA],
                                     done: { [unowned self] (selectedIndex) -> () in
                                         switch selectedIndex {
                                         case 0:
-                                            break
+                                            self.updateFont(pointSizeStep: AppConfig.Constants.increaseFontStep)
+                                        case 1:
+                                            self.updateFont(pointSizeStep: -AppConfig.Constants.increaseFontStep)
+                                        case 2:
+                                            self.toggleCollection(poetry: self.poetry)
+                                        case 3:
+                                        SSControllerHelper.showDirectoryContoller(controller: self, author: self.poetry.author)
+                                        case 4:
+                                            
+                                            UIPasteboard.general.string = StringUtils.contentTextFilter(poerityTitle: self.poetry.poetry)
+                                            self.showToast(message: SSStr.Toast.COPY_SUCCESS)
+                                        case 5:
+                                            self.speech(poetry: self.poetry)
+                                            
+                                        case 6:
+                                            SSControllerHelper.showBaikeContoller(controller: self, word: self.poetry.author)
+                                        case 7:
+                                            SSControllerHelper.showBaikeContoller(controller: self, word: self.poetry.title)
                                         default:
                                             break
                                         }
@@ -84,4 +102,42 @@ extension RandomPoetryVC {
         }
     }
     
+    fileprivate func updateFont(pointSizeStep: CGFloat) {
+        
+        self.updateFont(pointSizeStep: pointSizeStep, label:  self.poetryView.introLabel)
+        self.updateFont(pointSizeStep: pointSizeStep, label:  self.poetryView.contentLabel)
+        self.updateFont(pointSizeStep: pointSizeStep, label:  self.poetryView.titleLabel)
+        self.updateFont(pointSizeStep: pointSizeStep, label:  self.poetryView.authorLabel)
+    }
+    
+    fileprivate func updateFont(pointSizeStep: CGFloat, label: UILabel) {
+        label.font = UIFont(name: label.font.fontName, size: label.font.pointSize + pointSizeStep)
+    }
+    
+    fileprivate func toggleCollection(poetry: Poetry) {
+        let collectionArray = UserCollection.allInstances() as! [UserCollection]
+        let itemIndex = collectionArray.index { (userCollection) -> Bool in
+            return Int(userCollection.poetryId) == poetry.dNum && userCollection.poetryName == poetry.title
+        }
+        if let item = itemIndex {
+            collectionArray[item].delete()
+            self.showToast(message: SSStr.Toast.CANCEL_COLLECTION_SUCCESS)
+        }
+        else {
+            let userCollection = UserCollection()
+            userCollection.poetryId = Int64(poetry.dNum)
+            userCollection.poetryName = poetry.title
+            userCollection.userId = ""
+            userCollection.save({
+                
+            })
+            self.showToast(message: SSStr.Toast.COLLECTION_SUCCESS)
+        }
+    }
+    
+    fileprivate func speech(poetry: Poetry) {
+        let title = StringUtils.titleTextFilter(poerityTitle: poetry.title)
+        let content = StringUtils.contentTextFilter(poerityTitle: poetry.poetry)
+        SpeechUtil.default.speech(text: title + content)
+    }
 }
