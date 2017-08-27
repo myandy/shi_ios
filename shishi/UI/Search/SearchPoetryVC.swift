@@ -22,7 +22,7 @@ class SearchPoetryVC: NormalSearchVC{
     }
     
     override func getHint() -> String {
-        return "搜索诗"
+        return SSStr.Search.SEARCH_POETRY_HINT
     }
     override func onItemClick(_ pos: Int) {
         

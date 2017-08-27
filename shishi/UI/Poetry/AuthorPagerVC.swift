@@ -109,8 +109,10 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
             controllers.append(imageViewController)
         }
         
-        for poetry in poetrys {
-            let vc = PoetryCellVC(poetry:poetry,color:color)
+        controllers.append(AuthorCellVC(author:self.author))
+        
+        for (index,poetry) in poetrys.enumerated() {
+            let vc = PoetryCellVC(poetry:poetry,color:color,pager:String(index+1).appending("/").appending(String(poetrys.count)))
             controllers.append(vc)
         }
         
@@ -146,17 +148,17 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
             make.height.equalTo(convertWidth(pix: 100))
         }
         
-        let cancleBtn = UIButton()
-        self.bottomBar.addSubview(cancleBtn)
-        cancleBtn.setImage(UIImage(named:"cancel"), for: .normal)
-        cancleBtn.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(convertWidth(pix: 20))
-            make.bottom.equalToSuperview().offset(convertWidth(pix: -20))
-            make.height.width.equalTo(convertWidth(pix: 90))
-        }
-        cancleBtn.addTapHandler { [unowned self] in
-            self.navigationController?.popViewController(animated: true)
-        }
+//        let cancleBtn = UIButton()
+//        self.bottomBar.addSubview(cancleBtn)
+//        cancleBtn.setImage(UIImage(named:"cancel"), for: .normal)
+//        cancleBtn.snp.makeConstraints { (make) in
+//            make.left.equalToSuperview().offset(convertWidth(pix: 20))
+//            make.bottom.equalToSuperview().offset(convertWidth(pix: -20))
+//            make.height.width.equalTo(convertWidth(pix: 90))
+//        }
+//        cancleBtn.addTapHandler { [unowned self] in
+//            self.navigationController?.popViewController(animated: true)
+//        }
         
         
         self.editBtn = UIButton()
@@ -164,7 +166,8 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
         editBtn.setImage(UIImage(named:"setting"), for: .normal)
         editBtn.snp.makeConstraints { (make) in
             make.right.equalToSuperview().offset(convertWidth(pix: -20))
-            make.bottom.height.width.equalTo(cancleBtn)
+            make.bottom.equalToSuperview().offset(convertWidth(pix: -20))
+            make.height.width.equalTo(convertWidth(pix: 90))
         }
         editBtn.addTapHandler { [unowned self] in
             self.showMenu()

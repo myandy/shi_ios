@@ -335,6 +335,8 @@
 		E29558D81DD311720065AA1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29558D61DD311720065AA1B /* LaunchScreen.storyboard */; };
 		E2B0DFCB1EB5F962001B790C /* BackgroundPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B0DFCA1EB5F962001B790C /* BackgroundPagerView.swift */; };
 		E2BBD3051E9A694400B285DB /* Extensiton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BBD3041E9A694400B285DB /* Extensiton.swift */; };
+		E2D88B7E1F30D9CD008233CD /* AuthorCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D88B7D1F30D9CD008233CD /* AuthorCellVC.swift */; };
+		E2D88B821F434C39008233CD /* SearchWritingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D88B811F434C39008233CD /* SearchWritingVC.swift */; };
 		E2E14C6D1ED323AF0056009C /* YunSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C6C1ED323AF0056009C /* YunSettingVC.swift */; };
 		E2E14C6F1ED3241C0056009C /* BaseSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C6E1ED3241C0056009C /* BaseSettingVC.swift */; };
 		E2E14C711ED326470056009C /* SettingCheckItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C701ED326470056009C /* SettingCheckItemView.swift */; };
@@ -876,6 +878,8 @@
 		E29558D71DD311720065AA1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2B0DFCA1EB5F962001B790C /* BackgroundPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundPagerView.swift; sourceTree = "<group>"; };
 		E2BBD3041E9A694400B285DB /* Extensiton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensiton.swift; sourceTree = "<group>"; };
+		E2D88B7D1F30D9CD008233CD /* AuthorCellVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorCellVC.swift; sourceTree = "<group>"; };
+		E2D88B811F434C39008233CD /* SearchWritingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWritingVC.swift; sourceTree = "<group>"; };
 		E2E14C6C1ED323AF0056009C /* YunSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YunSettingVC.swift; path = Setting/YunSettingVC.swift; sourceTree = "<group>"; };
 		E2E14C6E1ED3241C0056009C /* BaseSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseSettingVC.swift; path = Setting/BaseSettingVC.swift; sourceTree = "<group>"; };
 		E2E14C701ED326470056009C /* SettingCheckItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingCheckItemView.swift; path = Setting/SettingCheckItemView.swift; sourceTree = "<group>"; };
@@ -2126,6 +2130,7 @@
 				756EFB571EB45935006E65DF /* SearchFormerVC.swift */,
 				E20CB2C51ED01E5A004298DA /* SearchYunVC.swift */,
 				E20CB2C91ED06C55004298DA /* SearchYunCell.swift */,
+				E2D88B811F434C39008233CD /* SearchWritingVC.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -2186,6 +2191,7 @@
 				E22869BF1EC0A2B300238DF8 /* AuthorPagerVC.swift */,
 				E22869C11EC0AF5900238DF8 /* PoetryCellVC.swift */,
 				E202C09C1EE83E2D0099FCCC /* FormerIntroVC.swift */,
+				E2D88B7D1F30D9CD008233CD /* AuthorCellVC.swift */,
 			);
 			path = Poetry;
 			sourceTree = "<group>";
@@ -2634,12 +2640,14 @@
 				756EFB521EB45929006E65DF /* AllAuthorCell.swift in Sources */,
 				75DE1E1D1F1750FC00AB354A /* FXBlurView.m in Sources */,
 				751E08141EACA61D00BAB696 /* UMAssetsCollectionCheckMarkView.m in Sources */,
+				E2D88B821F434C39008233CD /* SearchWritingVC.swift in Sources */,
 				756EFB831EBD9C92006E65DF /* Observable+DuiShi.swift in Sources */,
 				756EFB5F1EB4596C006E65DF /* BaseSearchVC.swift in Sources */,
 				751E082D1EACA61D00BAB696 /* UMCommunityUI.m in Sources */,
 				751E08171EACA61D00BAB696 /* UMAssetsCollectionOverlayView.m in Sources */,
 				7549ABE81EE6F1340043893A /* AssetsLibraryUtil.swift in Sources */,
 				751E084B1EACA61D00BAB696 /* UMComNoticeSystemViewController.m in Sources */,
+				E2D88B7E1F30D9CD008233CD /* AuthorCellVC.swift in Sources */,
 				751E08261EACA61D00BAB696 /* UMComProgressHUD.m in Sources */,
 				751E08481EACA61D00BAB696 /* UMComCommentMenuViewController.m in Sources */,
 				751E080B1EACA61D00BAB696 /* UMComHorizonMenuView.m in Sources */,
