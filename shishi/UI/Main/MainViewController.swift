@@ -55,7 +55,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         }
         
         let alertView4 = UIAlertAction(title: SSStr.Search.SEARCH_COLLECT_HINT, style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
-            self.navigationController?.pushViewController(SearchAuthorVC(), animated: true)
+            self.navigationController?.pushViewController(SearchUserCollectionPoetryVC(), animated: true)
         }
 
         let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)

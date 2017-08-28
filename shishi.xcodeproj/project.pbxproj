@@ -199,6 +199,7 @@
 		751E08761EACA7B200BAB696 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E08751EACA7B200BAB696 /* AppConfig.swift */; };
 		751E08781EACA82C00BAB696 /* SSTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E08771EACA82C00BAB696 /* SSTheme.swift */; };
 		751E087C1EACAD5000BAB696 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 751E087E1EACAD5000BAB696 /* Localizable.strings */; };
+		754676551F54677F00F4875A /* SearchUserCollectionPoetryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754676541F54677F00F4875A /* SearchUserCollectionPoetryVC.swift */; };
 		7549ABCD1ED5BF820043893A /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7549ABCB1ED5BF820043893A /* MainView.xib */; };
 		7549ABCE1ED5BF820043893A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABCC1ED5BF820043893A /* MainViewController.swift */; };
 		7549ABD01ED5D25C0043893A /* MainCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549ABCF1ED5D25C0043893A /* MainCardView.swift */; };
@@ -731,6 +732,7 @@
 		751E08771EACA82C00BAB696 /* SSTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSTheme.swift; sourceTree = "<group>"; };
 		751E08801EACAD5600BAB696 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		751E08811EACAD7300BAB696 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		754676541F54677F00F4875A /* SearchUserCollectionPoetryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserCollectionPoetryVC.swift; sourceTree = "<group>"; };
 		7549ABCB1ED5BF820043893A /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		7549ABCC1ED5BF820043893A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7549ABCF1ED5D25C0043893A /* MainCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCardView.swift; sourceTree = "<group>"; };
@@ -2131,6 +2133,7 @@
 				E20CB2C51ED01E5A004298DA /* SearchYunVC.swift */,
 				E20CB2C91ED06C55004298DA /* SearchYunCell.swift */,
 				E2D88B811F434C39008233CD /* SearchWritingVC.swift */,
+				754676541F54677F00F4875A /* SearchUserCollectionPoetryVC.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -2668,6 +2671,7 @@
 				751E07CF1EACA61D00BAB696 /* UMComLoginUser.m in Sources */,
 				75BE6EF71EEEF72B00A578B2 /* FCModel.m in Sources */,
 				756EFB581EB45935006E65DF /* SearchAuthorVC.swift in Sources */,
+				754676551F54677F00F4875A /* SearchUserCollectionPoetryVC.swift in Sources */,
 				756EFB471EB44097006E65DF /* NetworkLogger.swift in Sources */,
 				7549ABD01ED5D25C0043893A /* MainCardView.swift in Sources */,
 				751E08121EACA61D00BAB696 /* UMComPageControlView.m in Sources */,
