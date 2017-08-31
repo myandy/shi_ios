@@ -6,6 +6,8 @@
 //  Copyright © 2016年 Leomaster. All rights reserved.
 //
 
+import Foundation
+import UIKit
 
 class AppConfig {
    
@@ -16,7 +18,7 @@ class AppConfig {
         static let TAP_THROTTLE:Double = 0.3
         
         //字体变化每次步径
-        static let increaseFontStep: CGFloat = 2
+        static let increaseFontStep: CGFloat = 2.0
     }
     
     

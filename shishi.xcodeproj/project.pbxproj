@@ -3057,7 +3057,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.anddymao.shishi;
 				PRODUCT_NAME = "诗Shi";
 				SWIFT_OBJC_BRIDGING_HEADER = "shishi/Supporting Files/shishi-Bridging-Header.h";
-				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

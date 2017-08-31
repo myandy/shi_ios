@@ -6,6 +6,8 @@
 //  Copyright © 2017年 andymao. All rights reserved.
 //
 
+import UIKit
+
 //背景图片
 enum PoetryImage: Int {
     case bg001 = 1,

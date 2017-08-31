@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import Photos
+import FXBlurView
 
 private let cellIdentifier = "cellIdentifier"
 

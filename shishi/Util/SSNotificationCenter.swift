@@ -6,6 +6,7 @@
 //  Copyright © 2017年 andymao. All rights reserved.
 //
 
+import Foundation
 
 class SSNotificationCenter: NotificationCenter {
     static let keyPrefix = "SSNotification_"

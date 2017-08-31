@@ -6,7 +6,7 @@
 //  Copyright © 2017年 andymao. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class AboutVC: BaseSettingVC {
     

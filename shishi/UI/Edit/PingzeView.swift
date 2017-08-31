@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public class PingzeView: UIView {
     var currentShapeType: Int = 0
