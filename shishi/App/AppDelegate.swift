@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UMCommunitySDK.setAppkey("58a306bdb27b0a1e7f000d5f", withAppSecret: "2afbfe1210241b0baeb9d09524ebcce7")
        
 
-        UMSocialQQHandler.setQQWithAppId("1104581811" , appKey: "KEYlj8gnlPCd4j4vA22", url: "test")
-        UMSocialWechatHandler.setWXAppId("wx96110a1e3af63a39", appSecret: "c60e3d3ff109a5d17013df272df99199", url: "test")
+        UMSocialQQHandler.setQQWithAppId("1104581811" , appKey: "lj8gnlPCd4j4vA22", url: "test")
+        UMSocialWechatHandler.setWXAppId("944955993", appSecret: "4b6e97140e9417bec7b225bc4477262d", url: "test")
         UMSocialSinaSSOHandler.openNewSinaSSO(withAppKey: "944955993", secret: "4b6e97140e9417bec7b225bc4477262d", redirectURL: "http://sns.whalecloud.com/sina2/callback")
 
         
