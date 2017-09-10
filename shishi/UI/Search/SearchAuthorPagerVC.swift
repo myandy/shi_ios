@@ -1,14 +1,18 @@
 //
-//  ChooseViewController.swift
+//  SearchAuthorPager.swift
 //  shishi
 //
-//  Created by andymao on 2017/4/15.
+//  Created by andymao on 2017/9/11.
 //  Copyright © 2017年 andymao. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class SearchPoetryVC: NormalSearchVC{
+class SearchAuthorPagerVC: NormalSearchVC{
+    
+    var itemClick: ((_ pos:Int) -> Void)!
+
     
     public var author: String?
     
@@ -20,13 +24,12 @@ class SearchPoetryVC: NormalSearchVC{
             originItems = PoetryDB.getAll()
         }
     }
-
+    
     override func getHint() -> String {
         return SSStr.Search.SEARCH_POETRY_HINT
     }
     
     override func onItemClick(_ pos: Int) {
-        let vc = RandomPoetryVC(poetry: items[pos] as! Poetry)
-        self.navigationController?.pushViewController(vc, animated: true)
+        itemClick(pos)
     }
 }

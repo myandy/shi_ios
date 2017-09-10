@@ -85,6 +85,7 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
         super.init(nibName: nil, bundle: nil)
     }
     
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -286,7 +287,7 @@ extension AuthorPagerVC {
     
     fileprivate func showMenu() {
         FTPopOverMenu.showForSender(sender: self.editBtn,
-                                    with: [SSStr.Share.INCREASE_FONTSIZE, SSStr.Share.REDUCE_FONTSIZE, SSStr.All.FAVORITE, SSStr.All.DIRECTORY, SSStr.All.COPY_CONTENT, SSStr.All.SPEAK_CONTENT, SSStr.All.AUTHOR_PEDIA, SSStr.All.CONTENT_PEDIA],
+                                    with: [SSStr.Share.INCREASE_FONTSIZE, SSStr.Share.REDUCE_FONTSIZE, SSStr.All.FAVORITE, SSStr.All.DIRECTORY, SSStr.All.COPY_CONTENT, SSStr.All.SPEAK_CONTENT, SSStr.All.AUTHOR_PEDIA, SSStr.All.CONTENT_PEDIA, SSStr.All.MENU_EXIT],
                                     done: { [unowned self] (selectedIndex) -> () in
                                         switch selectedIndex {
                                         case 0:
@@ -318,6 +319,8 @@ extension AuthorPagerVC {
                                         case 7:
                                             let poetry = self.currentPoetry()
                                             SSControllerHelper.showBaikeContoller(controller: self, word: poetry.title)
+                                        case 8:
+                                            self.navigationController?.popViewController(animated: true)
                                         default:
                                             break
                                         }

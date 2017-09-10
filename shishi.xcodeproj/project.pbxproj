@@ -343,6 +343,7 @@
 		E2E14C711ED326470056009C /* SettingCheckItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C701ED326470056009C /* SettingCheckItemView.swift */; };
 		E2E14C731ED3B44C0056009C /* FontSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C721ED3B44C0056009C /* FontSettingVC.swift */; };
 		E2E14C751ED489140056009C /* CheckPingzeSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C741ED489140056009C /* CheckPingzeSettingVC.swift */; };
+		E2F62F931F659A2F00EBF90E /* SearchAuthorPagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F62F921F659A2F00EBF90E /* SearchAuthorPagerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -887,6 +888,7 @@
 		E2E14C701ED326470056009C /* SettingCheckItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingCheckItemView.swift; path = Setting/SettingCheckItemView.swift; sourceTree = "<group>"; };
 		E2E14C721ED3B44C0056009C /* FontSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontSettingVC.swift; path = Setting/FontSettingVC.swift; sourceTree = "<group>"; };
 		E2E14C741ED489140056009C /* CheckPingzeSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckPingzeSettingVC.swift; path = Setting/CheckPingzeSettingVC.swift; sourceTree = "<group>"; };
+		E2F62F921F659A2F00EBF90E /* SearchAuthorPagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAuthorPagerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2134,6 +2136,7 @@
 				E20CB2C91ED06C55004298DA /* SearchYunCell.swift */,
 				E2D88B811F434C39008233CD /* SearchWritingVC.swift */,
 				754676541F54677F00F4875A /* SearchUserCollectionPoetryVC.swift */,
+				E2F62F921F659A2F00EBF90E /* SearchAuthorPagerVC.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -2657,6 +2660,7 @@
 				756EFB871EBDCAF0006E65DF /* DuishiEditView.swift in Sources */,
 				751E08731EACA6B500BAB696 /* StringUtils.swift in Sources */,
 				756C77E81F37719000B9FF54 /* PoetryScrollView.swift in Sources */,
+				E2F62F931F659A2F00EBF90E /* SearchAuthorPagerVC.swift in Sources */,
 				756EFB801EBB8368006E65DF /* JSONAble.swift in Sources */,
 				E2BBD3051E9A694400B285DB /* Extensiton.swift in Sources */,
 				751E08001EACA61D00BAB696 /* UMComAddedImageView.m in Sources */,

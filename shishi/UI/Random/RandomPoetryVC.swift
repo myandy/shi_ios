@@ -23,6 +23,8 @@ class RandomPoetryVC: UIViewController {
     var poetry:Poetry!
     
     lazy var colors = ColorDB.getAll()
+    
+    var hasPoetry: Bool
    
     override public func viewDidLoad() {
         poetryView = PoetryView.loadNib()
@@ -41,8 +43,30 @@ class RandomPoetryVC: UIViewController {
         }
     }
     
+    init(poetry : Poetry) {
+        self.poetry = poetry
+        hasPoetry = true
+        super.init(nibName: nil, bundle: nil)
+        
+    }
+    
+    convenience init() {
+        self.init(poetry: Poetry())
+        hasPoetry = false
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     func refresh(){
-        poetry = PoetryDB.getRandomPoetry()
+        if hasPoetry {
+            hasPoetry = false
+        }
+        else {
+            poetry = PoetryDB.getRandomPoetry()
+        }
         let random = Int(arc4random_uniform(UInt32(colors.count)))
         poetryView.refresh(poetry: poetry,color:(colors[random]).toUIColor())
     }
@@ -82,7 +106,7 @@ extension RandomPoetryVC {
                                         case 2:
                                             self.toggleCollection(poetry: self.poetry)
                                         case 3:
-                                        SSControllerHelper.showDirectoryContoller(controller: self, author: self.poetry.author)
+                                            SSControllerHelper.showDirectoryContoller(controller: self, author: self.poetry.author)
                                         case 4:
                                             
                                             UIPasteboard.general.string = StringUtils.contentTextFilter(poerityTitle: self.poetry.poetry)

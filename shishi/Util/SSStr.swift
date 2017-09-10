@@ -15,8 +15,8 @@ class SSStr: NSObject {
         static var CANCEL_COLLECTION_SUCCESS: String { return NSLocalizedString("取消收藏成功", comment: "") }
     }
     struct Duishi {
-        static var duishi                       : String { return NSLocalizedString("DUISHI", comment: "") }
-        static var refresh                       : String { return NSLocalizedString("REFRESH", comment: "") }
+        static var duishi                       : String { return NSLocalizedString("对诗", comment: "") }
+        static var refresh                       : String { return NSLocalizedString("刷新", comment: "") }
     }
     
     struct Common {
@@ -37,6 +37,7 @@ class SSStr: NSObject {
         static let SPEAK_CONTENT = "语音朗读"
         static let AUTHOR_PEDIA = "作者百科"
         static let CONTENT_PEDIA = "内容百科"
+        static let MENU_EXIT = "退出"
     }
     
     struct Tips {

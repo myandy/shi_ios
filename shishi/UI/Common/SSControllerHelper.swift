@@ -41,7 +41,10 @@ class SSControllerHelper: NSObject {
     
     //目录界面
     static func showDirectoryContoller(controller: UIViewController, author: String) {
-        let searchController = SearchPoetryVC()
+        let searchController = SearchAuthorPagerVC()
+        searchController.itemClick = { (_pos:Int) in
+            //to do 跳转到AuthoPagerVC的指定页，一次只有一个AuthorPagerVC，退出就整体退出了
+        }
         searchController.author = author
         controller.navigationController?.pushViewController(searchController, animated: true)
     }

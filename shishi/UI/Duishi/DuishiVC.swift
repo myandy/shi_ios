@@ -115,7 +115,7 @@ class DuishiVC: UIViewController {
         
         let backBtn = UIButton()
         shangLianContainerView.addSubview(backBtn)
-        backBtn.setImage(UIImage(named:"back"), for: .normal)
+        backBtn.setImage(UIImage(named:"cancel"), for: .normal)
         backBtn.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(8)
             make.top.bottom.equalToSuperview()
@@ -128,6 +128,9 @@ class DuishiVC: UIViewController {
         self.shangLianTF = UITextField()
         shangLianContainerView.addSubview(self.shangLianTF)
         self.shangLianTF.backgroundColor = UIColor.white
+        self.shangLianTF.clearButtonMode = .unlessEditing
+        self.shangLianTF.delegate = self
+        self.shangLianTF.returnKeyType = UIReturnKeyType.done
         self.shangLianTF.snp.makeConstraints { (make) in
             make.left.equalTo(backBtn.snp.right).offset(8)
             make.height.equalTo(self.searchBtn)
@@ -207,7 +210,9 @@ class DuishiVC: UIViewController {
             let pasteBoard = UIPasteboard.general
             pasteBoard.string = text
         }
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
         alert.addAction(copyAction)
+        alert.addAction(cancelAction)
         self.present(alert, animated: true)
     }
 }
@@ -225,6 +230,8 @@ extension DuishiVC {
             self.tableView.reloadData()
             self.resetLockerView()
         }
+        shangLianTF.endEditing(true)
+
     }
 
     //刷新按钮
@@ -244,13 +251,26 @@ extension DuishiVC {
         self.search(with: shanglian, locker: locker) { isSuccess in
             self.tableView.reloadData()
         }
+
     }
     
     //返回按钮
     fileprivate func onBackBtnClicked() {
         self.navigationController?.popViewController(animated: true)
     }
+    
 }
+
+extension DuishiVC : UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+        shangLianTF.endEditing(true)
+        return true
+    }
+
+}
+
 
 
 

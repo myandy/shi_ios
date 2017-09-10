@@ -51,6 +51,8 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
             }
             alertController.addAction(alertView)
         }
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
+        alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
     }
     
