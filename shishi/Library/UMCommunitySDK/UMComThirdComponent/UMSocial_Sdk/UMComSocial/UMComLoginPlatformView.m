@@ -61,6 +61,10 @@
 
 - (void)initPlatformLogin
 {
+    //QQ登录失败，即使改SDK登录成功，后面加载图片也会崩溃
+    //隐藏QQ登录
+    [self.qqLoginButton setHidden:TRUE];
+    
     self.sinaLoginButton.tag = UMSocialSnsTypeSina;
     self.qqLoginButton.tag = UMSocialSnsTypeMobileQQ;
     self.wechatLoginButton.tag = UMSocialSnsTypeWechatSession;
@@ -142,11 +146,29 @@
                     hud.label.text = UMComLocalizedString(@"um_com_loginingContent",@"登录中...");
                     hud.label.backgroundColor = [UIColor clearColor];
                     [UMComLoginManager requestLoginWithLoginAccount:account requestCompletion:^(NSDictionary *responseObject, NSError *error, dispatch_block_t completion) {
-                        [hud hideAnimated:YES];
-                        if (error) {
-                            [UMComShowToast showFetchResultTipWithError:error];
+                        //SDK内部BUG,非UI线程操作UI导致崩溃，TB修改
+                        //[hud hideAnimated:YES];
+                        //if (error) {
+                        //    [UMComShowToast showFetchResultTipWithError:error];
+                        //}
+                        //[ws.parentViewController.navigationController dismissViewControllerAnimated:YES completion:completion];
+                        
+                        if ([NSThread isMainThread]) {
+                            [hud hideAnimated:YES];
+                            if (error) {
+                                [UMComShowToast showFetchResultTipWithError:error];
+                            }
+                            [ws.parentViewController.navigationController dismissViewControllerAnimated:YES completion:completion];
                         }
-                        [ws.parentViewController.navigationController dismissViewControllerAnimated:YES completion:completion];
+                        else {
+                            dispatch_sync(dispatch_get_main_queue(), ^{
+                                [hud hideAnimated:YES];
+                                if (error) {
+                                    [UMComShowToast showFetchResultTipWithError:error];
+                                }
+                                [ws.parentViewController.navigationController dismissViewControllerAnimated:YES completion:completion];
+                            });
+                        }
                     }];
                 }];
                 

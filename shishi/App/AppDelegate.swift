@@ -59,6 +59,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String!
+        
+        log.debug(sourceApplication)
+            let result = UMComLoginManager.handleOpen(url)
+            if (result == false) {
+                //调用其他SDK，例如新浪微博SDK等
+            }
+            return result;
+
+    }
 
     
     let databaseFileName = "shishi.db"
