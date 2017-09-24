@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Accelerate
 
 class SSImageUtil: NSObject {
     public static func genShiImage(_ bgImage: UIImage?, _ title: String, content: String) -> UIImage {

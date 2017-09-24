@@ -299,6 +299,8 @@
 		75DE1E1D1F1750FC00AB354A /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E1C1F1750FC00AB354A /* FXBlurView.m */; };
 		75DE1E1F1F1761CB00AB354A /* ShareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E1E1F1761CB00AB354A /* ShareVC.swift */; };
 		75DE1E251F2E211A00AB354A /* MirrorLoaderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E241F2E211900AB354A /* MirrorLoaderLayer.swift */; };
+		75E05B321F77839E00440FB9 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E05B311F77839E00440FB9 /* IntroView.swift */; };
+		75E220061F77BF3200359E99 /* SSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E220051F77BF3200359E99 /* SSUserDefaults.swift */; };
 		75F8074B1F4022A700759C2F /* ModelExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F8074A1F4022A700759C2F /* ModelExtention.swift */; };
 		75F8074D1F40293300759C2F /* SSNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F8074C1F40293300759C2F /* SSNotificationCenter.swift */; };
 		75F8074F1F408F1200759C2F /* UIButton+SS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F8074E1F408F1200759C2F /* UIButton+SS.swift */; };
@@ -844,6 +846,8 @@
 		75DE1E1C1F1750FC00AB354A /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		75DE1E1E1F1761CB00AB354A /* ShareVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareVC.swift; path = Share/ShareVC.swift; sourceTree = "<group>"; };
 		75DE1E241F2E211900AB354A /* MirrorLoaderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MirrorLoaderLayer.swift; path = Share/MirrorLoaderLayer.swift; sourceTree = "<group>"; };
+		75E05B311F77839E00440FB9 /* IntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		75E220051F77BF3200359E99 /* SSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSUserDefaults.swift; sourceTree = "<group>"; };
 		75F8074A1F4022A700759C2F /* ModelExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelExtention.swift; sourceTree = "<group>"; };
 		75F8074C1F40293300759C2F /* SSNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSNotificationCenter.swift; sourceTree = "<group>"; };
 		75F8074E1F408F1200759C2F /* UIButton+SS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+SS.swift"; sourceTree = "<group>"; };
@@ -1951,6 +1955,7 @@
 				756C77AF1F374EEE00B9FF54 /* UIImage+Rotate.m */,
 				75F8074C1F40293300759C2F /* SSNotificationCenter.swift */,
 				755C78211F53015B00AD8E45 /* SpeechUtil.swift */,
+				75E220051F77BF3200359E99 /* SSUserDefaults.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1972,6 +1977,7 @@
 				7549ABE31EDD88B00043893A /* VerticalDraggableCardView.swift */,
 				756C77E51F376FD600B9FF54 /* MainKolodaView.swift */,
 				756C77E71F37719000B9FF54 /* PoetryScrollView.swift */,
+				75E05B311F77839E00440FB9 /* IntroView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -2631,6 +2637,7 @@
 				75F8074F1F408F1200759C2F /* UIButton+SS.swift in Sources */,
 				751E084E1EACA61D00BAB696 /* UMComRemoteNoticeViewController.m in Sources */,
 				751E07B51EACA61D00BAB696 /* UMComCommentDataController.m in Sources */,
+				75E05B321F77839E00440FB9 /* IntroView.swift in Sources */,
 				751E07E71EACA61D00BAB696 /* UMComLocationView.m in Sources */,
 				751E07C41EACA61D00BAB696 /* UMComUserDataController.m in Sources */,
 				E20CB2C01ECB533D004298DA /* EditPagerCell.swift in Sources */,
@@ -2713,6 +2720,7 @@
 				751E07F41EACA61D00BAB696 /* UMComCommonTopicTableViewCell.m in Sources */,
 				7549ABCE1ED5BF820043893A /* MainViewController.swift in Sources */,
 				751E08461EACA61D00BAB696 /* UMComMicLikeUserTableViewCell.m in Sources */,
+				75E220061F77BF3200359E99 /* SSUserDefaults.swift in Sources */,
 				756EFB361EB43EAD006E65DF /* PingzeView.swift in Sources */,
 				751E08081EACA61D00BAB696 /* UMComProgressView.m in Sources */,
 				751E07FB1EACA61D00BAB696 /* UMComResouceDefines.m in Sources */,

@@ -119,7 +119,10 @@ class ShareEditVC : UIViewController {
     }
     
     func tapHandler() {
-        self.selectImage()
+        if self.albumBtn.isSelected {
+            self.selectImage()
+        }
+        
     }
     
     func selectImage() {
@@ -233,7 +236,7 @@ class ShareEditVC : UIViewController {
         
         self.poetryContainerView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
-            make.width.equalToSuperview().offset(convertWidth(pix: -20))
+            make.width.equalToSuperview()//.offset(convertWidth(pix: -20))
             make.height.greaterThanOrEqualToSuperview()
         }
     }
@@ -362,7 +365,18 @@ extension ShareEditVC {
 //        shareController.poetryContent = self.poetryContent
 //        shareController.bgImage = self.poetryContainerView.bgImageView.image
 //        self.navigationController?.pushViewController(shareController, animated: true)
-        SSControllerHelper.showShareContoller(controller: self, poetryTitle: self.poetryTitle, poetryAuthor: self.poetryAuthor, poetryContent: self.poetryContent, bgImage: self.poetryContainerView.bgImageView.image)
+        
+        //关闭当前页面
+        CATransaction.begin()
+        CATransaction.setCompletionBlock { [unowned self] in
+            let index = self.navigationController?.viewControllers.index(of: self)!
+            self.navigationController?.viewControllers.remove(at: index!)
+        }
+        let isAlbumImage = self.albumBtn.isSelected
+        SSControllerHelper.showShareContoller(controller: self, poetryTitle: self.poetryTitle, poetryAuthor: self.poetryAuthor, poetryContent: self.poetryContent, bgImage: self.poetryContainerView.bgImageView.image, isAlbumImage: isAlbumImage)
+        
+        CATransaction.commit()
+        
     }
     
     internal func onPaperBtnClick() {
@@ -476,6 +490,7 @@ extension ShareEditVC: UIImagePickerControllerDelegate, UINavigationControllerDe
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         // use the image
+        self.albumImage = chosenImage
         self.poetryContainerView.setupBGImage(image: chosenImage)
         picker.dismiss(animated: true, completion: nil)
     }

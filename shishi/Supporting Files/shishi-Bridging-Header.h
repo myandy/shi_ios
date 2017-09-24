@@ -28,7 +28,7 @@
 
 #import <Bugly/Bugly.h>
 
-#import "FXBlurView.h"
+//#import "FXBlurView.h"
 
 #include "UIImage+Rotate.h"
 

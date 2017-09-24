@@ -44,6 +44,9 @@ class ShareVC: UIViewController {
     internal var editBtn: UIButton!
     
     internal var shareBtn: UIButton!
+    
+    //是否是相册图片做背景
+    public var isAlbumImage = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +54,15 @@ class ShareVC: UIViewController {
         // Do any additional setup after loading the view.
         
         self.setupUI()
+        self.poetryContainerView.isMirrorView = !self.isAlbumImage
         self.poetryContainerView.setupData(title: self.poetryTitle, author: self.poetryAuthor, content: self.poetryContent)
         self.poetryContainerView.setupBGImage(image: self.bgImage)
+        
+        //更新上次保存的字体大小
+        let fontOffset = DataContainer.default.fontOffset
+        if fontOffset != 0 {
+            self.poetryContainerView.updateFont(pointSizeStep: fontOffset)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,6 +84,10 @@ class ShareVC: UIViewController {
     
     func rotateView(view: UIView, duration: Double = 1) {
         if view.layer.animation(forKey: kRotationAnimationKey) == nil {
+            let group = CAAnimationGroup()
+            group.duration = duration
+            group.repeatCount = 0
+            
             let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
             
             rotationAnimation.fromValue = 0.0
@@ -81,8 +95,21 @@ class ShareVC: UIViewController {
             rotationAnimation.duration = duration
             rotationAnimation.repeatCount = 0
             
-            view.layer.add(rotationAnimation, forKey: kRotationAnimationKey)
+//            view.layer.add(rotationAnimation, forKey: kRotationAnimationKey)
+            
+            
+            let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
+            
+            scaleAnimation.fromValue = 0.0
+            scaleAnimation.toValue = 1
+            scaleAnimation.duration = duration
+            scaleAnimation.repeatCount = 0
+            
+//            view.layer.add(rotationAnimation, forKey: kRotationAnimationKey)
+            group.animations = [rotationAnimation, scaleAnimation]
+            view.layer.add(group, forKey: kRotationAnimationKey)
         }
+        
     }
     
     internal func setupUI() {
@@ -111,7 +138,7 @@ class ShareVC: UIViewController {
         
         self.poetryContainerView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
-            make.width.equalToSuperview().offset(convertWidth(pix: -20))
+            make.width.equalToSuperview()//.offset(convertWidth(pix: -20))
             make.height.greaterThanOrEqualToSuperview()
         }
     }
@@ -160,8 +187,11 @@ class ShareVC: UIViewController {
             make.edges.equalToSuperview()
         }
         
+        let bottomBarHeight = convertWidth(pix: 100)
+        
         self.poetryScrollView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(convertWidth(pix: 100))
+            //make.top.equalToSuperview().offset(convertWidth(pix: 100))
+            make.centerY.equalToSuperview().offset(-bottomBarHeight)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().offset(convertWidth(pix: -20))
             make.height.equalTo(self.poetryScrollView.snp.width)
@@ -169,7 +199,7 @@ class ShareVC: UIViewController {
         
         self.bottomBar.snp.makeConstraints { (make) in
             make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(convertWidth(pix: 100))
+            make.height.equalTo(bottomBarHeight)
         }
     }
 
@@ -183,8 +213,10 @@ extension ShareVC {
                                     done: { [unowned self] (selectedIndex) -> () in
                                         switch selectedIndex {
                                         case 0:
+                                            _ = DataContainer.default.increaseFontOffset()
                                             self.poetryContainerView.increaseFontSize()
                                         case 1:
+                                            _ = DataContainer.default.reduceFontOffset()
                                             self.poetryContainerView.reduceFontSize()
                                         case 2:
                                             self.poetryContainerView.switchTextAlign()
@@ -210,6 +242,7 @@ extension ShareVC {
                                         case 0:
                                             let pasteBoard = UIPasteboard.general
                                             pasteBoard.string = self.poetryTitle + "\n" + self.poetryAuthor + "\n" + self.poetryContent
+                                            self.showToast(message: SSStr.Share.COPY_SUC)
                                         case 1:
                                             let image = SSImageUtil.image(with: self.poetryContainerView)
                                             PHPhotoLibrary.shared().performChanges({

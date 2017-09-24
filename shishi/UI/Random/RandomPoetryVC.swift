@@ -41,6 +41,12 @@ class RandomPoetryVC: UIViewController {
         self.poetryView.actionHandel = { [unowned self] _ in
             self.onShareBtnClick()
         }
+        
+        //更新上次保存的字体大小
+        let fontOffset = DataContainer.default.fontOffset
+        if fontOffset != 0 {
+            self.updateFont(pointSizeStep: fontOffset)
+        }
     }
     
     init(poetry : Poetry) {
@@ -100,8 +106,10 @@ extension RandomPoetryVC {
                                     done: { [unowned self] (selectedIndex) -> () in
                                         switch selectedIndex {
                                         case 0:
+                                            _ = DataContainer.default.increaseFontOffset()
                                             self.updateFont(pointSizeStep: AppConfig.Constants.increaseFontStep)
                                         case 1:
+                                            _ = DataContainer.default.reduceFontOffset()
                                             self.updateFont(pointSizeStep: -AppConfig.Constants.increaseFontStep)
                                         case 2:
                                             self.toggleCollection(poetry: self.poetry)

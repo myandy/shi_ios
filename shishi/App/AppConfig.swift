@@ -19,6 +19,15 @@ class AppConfig {
         
         //字体变化每次步径
         static let increaseFontStep: CGFloat = 2.0
+        
+        //介绍文字的初始大小
+        static let introFontSize: CGFloat = 15
+        //标题文字的初始大小
+        static let titleFontSize: CGFloat = 18
+        //作者文字的初始大小
+        static let authorFontSize: CGFloat = 34
+        //内容文字的初始大小
+        static let contentFontSize: CGFloat = 16
     }
     
     

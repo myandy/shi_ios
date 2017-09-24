@@ -126,10 +126,10 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     
     internal func setupPopMenu() {
         let configuration = FTConfiguration.shared
-        configuration.menuRowHeight = 50
-        configuration.menuWidth = 140
+        configuration.menuRowHeight = 32
+        configuration.menuWidth = 100
         configuration.textColor = UIColor.white
-        configuration.textFont = FontsUtils.fontFromUserDefault(pointSize: 18)
+        configuration.textFont = FontsUtils.fontFromUserDefault(pointSize: 12)
         //        configuration.tintColor = UIColor(red: 80/255, green: 80/255, blue: 80/255, alpha: 1)
         //        configuration.borderColor = ...
         //        configuration.borderWidth = ...
@@ -238,7 +238,13 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     }
     
     public func numberOfItems(in carousel: iCarousel) -> Int {
-        return formerItems.count + 1
+        //没有作品就显示介绍和主页
+        if formerItems.count == 0 {
+            return 1 + 1
+        }
+        else {
+            return formerItems.count + 1
+        }
     }
 
     
@@ -249,8 +255,26 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         let horizonalSpace:CGFloat = 40
         let cardViewWidth = self.carousel.bounds.size.width - horizonalSpace * 2
         
-        let isLast = (index == formerItems.count)
-        if !isLast {
+        //没有作品就显示介绍和主页
+        
+        //最后一个是主页
+        var isMainIndex = false
+        let hasFormer = self.formerItems.count != 0
+        
+        if !hasFormer && index == 0 {
+            let introView = IntroView(frame: CGRect(x: 0, y: 0, width: cardViewWidth, height: self.carousel.bounds.size.height))
+            return introView
+        }
+        
+        
+        if !hasFormer && index == 1 {
+            isMainIndex = true
+        }
+        else if index == formerItems.count {
+            isMainIndex = true
+        }
+        
+        if !isMainIndex {
             let cardView = MainCardView(frame: CGRect(x: 0, y: 0, width: cardViewWidth, height: self.carousel.bounds.size.height))
             
             let formerIndex = self.formerIndex(with: index)

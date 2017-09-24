@@ -59,11 +59,19 @@
     return self;
 }
 
+//TB,修改按钮位置
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.sinaLoginButton.frame = self.qqLoginButton.frame;
+}
+
 - (void)initPlatformLogin
 {
     //QQ登录失败，即使改SDK登录成功，后面加载图片也会崩溃
-    //隐藏QQ登录
+    //隐藏QQ登录,TB
     [self.qqLoginButton setHidden:TRUE];
+    //隐藏微信登录
+    [self.wechatLoginButton setHidden:TRUE];
     
     self.sinaLoginButton.tag = UMSocialSnsTypeSina;
     self.qqLoginButton.tag = UMSocialSnsTypeMobileQQ;

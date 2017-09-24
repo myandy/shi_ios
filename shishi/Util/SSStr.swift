@@ -43,6 +43,10 @@ class SSStr: NSObject {
     struct Tips {
         static let AUTHOR_SLIDE = "右滑可以关闭，左滑看下一页"
     }
+    
+    struct Main {
+        static let INTRO = "诗Shi介绍"
+    }
 
     struct Setting {
         static let YUN_TITLE = "韵典"
@@ -99,6 +103,7 @@ class SSStr: NSObject {
     struct Share {
         static let SHARE = "分享"
         static let COPY_TEXT = "复制文本"
+        static let COPY_SUC = "复制成功"
         static let SAVE_IMAGE = "保存图片"
         static let INCREASE_FONTSIZE = "增大字体"
         static let REDUCE_FONTSIZE = "减小字体"
