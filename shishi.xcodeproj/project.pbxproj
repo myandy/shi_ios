@@ -301,6 +301,8 @@
 		75DE1E251F2E211A00AB354A /* MirrorLoaderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE1E241F2E211900AB354A /* MirrorLoaderLayer.swift */; };
 		75E05B321F77839E00440FB9 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E05B311F77839E00440FB9 /* IntroView.swift */; };
 		75E220061F77BF3200359E99 /* SSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E220051F77BF3200359E99 /* SSUserDefaults.swift */; };
+		75E220081F92FA5B00359E99 /* EditBGImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E220071F92FA5B00359E99 /* EditBGImageVC.swift */; };
+		75E2200C1F9386F000359E99 /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E2200B1F9386F000359E99 /* UIImage+FixOrientation.m */; };
 		75F8074B1F4022A700759C2F /* ModelExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F8074A1F4022A700759C2F /* ModelExtention.swift */; };
 		75F8074D1F40293300759C2F /* SSNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F8074C1F40293300759C2F /* SSNotificationCenter.swift */; };
 		75F8074F1F408F1200759C2F /* UIButton+SS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F8074E1F408F1200759C2F /* UIButton+SS.swift */; };
@@ -848,6 +850,9 @@
 		75DE1E241F2E211900AB354A /* MirrorLoaderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MirrorLoaderLayer.swift; path = Share/MirrorLoaderLayer.swift; sourceTree = "<group>"; };
 		75E05B311F77839E00440FB9 /* IntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		75E220051F77BF3200359E99 /* SSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSUserDefaults.swift; sourceTree = "<group>"; };
+		75E220071F92FA5B00359E99 /* EditBGImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBGImageVC.swift; sourceTree = "<group>"; };
+		75E2200A1F9386F000359E99 /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
+		75E2200B1F9386F000359E99 /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixOrientation.m"; sourceTree = "<group>"; };
 		75F8074A1F4022A700759C2F /* ModelExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelExtention.swift; sourceTree = "<group>"; };
 		75F8074C1F40293300759C2F /* SSNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSNotificationCenter.swift; sourceTree = "<group>"; };
 		75F8074E1F408F1200759C2F /* UIButton+SS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+SS.swift"; sourceTree = "<group>"; };
@@ -957,6 +962,7 @@
 		751E06001EACA61C00BAB696 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				75E220091F9386F000359E99 /* UIImage+FixOrientation */,
 				75DE1E1A1F1750FC00AB354A /* FXBlurView */,
 				75DE1DE51EFF681F00AB354A /* Bugly.framework */,
 				75BE6EEE1EEEF72B00A578B2 /* FCModel */,
@@ -2128,6 +2134,7 @@
 				756EFB241EB43EAD006E65DF /* PingzeView.swift */,
 				E2B0DFCA1EB5F962001B790C /* BackgroundPagerView.swift */,
 				E20CB2BF1ECB533D004298DA /* EditPagerCell.swift */,
+				75E220071F92FA5B00359E99 /* EditBGImageVC.swift */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -2298,6 +2305,15 @@
 				75DE1E1C1F1750FC00AB354A /* FXBlurView.m */,
 			);
 			path = FXBlurView;
+			sourceTree = "<group>";
+		};
+		75E220091F9386F000359E99 /* UIImage+FixOrientation */ = {
+			isa = PBXGroup;
+			children = (
+				75E2200A1F9386F000359E99 /* UIImage+FixOrientation.h */,
+				75E2200B1F9386F000359E99 /* UIImage+FixOrientation.m */,
+			);
+			path = "UIImage+FixOrientation";
 			sourceTree = "<group>";
 		};
 		AB45D9C395F61C097FCE8636 /* Frameworks */ = {
@@ -2774,6 +2790,7 @@
 				751E07BA1EACA61D00BAB696 /* UMComNoticeListDataController..m in Sources */,
 				E20CB2C41ECFF6F2004298DA /* SettingItemView.swift in Sources */,
 				751E08451EACA61D00BAB696 /* UMComHtmlFeedStyle.m in Sources */,
+				75E2200C1F9386F000359E99 /* UIImage+FixOrientation.m in Sources */,
 				751E07FA1EACA61D00BAB696 /* UMComWebViewController.m in Sources */,
 				751E07C11EACA61D00BAB696 /* UMComTopicListDataController.m in Sources */,
 				751E08131EACA61D00BAB696 /* UMAssetsCollectionCell.m in Sources */,
@@ -2799,6 +2816,7 @@
 				751E07C01EACA61D00BAB696 /* UMComTopicGroupDataController.m in Sources */,
 				751E08551EACA61D00BAB696 /* UMComShareDelegateHandler.m in Sources */,
 				756EFB761EBA256D006E65DF /* DuishiVC.swift in Sources */,
+				75E220081F92FA5B00359E99 /* EditBGImageVC.swift in Sources */,
 				751E08401EACA61D00BAB696 /* UMComTopicFeedViewController.m in Sources */,
 				751E07E11EACA61D00BAB696 /* UMComUserInfoBar.m in Sources */,
 				751E07E81EACA61D00BAB696 /* UMComSelectTopicView.m in Sources */,

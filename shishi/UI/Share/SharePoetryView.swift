@@ -21,7 +21,8 @@ private let contentHorizonalMinOffset: CGFloat = 10
 
 class SharePoetryView: UIView {
     
-    fileprivate var bgImage: UIImage?
+    public var bgImage: UIImage?
+    public var bgImageId: Int?
     
     //内容水平方向偏移
     internal var contentHorizonalOffset: CGFloat = 0
@@ -202,10 +203,11 @@ class SharePoetryView: UIView {
         self.contentLabel.text = StringUtils.contentTextFilter(poerityTitle: content)
     }
     
-    public func setupBGImage(image: UIImage) {
+    public func setupBGImage(image: UIImage, imageId: Int?) {
 //        self.bgImageView.contentMode = contentMode
         //self.bgImageView.image = image
         self.bgImage = image
+        self.bgImageId = imageId
         self.mirrorLayer.image = image
         self.setNeedsLayout()
     }

@@ -8,21 +8,17 @@
 
 import UIKit
 
-//主页视图封装，暂时未使用到
+//主页视图封装，
 class MainKolodaView: UIView {
     
-    fileprivate lazy var poetryView: PoetryScrollView = {
-        let scrollView = PoetryScrollView()
-        return scrollView
-    }()
+    var label: UILabel!
+    
+    internal var mirrorLayer: MirrorLoaderLayer?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.setupSubviews()
-        self.setupConstrains()
-        
-        self.poetryView.backgroundColor = UIColor.green
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -30,13 +26,52 @@ class MainKolodaView: UIView {
     }
     
     fileprivate func setupSubviews() {
-        self.addSubview(self.poetryView)
+        self.label = UILabel(frame: self.bounds)
+        self.addSubview(label)
+        //label.text = writting.text
+        label.snp.makeConstraints { (make) in
+            let inset = convertWidth(pix: 20)
+            make.left.equalToSuperview().offset(inset * 1.5)
+            make.top.equalToSuperview().offset(inset)
+            make.right.equalToSuperview().offset(-inset * 1.5)
+        }
+        label.numberOfLines = 0
     }
     
-    fileprivate func setupConstrains() {
-        self.poetryView.snp.makeConstraints { (make) in
-            make.width.centerY.centerX.equalToSuperview()
-            make.height.equalTo(self.poetryView.snp.width)
+    
+    
+    public func setup(writting: Writting) {
+        self.label.text = writting.text
+        if writting.bgImg != 0 {
+            let poetryImage = PoetryImage(rawValue: Int(writting.bgImg))!
+            let image = poetryImage.image()
+            self.mirrorLayer = MirrorLoaderLayer()
+            self.mirrorLayer?.image = image
+            self.layer.insertSublayer(self.mirrorLayer!, at: 0)
         }
+        else if let imageName = writting.bgImgName {
+            let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+            // Get the Document directory path
+            let documentDirectorPath:String = paths[0]
+            // Create a new path for the new images folder
+            let imagesDirectoryPath = (documentDirectorPath as NSString).appendingPathComponent("writting")
+            let imagePath = (imagesDirectoryPath as NSString).appendingPathComponent(imageName)
+            let image = UIImage(contentsOfFile: imagePath)!
+            let imageView = UIImageView(image: image)
+            self.insertSubview(imageView, at: 0)
+            imageView.snp.makeConstraints({ (maker) in
+                maker.edges.equalToSuperview()
+            })
+        }
+        else {
+            self.backgroundColor = UIColor.white
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.mirrorLayer?.frame = self.bounds
+        self.mirrorLayer?.setNeedsDisplay()
     }
 }

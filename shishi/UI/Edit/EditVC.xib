@@ -34,16 +34,6 @@
                         <action selector="cancelBtnClick:" destination="-1" eventType="touchUpInside" id="cJU-Ws-U2O"/>
                     </connections>
                 </button>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="edH-yF-mfH">
-                    <rect key="frame" x="140" y="623" width="95" height="29"/>
-                    <segments>
-                        <segment title="" image="layout_bg_edit"/>
-                        <segment title="" image="layout_bg_paper"/>
-                    </segments>
-                    <connections>
-                        <action selector="pagedChanged:" destination="-1" eventType="valueChanged" id="Me7-hq-yIF"/>
-                    </connections>
-                </segmentedControl>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPL-7N-acN">
                     <rect key="frame" x="295" y="607" width="80" height="60"/>
                     <constraints>
@@ -56,6 +46,20 @@
                         <action selector="confirmBtnClick:" destination="-1" eventType="touchUpInside" id="6kd-g1-1ji"/>
                     </connections>
                 </button>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="edH-yF-mfH">
+                    <rect key="frame" x="116" y="615" width="143" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="JDP-iu-apo"/>
+                    </constraints>
+                    <segments>
+                        <segment title="" image="layout_bg_edit"/>
+                        <segment title="" image="layout_bg_paper"/>
+                        <segment title="" image="layout_bg_album"/>
+                    </segments>
+                    <connections>
+                        <action selector="pagedChanged:" destination="-1" eventType="valueChanged" id="Me7-hq-yIF"/>
+                    </connections>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -72,6 +76,7 @@
     <resources>
         <image name="cancel" width="15" height="15"/>
         <image name="done" width="22" height="22"/>
+        <image name="layout_bg_album" width="33" height="38"/>
         <image name="layout_bg_edit" width="33" height="38"/>
         <image name="layout_bg_paper" width="33" height="38"/>
     </resources>

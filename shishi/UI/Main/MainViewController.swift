@@ -285,9 +285,10 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
             let formerName = formerItem.first!.former.name!
             let updateDate = formerItem.last!.update_dt
             let dateString = self.dateString(with: updateDate)
-            let contentArray = formerItem.map({ (writting) -> String in
-                return writting.text
-            })
+//            let contentArray = formerItem.map({ (writting) -> String in
+//                return writting.text
+//            })
+            let contentArray = formerItem
             cardView.setupData(cipai: formerName, dateString: dateString, contentArray: contentArray)
             
             itemView = cardView

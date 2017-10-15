@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS "Writting" (
 "create_dt" datetime DEFAULT(datetime('now', 'localtime')),
 "update_dt" datetime DEFAULT(datetime('now', 'localtime')),
 "bgImg" integer(128) NOT NULL,
+"bgImgName" text(128),
 "author" text(128)
 );
 

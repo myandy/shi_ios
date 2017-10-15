@@ -56,7 +56,7 @@ class ShareVC: UIViewController {
         self.setupUI()
         self.poetryContainerView.isMirrorView = !self.isAlbumImage
         self.poetryContainerView.setupData(title: self.poetryTitle, author: self.poetryAuthor, content: self.poetryContent)
-        self.poetryContainerView.setupBGImage(image: self.bgImage)
+        self.poetryContainerView.setupBGImage(image: self.bgImage, imageId: nil)
         
         //更新上次保存的字体大小
         let fontOffset = DataContainer.default.fontOffset

@@ -44,7 +44,7 @@ class MainCardView: UIView {
         return label
     }()
     
-    var contentArray = [String]()
+    var contentArray = [Writting]()
     
     lazy var kolodaView: KolodaView = {
         let kolodaView = KolodaView()
@@ -72,7 +72,7 @@ class MainCardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func setupData(cipai: String, dateString: String, contentArray: [String]) {
+    public func setupData(cipai: String, dateString: String, contentArray: [Writting]) {
         self.cipaiLabel.text = cipai
         self.dateLabel.text = dateString
         self.contentArray = contentArray
@@ -130,19 +130,24 @@ extension MainCardView: KolodaViewDataSource {
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        let cardView = UIView()
-        cardView.backgroundColor = UIColor.white
+//        let cardView = UIView()
+        let cardView = MainKolodaView(frame: koloda.bounds)
+//        
         
-        let label = UILabel(frame: koloda.bounds)
-        cardView.addSubview(label)
-        label.text = self.contentArray[index]
-        label.snp.makeConstraints { (make) in
-            let inset = convertWidth(pix: 20)
-            make.left.equalToSuperview().offset(inset * 1.5)
-            make.top.equalToSuperview().offset(inset)
-            make.right.equalToSuperview().offset(-inset * 1.5)
-        }
-        label.numberOfLines = 0
+        let writting = self.contentArray[index]
+        cardView.setup(writting: writting)
+
+        
+//        let label = UILabel(frame: koloda.bounds)
+//        cardView.addSubview(label)
+//        label.text = writting.text
+//        label.snp.makeConstraints { (make) in
+//            let inset = convertWidth(pix: 20)
+//            make.left.equalToSuperview().offset(inset * 1.5)
+//            make.top.equalToSuperview().offset(inset)
+//            make.right.equalToSuperview().offset(-inset * 1.5)
+//        }
+//        label.numberOfLines = 0
         let tapGuesture = UITapGestureRecognizer()
         tapGuesture.rx.event
             .subscribe(onNext: { [weak self] _ in
@@ -152,7 +157,7 @@ extension MainCardView: KolodaViewDataSource {
             .addDisposableTo(self.rx_disposeBag)
         
         cardView.addGestureRecognizer(tapGuesture)
-//        let cardView = MainKolodaView()
+//
 //        //cardView.contentTe
 //        cardView.backgroundColor = UIColor.red
         return cardView

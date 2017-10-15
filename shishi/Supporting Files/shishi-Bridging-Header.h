@@ -31,4 +31,5 @@
 //#import "FXBlurView.h"
 
 #include "UIImage+Rotate.h"
+#include "UIImage+FixOrientation.h"
 

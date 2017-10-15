@@ -23,6 +23,7 @@
 @property (nonatomic) NSDate * _Nonnull create_dt;
 @property (nonatomic) NSDate * _Nonnull update_dt;
 @property (nonatomic, assign) int64_t bgImg;
+@property (nonatomic, copy, nullable) NSString *bgImgName;
 @property (nonatomic, copy, nullable) NSString *author;
 
 @end
