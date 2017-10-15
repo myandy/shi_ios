@@ -57,7 +57,7 @@ class IntroView: UIView {
     }
     
     fileprivate func appendData() -> Int {
-        let data = ["bg001", "bg002", "bg004"]
+        let data = ["intro1", "intro2", "intro3", "intro4", "intro5"]
         self.contentArray.append(contentsOf: data)
         return data.count
     }
