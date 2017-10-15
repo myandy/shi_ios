@@ -16,6 +16,8 @@
 #import "WXApi.h"
 #import <TencentOpenAPI/QQApiInterface.h>
 
+#import "WeiboSDK.h"
+
 #define MaxShareLength 137
 #define MaxLinkLength 10
 
@@ -85,10 +87,19 @@ static UMComShareDelegateHandler *_instance = nil;
 
     
     NSString *shareText = [NSString stringWithFormat:@"%@ %@",shareFeed.text,urlString];
-    if (shareFeed.text.length > MaxShareLength+2 - MaxLinkLength) {
-        NSString *feedString = [shareFeed.text substringToIndex:MaxShareLength - MaxLinkLength];
+//    if (shareFeed.text.length > MaxShareLength+2 - MaxLinkLength) {
+//        NSString *feedString = [shareFeed.text substringToIndex:MaxShareLength - MaxLinkLength];
+//        shareText = [NSString stringWithFormat:@"%@…… %@",feedString,urlString];
+//    }
+    
+    int linkLength = [urlString length];
+    if (shareFeed.text.length > MaxShareLength+2 - linkLength) {
+        NSString *feedString = [shareFeed.text substringToIndex:MaxShareLength - linkLength];
         shareText = [NSString stringWithFormat:@"%@…… %@",feedString,urlString];
     }
+    
+    NSString *version = [WeiboSDK getSDKVersion];
+    
     [UMSocialData defaultData].extConfig.sinaData.shareText = shareText;
     
     NSString *title = shareFeed.title;
