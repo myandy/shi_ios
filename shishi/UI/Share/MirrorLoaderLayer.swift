@@ -30,18 +30,25 @@ class MirrorLoaderLayer: CALayer {
             return
         }
         
-        var drawImage = image
+        let rotateImage = image.rotate(.downMirrored)!
+        
         let drawHeight = self.frame.size.width * (image.size.height / image.size.width)
         
         let rowCount = Int(self.frame.size.height / drawHeight) + (Int(self.frame.size.height) % Int(drawHeight) == 0 ? 0 : 1)
         for index in 0..<rowCount {
+            var drawImage = image
             let top = CGFloat(index) * drawHeight
             if index % 2 != 0 {
 //                drawImage = UIImage(cgImage: drawImage.cgImage!, scale: drawImage.scale, orientation: .downMirrored)
-                drawImage = image.rotate(.downMirrored)
+                drawImage = rotateImage
             }
         
-            ctx.draw(drawImage.cgImage!, in: CGRect(x: 0, y: top, width: self.frame.size.width, height: drawHeight))
+            let rect = CGRect(x: 0, y: top, width: self.frame.size.width, height: drawHeight)
+            UIGraphicsPushContext(ctx)
+            drawImage.draw(in: rect)
+            UIGraphicsPopContext()
+            
+//            ctx.draw(drawImage.cgImage!, in: CGRect(x: 0, y: top, width: self.frame.size.width, height: drawHeight))
         }
     }
 }

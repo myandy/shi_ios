@@ -13,7 +13,9 @@ private let editCellIdentifier = "editCellIdentifier"
 
 private let TOP_HEIGHT = 60
 
-public class EditPagerView : UIView{
+public class EditPagerView : UIView {
+    //是否需要保存，如果有编辑才需要保存
+    public var hasEdit = false
     
     
     public static let bgimgList=["dust", "bg001",
@@ -43,33 +45,67 @@ public class EditPagerView : UIView{
     
     var title: UILabel!
     
-    public override func draw(_ rect: CGRect) {
-        
-        //测试代码
-        if writing == nil{
-            writing = Writting()
-        }
-        
-        setupHeadView()
-        
-        
-        let backgroundImage=UIImageView()
-        backgroundImage.image=UIImage(named: EditPagerView.bgimgList[Int(writing.bgImg)])
-        self.addSubview(backgroundImage)
-        backgroundImage.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(TOP_HEIGHT)
-            make.bottom.left.right.equalToSuperview()
-        }
-        
-        
+    //背景图片
+    var defaultImage = PoetryImage.bg001
+    //顶部背景
+    var headView: UIImageView!
+    //中间的TABLEVIEW的背景
+    var backgroundImageView: UIImageView!
+    
+//    public override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        self.setupSubviews()
+//
+//        let image = UIImage(named: EditPagerView.bgimgList[Int(writing.bgImg)]) ?? self.defaultImage.image()
+//        self.updateImage(image: image)
+//    }
+    
+    init(writting: Writting) {
+        super.init(frame: CGRect.zero)
+        self.writing = writting
         let former = writing.former
         let slist = former.pingze.characters.split(separator: "。").map(String.init)
         clist = EditUtils.getCodeFromPingze(list: slist)
         
         self.contentArray = Array.init(repeating: nil, count: clist.count)
+        let textArray = writting.text.components(separatedBy: Writting.textSeparator)
+        for (index, item) in textArray.enumerated() {
+            self.contentArray[index] = item
+        }
+        
+        
+        self.setupSubviews()
+        
+        let image = UIImage(named: EditPagerView.bgimgList[Int(writing.bgImg)]) ?? self.defaultImage.image()
+        self.updateImage(image: image)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    internal func setupSubviews() {
+//        //测试代码
+//        if writing == nil{
+//            writing = Writting()
+//        }
+        
+        setupHeadView()
+        
+        
+        self.backgroundImageView = UIImageView()
+        self.addSubview(self.backgroundImageView)
+        self.backgroundImageView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(TOP_HEIGHT)
+            make.bottom.left.right.equalToSuperview()
+        }
+        
+        
+        
         
         
         tableView = UITableView()
+        tableView.backgroundColor = UIColor.clear
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 70
@@ -79,21 +115,20 @@ public class EditPagerView : UIView{
             make.top.equalToSuperview().offset(TOP_HEIGHT)
             make.bottom.left.right.equalToSuperview()
         }
-        
-        
-        
     }
+    
     
     func setupHeadView(){
         let ivTop = UIImageView()
+        self.headView = ivTop
         self.addSubview(ivTop)
         ivTop.snp.makeConstraints{ (make) in
             make.top.left.right.equalToSuperview()
             make.height.equalTo(TOP_HEIGHT)
         }
-        ivTop.backgroundColor=UIColor.clear
+        ivTop.backgroundColor = UIColor.clear
         ivTop.isUserInteractionEnabled = true
-        ivTop.image = UIImage(named: EditPagerView.bgimgList[Int(writing.bgImg)])
+        
         
         let keyboard = UIImageView()
         ivTop.addSubview(keyboard)
@@ -126,7 +161,7 @@ public class EditPagerView : UIView{
         
         
         title = UILabel()
-        if writing.title==nil {
+        if writing.title == nil {
             writing.title = writing.former.name
         }
         title.textColor = UIColor.black
@@ -154,6 +189,11 @@ public class EditPagerView : UIView{
         FontsUtils.setFont(title)
     }
     
+    func updateImage(image: UIImage) {
+        self.headView.image = image
+        self.backgroundImageView.image = image
+    }
+    
     func titleClick(){
         let alert = UIAlertController(title: SSStr.Edit.INPUT_TITLE, message: nil, preferredStyle: UIAlertControllerStyle.alert)
         
@@ -166,6 +206,7 @@ public class EditPagerView : UIView{
         let alertView2 = UIAlertAction(title: SSStr.Common.CONFIRM, style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
             self.writing.title = (alert.textFields?.first?.text)!
             self.refreshTitle()
+            self.hasEdit = true
         }
         alert.addAction(alertView1)
         alert.addAction(alertView2)
@@ -216,6 +257,7 @@ extension EditPagerView: UITableViewDataSource,UITableViewDelegate {
         cell.refresh(code: clist[indexPath.row], content: content)
         cell.editHandler = { [unowned self] content in
             self.contentArray[indexPath.row] = content
+            self.hasEdit = true
         }
         return cell
     }

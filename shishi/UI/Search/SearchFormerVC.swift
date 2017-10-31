@@ -16,6 +16,9 @@ class SearchFormerVC: NormalSearchVC{
     override func onItemClick(_ pos: Int) {
         let viewController = EditVC(former:items[pos] as! Former)
         self.navigationController?.pushViewController(viewController, animated: true)
+        //删除当前页面
+        let index = self.navigationController!.viewControllers.index(of: self)
+        self.navigationController!.viewControllers.remove(at: index!)
     }
     
     override func getHint() -> String {

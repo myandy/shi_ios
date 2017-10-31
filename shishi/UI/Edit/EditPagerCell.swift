@@ -22,6 +22,8 @@ class EditPagerCell : UITableViewCell {
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.backgroundColor = UIColor.clear
+        
         self.selectionStyle = UITableViewCellSelectionStyle.none
         pingzeLinearView = PingzeLinearView()
         addSubview(pingzeLinearView)

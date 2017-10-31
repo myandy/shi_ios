@@ -206,6 +206,7 @@ class SharePoetryView: UIView {
     public func setupBGImage(image: UIImage, imageId: Int?) {
 //        self.bgImageView.contentMode = contentMode
         //self.bgImageView.image = image
+        
         self.bgImage = image
         self.bgImageId = imageId
         self.mirrorLayer.image = image

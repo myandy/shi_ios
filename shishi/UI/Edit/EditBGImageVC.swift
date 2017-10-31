@@ -194,12 +194,18 @@ class EditBGImageVC: UIViewController {
         })
     }
     
+    //相册选择图片
     func selectImage() {
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = false
         picker.sourceType = .photoLibrary
         self.present(picker, animated: true, completion: nil)
+    }
+    
+    //背景图片变化,子类处理
+    internal func onBGImageUpdate(image: UIImage) {
+        
     }
     
     //显示第一张背景图
@@ -297,7 +303,7 @@ extension EditBGImageVC: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let image = self.bgImageArray[indexPath.row]
         self.poetryContainerView.setupBGImage(image: image.image(), imageId: image.rawValue)
-        
+        self.onBGImageUpdate(image: image.image())
         
         if let cell = collectionView.cellForItem(at: indexPath) as? ShareImageCollectionViewCell {
             cell.updateSelectedStatus(isSelected: true)
@@ -331,6 +337,7 @@ extension EditBGImageVC: UIImagePickerControllerDelegate, UINavigationController
         // use the image
         self.albumImage = chosenImage.fixOrientation()
         self.poetryContainerView.setupBGImage(image: self.albumImage!, imageId: nil)
+        self.onBGImageUpdate(image: self.albumImage!)
         picker.dismiss(animated: true, completion: nil)
     }
     

@@ -21,14 +21,21 @@
     }
     
     self.customButtonView = [[UMComButton alloc] initWithNormalImageName:imageName target:target action:action];
+    
+    //CHANGE BY TB,解决导航栏返回按钮位置不对的问题
+    [self.customButtonView setAutoresizingMask: UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin];
+    
+    
     //创建父控件---begin
     UIButton* containerBTN=  [UIButton buttonWithType:UIButtonTypeCustom];
     containerBTN.frame = self.customButtonView.bounds;
     [containerBTN addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     [containerBTN addSubview:self.customButtonView];
+    
+    
+    
     //创建父控件---end
     self = [super initWithCustomView:containerBTN];
-    
     
     if(self){
     }

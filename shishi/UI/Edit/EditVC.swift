@@ -21,7 +21,13 @@ class EditVC: EditBGImageVC {
     
     fileprivate var bgImage = PoetryImage.bg001.image()
     
+    
     @IBAction func cancelBtnClick(_ sender: Any) {
+        if !self.editPagerView.hasEdit {
+            self.navigationController?.popViewController(animated: true)
+            return
+        }
+        
         let alertController = UIAlertController(title: "是否保存", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         let alertView1 = UIAlertAction(title: "保存", style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
             if self.saveWritting() {
@@ -42,6 +48,9 @@ class EditVC: EditBGImageVC {
         
         if self.saveWritting() {
             SSControllerHelper.showShareContoller(controller: self, poetryTitle: self.writing.title, poetryAuthor: self.writing.author ?? "", poetryContent: self.writing.text, bgImage: self.bgImage, isAlbumImage: false)
+            //删除当前页面
+            let index = self.navigationController!.viewControllers.index(of: self)
+            self.navigationController!.viewControllers.remove(at: index!)
         }
     }
     
@@ -68,8 +77,7 @@ class EditVC: EditBGImageVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        editPagerView = EditPagerView()
-        editPagerView.writing = writing
+        editPagerView = EditPagerView(writting: writing)
         self.view.addSubview(editPagerView)
         
         segmentedControl.tintColor = UIColor.clear
@@ -89,6 +97,7 @@ class EditVC: EditBGImageVC {
         let image0 = segmentedControl.selectedSegmentIndex == 0 ? "layout_bg_edit_selected":"layout_bg_edit"
         let image1 = segmentedControl.selectedSegmentIndex == 1 ? "layout_bg_paper_selected":"layout_bg_paper"
         let image2 = segmentedControl.selectedSegmentIndex == 2 ? "layout_bg_album_selected":"layout_bg_album"
+      
         segmentedControl.setImage(UIImage(named: image0)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), forSegmentAt: 0)
         segmentedControl.setImage(UIImage(named: image1)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), forSegmentAt: 1)
         segmentedControl.setImage(UIImage(named: image2)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), forSegmentAt: 2)
@@ -126,7 +135,11 @@ class EditVC: EditBGImageVC {
         
     }
     
-    
+    //背景图片变化
+    override func onBGImageUpdate(image: UIImage) {
+        self.editPagerView.updateImage(image: image)
+        self.editPagerView.hasEdit = true
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
