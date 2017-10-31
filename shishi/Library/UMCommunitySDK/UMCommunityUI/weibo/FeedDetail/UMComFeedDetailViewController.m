@@ -313,6 +313,17 @@ typedef void(^LoadFinishBlock)(NSError *error);
     return button;
 }
 
+//change by tb,修改图片大小不一致的问题
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
 
 - (void)createTopBarItems
 {
@@ -324,7 +335,10 @@ typedef void(^LoadFinishBlock)(NSError *error);
         image = UMComImageWithImageName(@"um_forum_collection_highlight");
     }else{
         image = UMComImageWithImageName(@"um_forum_collection_normal");
+        //change by tb,修改图片大小不一致的问题
+        image = [[self class] imageWithImage:image scaledToSize: CGSizeMake(20, 20)];
     }
+    
     [_favNavButton setImage:image forState:UIControlStateNormal];
     
     UIBarButtonItem *favItem = [[UIBarButtonItem alloc] initWithCustomView:_favNavButton];
@@ -1158,17 +1172,20 @@ typedef void(^LoadFinishBlock)(NSError *error);
         if (!error) {
             
             [weakSelf.feedDetailDataController favoriteFeedWithCompletion:^(id responseObject, NSError *error) {
-                [UMComShowToast favouriteFeedFail:error isFavourite:isFavourite];
-                UIImage *image = nil;
-                if ([weakSelf.feed.has_collected boolValue]) {
-                    image = UMComImageWithImageName(@"um_forum_collection_highlight");
-                }else{
-                    image = UMComImageWithImageName(@"um_forum_collection_normal");
-                }
-                [weakSelf.collectionButton setImage:image forState:UIControlStateNormal];
-                if (weakSelf.feedOperationFinishDelegate && [weakSelf.feedOperationFinishDelegate respondsToSelector:@selector(reloadDataWhenFeedOperationFinish:)]) {
-                    [weakSelf.feedOperationFinishDelegate reloadDataWhenFeedOperationFinish:feed];
-                }
+                [self doOnMainThread:^{
+                    [UMComShowToast favouriteFeedFail:error isFavourite:isFavourite];
+                    UIImage *image = nil;
+                    if ([weakSelf.feed.has_collected boolValue]) {
+                        image = UMComImageWithImageName(@"um_forum_collection_highlight");
+                    }else{
+                        image = UMComImageWithImageName(@"um_forum_collection_normal");
+                    }
+                    [weakSelf.collectionButton setImage:image forState:UIControlStateNormal];
+                    if (weakSelf.feedOperationFinishDelegate && [weakSelf.feedOperationFinishDelegate respondsToSelector:@selector(reloadDataWhenFeedOperationFinish:)]) {
+                        [weakSelf.feedOperationFinishDelegate reloadDataWhenFeedOperationFinish:feed];
+                    }
+                }];
+                
             }];
         }
     }];

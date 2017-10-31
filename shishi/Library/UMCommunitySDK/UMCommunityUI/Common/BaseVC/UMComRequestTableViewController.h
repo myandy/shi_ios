@@ -113,5 +113,9 @@ typedef void (^UMComLoadSeverDataCompletionHandler)(NSArray *data,NSError *error
  */
 - (void)handleNextPageData:(NSArray *)data error:(NSError *)error;
 
+
+//change by tb,解决子线程操作UI问题
+- (void)doOnMainThread: (void (^)()) action;
+
 @end
 

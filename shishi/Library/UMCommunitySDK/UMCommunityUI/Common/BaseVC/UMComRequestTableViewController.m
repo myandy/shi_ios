@@ -420,5 +420,17 @@ typedef NS_ENUM(NSInteger, UMComVisitType){
     }
 }
 
+//change by tb,解决子线程操作UI问题
+- (void)doOnMainThread: (void (^)()) action {
+    if ([NSThread isMainThread]) {
+        action();
+    }
+    else {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            action();
+        });
+    }
+}
+
 @end
 

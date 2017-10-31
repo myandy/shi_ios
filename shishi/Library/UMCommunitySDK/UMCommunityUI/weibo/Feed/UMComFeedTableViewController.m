@@ -402,21 +402,24 @@
             if (!error) {
                 UMComFeedListDataController *feedDataController = (UMComFeedListDataController *)self.dataController;
                 [feedDataController likeFeed:feed completion:^(id responseObject, NSError *error) {
-                    if (!error) {
-                        if (feed.liked.boolValue) {
-                            [UMComShowToast likeFeedSuccess];
-                        }
-                        else{
-                            [UMComShowToast unlikeFeedSuccess];
-                        }
-                        [weakSelf reloadFeed:feed];
-                    }else{
-                        if (ERR_CODE_LIKE_HAS_BEEN_CANCELED == error.code ||
-                            ERR_CODE_FEED_HAS_BEEN_LIKED == error.code) {
+                    [self doOnMainThread:^{
+                        if (!error) {
+                            if (feed.liked.boolValue) {
+                                [UMComShowToast likeFeedSuccess];
+                            }
+                            else{
+                                [UMComShowToast unlikeFeedSuccess];
+                            }
                             [weakSelf reloadFeed:feed];
+                        }else{
+                            if (ERR_CODE_LIKE_HAS_BEEN_CANCELED == error.code ||
+                                ERR_CODE_FEED_HAS_BEEN_LIKED == error.code) {
+                                [weakSelf reloadFeed:feed];
+                            }
+                            [UMComShowToast showFetchResultTipWithError:error];
                         }
-                        [UMComShowToast showFetchResultTipWithError:error];
-                    }
+                    }];
+                    
                 }];
             }
     }];
