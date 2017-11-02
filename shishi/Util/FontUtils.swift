@@ -13,7 +13,10 @@ import UIKit
 
 public class FontsUtils{
     
-    public static let FONTS = ["FZQingkeBenYueSongS-R-GB","fzsongkebenxiukai_fanti"]
+//    public static let FONTS = ["FZQingkeBenYueSongS-R-GB","fzsongkebenxiukai_fanti"]
+    
+    public static let FONTS = ["CloudSongFangGBK","CloudKaiTiGBK"]
+    
     
     public static func setFont(_ view : UIView){
         
