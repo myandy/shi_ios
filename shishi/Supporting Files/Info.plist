@@ -113,6 +113,8 @@
 	<array>
 		<string>fzqkyuesong.ttf</string>
 		<string>fzsongkebenxiukai_fanti.ttf</string>
+		<string>font_ruifs.ttf</string>
+		<string>font_ruikt.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
