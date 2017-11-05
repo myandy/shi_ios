@@ -47,7 +47,9 @@ class EditVC: EditBGImageVC {
     @IBAction func confirmBtnClick(_ sender: Any) {
         
         if self.saveWritting() {
-            SSControllerHelper.showShareContoller(controller: self, poetryTitle: self.writing.title, poetryAuthor: self.writing.author ?? "", poetryContent: self.writing.text, bgImage: self.bgImage, isAlbumImage: false)
+            let isAlbumImage = segmentedControl.selectedSegmentIndex == 2
+            let bgImage = isAlbumImage ? self.albumImage : self.bgImage
+            SSControllerHelper.showShareContoller(controller: self, poetryTitle: self.writing.title, poetryAuthor: self.writing.author ?? "", poetryContent: self.writing.text, bgImage: bgImage, isAlbumImage: isAlbumImage)
             //删除当前页面
             let index = self.navigationController!.viewControllers.index(of: self)
             self.navigationController!.viewControllers.remove(at: index!)

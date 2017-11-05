@@ -276,6 +276,9 @@
 		756EFB831EBD9C92006E65DF /* Observable+DuiShi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB821EBD9C92006E65DF /* Observable+DuiShi.swift */; };
 		756EFB851EBD9D08006E65DF /* Observable+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB841EBD9D08006E65DF /* Observable+Result.swift */; };
 		756EFB871EBDCAF0006E65DF /* DuishiEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB861EBDCAF0006E65DF /* DuishiEditView.swift */; };
+		7596A6351FAF64D200971C35 /* font_ruifs.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7596A6331FAF64D100971C35 /* font_ruifs.ttf */; };
+		7596A6361FAF64D200971C35 /* font_ruikt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7596A6341FAF64D200971C35 /* font_ruikt.ttf */; };
+		7596A63A1FAF66F000971C35 /* NSString+ZYChangeCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7596A6391FAF66F000971C35 /* NSString+ZYChangeCode.m */; };
 		759722571F93C668000F6FAA /* libSocialSinaSSO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 759722481F93C668000F6FAA /* libSocialSinaSSO.a */; };
 		759722581F93C668000F6FAA /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 759722491F93C668000F6FAA /* libWeiboSDK.a */; };
 		759722591F93C668000F6FAA /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 759722541F93C668000F6FAA /* WeiboSDK.bundle */; };
@@ -804,6 +807,10 @@
 		756EFB821EBD9C92006E65DF /* Observable+DuiShi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+DuiShi.swift"; sourceTree = "<group>"; };
 		756EFB841EBD9D08006E65DF /* Observable+Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Result.swift"; sourceTree = "<group>"; };
 		756EFB861EBDCAF0006E65DF /* DuishiEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuishiEditView.swift; sourceTree = "<group>"; };
+		7596A6331FAF64D100971C35 /* font_ruifs.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font_ruifs.ttf; sourceTree = "<group>"; };
+		7596A6341FAF64D200971C35 /* font_ruikt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font_ruikt.ttf; sourceTree = "<group>"; };
+		7596A6381FAF66F000971C35 /* NSString+ZYChangeCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZYChangeCode.h"; sourceTree = "<group>"; };
+		7596A6391FAF66F000971C35 /* NSString+ZYChangeCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZYChangeCode.m"; sourceTree = "<group>"; };
 		759722481F93C668000F6FAA /* libSocialSinaSSO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSinaSSO.a; sourceTree = "<group>"; };
 		759722491F93C668000F6FAA /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
 		7597224A1F93C668000F6FAA /* UMSocialSinaSSOHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaSSOHandler.h; sourceTree = "<group>"; };
@@ -953,6 +960,8 @@
 		751E05F71EACA51300BAB696 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				7596A6331FAF64D100971C35 /* font_ruifs.ttf */,
+				7596A6341FAF64D200971C35 /* font_ruikt.ttf */,
 				751E05F81EACA51300BAB696 /* fzqkyuesong.ttf */,
 				751E05F91EACA51300BAB696 /* fzsongkebenxiukai_fanti.ttf */,
 			);
@@ -962,6 +971,7 @@
 		751E06001EACA61C00BAB696 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				7596A6371FAF66F000971C35 /* ZYChangeCode */,
 				75E220091F9386F000359E99 /* UIImage+FixOrientation */,
 				75DE1E1A1F1750FC00AB354A /* FXBlurView */,
 				75DE1DE51EFF681F00AB354A /* Bugly.framework */,
@@ -2237,6 +2247,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		7596A6371FAF66F000971C35 /* ZYChangeCode */ = {
+			isa = PBXGroup;
+			children = (
+				7596A6381FAF66F000971C35 /* NSString+ZYChangeCode.h */,
+				7596A6391FAF66F000971C35 /* NSString+ZYChangeCode.m */,
+			);
+			path = ZYChangeCode;
+			sourceTree = "<group>";
+		};
 		759722471F93C668000F6FAA /* Sina */ = {
 			isa = PBXGroup;
 			children = (
@@ -2496,6 +2515,7 @@
 				751E07EB1EACA61D00BAB696 /* UMComPostReplyEditView.xib in Resources */,
 				756C77E31F37632000B9FF54 /* left_slip_guide_023@3x.png in Resources */,
 				751E05FF1EACA54200BAB696 /* Assets.xcassets in Resources */,
+				7596A6361FAF64D200971C35 /* font_ruikt.ttf in Resources */,
 				E22869BE1EBEDACB00238DF8 /* shishi.db in Resources */,
 				751E05FD1EACA51300BAB696 /* Info.plist in Resources */,
 				75DE1E0D1F10DB8D00AB354A /* RandomPoetryVC.xib in Resources */,
@@ -2563,6 +2583,7 @@
 				756C77E11F37632000B9FF54 /* left_slip_guide_021@3x.png in Resources */,
 				751E08381EACA61D00BAB696 /* UMComFeedsTableViewCell.xib in Resources */,
 				756C77D51F37632000B9FF54 /* left_slip_guide_009@3x.png in Resources */,
+				7596A6351FAF64D200971C35 /* font_ruifs.ttf in Resources */,
 				751E07E01EACA61D00BAB696 /* UMComFindTableViewCell.xib in Resources */,
 				E29558D31DD311720065AA1B /* Main.storyboard in Resources */,
 			);
@@ -2665,6 +2686,7 @@
 				751E08521EACA61D00BAB696 /* UMComLoginHandler+Social.m in Sources */,
 				7549ABEA1EED2DA50043893A /* DBMigration.swift in Sources */,
 				75DE1E251F2E211A00AB354A /* MirrorLoaderLayer.swift in Sources */,
+				7596A63A1FAF66F000971C35 /* NSString+ZYChangeCode.m in Sources */,
 				7549ABDF1EDD87920043893A /* KolodaView.swift in Sources */,
 				756EFB521EB45929006E65DF /* AllAuthorCell.swift in Sources */,
 				75DE1E1D1F1750FC00AB354A /* FXBlurView.m in Sources */,

@@ -30,6 +30,8 @@
 
 //#import "FXBlurView.h"
 
-#include "UIImage+Rotate.h"
-#include "UIImage+FixOrientation.h"
+#import "UIImage+Rotate.h"
+#import "UIImage+FixOrientation.h"
+
+#import "NSString+ZYChangeCode.h"
 
