@@ -44,6 +44,11 @@ class SSControllerHelper: NSObject {
         let searchController = SearchAuthorPagerVC()
         searchController.itemClick = { (_pos:Int) in
             //to do 跳转到AuthoPagerVC的指定页，一次只有一个AuthorPagerVC，退出就整体退出了
+            let poetry = searchController.items[_pos] as! Poetry
+            let author = AuthorDB.getAuthor(name: author)
+            let vc = AuthorPagerVC(author: author!, color: ColorDB.getAll()[0].toUIColor())
+            vc.firstPoetry = poetry
+            controller.navigationController?.pushViewController(vc, animated: true)
         }
         searchController.author = author
         controller.navigationController?.pushViewController(searchController, animated: true)

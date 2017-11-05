@@ -193,7 +193,7 @@ class ShareVC: UIViewController {
             //make.top.equalToSuperview().offset(convertWidth(pix: 100))
             make.centerY.equalToSuperview().offset(-bottomBarHeight)
             make.centerX.equalToSuperview()
-            make.width.equalToSuperview().offset(convertWidth(pix: -20))
+            make.width.equalToSuperview().multipliedBy(0.9)
             make.height.equalTo(self.poetryScrollView.snp.width)
         }
         

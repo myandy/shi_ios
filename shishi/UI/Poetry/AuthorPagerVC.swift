@@ -35,6 +35,8 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
     var author : Author!
     var color : UIColor!
     
+    //初始定位的诗
+    var firstPoetry: Poetry?
     
     fileprivate lazy var tipView:UIView = {
         let tipView = UIView()
@@ -125,7 +127,16 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        if self.canSwapExit {
+        
+        
+        if let firstPoetry = self.firstPoetry {
+            let index = self.poetrys.index(where: { (poetry) -> Bool in
+                return poetry.dNum == firstPoetry.dNum
+            })
+            let firstPoetryIndex = 2
+            pageController.setViewControllers([controllers[index! + firstPoetryIndex]], direction: .forward, animated: false)
+        }
+        else if self.canSwapExit {
             pageController.setViewControllers([controllers[1]], direction: .forward, animated: false)
         }
         
@@ -152,7 +163,8 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
         
         self.bottomBar.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
-            self.bottomBarConstraint = make.bottom.equalToSuperview().offset(bootimBarHeight).constraint
+            //self.bottomBarConstraint = make.bottom.equalToSuperview().offset(bootimBarHeight).constraint
+            self.bottomBarConstraint = make.bottom.equalToSuperview().constraint
             make.height.equalTo(convertWidth(pix: 100))
         }
         
@@ -182,25 +194,25 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
         }
         
         
-        let tapGestrue = UITapGestureRecognizer()
-        self.view.addGestureRecognizer(tapGestrue)
-        tapGestrue.rx.event
-            .subscribe(onNext: { [weak self] x in
-                self?.toggleBottomView()
-            })
-            .addDisposableTo(self.rx_disposeBag)
+//        let tapGestrue = UITapGestureRecognizer()
+//        self.view.addGestureRecognizer(tapGestrue)
+//        tapGestrue.rx.event
+//            .subscribe(onNext: { [weak self] x in
+//                self?.toggleBottomView()
+//            })
+//            .addDisposableTo(self.rx_disposeBag)
     }
     
-    internal func toggleBottomView() {
-        let targetOffset = self.isBottomBarHidden ? 0 : bootimBarHeight
-        
-        UIView.animate(withDuration: 0.5) { 
-            self.bottomBarConstraint.update(offset: targetOffset)
-            self.bottomBar.superview?.layoutIfNeeded()
-        }
-        
-        self.isBottomBarHidden = !self.isBottomBarHidden
-    }
+//    internal func toggleBottomView() {
+//        let targetOffset = self.isBottomBarHidden ? 0 : bootimBarHeight
+//
+//        UIView.animate(withDuration: 0.5) {
+//            self.bottomBarConstraint.update(offset: targetOffset)
+//            self.bottomBar.superview?.layoutIfNeeded()
+//        }
+//
+//        self.isBottomBarHidden = !self.isBottomBarHidden
+//    }
     
     fileprivate func showTip() {
         if self.tipView.superview == nil {

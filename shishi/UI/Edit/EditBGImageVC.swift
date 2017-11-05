@@ -120,7 +120,7 @@ class EditBGImageVC: UIViewController {
         self.poetryScrollView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(convertWidth(pix: 100))
             make.centerX.equalToSuperview()
-            make.width.equalToSuperview().offset(convertWidth(pix: -20))
+            make.width.equalToSuperview().multipliedBy(0.9)
             make.height.equalTo(self.poetryScrollView.snp.width)
         }
         
@@ -187,7 +187,7 @@ class EditBGImageVC: UIViewController {
             isStop.pointee = true
             imageManager.requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: requestOptions) { image, info in
                 if let image = image {
-                    self?.albumImage = image
+                    self?.albumImage = self?.resizedImage(image: image)
                     
                 }
             }
@@ -335,7 +335,9 @@ extension EditBGImageVC: UIImagePickerControllerDelegate, UINavigationController
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         // use the image
-        self.albumImage = chosenImage.fixOrientation()
+        //self.albumImage = chosenImage.fixOrientation()
+        let image = chosenImage.fixOrientation()!
+        self.albumImage = self.resizedImage(image: image)
         self.poetryContainerView.setupBGImage(image: self.albumImage!, imageId: nil)
         self.onBGImageUpdate(image: self.albumImage!)
         picker.dismiss(animated: true, completion: nil)
@@ -345,4 +347,29 @@ extension EditBGImageVC: UIImagePickerControllerDelegate, UINavigationController
         picker.dismiss(animated: true, completion: nil)
     }
     
+    internal func resizedImage(image: UIImage) -> UIImage {
+       
+        let maxWidth: CGFloat = 720
+        if image.size.width <= maxWidth {
+            return image
+        }
+        
+        
+        let resizeSize = CGSize(width: maxWidth, height: image.size.height / image.size.width * maxWidth)
+        
+        return image.imageScaledToSize(newSize: resizeSize)
+    }
+}
+
+internal extension UIImage {
+    func imageScaledToSize(newSize:CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(newSize, false, self.scale)
+        self.draw(in: CGRect(x:0, y:0, width:newSize.width, height:newSize.height))
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return image!
+    }
 }

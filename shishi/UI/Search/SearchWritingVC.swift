@@ -14,8 +14,9 @@ class SearchWritingVC: NormalSearchVC{
 
     }
     override func onItemClick(_ pos: Int) {
-//        let viewController = EditVC(former:items[pos] as! Former)
-//        self.navigationController?.pushViewController(viewController, animated: true)
+        let writting = self.originItems[pos] as! Writting
+        let viewController = EditVC(writting: writting)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     override func getHint() -> String {

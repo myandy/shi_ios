@@ -25,6 +25,9 @@ class RandomPoetryVC: UIViewController {
     lazy var colors = ColorDB.getAll()
     
     var hasPoetry: Bool
+    
+    //当前显示字体大小
+    internal var uifontOffset: CGFloat = 0
    
     override public func viewDidLoad() {
         poetryView = PoetryView.loadNib()
@@ -64,6 +67,16 @@ class RandomPoetryVC: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    //解决从子页面返回时，字体大小没有刷新的问题
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if self.uifontOffset != DataContainer.default.fontOffset {
+            let increaseSize = DataContainer.default.fontOffset - self.uifontOffset
+            self.updateFont(pointSizeStep: increaseSize)
+        }
     }
 
     func refresh(){
@@ -135,6 +148,7 @@ extension RandomPoetryVC {
     }
     
     fileprivate func updateFont(pointSizeStep: CGFloat) {
+        self.uifontOffset += pointSizeStep
         
         self.updateFont(pointSizeStep: pointSizeStep, label:  self.poetryView.introLabel)
         self.updateFont(pointSizeStep: pointSizeStep, label:  self.poetryView.contentLabel)

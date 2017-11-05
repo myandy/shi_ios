@@ -39,6 +39,7 @@ class SharePoetryView: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
     
@@ -157,23 +158,25 @@ class SharePoetryView: UIView {
         
         self.titleLabel.snp.remakeConstraints { (make) in
             make.top.equalToSuperview().offset(verticalOffset)
-            
+
             make.width.lessThanOrEqualToSuperview()
-            if self.textAlignment == .center {
-                make.centerX.equalToSuperview().offset(contentHorizonalOffset)
-            }
-            else {
-                make.left.equalToSuperview().offset(contentHorizonalOffset + contentHorizonalMinOffset)
-            }
+            make.centerX.equalToSuperview().offset(contentHorizonalOffset)
+//            if self.textAlignment == .center {
+//                make.centerX.equalToSuperview().offset(contentHorizonalOffset)
+//            }
+//            else {
+//                make.left.equalToSuperview().offset(contentHorizonalOffset + contentHorizonalMinOffset)
+//            }
         }
-        
+
         self.authorLabel.snp.remakeConstraints { (make) in
-            if self.textAlignment == .center {
-                make.centerX.equalToSuperview().offset(contentHorizonalOffset)
-            }
-            else {
-                make.left.equalToSuperview().offset(contentHorizonalOffset + contentHorizonalMinOffset)
-            }
+//            if self.textAlignment == .center {
+//                make.centerX.equalToSuperview().offset(contentHorizonalOffset)
+//            }
+//            else {
+//                make.left.equalToSuperview().offset(contentHorizonalOffset + contentHorizonalMinOffset)
+//            }
+            make.centerX.equalToSuperview().offset(contentHorizonalOffset)
             make.width.lessThanOrEqualToSuperview()
             make.top.equalTo(self.titleLabel.snp.bottom).offset(5)
             if self.authorLabel.isHidden {
@@ -183,13 +186,14 @@ class SharePoetryView: UIView {
         
         self.contentLabel.snp.remakeConstraints { (make) in
             make.top.equalTo(self.authorLabel.snp.bottom).offset(10)
-            make.width.lessThanOrEqualToSuperview()
-            if self.textAlignment == .center {
-                make.centerX.equalToSuperview().offset(contentHorizonalOffset)
-            }
-            else {
-                make.left.equalToSuperview().offset(contentHorizonalOffset + contentHorizonalMinOffset)
-            }
+            make.width.equalToSuperview().offset(-20)
+            make.centerX.equalToSuperview().offset(contentHorizonalOffset)
+//            if self.textAlignment == .center {
+//                make.centerX.equalToSuperview().offset(contentHorizonalOffset)
+//            }
+//            else {
+//                make.left.equalToSuperview().offset(contentHorizonalOffset + contentHorizonalMinOffset)
+//            }
             
             make.bottom.equalToSuperview().offset(-verticalOffset).priority(750)
         }
@@ -228,11 +232,17 @@ class SharePoetryView: UIView {
     }
     
     public func switchTextAlign() {
-        if self.textAlignment == .center {
-            self.textAlignment = .left
+//        if self.textAlignment == .center {
+//            self.textAlignment = .left
+//        }
+//        else {
+//            self.textAlignment = .center
+//        }
+        if self.contentLabel.textAlignment == .center {
+            self.contentLabel.textAlignment = .left
         }
         else {
-            self.textAlignment = .center
+            self.contentLabel.textAlignment = .center
         }
     }
     
@@ -289,15 +299,4 @@ class SharePoetryView: UIView {
     }
 }
 
-internal extension UIImage {
-    func imageScaledToSize(newSize:CGSize) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(newSize, false, self.scale)
-        self.draw(in: CGRect(x:0, y:0, width:newSize.width, height:newSize.height))
-        
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        
-        UIGraphicsEndImageContext()
-        
-        return image!
-    }
-}
+

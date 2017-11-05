@@ -50,9 +50,11 @@ class IntroView: UIView {
         
         self.addSubview(kolodaView)
         
+        let introRatio: CGFloat = CGFloat(500) / 600
         self.kolodaView.snp.makeConstraints { (make) in
-            make.width.bottom.centerX.equalToSuperview()
+            make.width.centerX.equalToSuperview()
             make.top.equalTo(self.titleLabel.snp.bottom).offset(20)
+            make.height.equalTo(self.kolodaView.snp.width).dividedBy(introRatio)
         }
     }
     
