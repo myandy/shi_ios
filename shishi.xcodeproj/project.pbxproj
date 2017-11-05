@@ -347,8 +347,6 @@
 		E2E14C711ED326470056009C /* SettingCheckItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C701ED326470056009C /* SettingCheckItemView.swift */; };
 		E2E14C731ED3B44C0056009C /* FontSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C721ED3B44C0056009C /* FontSettingVC.swift */; };
 		E2E14C751ED489140056009C /* CheckPingzeSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C741ED489140056009C /* CheckPingzeSettingVC.swift */; };
-		E2E16AAA1FAB61FA0039573E /* font_ruikt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2E16AA81FAB61F90039573E /* font_ruikt.ttf */; };
-		E2E16AAB1FAB61FA0039573E /* font_ruifs.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2E16AA91FAB61FA0039573E /* font_ruifs.ttf */; };
 		E2F62F931F659A2F00EBF90E /* SearchAuthorPagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F62F921F659A2F00EBF90E /* SearchAuthorPagerVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -899,8 +897,6 @@
 		E2E14C701ED326470056009C /* SettingCheckItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingCheckItemView.swift; path = Setting/SettingCheckItemView.swift; sourceTree = "<group>"; };
 		E2E14C721ED3B44C0056009C /* FontSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontSettingVC.swift; path = Setting/FontSettingVC.swift; sourceTree = "<group>"; };
 		E2E14C741ED489140056009C /* CheckPingzeSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckPingzeSettingVC.swift; path = Setting/CheckPingzeSettingVC.swift; sourceTree = "<group>"; };
-		E2E16AA81FAB61F90039573E /* font_ruikt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font_ruikt.ttf; sourceTree = "<group>"; };
-		E2E16AA91FAB61FA0039573E /* font_ruifs.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font_ruifs.ttf; sourceTree = "<group>"; };
 		E2F62F921F659A2F00EBF90E /* SearchAuthorPagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAuthorPagerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -957,8 +953,6 @@
 		751E05F71EACA51300BAB696 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				E2E16AA91FAB61FA0039573E /* font_ruifs.ttf */,
-				E2E16AA81FAB61F90039573E /* font_ruikt.ttf */,
 				751E05F81EACA51300BAB696 /* fzqkyuesong.ttf */,
 				751E05F91EACA51300BAB696 /* fzsongkebenxiukai_fanti.ttf */,
 			);
@@ -2469,7 +2463,7 @@
 				TargetAttributes = {
 					E29558C91DD311720065AA1B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = X8Q8BW44Z2;
+						DevelopmentTeam = G5YJVZL9SU;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2545,7 +2539,6 @@
 				756C77E41F37632000B9FF54 /* left_slip_guide_024@3x.png in Resources */,
 				756C77D11F37632000B9FF54 /* left_slip_guide_005@3x.png in Resources */,
 				751E085F1EACA61D00BAB696 /* UMSnsAccountViewController.xib in Resources */,
-				E2E16AAA1FAB61FA0039573E /* font_ruikt.ttf in Resources */,
 				756C77CD1F37632000B9FF54 /* left_slip_guide_001@3x.png in Resources */,
 				756C77D31F37632000B9FF54 /* left_slip_guide_007@3x.png in Resources */,
 				755C78271F5322C300AD8E45 /* user_2.sql in Resources */,
@@ -2567,7 +2560,6 @@
 				751E087C1EACAD5000BAB696 /* Localizable.strings in Resources */,
 				E202C09F1EE848810099FCCC /* intro.html in Resources */,
 				751E08671EACA61D00BAB696 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
-				E2E16AAB1FAB61FA0039573E /* font_ruifs.ttf in Resources */,
 				756C77E11F37632000B9FF54 /* left_slip_guide_021@3x.png in Resources */,
 				751E08381EACA61D00BAB696 /* UMComFeedsTableViewCell.xib in Resources */,
 				756C77D51F37632000B9FF54 /* left_slip_guide_009@3x.png in Resources */,
@@ -3028,7 +3020,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = X8Q8BW44Z2;
+				DEVELOPMENT_TEAM = G5YJVZL9SU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3068,7 +3060,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = X8Q8BW44Z2;
+				DEVELOPMENT_TEAM = G5YJVZL9SU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
