@@ -194,7 +194,7 @@ class ShareVC: UIViewController {
             make.centerY.equalToSuperview().offset(-bottomBarHeight)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.9)
-            make.height.equalTo(self.poetryScrollView.snp.width)
+            make.height.equalTo(self.poetryScrollView.snp.width).dividedBy(0.63)
         }
         
         self.bottomBar.snp.makeConstraints { (make) in

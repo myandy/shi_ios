@@ -21,8 +21,8 @@ class IntroView: UIView {
         return label
     }()
 
-    lazy var kolodaView: KolodaView = {
-        let kolodaView = KolodaView()
+    lazy var kolodaView: SSKolodaView = {
+        let kolodaView = SSKolodaView()
         kolodaView.dataSource = self
         kolodaView.delegate = self
         return kolodaView
@@ -43,7 +43,7 @@ class IntroView: UIView {
     private func setupSubviews() {
         self.addSubview(self.titleLabel)
         self.titleLabel.snp.makeConstraints({ (make) in
-            make.top.equalToSuperview().offset(convertHeight(pix: 100))
+            make.top.equalToSuperview().offset(convertHeight(pix: 200))
             make.centerX.equalToSuperview()
             make.width.lessThanOrEqualToSuperview()
         })

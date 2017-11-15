@@ -54,6 +54,18 @@ public class StringUtils {
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
         return regex.stringByReplacingMatches(in: poerityTitle, options: [], range: poerityTitle.nsRange(from: range), withTemplate: "")
     }
+    
+    //过滤内容中的起始空格和回车
+    public class func contentTextFilterPrifix(poerityTitle: String) -> String {
+        var result = poerityTitle
+        while result.hasPrefix(" ") {
+            result.remove(at: result.startIndex)
+        }
+        while result.hasPrefix("\r\n") {
+            result.remove(at: result.startIndex)
+        }
+        return result
+    }
 }
 
 extension String {

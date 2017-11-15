@@ -75,10 +75,12 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         self.navigationController?.pushViewController(AllAuthorVC(), animated: true)
     }
     
+    //随机一首诗
     @IBAction func randomClick(_ sender: Any) {
         self.navigationController?.pushViewController(RandomPoetryVC(), animated: true)
     }
     
+    //智能对诗
     @IBAction func onBtnClick(_ sender: AnyObject) {
         self.navigationController?.pushViewController(DuishiVC(), animated: true)
     }

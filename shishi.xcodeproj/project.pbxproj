@@ -279,6 +279,7 @@
 		7596A6351FAF64D200971C35 /* font_ruifs.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7596A6331FAF64D100971C35 /* font_ruifs.ttf */; };
 		7596A6361FAF64D200971C35 /* font_ruikt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7596A6341FAF64D200971C35 /* font_ruikt.ttf */; };
 		7596A63A1FAF66F000971C35 /* NSString+ZYChangeCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7596A6391FAF66F000971C35 /* NSString+ZYChangeCode.m */; };
+		7596A63C1FBCA02B00971C35 /* SSKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596A63B1FBCA02B00971C35 /* SSKolodaView.swift */; };
 		759722571F93C668000F6FAA /* libSocialSinaSSO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 759722481F93C668000F6FAA /* libSocialSinaSSO.a */; };
 		759722581F93C668000F6FAA /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 759722491F93C668000F6FAA /* libWeiboSDK.a */; };
 		759722591F93C668000F6FAA /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 759722541F93C668000F6FAA /* WeiboSDK.bundle */; };
@@ -811,6 +812,7 @@
 		7596A6341FAF64D200971C35 /* font_ruikt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font_ruikt.ttf; sourceTree = "<group>"; };
 		7596A6381FAF66F000971C35 /* NSString+ZYChangeCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZYChangeCode.h"; sourceTree = "<group>"; };
 		7596A6391FAF66F000971C35 /* NSString+ZYChangeCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZYChangeCode.m"; sourceTree = "<group>"; };
+		7596A63B1FBCA02B00971C35 /* SSKolodaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSKolodaView.swift; sourceTree = "<group>"; };
 		759722481F93C668000F6FAA /* libSocialSinaSSO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSinaSSO.a; sourceTree = "<group>"; };
 		759722491F93C668000F6FAA /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
 		7597224A1F93C668000F6FAA /* UMSocialSinaSSOHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaSSOHandler.h; sourceTree = "<group>"; };
@@ -1972,6 +1974,7 @@
 				756C77E51F376FD600B9FF54 /* MainKolodaView.swift */,
 				756C77E71F37719000B9FF54 /* PoetryScrollView.swift */,
 				75E05B311F77839E00440FB9 /* IntroView.swift */,
+				7596A63B1FBCA02B00971C35 /* SSKolodaView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -2761,6 +2764,7 @@
 				75E220061F77BF3200359E99 /* SSUserDefaults.swift in Sources */,
 				756EFB361EB43EAD006E65DF /* PingzeView.swift in Sources */,
 				751E08081EACA61D00BAB696 /* UMComProgressView.m in Sources */,
+				7596A63C1FBCA02B00971C35 /* SSKolodaView.swift in Sources */,
 				751E07FB1EACA61D00BAB696 /* UMComResouceDefines.m in Sources */,
 				751E08781EACA82C00BAB696 /* SSTheme.swift in Sources */,
 				75DE1E131F12512B00AB354A /* SharePoetryView.swift in Sources */,

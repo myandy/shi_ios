@@ -23,6 +23,12 @@ class EditBGImageVC: UIViewController {
         return poetryScrollView
     }()
     
+    //滚动视图的背景
+    internal lazy var scrollBGView: UIView = {
+        let bgView = UIView()
+        return bgView
+    }()
+    
     lazy var collectionViewLayout: UICollectionViewLayout = { [unowned self] in
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -96,7 +102,8 @@ class EditBGImageVC: UIViewController {
     }
     
     internal func setupViews() {
-        self.view.addSubview(self.poetryScrollView)
+        self.view.addSubview(self.scrollBGView)
+        self.scrollBGView.addSubview(self.poetryScrollView)
         
         self.view.addSubview(self.collectionView)
         
@@ -106,6 +113,7 @@ class EditBGImageVC: UIViewController {
     }
     
     internal func setupPoetryView() {
+        
         self.poetryScrollView.addSubview(self.poetryContainerView)
         
         self.poetryContainerView.snp.makeConstraints { (make) in
@@ -116,12 +124,17 @@ class EditBGImageVC: UIViewController {
     }
 
     internal func setupConstraints() {
-        
-        self.poetryScrollView.snp.makeConstraints { (make) in
+        self.scrollBGView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(convertWidth(pix: 100))
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.9)
-            make.height.equalTo(self.poetryScrollView.snp.width)
+            make.height.equalTo(self.scrollBGView.snp.width)
+        }
+        
+        self.poetryScrollView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+            make.width.equalToSuperview()
+            //make.height.equalTo(self.poetryScrollView.snp.width)
         }
         
         self.collectionView.snp.makeConstraints { (make) in

@@ -46,8 +46,8 @@ class MainCardView: UIView {
     
     var contentArray = [Writting]()
     
-    lazy var kolodaView: KolodaView = {
-        let kolodaView = KolodaView()
+    lazy var kolodaView: SSKolodaView = {
+        let kolodaView = SSKolodaView()
 //        kolodaView.backgroundColor = UIColor.white
         kolodaView.dataSource = self
         kolodaView.delegate = self

@@ -50,7 +50,7 @@ class ShareEditVC : EditBGImageVC {
         
         //self.poetryContainerView.setupData(title: self.poetry.title, author: self.poetry.author, content: self.poetry.poetry)
         self.poetryContainerView.setupData(title: self.poetryTitle, author: self.poetryAuthor, content: self.poetryContent)
-        self.poetryContainerView.updateTextColor(textColor: UIColor(hexColor: "A9A9AB"))
+//        self.poetryContainerView.updateTextColor(textColor: UIColor(hexColor: "A9A9AB"))
         
         
         
@@ -178,7 +178,7 @@ extension ShareEditVC {
         if self.paperBtn.isSelected {
             return
         }
-        self.poetryContainerView.updateTextColor(textColor: UIColor(hexColor: "A9A9AB"))
+//        self.poetryContainerView.updateTextColor(textColor: UIColor(hexColor: "A9A9AB"))
         self.poetryContainerView.isMirrorView = true
         self.paperBtn.isSelected = true
         self.albumBtn.isSelected = false
@@ -195,7 +195,7 @@ extension ShareEditVC {
             self.selectImage()
             return
         }
-        self.poetryContainerView.updateTextColor(textColor: UIColor.white)
+//        self.poetryContainerView.updateTextColor(textColor: UIColor.white)
         self.poetryContainerView.isMirrorView = false
         self.paperBtn.isSelected = false
         self.albumBtn.isSelected = true

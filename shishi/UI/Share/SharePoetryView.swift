@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 //字体变化每次步径
 private let increaseFontStep: CGFloat = AppConfig.Constants.increaseFontStep
@@ -27,11 +28,18 @@ class SharePoetryView: UIView {
     //内容水平方向偏移
     internal var contentHorizonalOffset: CGFloat = 0
     
-    public var textAlignment: NSTextAlignment = .center {
-        didSet {
-            self.remakeConstraints()
-        }
-    }
+    //用来做左右偏移
+    internal var labelConstraint: Constraint!
+//    internal var authorHeightConstraint: Constraint!
+    //保存作者名字，来来隐藏和显示作者
+    internal var authorName: String!
+    
+    public var textAlignment: NSTextAlignment = .center
+//    {
+//        didSet {
+//            self.remakeConstraints()
+//        }
+//    }
     
     lazy var textContentView: UIView = UIView()
     
@@ -104,18 +112,11 @@ class SharePoetryView: UIView {
         self.titleLabel.setContentHuggingPriority(1000, for: .vertical)
         self.authorLabel.setContentHuggingPriority(1000, for: .vertical)
         self.contentLabel.setContentHuggingPriority(1000, for: .vertical)
-        
+
         self.titleLabel.setContentCompressionResistancePriority(750, for: .vertical)
         self.authorLabel.setContentCompressionResistancePriority(750, for: .vertical)
-        self.contentLabel.setContentCompressionResistancePriority(750, for: .vertical)
-        
-//        self.bgImageView.setContentHuggingPriority(1000, for: .vertical)
-//        self.bgImageView.setContentCompressionResistancePriority(50, for: .vertical)
-        
-        //test
-//        self.titleLabel.backgroundColor = UIColor.green.withAlphaComponent(0.3)
-//        self.authorLabel.backgroundColor = UIColor.yellow.withAlphaComponent(0.2)
-//        self.contentLabel.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
+        self.contentLabel.setContentCompressionResistancePriority(250, for: .vertical)
+    
     }
     
     internal func setupSubviews() {
@@ -128,6 +129,8 @@ class SharePoetryView: UIView {
         self.textContentView.addSubview(self.titleLabel)
         self.textContentView.addSubview(self.authorLabel)
         self.textContentView.addSubview(self.contentLabel)
+        
+        self.bgImageView.contentMode = .scaleAspectFill
         
     }
     
@@ -142,60 +145,48 @@ class SharePoetryView: UIView {
         self.mirrorLayer.setNeedsDisplay()
     }
     
+//    internal func setupConstraints() {
+////        self.textContentView.snp.makeConstraints { (make) in
+////            make.top.greaterThanOrEqualToSuperview().priority(750)
+////            make.bottom.lessThanOrEqualToSuperview().priority(750)
+////            make.centerY.left.right.equalToSuperview()
+////        }
+//
+//
+//        self.remakeConstraints()
+//    }
+    
     internal func setupConstraints() {
+        let verticalOffset = convertWidth(pix: 50)
         self.textContentView.snp.makeConstraints { (make) in
-            make.top.greaterThanOrEqualToSuperview().priority(750)
-            make.bottom.lessThanOrEqualToSuperview().priority(750)
-            make.centerY.left.right.equalToSuperview()
+            make.top.lessThanOrEqualToSuperview().offset(verticalOffset).priority(750)
+            make.bottom.lessThanOrEqualToSuperview().offset(-verticalOffset).priority(750)
+            make.centerY.equalToSuperview()
+            make.width.equalToSuperview()
+            self.labelConstraint = make.centerX.equalToSuperview().constraint
         }
         
-        self.remakeConstraints()
-    }
-    
-    internal func remakeConstraints() {
-        
-        let verticalOffset = convertWidth(pix: 50)
-        
-        self.titleLabel.snp.remakeConstraints { (make) in
-            make.top.equalToSuperview().offset(verticalOffset)
+        self.titleLabel.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().priority(750)
 
             make.width.lessThanOrEqualToSuperview()
-            make.centerX.equalToSuperview().offset(contentHorizonalOffset)
-//            if self.textAlignment == .center {
-//                make.centerX.equalToSuperview().offset(contentHorizonalOffset)
-//            }
-//            else {
-//                make.left.equalToSuperview().offset(contentHorizonalOffset + contentHorizonalMinOffset)
-//            }
+            make.centerX.equalToSuperview()//.offset(contentHorizonalOffset)
         }
 
-        self.authorLabel.snp.remakeConstraints { (make) in
-//            if self.textAlignment == .center {
-//                make.centerX.equalToSuperview().offset(contentHorizonalOffset)
-//            }
-//            else {
-//                make.left.equalToSuperview().offset(contentHorizonalOffset + contentHorizonalMinOffset)
-//            }
-            make.centerX.equalToSuperview().offset(contentHorizonalOffset)
+        self.authorLabel.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()//.offset(contentHorizonalOffset)
             make.width.lessThanOrEqualToSuperview()
             make.top.equalTo(self.titleLabel.snp.bottom).offset(5)
-            if self.authorLabel.isHidden {
-                make.height.equalTo(0)
-            }
+            //if self.authorLabel.isHidden {
+            //self.authorHeightConstraint = make.height.greaterThanOrEqualTo(20).constraint
+            //}
         }
         
-        self.contentLabel.snp.remakeConstraints { (make) in
+        self.contentLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.authorLabel.snp.bottom).offset(10)
             make.width.equalToSuperview().offset(-20)
-            make.centerX.equalToSuperview().offset(contentHorizonalOffset)
-//            if self.textAlignment == .center {
-//                make.centerX.equalToSuperview().offset(contentHorizonalOffset)
-//            }
-//            else {
-//                make.left.equalToSuperview().offset(contentHorizonalOffset + contentHorizonalMinOffset)
-//            }
-            
-            make.bottom.equalToSuperview().offset(-verticalOffset).priority(750)
+            make.centerX.equalToSuperview()//.offset(contentHorizonalOffset)
+            make.bottom.equalToSuperview().priority(750)
         }
         
         
@@ -204,7 +195,10 @@ class SharePoetryView: UIView {
     public func setupData(title: String, author: String, content: String) {
         self.titleLabel.text = StringUtils.titleTextFilter(poerityTitle: title)
         self.authorLabel.text = author
-        self.contentLabel.text = StringUtils.contentTextFilter(poerityTitle: content)
+        var contentText = StringUtils.contentTextFilter(poerityTitle: content)
+        contentText = StringUtils.contentTextFilterPrifix(poerityTitle: contentText)
+        self.contentLabel.text = contentText
+        self.authorName = author
     }
     
     public func setupBGImage(image: UIImage, imageId: Int?) {
@@ -248,17 +242,22 @@ class SharePoetryView: UIView {
     
     public func contentMoveLeft() {
         self.contentHorizonalOffset -= contentHorizonalMoveStep
-        self.remakeConstraints()
+        self.labelConstraint.update(offset: self.contentHorizonalOffset)
+       // self.remakeConstraints()
     }
     
     public func contentMoveRight() {
         self.contentHorizonalOffset += contentHorizonalMoveStep
-        self.remakeConstraints()
+        self.labelConstraint.update(offset: +self.contentHorizonalOffset)
+       // self.remakeConstraints()
     }
     
     public func toggleAuthorHidden() {
         self.authorLabel.isHidden = !self.authorLabel.isHidden
-        self.remakeConstraints()
+        //self.remakeConstraints()
+        //let offset = self.authorLabel.isHidden ? -25 : 0
+        //self.authorHeightConstraint.update(offset: offset)
+        self.authorLabel.text = self.authorLabel.isHidden ? "" : self.authorName
     }
     
     public func updateFont(pointSizeStep: CGFloat) {
