@@ -31,9 +31,9 @@ class MainKolodaView: UIView {
         //label.text = writting.text
         label.snp.makeConstraints { (make) in
             let inset = convertWidth(pix: 20)
-            make.left.equalToSuperview().offset(inset * 1.5)
-            make.top.equalToSuperview().offset(inset)
-            make.right.equalToSuperview().offset(-inset * 1.5)
+            make.left.equalToSuperview().offset(inset * 1.5).priority(750)
+            make.top.equalToSuperview().offset(inset).priority(750)
+            make.right.equalToSuperview().offset(-inset * 1.5).priority(750)
         }
         label.numberOfLines = 0
     }

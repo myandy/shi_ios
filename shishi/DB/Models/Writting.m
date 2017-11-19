@@ -21,10 +21,10 @@
     {
         Writting* writting1 = obj1;
         Writting* writting2 = obj2;
-        return writting1.index > writting2.index;
+        return writting1.orderIndex > writting2.orderIndex;
     }];
     
-    int64_t newIndex = allValues.count == 0 ? 0 : (((Writting*)[sortValues lastObject]).index + 1);
+    int64_t newIndex = allValues.count == 0 ? 0 : (((Writting*)[sortValues lastObject]).orderIndex + 1);
     return newIndex;
 }
 
@@ -35,7 +35,7 @@
 //    }
     
     if (!self.existsInDatabase) {
-        self.index = [self.class indexValueForNewInstance];
+        self.orderIndex = [self.class indexValueForNewInstance];
     }
     
     return [super save:^{

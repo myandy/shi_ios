@@ -15,7 +15,7 @@
 
 @property (nonatomic, assign) int64_t id;
 //用于排序
-@property (nonatomic, assign) int64_t index;
+@property (nonatomic, assign) int64_t orderIndex;
 @property (nonatomic, copy, nonnull) NSString *text;
 @property (nonatomic, assign) int64_t formerId;
 @property (nonatomic, copy) NSString * _Nonnull title;

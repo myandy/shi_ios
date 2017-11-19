@@ -210,19 +210,19 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         let array = Writting.allInstances()
         self.writtingArray = array as! [Writting]
         self.writtingArray = self.writtingArray.sorted(by: { (obj0, ojb1) -> Bool in
-            return obj0.index < ojb1.index
+            return obj0.orderIndex < ojb1.orderIndex
         })
-        for item in self.writtingArray {
-            log.debug("id:\(item.id)")
-            log.debug("index:\(item.index)")
-            log.debug("title:\(item.title)")
-            log.debug("text:\(item.text)")
-            log.debug("formerId:\(item.formerId)")
-            log.debug("bgImg:\(item.bgImg)")
-            log.debug("author:\(item.author)")
-            log.debug("create_dt:\(item.create_dt)")
-            log.debug("update_dt:\(item.update_dt)")
-        }
+//        for item in self.writtingArray {
+//            log.debug("id:\(item.id)")
+//            log.debug("index:\(item.index)")
+//            log.debug("title:\(item.title)")
+//            log.debug("text:\(item.text)")
+//            log.debug("formerId:\(item.formerId)")
+//            log.debug("bgImg:\(item.bgImg)")
+//            log.debug("author:\(item.author)")
+//            log.debug("create_dt:\(item.create_dt)")
+//            log.debug("update_dt:\(item.update_dt)")
+//        }
         
     }
     
@@ -357,7 +357,7 @@ extension MainViewController: MainCardViewDelegate {
         let newWrittingIndex = Writting.indexValueForNewInstance()
         let writting = self.formerItems[cardIndex].remove(at: index)
         //writting.delete()
-        writting.index = newWrittingIndex
+        writting.orderIndex = newWrittingIndex
         writting.save(nil)
         
         self.formerItems[cardIndex].append(writting)
