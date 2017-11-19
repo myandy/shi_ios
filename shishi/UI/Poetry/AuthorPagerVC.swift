@@ -355,6 +355,9 @@ extension AuthorPagerVC {
             if let poetryCellVC = controller as? PoetryCellVC {
                 poetryCellVC.updateFont(pointSizeStep: pointSizeStep)
             }
+            else if let authorCellVC = controller as? AuthorCellVC {
+                authorCellVC.updateFont(pointSizeStep: pointSizeStep)
+            }
         }
     }
     

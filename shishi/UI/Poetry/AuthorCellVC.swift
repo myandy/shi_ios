@@ -72,11 +72,21 @@ class AuthorCellVC : UIViewController {
 
         
         FontsUtils.setFont(self.view)
-        
+  
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func updateFont(pointSizeStep: CGFloat) {
+        self.updateFont(pointSizeStep: pointSizeStep, label:  self.titleLabel)
+        self.updateFont(pointSizeStep: pointSizeStep, label:  self.introLabel)
+        
+    }
+    
+    fileprivate func updateFont(pointSizeStep: CGFloat, label: UILabel) {
+        label.font = UIFont(name: label.font.fontName, size: label.font.pointSize + pointSizeStep)
     }
     
     

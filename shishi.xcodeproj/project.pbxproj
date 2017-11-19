@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		751E05FB1EACA51300BAB696 /* fzqkyuesong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 751E05F81EACA51300BAB696 /* fzqkyuesong.ttf */; };
-		751E05FC1EACA51300BAB696 /* fzsongkebenxiukai_fanti.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 751E05F91EACA51300BAB696 /* fzsongkebenxiukai_fanti.ttf */; };
 		751E05FD1EACA51300BAB696 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 751E05FA1EACA51300BAB696 /* Info.plist */; };
 		751E05FF1EACA54200BAB696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751E05FE1EACA54200BAB696 /* Assets.xcassets */; };
 		751E07B41EACA61D00BAB696 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 751E06021EACA61C00BAB696 /* README.txt */; };
@@ -372,8 +370,6 @@
 /* Begin PBXFileReference section */
 		24A66A034D3DEB65E9B524B9 /* Pods-shishi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shishi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shishi/Pods-shishi.debug.xcconfig"; sourceTree = "<group>"; };
 		75017654B54A18144ADB7DED /* Pods_shishi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shishi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		751E05F81EACA51300BAB696 /* fzqkyuesong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fzqkyuesong.ttf; sourceTree = "<group>"; };
-		751E05F91EACA51300BAB696 /* fzsongkebenxiukai_fanti.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fzsongkebenxiukai_fanti.ttf; sourceTree = "<group>"; };
 		751E05FA1EACA51300BAB696 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		751E05FE1EACA54200BAB696 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		751E06021EACA61C00BAB696 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
@@ -970,8 +966,6 @@
 			children = (
 				7596A6331FAF64D100971C35 /* font_ruifs.ttf */,
 				7596A6341FAF64D200971C35 /* font_ruikt.ttf */,
-				751E05F81EACA51300BAB696 /* fzqkyuesong.ttf */,
-				751E05F91EACA51300BAB696 /* fzsongkebenxiukai_fanti.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -2566,7 +2560,6 @@
 				751E08341EACA61D00BAB696 /* UMComFriendTableViewCell.xib in Resources */,
 				756EFB691EB459E2006E65DF /* PoetryView.xib in Resources */,
 				756C77DA1F37632000B9FF54 /* left_slip_guide_014@3x.png in Resources */,
-				751E05FC1EACA51300BAB696 /* fzsongkebenxiukai_fanti.ttf in Resources */,
 				756C77E41F37632000B9FF54 /* left_slip_guide_024@3x.png in Resources */,
 				756C77D11F37632000B9FF54 /* left_slip_guide_005@3x.png in Resources */,
 				751E085F1EACA61D00BAB696 /* UMSnsAccountViewController.xib in Resources */,
@@ -2587,7 +2580,6 @@
 				756C77D41F37632000B9FF54 /* left_slip_guide_008@3x.png in Resources */,
 				751E085A1EACA61D00BAB696 /* UMSCommentInputController.xib in Resources */,
 				751E082B1EACA61D00BAB696 /* UMCommunityStrings.strings in Resources */,
-				751E05FB1EACA51300BAB696 /* fzqkyuesong.ttf in Resources */,
 				751E087C1EACAD5000BAB696 /* Localizable.strings in Resources */,
 				E202C09F1EE848810099FCCC /* intro.html in Resources */,
 				751E08671EACA61D00BAB696 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
