@@ -16,7 +16,14 @@ class FontSettingVC : BaseSettingVC {
     
     let itemClickSelectors = [#selector(itemClickSelector1),#selector(itemClickSelector2),#selector(itemClickSelector3)]
     
+    //初始语言
+    var rawLanguage: Int!
+    //目标语言
+    var targetLanguage: Int?
+    
     override func setupUI() {
+        
+        self.rawLanguage = UserDefaultUtils.getFont()
         
         let card = getCardView()
         self.scrollView.addSubview(card)
@@ -58,7 +65,7 @@ class FontSettingVC : BaseSettingVC {
     }
     
     func refreshCheck(){
-        let check = UserDefaultUtils.getFont()
+        let check = self.targetLanguage ?? self.rawLanguage
         for i in 0...2 {
             if i == check {
                 itemList[i].checkView.isHidden = false
@@ -81,13 +88,19 @@ class FontSettingVC : BaseSettingVC {
     }
     
     func changeSelector(_ pos: Int) {
-        UserDefaultUtils.setFont(pos)
+        self.targetLanguage = pos
         refreshCheck()
         changeSelector()
     }
     
     override func onBackBtnClicked() {
         self.navigationController?.popViewController(animated: false)
+        
+        guard let tar = self.targetLanguage, tar != self.rawLanguage else {
+            return
+        }
+        UserDefaultUtils.setFont(tar)
+        SSNotificationCenter.default.post(name: SSNotificationCenter.Names.updateAppLanguage, object: nil)
     }
     
 }

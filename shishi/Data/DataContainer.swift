@@ -43,6 +43,7 @@ class DataContainer: NSObject {
         let newFontSize = self.fontOffset + pointSizeStep
         self.fontOffset = newFontSize
         self.saveFontOffset()
+        SSNotificationCenter.default.post(name: SSNotificationCenter.Names.updateFontSize, object: nil)
         return newFontSize
     }
     

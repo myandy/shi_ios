@@ -27,6 +27,12 @@ class MainKolodaView: UIView {
     
     fileprivate func setupSubviews() {
         self.label = UILabel(frame: self.bounds)
+        self.updateFontSize()
+        SSNotificationCenter.default.rx.notification(SSNotificationCenter.Names.updateFontSize).subscribe(onNext: { [weak self] notify in
+            self?.updateFontSize()
+        })
+            .addDisposableTo(self.rx_disposeBag)
+        
         self.addSubview(label)
         //label.text = writting.text
         label.snp.makeConstraints { (make) in
@@ -38,7 +44,13 @@ class MainKolodaView: UIView {
         label.numberOfLines = 0
     }
     
-    
+    //更新字体大小
+    internal func updateFontSize() {
+        let fontSize = AppConfig.Constants.contentFontSize + DataContainer.default.fontOffset
+        if self.label.font.pointSize != fontSize {
+            self.label.font = UIFont.systemFont(ofSize: fontSize)
+        }
+    }
     
     public func setup(writting: Writting) {
         self.label.text = writting.text

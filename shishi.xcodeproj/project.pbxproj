@@ -310,6 +310,7 @@
 		75F8074B1F4022A700759C2F /* ModelExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F8074A1F4022A700759C2F /* ModelExtention.swift */; };
 		75F8074D1F40293300759C2F /* SSNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F8074C1F40293300759C2F /* SSNotificationCenter.swift */; };
 		75F8074F1F408F1200759C2F /* UIButton+SS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F8074E1F408F1200759C2F /* UIButton+SS.swift */; };
+		75F8F09B1FC1D2DE00F81557 /* SSAppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F8F09A1FC1D2DE00F81557 /* SSAppLanguage.swift */; };
 		E202C09B1EE4070C0099FCCC /* ShareEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */; };
 		E202C09D1EE83E2D0099FCCC /* FormerIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C09C1EE83E2D0099FCCC /* FormerIntroVC.swift */; };
 		E202C09F1EE848810099FCCC /* intro.html in Resources */ = {isa = PBXBuildFile; fileRef = E202C09E1EE848810099FCCC /* intro.html */; };
@@ -749,6 +750,10 @@
 		755C78231F53193400AD8E45 /* UserCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCollection.h; sourceTree = "<group>"; };
 		755C78241F53193400AD8E45 /* UserCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCollection.m; sourceTree = "<group>"; };
 		755C78261F5322C300AD8E45 /* user_2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = user_2.sql; sourceTree = "<group>"; };
+		756A0C601FC1E77800A29BAA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		756A0C611FC1E77800A29BAA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		756A0C621FC1E77800A29BAA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/UMSocialLocalizable.strings"; sourceTree = "<group>"; };
+		756A0C631FC1E77800A29BAA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		756C77AE1F374EEE00B9FF54 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
 		756C77AF1F374EEE00B9FF54 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
 		756C77B31F37632000B9FF54 /* left_slip_guide_000@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_slip_guide_000@3x.png"; sourceTree = "<group>"; };
@@ -865,6 +870,7 @@
 		75F8074A1F4022A700759C2F /* ModelExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelExtention.swift; sourceTree = "<group>"; };
 		75F8074C1F40293300759C2F /* SSNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSNotificationCenter.swift; sourceTree = "<group>"; };
 		75F8074E1F408F1200759C2F /* UIButton+SS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+SS.swift"; sourceTree = "<group>"; };
+		75F8F09A1FC1D2DE00F81557 /* SSAppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAppLanguage.swift; sourceTree = "<group>"; };
 		86A3D6B6999EBD9A4ABA66B1 /* Pods-shishi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shishi.release.xcconfig"; path = "Pods/Target Support Files/Pods-shishi/Pods-shishi.release.xcconfig"; sourceTree = "<group>"; };
 		E202C09A1EE4070C0099FCCC /* ShareEditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareEditVC.swift; path = Share/ShareEditVC.swift; sourceTree = "<group>"; };
 		E202C09C1EE83E2D0099FCCC /* FormerIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormerIntroVC.swift; sourceTree = "<group>"; };
@@ -2189,6 +2195,7 @@
 			children = (
 				756EFB4B1EB4429C006E65DF /* DataContainer.swift */,
 				75DE1E101F12414C00AB354A /* PoetryImage.swift */,
+				75F8F09A1FC1D2DE00F81557 /* SSAppLanguage.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -2498,6 +2505,7 @@
 				en,
 				Base,
 				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = E29558C11DD311720065AA1B;
 			productRefGroup = E29558CB1DD311720065AA1B /* Products */;
@@ -2789,6 +2797,7 @@
 				E22869B91EBED7D100238DF8 /* Writing.swift in Sources */,
 				E22869C01EC0A2B300238DF8 /* AuthorPagerVC.swift in Sources */,
 				751E08281EACA61D00BAB696 /* UMComAvatarImageView.m in Sources */,
+				75F8F09B1FC1D2DE00F81557 /* SSAppLanguage.swift in Sources */,
 				751E07B81EACA61D00BAB696 /* UMComFeedListDataController.m in Sources */,
 				751E07C31EACA61D00BAB696 /* UMComListDataController.m in Sources */,
 				756EFB781EBA28D1006E65DF /* SSStr.swift in Sources */,
@@ -2916,6 +2925,7 @@
 			children = (
 				751E077D1EACA61D00BAB696 /* en */,
 				751E07961EACA61D00BAB696 /* zh-Hans */,
+				756A0C621FC1E77800A29BAA /* zh-Hant */,
 			);
 			name = UMSocialLocalizable.strings;
 			sourceTree = "<group>";
@@ -2925,6 +2935,7 @@
 			children = (
 				751E08801EACAD5600BAB696 /* zh-Hans */,
 				751E08811EACAD7300BAB696 /* en */,
+				756A0C631FC1E77800A29BAA /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2933,6 +2944,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E29558D21DD311720065AA1B /* Base */,
+				756A0C601FC1E77800A29BAA /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -2941,6 +2953,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E29558D71DD311720065AA1B /* Base */,
+				756A0C611FC1E77800A29BAA /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

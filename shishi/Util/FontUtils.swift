@@ -15,7 +15,7 @@ public class FontsUtils{
     
 //    public static let FONTS = ["FZQingkeBenYueSongS-R-GB","fzsongkebenxiukai_fanti"]
     
-    public static let FONTS = ["CloudSongFangGBK","CloudKaiTiGBK"]
+    public static let FONTS = ["CloudSongFangGBK","CloudKaiTiGBK", "CloudSongFangGBK"]
     
     
     public static func setFont(_ view : UIView){

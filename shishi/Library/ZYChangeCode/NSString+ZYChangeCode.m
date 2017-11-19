@@ -39,7 +39,7 @@ static NSString *TRADITION = @"萬與醜專業叢東絲丟兩嚴喪個爿豐臨�
         unichar c = [self characterAtIndex:i];
         NSString * curStr = [[NSString alloc]initWithFormat:@"%C", c];
         NSRange r = [TRADITION rangeOfString: curStr ];
-        if( 2147483647 != r.location )
+        if( 2147483647 != r.location && r.length > 0)
         {
             unichar tc = [SIMPLE characterAtIndex:r.location];
             outputStirng = [outputStirng stringByAppendingFormat:@"%C", tc];
@@ -56,7 +56,7 @@ static NSString *TRADITION = @"萬與醜專業叢東絲丟兩嚴喪個爿豐臨�
 -(NSString *)autoChange{
     NSString *language=[[[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"] objectAtIndex:0];
     NSString *returnString;
-    if ([language isEqualToString:@"zh-Hans"]) {
+    if ([language isEqualToString:@"zh-Hans"] || [language isEqualToString:@"zh-Hans-CN"]) {
         //简体中文
        returnString= [self  toSimpleString];
     }else if([language isEqualToString:@"zh-HK"]||[language isEqualToString:@"zh-Hant"]){

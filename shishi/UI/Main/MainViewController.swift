@@ -95,6 +95,8 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         if !DBManager.shared.openDatabase(){
             NSLog("failed")
             return
@@ -123,7 +125,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         })
         .addDisposableTo(self.rx_disposeBag)
         
-        
+        self.fixLanguage()
     }
     
     internal func setupPopMenu() {

@@ -31,6 +31,12 @@ class ShareVC: UIViewController {
         return bottomBar
     }()
     
+    //除了BOTTOM以外的部分
+    internal lazy var contentView: UIView = {
+        let contentView = UIView()
+        return contentView
+    }()
+    
     internal lazy var poetryScrollView: UIScrollView = {
         let poetryScrollView = UIScrollView()
         return poetryScrollView
@@ -126,7 +132,9 @@ class ShareVC: UIViewController {
         
         self.view.addSubview(self.bgImageView)
         
-        self.view.addSubview(self.poetryScrollView)
+        self.view.addSubview(self.contentView)
+        
+        self.contentView.addSubview(self.poetryScrollView)
         
         self.setupBottomView()
         
@@ -134,6 +142,9 @@ class ShareVC: UIViewController {
     }
     
     internal func setupPoetryView() {
+        
+        
+        self.poetryScrollView.clipsToBounds = false
         self.poetryScrollView.addSubview(self.poetryContainerView)
         
         self.poetryContainerView.snp.makeConstraints { (make) in
@@ -189,17 +200,24 @@ class ShareVC: UIViewController {
         
         let bottomBarHeight = convertWidth(pix: 100)
         
+        
+        
+        self.bottomBar.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalToSuperview()
+            make.height.equalTo(bottomBarHeight)
+        }
+        
+        self.contentView.snp.makeConstraints { (maker) in
+            maker.bottom.equalTo(self.bottomBar.snp.top)
+            maker.left.top.right.equalToSuperview()
+        }
+        
         self.poetryScrollView.snp.makeConstraints { (make) in
             //make.top.equalToSuperview().offset(convertWidth(pix: 100))
             make.centerY.equalToSuperview().offset(-bottomBarHeight)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.9)
-            make.height.equalTo(self.poetryScrollView.snp.width).dividedBy(0.63)
-        }
-        
-        self.bottomBar.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(bottomBarHeight)
+            make.height.equalTo(self.poetryScrollView.snp.width).dividedBy(0.67)
         }
     }
 

@@ -28,6 +28,10 @@ class AppConfig {
         static let authorFontSize: CGFloat = 34
         //内容文字的初始大小
         static let contentFontSize: CGFloat = 16
+        //日期
+        static let timeFontSize: CGFloat = 16
+        //作品作者文字的初始大小
+        static let writtingAuthorFontSize: CGFloat = 16
     }
     
     

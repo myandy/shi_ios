@@ -19,28 +19,29 @@ class MainCardView: UIView {
     
     lazy var cipaiLabel: UILabel = {
        let label = UILabel()
-        self.addSubview(label)
+        
         label.font = UIFont.systemFont(ofSize: 18)
         label.numberOfLines = 0
         label.textColor = UIColor.white
-        label.snp.makeConstraints({ (make) in
-            make.top.equalToSuperview().offset(convertHeight(pix: 100))
-            make.centerX.equalToSuperview()
-            make.width.lessThanOrEqualToSuperview()
-        })
         
+        
+        return label
+    }()
+    
+    lazy var authorLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textColor = UIColor.white
         return label
     }()
     
     lazy var dateLabel: UILabel = {
         let label = UILabel()
-        self.addSubview(label)
+        
         label.textColor = UIColor.gray
         label.font = UIFont.systemFont(ofSize: 14)
-        label.snp.makeConstraints({ (make) in
-            make.top.equalTo(self.cipaiLabel.snp.bottom).offset(convertWidth(pix:20))
-            make.centerX.equalToSuperview()
-        })
+        
         return label
     }()
     
@@ -51,7 +52,7 @@ class MainCardView: UIView {
 //        kolodaView.backgroundColor = UIColor.white
         kolodaView.dataSource = self
         kolodaView.delegate = self
-        self.addSubview(kolodaView)
+        
         
         
         return kolodaView
@@ -62,8 +63,20 @@ class MainCardView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-//        self.setupSubviews()
+        self.setupSubviews()
         
+        SSNotificationCenter.default.rx.notification(SSNotificationCenter.Names.updateFontSize).subscribe(onNext: { [weak self] notify in
+            self?.updateFontSize()
+        })
+            .addDisposableTo(self.rx_disposeBag)
+        
+        SSNotificationCenter.default.rx.notification(SSNotificationCenter.Names.updateAuthorName).subscribe(onNext: { [weak self] notify in
+            self?.updateUserName()
+        })
+            .addDisposableTo(self.rx_disposeBag)
+        
+        self.updateFontSize()
+        self.updateUserName()
         
         
     }
@@ -75,16 +88,58 @@ class MainCardView: UIView {
     public func setupData(cipai: String, dateString: String, contentArray: [Writting]) {
         self.cipaiLabel.text = cipai
         self.dateLabel.text = dateString
+        
         self.contentArray = contentArray
         
-        self.setupSubviews()
+//        self.kolodaView.reloadData()
+//        self.setupSubviews()
+        self.addKolodaView()
+    }
+    
+    internal func updateUserName() {
+        let userName = UserDefaultUtils.getUsername()
+        self.authorLabel.text = userName
+    }
+    
+    private func addKolodaView() {
+        self.addSubview(self.kolodaView)
+        self.kolodaView.snp.makeConstraints { (make) in
+            make.width.bottom.centerX.equalToSuperview()
+            make.top.equalTo(self.dateLabel.snp.bottom).offset(10)
+        }
+    }
+    
+    //更新字体大小
+    internal func updateFontSize() {
+        let titleFontSize = AppConfig.Constants.titleFontSize + DataContainer.default.fontOffset
+        let timeFontSize = AppConfig.Constants.timeFontSize + DataContainer.default.fontOffset
+        let authorFontSize = AppConfig.Constants.writtingAuthorFontSize + DataContainer.default.fontOffset
+        self.cipaiLabel.font = UIFont.systemFont(ofSize: titleFontSize)
+        self.dateLabel.font = UIFont.systemFont(ofSize: timeFontSize)
+        self.authorLabel.font = UIFont.systemFont(ofSize: authorFontSize)
     }
     
     private func setupSubviews() {
-        self.kolodaView.snp.makeConstraints { (make) in
-            make.width.bottom.centerX.equalToSuperview()
-            make.top.equalTo(self.dateLabel.snp.bottom).offset(20)
-        }
+        self.addSubview(self.cipaiLabel)
+        self.cipaiLabel.snp.makeConstraints({ (make) in
+            make.top.equalToSuperview().offset(convertHeight(pix: 100))
+            make.centerX.equalToSuperview()
+            make.width.lessThanOrEqualToSuperview()
+        })
+        
+        self.addSubview(self.authorLabel)
+        self.authorLabel.snp.makeConstraints({ (make) in
+            make.top.equalTo(self.cipaiLabel.snp.bottom).offset(convertWidth(pix:10))
+            make.centerX.equalToSuperview()
+        })
+        
+        self.addSubview(self.dateLabel)
+        self.dateLabel.snp.makeConstraints({ (make) in
+            make.top.equalTo(self.authorLabel.snp.bottom).offset(convertWidth(pix:10))
+            make.centerX.equalToSuperview()
+        })
+        
+        
     }
     
     fileprivate func onKolodaViewClick(view: UIView, index: Int) {

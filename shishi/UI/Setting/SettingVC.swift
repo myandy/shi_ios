@@ -14,7 +14,6 @@ import NSObject_Rx
 
 
 
-
 class SettingVC: BaseSettingVC {
     
     
@@ -35,6 +34,10 @@ class SettingVC: BaseSettingVC {
     lazy var titleList2 = [SSStr.Setting.ABOUT_TITLE,SSStr.Setting.MARK_TITLE,SSStr.Setting.WEIBO_TITLE]
     
     override func setupUI(){
+        SSNotificationCenter.default.rx.notification(SSNotificationCenter.Names.updateAppLanguage).subscribe(onNext: { [weak self] notify in
+            self?.refreshFont()
+        })
+        .addDisposableTo(self.rx_disposeBag)
         
         let card1 = getCardView()
         self.scrollView.addSubview(card1)
@@ -176,6 +179,7 @@ extension SettingVC{
         let alertView2 = UIAlertAction(title: SSStr.Common.CONFIRM, style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
             UserDefaultUtils.setUsername((alert.textFields?.first?.text)!)
             self.refreshUsername()
+            SSNotificationCenter.default.post(name: SSNotificationCenter.Names.updateAuthorName, object: nil)
         }
         alert.addAction(alertView1)
         alert.addAction(alertView2)

@@ -32,10 +32,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         Bugly.start(withAppId: "8511d2df86", config: nil)
+        
+        SSNotificationCenter.default.rx.notification(SSNotificationCenter.Names.updateAppLanguage).subscribe(onNext: { [weak self] notify in
+            self?.updateAppLanguage()
+        })
+            .addDisposableTo(self.rx_disposeBag)
 
         return true
     }
     
+    //更新字体名字
+    internal func updateAppLanguage() {
+        var allViewControllers: [UIViewController] = []
+        if let viewControllers = self.window?.rootViewController?.presentedViewController
+        {
+            // Array of all viewcontroller even after presented
+            allViewControllers.append(viewControllers)
+        }
+        else if let viewControllers = self.window?.rootViewController?.childViewControllers
+        {
+            // Array of all viewcontroller after push
+            allViewControllers.append(contentsOf: viewControllers)
+        }
+        allViewControllers.forEach { (controller) in
+            controller.fixLanguage()
+        }
+    }
     
 
     func applicationWillResignActive(_ application: UIApplication) {
