@@ -17,22 +17,6 @@ public class EditPagerView : UIView {
     //是否需要保存，如果有编辑才需要保存
     public var hasEdit = false
     
-    
-    public static let bgimgList=["dust", "bg001",
-                                 "bg002", "bg004", "bg006",
-                                 "bg007", "bg011", "bg013",
-                                 "bg072", "bg084", "bg096",
-                                 "bg118"]
-    
-    
-    public static let bgSmallimgList = ["dust",
-                                        "bg001_small" ,"bg002_small",
-                                        "bg004_small", "bg006_small",
-                                        "bg007_small", "bg011_small",
-                                        "bg013_small", "bg072_small",
-                                        "bg084_small", "bg096_small",
-                                        "bg118_small"]
-    
     public var writing: Writting!
     
     //列表
@@ -46,7 +30,7 @@ public class EditPagerView : UIView {
     var title: UILabel!
     
     //背景图片
-    var defaultImage = PoetryImage.bg001
+    var defaultImage = PoetryImage.dust
     //顶部背景
     var headView: UIImageView!
     //中间的TABLEVIEW的背景
@@ -76,7 +60,8 @@ public class EditPagerView : UIView {
         
         self.setupSubviews()
         
-        let image = UIImage(named: EditPagerView.bgimgList[Int(writing.bgImg)]) ?? self.defaultImage.image()
+        let poetryImage = PoetryImage(rawValue: Int(writting.bgImg))!
+        let image = poetryImage.image()
         self.updateImage(image: image)
     }
     

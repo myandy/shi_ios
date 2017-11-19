@@ -10,7 +10,9 @@ import UIKit
 
 //背景图片
 enum PoetryImage: Int {
-    case bg001 = 1,
+    
+    case dust = 0,
+    bg001 = 1,
     bg002 = 2,
     bg004 = 4,
     bg006 = 6,
@@ -22,10 +24,12 @@ enum PoetryImage: Int {
     bg096 = 96,
     bg118 = 118
     
-    public static let allValues:[PoetryImage] = [.bg001, .bg002, .bg004, .bg006, .bg007, .bg011, .bg013, .bg072, .bg084, .bg096, bg118]
+    public static let allValues:[PoetryImage] = [.dust,.bg001, .bg002, .bg004, .bg006, .bg007, .bg011, .bg013, .bg072, .bg084, .bg096, bg118]
     
     public func imageName() -> String {
         switch self {
+        case .dust:
+            return "dust"
         case .bg001:
             return "bg001"
         case .bg002:
@@ -52,8 +56,16 @@ enum PoetryImage: Int {
         }
     }
     
+    public func smallImageName() -> String {
+     return imageName().appending("_small")
+    }
+    
     public func image() -> UIImage {
         return UIImage(named: self.imageName())!
+    }
+    
+    public func smallImage() -> UIImage {
+        return UIImage(named: self.smallImageName())!
     }
 }
 

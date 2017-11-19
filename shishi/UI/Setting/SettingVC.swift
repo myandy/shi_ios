@@ -30,9 +30,9 @@ class SettingVC: BaseSettingVC {
     
     lazy var titleList = [SSStr.Setting.YUN_TITLE,SSStr.Setting.FONT_TITLE,SSStr.Setting.CHECK_TITLE,SSStr.Setting.AUTHOR_TITLE]
     
-    lazy var selectorList2 = [#selector(aboutItemClick),#selector(marktemClick),#selector(weiboItemClick)]
+    lazy var selectorList2 = [#selector(aboutItemClick),#selector(weiboItemClick),#selector(marktemClick),#selector(shareItemClick)]
     
-    lazy var titleList2 = [SSStr.Setting.ABOUT_TITLE,SSStr.Setting.MARK_TITLE,SSStr.Setting.WEIBO_TITLE]
+    lazy var titleList2 = [SSStr.Setting.ABOUT_TITLE,SSStr.Setting.WEIBO_TITLE,SSStr.Setting.MARK_TITLE,SSStr.Setting.SHARE_TITLE]
     
     override func setupUI(){
         
@@ -78,7 +78,7 @@ class SettingVC: BaseSettingVC {
         
         let card2 = getCardView()
         self.scrollView.addSubview(card2)
-        var itemList2 = [SettingItemView(),SettingItemView(),SettingItemView()]
+        var itemList2 = [SettingItemView(),SettingItemView(),SettingItemView(),SettingItemView()]
 
         card2.snp.makeConstraints{ (make) in
             make.left.equalToSuperview().offset(20)
@@ -183,17 +183,25 @@ extension SettingVC{
         self.present(alert, animated: true, completion: nil)
     }
     
+    //关于我们
     func aboutItemClick(){
         self.navigationController?.pushViewController(AboutVC(), animated: false)
     }
     
+    //app store 评分
     func marktemClick(){
-        let urlString = "itms-apps://itunes.apple.com/app/id444934666"
+        let urlString = "itms-apps://itunes.apple.com/app/id944955993"
         let url = URL(string: urlString)
         UIApplication.shared.open(url!)
     }
     
+    //跳转微博
     func weiboItemClick(){
+        UIApplication.shared.open(URL(string: "http://www.weibo.com/anddymao")!)
+    }
+    
+    //分享给好友 to do
+    func shareItemClick(){
         UIApplication.shared.open(URL(string: "http://www.weibo.com/anddymao")!)
     }
   

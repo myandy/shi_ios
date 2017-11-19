@@ -61,12 +61,13 @@ class SSStr: NSObject {
         static let AUTHOR_TITLE = "作者名"
         
         static let ABOUT_TITLE = "关于"
-        static let MARK_TITLE = "给我打分"
         static let WEIBO_TITLE = "关注微博"
+        static let MARK_TITLE = "给我打分"
+        static let SHARE_TITLE = "分享给好友"
         
         static let ABOUT_LABEL = "关于诗Shi"
-        static let ABOUT_QQ = "官方QQ群：305395176"
-        static let ABOUT_INTRO = "本应用为非盈利个人应用，设计风格借鉴于词Ci。之前开发了词Ci android版，应用户的建议再开发了本应用。"
+        static let ABOUT_QQ = "官方QQ群：683485775"
+//        static let ABOUT_INTRO = "诗Shi"
         static let ABOUT_EMAIL = "有建议或者bug请联系：\n".appending(ABOUT_EMAIL_VALUE)
         static let ABOUT_EMAIL_VALUE = "andymao1991@gmail.com"
         static let ABOUT_WEXIN = "微信公众号：天涯共词Ci"
@@ -112,7 +113,7 @@ class SSStr: NSObject {
         static let TEXT_ALIGN = "文字居中/居左"
         static let CONTENT_MOVELEFT = "内容左移"
         static let CONTENT_MOVERIGHT = "内容右移"
-        static let HIDE_AHTHOR = "隐藏作者"
+        static let HIDE_AHTHOR = "显示/隐藏作者"
     }
     
     struct AuthorPager {

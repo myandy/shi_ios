@@ -305,7 +305,7 @@ extension EditBGImageVC: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! ShareImageCollectionViewCell
         
         let image = self.bgImageArray[indexPath.row]
-        cell.imageView.image = image.image()
+        cell.imageView.image = image.smallImage()
         cell.updateSelectedStatus(isSelected: self.selectedImageIndex == indexPath.row)
         
         return cell

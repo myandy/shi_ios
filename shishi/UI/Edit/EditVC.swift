@@ -19,7 +19,7 @@ class EditVC: EditBGImageVC {
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
     
-    fileprivate var bgImage = PoetryImage.bg001.image()
+    fileprivate var bgImage = PoetryImage.dust.image()
     
     
     @IBAction func cancelBtnClick(_ sender: Any) {

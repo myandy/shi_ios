@@ -26,7 +26,7 @@ class AboutVC: BaseSettingVC {
         
         let currentVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
         let version = SSStr.Setting.ABOUT_VERSION.appending(currentVersion)
-        let itemTexts = [version,SSStr.Setting.ABOUT_QQ,SSStr.Setting.ABOUT_WEXIN,SSStr.Setting.ABOUT_EMAIL,SSStr.Setting.ABOUT_INTRO]
+        let itemTexts = [version,SSStr.Setting.ABOUT_QQ,SSStr.Setting.ABOUT_WEXIN,SSStr.Setting.ABOUT_EMAIL]
         var itemList=[UIView]()
         
         for (index,itemText) in itemTexts.enumerated() {
