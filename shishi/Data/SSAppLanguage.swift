@@ -38,6 +38,30 @@ extension SSAppLanguage {
         let language = UserDefaultUtils.getFont()
         return SSAppLanguage(rawValue: language)!
     }
+    
+    //转换语言
+    public static func fixViewLanguage(view: UIView) {
+        if let label = view as? UILabel{
+            label.text = label.text?.fixLanguage()
+        }
+        else if let textField = view as? UITextField {
+            textField.text = textField.text?.fixLanguage()
+        }
+        else if let textView = view as? UITextView {
+            textView.text = textView.text.fixLanguage()
+        }
+        else if let button = view as? UIButton {
+            button.setTitle(button.title(for: .normal)?.fixLanguage(), for: .normal)
+            button.setTitle(button.title(for: .highlighted)?.fixLanguage(), for: .highlighted)
+            button.setTitle(button.title(for: .selected)?.fixLanguage(), for: .selected)
+            button.setTitle(button.title(for: .disabled)?.fixLanguage(), for: .disabled)
+        }
+        
+        for subview in view.subviews{
+            fixViewLanguage(view: subview)
+        }
+        
+    }
 }
 
 //语言转换
@@ -65,32 +89,10 @@ extension UIViewController {
             })
         }
         else {
-            fixViewLanguage(view: self.view)
+            SSAppLanguage.fixViewLanguage(view: self.view)
         }
         
     }
     
-    //转换语言
-    public func fixViewLanguage(view: UIView) {
-        if let label = view as? UILabel{
-            label.text = label.text?.fixLanguage()
-        }
-        else if let textField = view as? UITextField {
-            textField.text = textField.text?.fixLanguage()
-        }
-        else if let textView = view as? UITextView {
-            textView.text = textView.text.fixLanguage()
-        }
-        else if let button = view as? UIButton {
-            button.setTitle(button.title(for: .normal)?.fixLanguage(), for: .normal)
-            button.setTitle(button.title(for: .highlighted)?.fixLanguage(), for: .highlighted)
-            button.setTitle(button.title(for: .selected)?.fixLanguage(), for: .selected)
-            button.setTitle(button.title(for: .disabled)?.fixLanguage(), for: .disabled)
-        }
-       
-        for subview in view.subviews{
-            fixViewLanguage(view: subview)
-        }
-        
-    }
+    
 }

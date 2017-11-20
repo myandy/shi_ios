@@ -47,7 +47,6 @@ class EditPagerCell : UITableViewCell {
         
         textField.delegate = self
         
-        FontsUtils.setFont(textField)
         //        let lineView = UIView()
         //        lineView.backgroundColor = UIColor.lightGray
         //        addSubview(lineView)

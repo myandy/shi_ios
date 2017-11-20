@@ -119,6 +119,7 @@ class SettingVC: BaseSettingVC {
     
     func refreshFont(){
         self.fontItem.hint.text = SSStr.Setting.FONT_CHOICES[UserDefaultUtils.getFont()]
+        fixLanguage()
     }
     
     func refreshCheckPingze(){

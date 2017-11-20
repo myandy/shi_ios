@@ -50,6 +50,8 @@ class RandomPoetryVC: UIViewController {
         if fontOffset != 0 {
             self.updateFont(pointSizeStep: fontOffset)
         }
+        
+        FontsUtils.setFont(self.view)
     }
     
     init(poetry : Poetry) {

@@ -32,7 +32,7 @@ class PoetryView : UIView, Nibloadable {
         contentLabel.text = poetry.poetry
         
         if (poetry.intro?.characters.count)! > 5{
-            introLabel.text=poetry.intro
+            introLabel.text = poetry.intro
         }
         else{
             introLabel.text = nil
@@ -41,6 +41,7 @@ class PoetryView : UIView, Nibloadable {
         shareBtn.backgroundColor = color
         authorLabel.text = poetry.author
         
+        SSAppLanguage.fixViewLanguage(view: self)
     }
     public override func layoutSubviews() {
         self.backgroundColor = UIColor.clear

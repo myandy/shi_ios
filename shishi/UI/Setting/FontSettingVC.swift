@@ -91,16 +91,16 @@ class FontSettingVC : BaseSettingVC {
         self.targetLanguage = pos
         refreshCheck()
         changeSelector()
+        UserDefaultUtils.setFont(pos)
+        self.fixLanguage()
     }
     
     override func onBackBtnClicked() {
         self.navigationController?.popViewController(animated: false)
-        
         guard let tar = self.targetLanguage, tar != self.rawLanguage else {
             return
         }
-        UserDefaultUtils.setFont(tar)
         SSNotificationCenter.default.post(name: SSNotificationCenter.Names.updateAppLanguage, object: nil)
-    }
+     }
     
 }

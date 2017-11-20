@@ -124,8 +124,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
             self.reloadData()
         })
         .addDisposableTo(self.rx_disposeBag)
-        
-        self.fixLanguage()
+
     }
     
     internal func setupPopMenu() {

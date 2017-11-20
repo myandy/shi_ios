@@ -77,17 +77,12 @@ public class EditPagerView : UIView {
         
         setupHeadView()
         
-        
         self.backgroundImageView = UIImageView()
         self.addSubview(self.backgroundImageView)
         self.backgroundImageView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(TOP_HEIGHT)
             make.bottom.left.right.equalToSuperview()
         }
-        
-        
-        
-        
         
         tableView = UITableView()
         tableView.backgroundColor = UIColor.clear
@@ -100,6 +95,7 @@ public class EditPagerView : UIView {
             make.top.equalToSuperview().offset(TOP_HEIGHT)
             make.bottom.left.right.equalToSuperview()
         }
+//        tableView.bounces = false
     }
     
     
