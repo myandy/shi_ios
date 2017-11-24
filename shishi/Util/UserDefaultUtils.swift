@@ -38,11 +38,11 @@ public class UserDefaultUtils {
     }
     
     public static func isCheckPingze() -> Bool {
-        return userDefault.bool(forKey: "checkPingze")
+        return !userDefault.bool(forKey: "notcheckPingze")
     }
     
     public static func setCheckPingze(_ bool: Bool) {
-        userDefault.set(bool, forKey: "checkPingze")
+        userDefault.set(!bool, forKey: "notcheckPingze")
     }
     
     public static func getUsername() -> String? {
