@@ -69,6 +69,8 @@ class ShareVC: UIViewController {
         if fontOffset != 0 {
             self.poetryContainerView.updateFont(pointSizeStep: fontOffset)
         }
+        
+        FontsUtils.setFont(self.view)
     }
 
     override func didReceiveMemoryWarning() {
@@ -123,8 +125,6 @@ class ShareVC: UIViewController {
         self.setupConstraints()
         
         self.setupPoetryView()
-        
-        FontsUtils.setFont(self.poetryContainerView)
         
     }
     

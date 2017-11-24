@@ -71,6 +71,8 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
         NSLog(String(describing: height))
         vf.itemSize = CGSize(width:70,height:height)
         loadData()
+        
+        FontsUtils.setFont(self.view)
     }
     
     func getColor(index:Int)->Color{

@@ -54,7 +54,7 @@ class ShareEditVC : EditBGImageVC {
         
         
         
-        
+        FontsUtils.setFont(self.view)
         
     }
     

@@ -17,7 +17,7 @@ public class PingzeLinearView : UIView{
         if code == nil{
             return
         }
-        for i in 0...code.characters.count-1{
+        for i in 0...code.trimmingCharacters(in:NSCharacterSet.newlines).characters.count-1{
             
             let index = code.index(code.startIndex, offsetBy: i)
             let c = code[index]
