@@ -274,6 +274,7 @@
 		756EFB831EBD9C92006E65DF /* Observable+DuiShi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB821EBD9C92006E65DF /* Observable+DuiShi.swift */; };
 		756EFB851EBD9D08006E65DF /* Observable+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB841EBD9D08006E65DF /* Observable+Result.swift */; };
 		756EFB871EBDCAF0006E65DF /* DuishiEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB861EBDCAF0006E65DF /* DuishiEditView.swift */; };
+		756FE9211FCAFF4C002BE43F /* ExUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FE9201FCAFF4C002BE43F /* ExUITableView.swift */; };
 		7596A6351FAF64D200971C35 /* font_ruifs.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7596A6331FAF64D100971C35 /* font_ruifs.ttf */; };
 		7596A63A1FAF66F000971C35 /* NSString+ZYChangeCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7596A6391FAF66F000971C35 /* NSString+ZYChangeCode.m */; };
 		7596A63C1FBCA02B00971C35 /* SSKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596A63B1FBCA02B00971C35 /* SSKolodaView.swift */; };
@@ -808,6 +809,7 @@
 		756EFB821EBD9C92006E65DF /* Observable+DuiShi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+DuiShi.swift"; sourceTree = "<group>"; };
 		756EFB841EBD9D08006E65DF /* Observable+Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Result.swift"; sourceTree = "<group>"; };
 		756EFB861EBDCAF0006E65DF /* DuishiEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuishiEditView.swift; sourceTree = "<group>"; };
+		756FE9201FCAFF4C002BE43F /* ExUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUITableView.swift; sourceTree = "<group>"; };
 		7596A6331FAF64D100971C35 /* font_ruifs.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font_ruifs.ttf; sourceTree = "<group>"; };
 		7596A6381FAF66F000971C35 /* NSString+ZYChangeCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZYChangeCode.h"; sourceTree = "<group>"; };
 		7596A6391FAF66F000971C35 /* NSString+ZYChangeCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZYChangeCode.m"; sourceTree = "<group>"; };
@@ -2228,6 +2230,7 @@
 			children = (
 				756EFB7B1EBB8109006E65DF /* UIVIewController+SS.swift */,
 				75F8074E1F408F1200759C2F /* UIButton+SS.swift */,
+				756FE9201FCAFF4C002BE43F /* ExUITableView.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -2483,7 +2486,7 @@
 				TargetAttributes = {
 					E29558C91DD311720065AA1B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = X8Q8BW44Z2;
+						DevelopmentTeam = G5YJVZL9SU;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2841,6 +2844,7 @@
 				756EFB761EBA256D006E65DF /* DuishiVC.swift in Sources */,
 				75E220081F92FA5B00359E99 /* EditBGImageVC.swift in Sources */,
 				751E08401EACA61D00BAB696 /* UMComTopicFeedViewController.m in Sources */,
+				756FE9211FCAFF4C002BE43F /* ExUITableView.swift in Sources */,
 				751E07E11EACA61D00BAB696 /* UMComUserInfoBar.m in Sources */,
 				751E07E81EACA61D00BAB696 /* UMComSelectTopicView.m in Sources */,
 				751E08511EACA61D00BAB696 /* UMComUserCenterViewController.m in Sources */,
@@ -3047,7 +3051,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = X8Q8BW44Z2;
+				DEVELOPMENT_TEAM = G5YJVZL9SU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3087,7 +3091,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = X8Q8BW44Z2;
+				DEVELOPMENT_TEAM = G5YJVZL9SU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

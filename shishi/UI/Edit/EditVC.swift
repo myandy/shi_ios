@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class EditVC: EditBGImageVC {
     
@@ -19,7 +20,7 @@ class EditVC: EditBGImageVC {
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
     
-    fileprivate var bgImage = PoetryImage.dust.image()
+//    fileprivate var bgImage = PoetryImage.dust.image()
     
     
     @IBAction func cancelBtnClick(_ sender: Any) {
@@ -48,8 +49,8 @@ class EditVC: EditBGImageVC {
         
         if self.saveWritting() {
             let isAlbumImage = segmentedControl.selectedSegmentIndex == 2
-            let bgImage = isAlbumImage ? self.albumImage : self.bgImage
-            SSControllerHelper.showShareContoller(controller: self, poetryTitle: self.writing.title, poetryAuthor: self.writing.author ?? "", poetryContent: self.writing.text, bgImage: bgImage, isAlbumImage: isAlbumImage)
+            let bgImage = isAlbumImage ? self.albumImage : self.poetryContainerView.bgImage!
+            SSControllerHelper.showShareContoller(controller: self, poetryTitle: self.writing.title, poetryAuthor: self.writing.author ?? "", poetryContent: self.writing.text, bgImage: bgImage, isAlbumImage: isAlbumImage, textColor: self.poetryContainerView.textColor)
             //删除当前页面
             let index = self.navigationController!.viewControllers.index(of: self)
             self.navigationController!.viewControllers.remove(at: index!)
@@ -93,6 +94,19 @@ class EditVC: EditBGImageVC {
         
         self.hiddenPoetryView(isHidden: true)
         self.hiddenBgImageCollectionView(isHidden: true)
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        IQKeyboardManager.sharedManager().enable = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        IQKeyboardManager.sharedManager().enable = false
     }
     
     func setSegmentedControlImage(){

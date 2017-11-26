@@ -207,7 +207,9 @@ extension SettingVC{
     
     //分享给好友 to do
     func shareItemClick(){
-        UIApplication.shared.open(URL(string: "http://www.weibo.com/anddymao")!)
+//        UIApplication.shared.open(URL(string: "http://www.weibo.com/anddymao")!)
+        let urlString = "http://www.weibo.com/anddymao"
+        SSShareUtil.default.shareToWB(controller: self, title: "test", url: urlString)
     }
   
 }

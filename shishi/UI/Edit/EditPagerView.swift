@@ -90,6 +90,7 @@ public class EditPagerView : UIView {
         tableView.delegate = self
         tableView.rowHeight = 70
         tableView.register(EditPagerCell.self, forCellReuseIdentifier: editCellIdentifier)
+        tableView.hideEmptyCells()
         self.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(TOP_HEIGHT)

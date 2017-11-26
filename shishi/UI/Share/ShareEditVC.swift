@@ -168,7 +168,7 @@ extension ShareEditVC {
             self.navigationController?.viewControllers.remove(at: index!)
         }
         let isAlbumImage = self.albumBtn.isSelected
-        SSControllerHelper.showShareContoller(controller: self, poetryTitle: self.poetryTitle, poetryAuthor: self.poetryAuthor, poetryContent: self.poetryContent, bgImage: self.poetryContainerView.bgImageView.image, isAlbumImage: isAlbumImage)
+        SSControllerHelper.showShareContoller(controller: self, poetryTitle: self.poetryTitle, poetryAuthor: self.poetryAuthor, poetryContent: self.poetryContent, bgImage: self.poetryContainerView.bgImageView.image, isAlbumImage: isAlbumImage, textColor: self.poetryContainerView.textColor)
         
         CATransaction.commit()
         

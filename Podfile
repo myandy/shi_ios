@@ -38,6 +38,8 @@ target ‘shishi’ do
     
     pod 'FTPopOverMenu_Swift'
     
+    pod "IQKeyboardManagerSwift"
+    
 end
 
 

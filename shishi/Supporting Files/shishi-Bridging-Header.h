@@ -21,6 +21,8 @@
 #import "UMSocialWechatHandler.h"
 #import "UMComLoginManager.h"
 
+#import "WeiboSDK.h"
+
 #import "FCModel.h"
 //#import <FMDB/FMDatabase.h>
 #import "Writting.h"

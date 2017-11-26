@@ -53,6 +53,8 @@ class ShareVC: UIViewController {
     
     //是否是相册图片做背景
     public var isAlbumImage = false
+    //文本颜色
+    public var textColor: UIColor!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +65,7 @@ class ShareVC: UIViewController {
         self.poetryContainerView.isMirrorView = !self.isAlbumImage
         self.poetryContainerView.setupData(title: self.poetryTitle, author: self.poetryAuthor, content: self.poetryContent)
         self.poetryContainerView.setupBGImage(image: self.bgImage, imageId: nil)
+        self.poetryContainerView.textColor = self.textColor
         
         //更新上次保存的字体大小
         let fontOffset = DataContainer.default.fontOffset
@@ -82,7 +85,11 @@ class ShareVC: UIViewController {
         super.viewWillAppear(animated)
         
         if self.isMovingToParentViewController {
-            self.rotateView(view: self.poetryContainerView)
+            self.poetryScrollView.clipsToBounds = false
+            self.rotateView(view: self.poetryContainerView, duration: 1)
+            delayToMainThread(delay: 1, closure: { [weak self] in
+                self?.poetryScrollView.clipsToBounds = true
+            })
         }
     }
     
@@ -144,7 +151,7 @@ class ShareVC: UIViewController {
     internal func setupPoetryView() {
         
         
-        self.poetryScrollView.clipsToBounds = false
+        
         self.poetryScrollView.addSubview(self.poetryContainerView)
         
         self.poetryContainerView.snp.makeConstraints { (make) in
@@ -217,7 +224,7 @@ class ShareVC: UIViewController {
             make.centerY.equalToSuperview().offset(-bottomBarHeight)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.9)
-            make.height.equalTo(self.poetryScrollView.snp.width).dividedBy(0.67)
+            make.height.equalTo(self.poetryScrollView.snp.width)//.dividedBy(0.67)
         }
     }
 

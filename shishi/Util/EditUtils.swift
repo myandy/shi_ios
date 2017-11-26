@@ -38,7 +38,7 @@ class EditUtils {
                     
                     let codeEndIndex=codes[i].index(before: codes[i].endIndex)
                     
-                    if(list[i][index1] == "韵" && list[i][index2] == "）"){
+                    if(item[index1] == "韵" && item[index2] == "）"){
                         let value=codes[i][codeEndIndex]
                         let newValue=Int(String(value))!+3
                         codes[i].remove(at: codeEndIndex)

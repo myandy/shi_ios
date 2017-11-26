@@ -7,6 +7,7 @@ PODS:
   - FTPopOverMenu_Swift (0.0.8)
   - FXBlurView (1.6.4)
   - iCarousel (1.8.3)
+  - IQKeyboardManagerSwift (5.0.6)
   - MBProgressHUD (1.0.0)
   - Moya (8.0.5):
     - Moya/Core (= 8.0.5)
@@ -48,6 +49,7 @@ DEPENDENCIES:
   - FTPopOverMenu_Swift
   - FXBlurView
   - iCarousel (~> 1.8.3)
+  - IQKeyboardManagerSwift
   - MBProgressHUD
   - Moya (~> 8.0.3)
   - Moya-SwiftyJSONMapper/RxSwift
@@ -70,6 +72,7 @@ SPEC CHECKSUMS:
   FTPopOverMenu_Swift: 08f9a712c63811f675fe0b604c792e46246e00d9
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
   Moya-SwiftyJSONMapper: 03c9d3e562c9025c8c00fa3ec97ae1da61a2be37
@@ -85,6 +88,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XCGLogger: 0b43697155d41e4a1b15fc776f319c2141646b09
 
-PODFILE CHECKSUM: 1f5f0aeb550f90df19dabb6f1ec81f5c63416344
+PODFILE CHECKSUM: c0cd926547d6dc246605914d2a3502ca7d18a791
 
 COCOAPODS: 1.2.1

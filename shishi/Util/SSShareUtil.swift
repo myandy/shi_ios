@@ -34,4 +34,23 @@ class SSShareUtil: NSObject {
 
     }
     
+    public func shareToWB(controller:UIViewController, title: String, url:String) {
+        let webObject = WBWebpageObject()
+        
+        webObject.title = title
+        webObject.description = description
+        webObject.webpageUrl = url
+//        let smallImage = thumbImage.compressImage(maxLength:30 * 1024)
+        webObject.thumbnailData = UIImageJPEGRepresentation(UIImage(named: "icon")!, 1)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYYMMDDHHmmss"
+        webObject.objectID = "weibo_\(formatter.string(from: Date()))"
+        let message = WBMessageObject()
+        message.mediaObject = webObject
+        
+        let req = WBSendMessageToWeiboRequest()
+        req.message = message
+        
+        WeiboSDK.send(req)
+    }
 }

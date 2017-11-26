@@ -13,8 +13,22 @@ public class PingzeLinearView : UIView{
     
     var code : String!
     
-    public override func draw(_ rect: CGRect) {
-        if code == nil{
+//    public override func draw(_ rect: CGRect) {
+//
+//    }
+    
+    public func refresh(code:String){
+        
+        self.backgroundColor = UIColor.clear
+        
+        self.code = code
+        //setNeedsDisplay()
+        
+        for subview in self.subviews {
+            subview.removeFromSuperview()
+        }
+        
+        if code.isEmpty {
             return
         }
         for i in 0...code.trimmingCharacters(in:NSCharacterSet.newlines).characters.count-1{
@@ -28,6 +42,11 @@ public class PingzeLinearView : UIView{
                 let pingze = PingzeView(frame: frame ,shape:Int(String(c))!)
                 pingze.backgroundColor=UIColor.clear
                 addSubview(pingze)
+                pingze.snp.makeConstraints({ (maker) in
+                    maker.height.width.equalTo(20)
+                    maker.top.equalToSuperview()
+                    maker.leading.equalToSuperview().offset(i * 20)
+                })
             }
             else{
                 let label = UILabel()
@@ -35,16 +54,16 @@ public class PingzeLinearView : UIView{
                 label.text=String(c)
                 label.textColor=UIColor.init(intColor: PingzeView.COLOR_ZE)
                 addSubview(label)
+                label.snp.makeConstraints({ (maker) in
+                    maker.height.width.equalTo(20)
+                    maker.top.equalToSuperview()
+                    maker.leading.equalToSuperview().offset(i * 20)
+                })
             }
         }
     }
     
-    public func refresh(code:String){
-        self.code = code
-        setNeedsDisplay()
-    }
-    
-    public override func layoutSubviews() {
-        self.backgroundColor = UIColor.clear
-    }
+//    public override func layoutSubviews() {
+//
+//    }
 }

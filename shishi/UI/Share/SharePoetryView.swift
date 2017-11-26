@@ -211,6 +211,15 @@ class SharePoetryView: UIView {
         self.setNeedsLayout()
     }
     
+    public var textColor: UIColor {
+        get {
+            return self.titleLabel.textColor
+        }
+        set {
+            self.updateTextColor(textColor: newValue)
+        }
+    }
+    
     public func updateTextColor(textColor: UIColor) {
         self.titleLabel.textColor = textColor
         self.authorLabel.textColor = textColor

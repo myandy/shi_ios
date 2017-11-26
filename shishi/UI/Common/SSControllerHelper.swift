@@ -55,7 +55,7 @@ class SSControllerHelper: NSObject {
     }
     
     //分享第二个界面
-    static func showShareContoller(controller: UIViewController, poetryTitle: String, poetryAuthor: String, poetryContent: String, bgImage: UIImage?, isAlbumImage: Bool) {
+    static func showShareContoller(controller: UIViewController, poetryTitle: String, poetryAuthor: String, poetryContent: String, bgImage: UIImage?, isAlbumImage: Bool, textColor: UIColor) {
         let shareController = ShareVC()
         //shareController.poetry = self.poetry
         shareController.poetryTitle = poetryTitle
@@ -63,6 +63,7 @@ class SSControllerHelper: NSObject {
         shareController.poetryContent = poetryContent
         shareController.bgImage = bgImage
         shareController.isAlbumImage = isAlbumImage
+        shareController.textColor = textColor
         controller.navigationController?.pushViewController(shareController, animated: true)
     }
 }
