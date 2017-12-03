@@ -62,6 +62,7 @@ class MainKolodaView: UIView {
         }
         
         self.contentLabel = UILabel(frame: self.bounds)
+        self.contentLabel.textAlignment = .center
         self.addSubview(contentLabel)
         //label.text = writting.text
         contentLabel.snp.makeConstraints { (make) in
