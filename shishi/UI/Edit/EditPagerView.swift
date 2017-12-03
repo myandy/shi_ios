@@ -48,8 +48,15 @@ public class EditPagerView : UIView {
         super.init(frame: CGRect.zero)
         self.writing = writting
         let former = writing.former
-        let slist = former.pingze.characters.split(separator: "。").map(String.init)
-        clist = EditUtils.getCodeFromPingze(list: slist)
+        //自由
+        if former.pingze == nil {
+            clist = [""]
+        }
+        else {
+            let slist = former.pingze.characters.split(separator: "。").map(String.init)
+            clist = EditUtils.getCodeFromPingze(list: slist)
+        }
+        
         
         self.contentArray = Array.init(repeating: nil, count: clist.count)
         let textArray = writting.text.components(separatedBy: Writting.textSeparator)
@@ -102,6 +109,7 @@ public class EditPagerView : UIView {
     
     func setupHeadView(){
         let ivTop = UIImageView()
+        ivTop.contentMode = .scaleAspectFill
         self.headView = ivTop
         self.addSubview(ivTop)
         ivTop.snp.makeConstraints{ (make) in

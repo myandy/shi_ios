@@ -28,13 +28,13 @@ class MainCardView: UIView {
         return label
     }()
     
-    lazy var authorLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 1
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.textColor = UIColor.white
-        return label
-    }()
+//    lazy var authorLabel: UILabel = {
+//        let label = UILabel()
+//        label.numberOfLines = 1
+//        label.font = UIFont.boldSystemFont(ofSize: 16)
+//        label.textColor = UIColor.white
+//        return label
+//    }()
     
     lazy var dateLabel: UILabel = {
         let label = UILabel()
@@ -70,13 +70,13 @@ class MainCardView: UIView {
         })
             .addDisposableTo(self.rx_disposeBag)
         
-        SSNotificationCenter.default.rx.notification(SSNotificationCenter.Names.updateAuthorName).subscribe(onNext: { [weak self] notify in
-            self?.updateUserName()
-        })
-            .addDisposableTo(self.rx_disposeBag)
+//        SSNotificationCenter.default.rx.notification(SSNotificationCenter.Names.updateAuthorName).subscribe(onNext: { [weak self] notify in
+//            self?.updateUserName()
+//        })
+//            .addDisposableTo(self.rx_disposeBag)
         
         self.updateFontSize()
-        self.updateUserName()
+//        self.updateUserName()
         
         
     }
@@ -96,16 +96,17 @@ class MainCardView: UIView {
         self.addKolodaView()
     }
     
-    internal func updateUserName() {
-        let userName = UserDefaultUtils.getUsername()
-        self.authorLabel.text = userName
-    }
+//    internal func updateUserName() {
+//        let userName = UserDefaultUtils.getUsername()
+//        self.authorLabel.text = userName
+//    }
     
     private func addKolodaView() {
         self.addSubview(self.kolodaView)
         self.kolodaView.snp.makeConstraints { (make) in
-            make.width.bottom.centerX.equalToSuperview()
+            make.width.centerX.equalToSuperview()
             make.top.equalTo(self.dateLabel.snp.bottom).offset(10)
+            make.height.equalTo(self.kolodaView.snp.width)
         }
     }
     
@@ -113,29 +114,29 @@ class MainCardView: UIView {
     internal func updateFontSize() {
         let titleFontSize = AppConfig.Constants.titleFontSize + DataContainer.default.fontOffset
         let timeFontSize = AppConfig.Constants.timeFontSize + DataContainer.default.fontOffset
-        let authorFontSize = AppConfig.Constants.writtingAuthorFontSize + DataContainer.default.fontOffset
+//        let authorFontSize = AppConfig.Constants.writtingAuthorFontSize + DataContainer.default.fontOffset
         self.cipaiLabel.font = UIFont.systemFont(ofSize: titleFontSize)
         self.dateLabel.font = UIFont.systemFont(ofSize: timeFontSize)
-        self.authorLabel.font = UIFont.systemFont(ofSize: authorFontSize)
+//        self.authorLabel.font = UIFont.systemFont(ofSize: authorFontSize)
     }
     
     private func setupSubviews() {
         self.addSubview(self.cipaiLabel)
         self.cipaiLabel.snp.makeConstraints({ (make) in
-            make.top.equalToSuperview().offset(convertHeight(pix: 100))
+            make.top.equalToSuperview().offset(convertHeight(pix: 220))
             make.centerX.equalToSuperview()
             make.width.lessThanOrEqualToSuperview()
         })
         
-        self.addSubview(self.authorLabel)
-        self.authorLabel.snp.makeConstraints({ (make) in
-            make.top.equalTo(self.cipaiLabel.snp.bottom).offset(convertWidth(pix:10))
-            make.centerX.equalToSuperview()
-        })
+//        self.addSubview(self.authorLabel)
+//        self.authorLabel.snp.makeConstraints({ (make) in
+//            make.top.equalTo(self.cipaiLabel.snp.bottom).offset(convertWidth(pix:10))
+//            make.centerX.equalToSuperview()
+//        })
         
         self.addSubview(self.dateLabel)
         self.dateLabel.snp.makeConstraints({ (make) in
-            make.top.equalTo(self.authorLabel.snp.bottom).offset(convertWidth(pix:10))
+            make.top.equalTo(self.cipaiLabel.snp.bottom).offset(convertWidth(pix:10))
             make.centerX.equalToSuperview()
         })
         

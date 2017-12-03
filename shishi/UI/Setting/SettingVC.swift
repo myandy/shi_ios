@@ -208,8 +208,8 @@ extension SettingVC{
     //分享给好友 to do
     func shareItemClick(){
 //        UIApplication.shared.open(URL(string: "http://www.weibo.com/anddymao")!)
-        let urlString = "http://www.weibo.com/anddymao"
-        SSShareUtil.default.shareToWB(controller: self, title: "test", url: urlString)
+        let urlString = "https://itunes.apple.com/cn/app/id944955993?mt=8"
+        SSShareUtil.default.shareToWB(controller: self, title: "诗Shi", image: UIImage(named: "icon")!, url: urlString)
     }
   
 }

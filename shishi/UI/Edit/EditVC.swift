@@ -63,6 +63,7 @@ class EditVC: EditBGImageVC {
         writing = Writting()
         writing.formerId = former.id
         writing.title = former.name
+        writing.author = UserDefaultUtils.getUsername()
         super.init(nibName: nil, bundle: nil)
     }
     

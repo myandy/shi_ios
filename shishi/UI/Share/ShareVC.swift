@@ -37,6 +37,12 @@ class ShareVC: UIViewController {
         return contentView
     }()
     
+    //显示动画的容器
+    internal lazy var animContainerView: UIView = {
+        let contentView = UIView()
+        return contentView
+    }()
+    
     internal lazy var poetryScrollView: UIScrollView = {
         let poetryScrollView = UIScrollView()
         return poetryScrollView
@@ -85,10 +91,11 @@ class ShareVC: UIViewController {
         super.viewWillAppear(animated)
         
         if self.isMovingToParentViewController {
-            self.poetryScrollView.clipsToBounds = false
-            self.rotateView(view: self.poetryContainerView, duration: 1)
+            self.animContainerView.clipsToBounds = false
+            //self.rotateView(view: self.poetryContainerView, duration: 1)
+            self.rotateView(view: self.poetryScrollView, duration: 1)
             delayToMainThread(delay: 1, closure: { [weak self] in
-                self?.poetryScrollView.clipsToBounds = true
+                self?.animContainerView.clipsToBounds = true
             })
         }
     }
@@ -141,7 +148,9 @@ class ShareVC: UIViewController {
         
         self.view.addSubview(self.contentView)
         
-        self.contentView.addSubview(self.poetryScrollView)
+        //self.contentView.addSubview(self.poetryScrollView)
+        self.contentView.addSubview(self.animContainerView)
+        self.animContainerView.addSubview(self.poetryScrollView)
         
         self.setupBottomView()
         
@@ -219,12 +228,18 @@ class ShareVC: UIViewController {
             maker.left.top.right.equalToSuperview()
         }
         
+        self.animContainerView.snp.makeConstraints { (maker) in
+            maker.leading.trailing.equalToSuperview()
+            maker.centerY.equalToSuperview().offset(-bottomBarHeight)
+        }
+        
         self.poetryScrollView.snp.makeConstraints { (make) in
             //make.top.equalToSuperview().offset(convertWidth(pix: 100))
-            make.centerY.equalToSuperview().offset(-bottomBarHeight)
-            make.centerX.equalToSuperview()
+            //make.centerY.equalToSuperview().offset(-bottomBarHeight)
+            make.centerX.centerY.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.9)
             make.height.equalTo(self.poetryScrollView.snp.width)//.dividedBy(0.67)
+            make.height.equalToSuperview()
         }
     }
 

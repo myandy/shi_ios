@@ -11,7 +11,27 @@ import UIKit
 //主页视图封装，
 class MainKolodaView: UIView {
     
-    var label: UILabel!
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.numberOfLines = 0
+//        label.textColor = UIColor.white
+        
+        
+        return label
+    }()
+    
+    lazy var authorLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.numberOfLines = 1
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+//        label.textColor = UIColor.white
+        return label
+    }()
+    
+    var contentLabel: UILabel!
     
     internal var mirrorLayer: MirrorLoaderLayer?
 
@@ -26,34 +46,56 @@ class MainKolodaView: UIView {
     }
     
     fileprivate func setupSubviews() {
-        self.label = UILabel(frame: self.bounds)
+        self.addSubview(self.titleLabel)
+        let insetWidth = convertWidth(pix: 20)
+        self.titleLabel.snp.makeConstraints { (maker) in
+//            maker.top.equalToSuperview().inset(insets).priority(750)
+            maker.left.equalToSuperview().offset(insetWidth * 1.5).priority(750)
+            maker.top.equalToSuperview().offset(insetWidth).priority(750)
+            maker.right.equalToSuperview().offset(-insetWidth * 1.5).priority(750)
+        }
+        
+        self.addSubview(self.authorLabel)
+        self.authorLabel.snp.makeConstraints { (maker) in
+            maker.centerX.equalToSuperview()
+            maker.top.equalTo(self.titleLabel.snp.bottom).offset(convertWidth(pix:10))
+        }
+        
+        self.contentLabel = UILabel(frame: self.bounds)
+        self.addSubview(contentLabel)
+        //label.text = writting.text
+        contentLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.authorLabel.snp.bottom).offset(convertWidth(pix:10))
+            make.centerX.width.equalTo(self.titleLabel)
+//            make.left.equalToSuperview().offset(inset * 1.5).priority(750)
+//            make.top.equalToSuperview().offset(inset).priority(750)
+//            make.right.equalToSuperview().offset(-inset * 1.5).priority(750)
+        }
+        contentLabel.numberOfLines = 0
+        
         self.updateFontSize()
         SSNotificationCenter.default.rx.notification(SSNotificationCenter.Names.updateFontSize).subscribe(onNext: { [weak self] notify in
             self?.updateFontSize()
         })
             .addDisposableTo(self.rx_disposeBag)
-        
-        self.addSubview(label)
-        //label.text = writting.text
-        label.snp.makeConstraints { (make) in
-            let inset = convertWidth(pix: 20)
-            make.left.equalToSuperview().offset(inset * 1.5).priority(750)
-            make.top.equalToSuperview().offset(inset).priority(750)
-            make.right.equalToSuperview().offset(-inset * 1.5).priority(750)
-        }
-        label.numberOfLines = 0
     }
     
     //更新字体大小
     internal func updateFontSize() {
         let fontSize = AppConfig.Constants.contentFontSize + DataContainer.default.fontOffset
-        if self.label.font.pointSize != fontSize {
-            self.label.font = UIFont.systemFont(ofSize: fontSize)
+        if self.contentLabel.font.pointSize != fontSize {
+            self.contentLabel.font = UIFont.systemFont(ofSize: fontSize)
         }
+        let titleFontSize = AppConfig.Constants.titleFontSize + DataContainer.default.fontOffset
+        self.titleLabel.font = UIFont.systemFont(ofSize: titleFontSize)
+        let authorFontSize = AppConfig.Constants.writtingAuthorFontSize + DataContainer.default.fontOffset
+        self.authorLabel.font = UIFont.systemFont(ofSize: authorFontSize)
     }
     
     public func setup(writting: Writting) {
-        self.label.text = writting.text
+        self.titleLabel.text = writting.title
+        self.authorLabel.text = writting.author
+        self.contentLabel.text = writting.text
         if writting.bgImg != 0 {
             let poetryImage = PoetryImage(rawValue: Int(writting.bgImg))!
             let image = poetryImage.image()

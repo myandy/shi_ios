@@ -28,5 +28,11 @@ class SearchPoetryVC: NormalSearchVC{
     override func onItemClick(_ pos: Int) {
         let vc = RandomPoetryVC(poetry: items[pos] as! Poetry)
         self.navigationController?.pushViewController(vc, animated: true)
+        
+//        let poetry = items[pos] as! Poetry
+//        let author = AuthorDB.getAuthor(name: poetry.author)
+//        let vc = AuthorPagerVC(author: author!, color: ColorDB.getAll()[0].toUIColor())
+//        vc.firstPoetry = poetry
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
