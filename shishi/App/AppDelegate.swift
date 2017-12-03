@@ -9,7 +9,7 @@
 import UIKit
 import UMCommunitySDK
 import Bugly
-
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         copyDbToSandy()
         
         UserDBManager.default.configure()
+        
+        IQKeyboardManager.sharedManager().enable = false
         
         UMCommunitySDK.setAppkey("58a306bdb27b0a1e7f000d5f", withAppSecret: "2afbfe1210241b0baeb9d09524ebcce7")
        

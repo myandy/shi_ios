@@ -20,21 +20,27 @@ public class EditPagerView : UIView {
     public var writing: Writting!
     
     //列表
-    var tableView: UITableView!
+    fileprivate var tableView: UITableView!
     
-    var clist: Array<String>!
+    fileprivate var clist: Array<String>!
     
     //已经输入的内容
-    var contentArray: [String?]!
+    fileprivate var contentArray: [String?]!
     
-    var title: UILabel!
+    fileprivate var title: UILabel!
     
     //背景图片
-    var defaultImage = PoetryImage.dust
+    fileprivate var defaultImage = PoetryImage.dust
     //顶部背景
-    var headView: UIImageView!
+    fileprivate var headView: UIImageView!
     //中间的TABLEVIEW的背景
-    var backgroundImageView: UIImageView!
+    fileprivate var backgroundImageView: UIImageView!
+    
+    //是否是自由格律
+    internal var isFreeFormer = false
+    
+    //自由格律的输入框
+    internal var freeEditView: UITextView!
     
 //    public override init(frame: CGRect) {
 //        super.init(frame: frame)
@@ -51,6 +57,7 @@ public class EditPagerView : UIView {
         //自由
         if former.pingze == nil {
             clist = [""]
+            self.isFreeFormer = true
         }
         else {
             let slist = former.pingze.characters.split(separator: "。").map(String.init)
@@ -91,18 +98,36 @@ public class EditPagerView : UIView {
             make.bottom.left.right.equalToSuperview()
         }
         
-        tableView = UITableView()
-        tableView.backgroundColor = UIColor.clear
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.rowHeight = 70
-        tableView.register(EditPagerCell.self, forCellReuseIdentifier: editCellIdentifier)
-        tableView.hideEmptyCells()
-        self.addSubview(tableView)
-        tableView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(TOP_HEIGHT)
-            make.bottom.left.right.equalToSuperview()
+        if self.isFreeFormer {
+            self.freeEditView = UITextView()
+            self.freeEditView.font = UIFont.systemFont(ofSize: 17)
+            self.addSubview(self.freeEditView)
+            self.freeEditView.snp.makeConstraints { (make) in
+                make.top.equalToSuperview().offset(TOP_HEIGHT)
+                make.bottom.left.right.equalToSuperview()
+            }
+            self.freeEditView.becomeFirstResponder()
+            self.freeEditView.rx.didChange.subscribe(onNext: { [unowned self] text in
+                self.hasEdit = true
+            })
+            .addDisposableTo(self.rx_disposeBag)
         }
+        else {
+            tableView = UITableView()
+            tableView.backgroundColor = UIColor.clear
+            tableView.dataSource = self
+            tableView.delegate = self
+            tableView.rowHeight = 70
+            tableView.register(EditPagerCell.self, forCellReuseIdentifier: editCellIdentifier)
+            tableView.hideEmptyCells()
+            self.addSubview(tableView)
+            tableView.snp.makeConstraints { (make) in
+                make.top.equalToSuperview().offset(TOP_HEIGHT)
+                make.bottom.left.right.equalToSuperview()
+            }
+        }
+        
+        
 //        tableView.bounces = false
     }
     
@@ -222,6 +247,9 @@ public class EditPagerView : UIView {
     
     //生成输入的内容
     func mergeContent() -> String {
+        if self.isFreeFormer {
+            return self.freeEditView.text
+        }
         var content = ""
         for item in self.contentArray {
             if let item = item {

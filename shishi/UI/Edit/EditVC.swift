@@ -96,18 +96,23 @@ class EditVC: EditBGImageVC {
         self.hiddenPoetryView(isHidden: true)
         self.hiddenBgImageCollectionView(isHidden: true)
         
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        IQKeyboardManager.sharedManager().enable = true
+        if !self.editPagerView.isFreeFormer {
+            IQKeyboardManager.sharedManager().enable = true
+        }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        IQKeyboardManager.sharedManager().enable = false
+        
+        if !self.editPagerView.isFreeFormer {
+            IQKeyboardManager.sharedManager().enable = false
+        }
     }
     
     func setSegmentedControlImage(){

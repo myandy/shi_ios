@@ -14,24 +14,38 @@ class SSShareUtil: NSObject {
     }()
     
     public func shareToSystem(controller:UIViewController, image:UIImage) {
-//        let data = UIImagePNGRepresentation(image)
-//        let docPath: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-//        let imagePath = (docPath as NSString).appendingPathComponent("test.png")
-//        let success = FileManager.default.createFile(atPath: imagePath, contents: data, attributes: nil)
-        
-//        let myShare = "test share"
-//        let image = UIImage(named: "back")! as AnyObject
         let shareVC: UIActivityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         controller.present(shareVC, animated: true, completion: nil)
-        
-//        AssetsLibraryUtil.default.saveImageFile(filePath: imagePath) { (url, identify, error) in
-//            DispatchQueue.main.sync {
-//                
-//            }
-//        }
-        
-        
-
+    }
+    
+    public func shareToSystem(controller:UIViewController, title: String, image: UIImage?, urlString: String, handler:((Error?) -> Void)? = nil) {
+        guard !title.isEmpty, let url = URL(string: urlString) else {
+            let error = NSError(domain: "", code: 0, userInfo: nil)
+            handler?(error)
+            return
+        }
+        var activityItems = [title, url] as [Any]
+        if let image = image {
+            activityItems.append(image)
+        }
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: [])
+        activityVC.completionWithItemsHandler = { (activity, success, items, error) in
+            if !success {
+                if let error = error {
+                    log.debug(error)
+                    handler?(error)
+                }
+                else {
+                    //let error = NSError(domain: "", code: 0, userInfo: nil)
+                    handler?(nil)
+                }
+                
+            }
+            else {
+                handler?(nil)
+            }
+        }
+        controller.present(activityVC, animated: true)
     }
     
     public func shareToWB(controller:UIViewController, title: String, image: UIImage, url:String) {
