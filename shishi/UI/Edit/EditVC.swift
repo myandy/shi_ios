@@ -22,6 +22,8 @@ class EditVC: EditBGImageVC {
     
 //    fileprivate var bgImage = PoetryImage.dust.image()
     
+    //是否是新加作品，如果不是，代表是编辑旧作品
+    fileprivate var isNewWritting = false
     
     @IBAction func cancelBtnClick(_ sender: Any) {
         if !self.editPagerView.hasEdit {
@@ -64,12 +66,16 @@ class EditVC: EditBGImageVC {
         writing.formerId = former.id
         writing.title = former.name
         writing.author = UserDefaultUtils.getUsername()
+        self.isNewWritting = true
         super.init(nibName: nil, bundle: nil)
+        
     }
     
     init(writting : Writting) {
         self.writing = writting
+        self.isNewWritting = false
         super.init(nibName: nil, bundle: nil)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -96,6 +102,18 @@ class EditVC: EditBGImageVC {
         self.hiddenPoetryView(isHidden: true)
         self.hiddenBgImageCollectionView(isHidden: true)
         
+        if !self.isNewWritting {
+            if self.writing.bgImg != 0 {
+                let poetryImage = PoetryImage(rawValue: Int(self.writing.bgImg))!
+                let image = poetryImage.image()
+                self.poetryContainerView.setupBGImage(image: image, imageId: Int(self.writing.bgImg))
+                self.editPagerView.updateImage(image: image)
+            }
+            else if let image = self.writing.albumImage() {
+                self.poetryContainerView.setupBGImage(image: image, imageId: nil)
+                self.editPagerView.updateImage(image: image)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -141,10 +159,10 @@ class EditVC: EditBGImageVC {
         if segmentedControl.selectedSegmentIndex == 1 {
             self.poetryContainerView.isMirrorView = true
             self.showFirstBGImage()
-            self.poetryContainerView.updateTextColor(textColor: UIColor(hexColor: "A9A9AB"))
+            self.poetryContainerView.updateTextColor(textColor: AppConfig.Constants.textColorForPaper)
         }
         else if segmentedControl.selectedSegmentIndex == 2 {
-            self.poetryContainerView.updateTextColor(textColor: UIColor.white)
+            self.poetryContainerView.updateTextColor(textColor: AppConfig.Constants.textColorForAlbum)
             self.poetryContainerView.isMirrorView = false
             self.updateImageWithSlider()
         }
@@ -167,35 +185,8 @@ class EditVC: EditBGImageVC {
         super.didReceiveMemoryWarning()
     }
     
-    fileprivate func saveAlbumBgImage(image: UIImage) -> String? {
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        // Get the Document directory path
-        let documentDirectorPath:String = paths[0]
-        // Create a new path for the new images folder
-        let imagesDirectoryPath = (documentDirectorPath as NSString).appendingPathComponent("writting")
-        var objcBool:ObjCBool = true
-        let isExist = FileManager.default.fileExists(atPath: imagesDirectoryPath, isDirectory: &objcBool)
-        // If the folder with the given path doesn't exist already, create it
-        if isExist == false{
-            do{
-                try FileManager.default.createDirectory(atPath: imagesDirectoryPath, withIntermediateDirectories: true, attributes: nil)
-
-            }catch{
-                print("Something went wrong while creating a new folder")
-                return nil
-            }
-        }
-        let imageName = Date().description
-        let imagePath = (imagesDirectoryPath as NSString).appendingPathComponent(imageName)
-        let data = UIImagePNGRepresentation(image)
-        let success = FileManager.default.createFile(atPath: imagePath, contents: data, attributes: nil)
-        if success {
-            return imageName
-        }
-        else {
-            return nil
-        }
-    }
+    
+    
     
     fileprivate func saveWritting() -> Bool {
         if self.writing.title.isEmpty {
@@ -207,6 +198,8 @@ class EditVC: EditBGImageVC {
             self.showToast(message: "内容不能为空")
             return false
         }
+        
+        
         if self.segmentedControl.selectedSegmentIndex == 1 {
             let bgImageId = self.poetryContainerView.bgImageId
             self.writing.bgImg = Int64(bgImageId!)
@@ -215,15 +208,26 @@ class EditVC: EditBGImageVC {
         else if self.segmentedControl.selectedSegmentIndex == 2 {
             self.writing.bgImg = 0
             let bgImage = self.poetryContainerView.bgImage
-            self.writing.bgImgName = self.saveAlbumBgImage(image: bgImage!)
+            self.writing.saveAlbumBgImage(image: bgImage!)
+            //bgImgName = self.saveAlbumBgImage(image: bgImage!)
         }
         else {
-            self.writing.bgImg = 0
-            self.writing.bgImgName = nil
+            if self.isNewWritting {
+                self.writing.bgImg = 0
+                self.writing.bgImgName = nil
+            }
         }
+        
         self.writing.text = content
         self.writing.save(nil)
-        SSNotificationCenter.default.post(name: SSNotificationCenter.Names.addWritting, object: nil)
+        
+        if self.isNewWritting {
+            SSNotificationCenter.default.post(name: SSNotificationCenter.Names.addWritting, object: nil)
+        }
+        else {
+            SSNotificationCenter.default.post(name: SSNotificationCenter.Names.updateWritting, object: nil)
+        }
+        
         return true
     }
     

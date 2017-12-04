@@ -20,6 +20,7 @@
 #import "UMSocialSinaSSOHandler.h"
 #import "UMSocialWechatHandler.h"
 #import "UMComLoginManager.h"
+#import <UMComDataStorage/UMComUser.h>
 
 #import "WeiboSDK.h"
 

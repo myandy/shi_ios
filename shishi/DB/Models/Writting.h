@@ -15,6 +15,7 @@
 
 @property (nonatomic, assign) int64_t id;
 //用于排序
+//排序用最后时间了，不需要索引了
 @property (nonatomic, assign) int64_t orderIndex;
 @property (nonatomic, copy, nonnull) NSString *text;
 @property (nonatomic, assign) int64_t formerId;

@@ -13,6 +13,8 @@ class SSNotificationCenter: NotificationCenter {
     struct Names {
         //添加新作品
         static let addWritting: NSNotification.Name = Notification.Name(rawValue:keyPrefix + "addWritting")
+        //编辑作品
+        static let updateWritting: NSNotification.Name = Notification.Name(rawValue:keyPrefix + "updateWritting")
         //字体大小变化
         static let updateFontSize: NSNotification.Name = Notification.Name(rawValue:keyPrefix + "updateFontSize")
         //作者名字变化

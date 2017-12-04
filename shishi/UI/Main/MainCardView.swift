@@ -36,7 +36,7 @@ class MainCardView: UIView {
 //        return label
 //    }()
     
-    lazy var dateLabel: UILabel = {
+    lazy fileprivate(set) var dateLabel: UILabel = {
         let label = UILabel()
         
         label.textColor = UIColor.gray

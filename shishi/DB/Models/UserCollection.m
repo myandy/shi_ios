@@ -13,8 +13,9 @@
 - (BOOL)save:(void (^)())modificiationsBlock
 {
     return [super save:^{
-        if (self.hasUnsavedChanges) self.create_dt = [NSDate date];
-        
+        if (!self.existsInDatabase) {
+            self.create_dt = [NSDate date];
+        }
         if (modificiationsBlock != nil) {
             modificiationsBlock();
         }

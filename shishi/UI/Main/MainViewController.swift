@@ -124,6 +124,13 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
             self.reloadData()
         })
         .addDisposableTo(self.rx_disposeBag)
+        
+        _ = SSNotificationCenter.default.rx
+            .notification(SSNotificationCenter.Names.updateWritting)
+            .subscribe(onNext: { [unowned self] notification in
+                self.reloadData()
+            })
+            .addDisposableTo(self.rx_disposeBag)
 
     }
     
@@ -210,9 +217,16 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         //self.writtingArray = WritingDB.getAll()
         let array = Writting.allInstances()
         self.writtingArray = array as! [Writting]
-        self.writtingArray = self.writtingArray.sorted(by: { (obj0, ojb1) -> Bool in
-            return obj0.orderIndex < ojb1.orderIndex
+        
+//        self.writtingArray = self.writtingArray.sorted(by: { (obj0, ojb1) -> Bool in
+//            return obj0.orderIndex < ojb1.orderIndex
+//        })
+        //改成最后修改时间排序
+        self.writtingArray = self.writtingArray.sorted(by: { (writting0, writting1) -> Bool in
+            return writting0.update_dt > writting1.update_dt
         })
+        
+        
 //        for item in self.writtingArray {
 //            log.debug("id:\(item.id)")
 //            log.debug("index:\(item.index)")
@@ -229,7 +243,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     
     fileprivate func dateString(with date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yy-MM-dd"
+        formatter.dateFormat = "yyyy-MM-dd mm:ss"
         
         return formatter.string(from: date)
     }
@@ -291,7 +305,11 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
 //            let contentArray = formerItem.map({ (writting) -> String in
 //                return writting.text
 //            })
+            
             let contentArray = formerItem
+//            let contentArray = formerItem.sorted(by: { (writting0, writting1) -> Bool in
+//                return writting0.update_dt > writting1.update_dt
+//            })
             cardView.setupData(cipai: formerName, dateString: dateString, contentArray: contentArray)
             
             itemView = cardView
@@ -351,20 +369,24 @@ extension MainViewController: MainCardViewDelegate {
     
     func mainCard(_ mainCardView: MainCardView, didSwipeCardAt index: Int) {
         let cardIndex = mainCardView.tag
-        guard self.formerItems[cardIndex].count > 0 else {
+        guard self.formerItems[cardIndex].count > 1 else {
             return
         }
         
-        let newWrittingIndex = Writting.indexValueForNewInstance()
+        //排序用最后时间了，不需要索引了
+//        let newWrittingIndex = Writting.indexValueForNewInstance()
         let writting = self.formerItems[cardIndex].remove(at: index)
-        //writting.delete()
-        writting.orderIndex = newWrittingIndex
-        writting.save(nil)
+//        writting.orderIndex = newWrittingIndex
+//        writting.save(nil)
         
         self.formerItems[cardIndex].append(writting)
         
         let viewIndex = self.formerIndex(with: cardIndex)
         self.carousel.reloadItem(at: viewIndex, animated: true)
+        
+        let topWritting = self.formerItems[cardIndex].first!
+        let dateString = self.dateString(with: topWritting.update_dt)
+        mainCardView.dateLabel.text = dateString
     }
     
     internal func deleteItem(cardViewIndex: Int, poetryIndex: Int) {

@@ -32,6 +32,11 @@ class AppConfig {
         static let timeFontSize: CGFloat = 16
         //作品作者文字的初始大小
         static let writtingAuthorFontSize: CGFloat = 16
+        
+        //如果用内置图片做背景时的文字颜色
+        static let textColorForPaper: UIColor = UIColor(hexColor: "A9A9AB")
+        //如果用相册图片做背景时的文字颜色
+        static let textColorForAlbum: UIColor = UIColor.white
     }
     
     

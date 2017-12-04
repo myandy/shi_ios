@@ -40,7 +40,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
             .addDisposableTo(self.rx_disposeBag)
 
+        self.autoLogin()
+        
         return true
+    }
+    
+    internal func autoLogin() {
+        guard let loginUserArray = UMComDataBaseManager.share().fetchSyncUMComUser(with: UMComRelatedIDTableType.registerUserID
+            ) as? NSArray else {
+                return
+        }
+        if let loginUser = loginUserArray.object(at: 0) as? UMComUser {
+            // 使用第三方平台登录，如微博类型为UMComSnsTypeSina
+            let account = UMComLoginUser(snsType: UMComSnsTypeSina)!
+            account.usid = loginUser.source_uid
+            account.custom = "这是一个自定义字段，可以改成自己需要的数据"
+            account.name = loginUser.name
+            account.icon_url = loginUser.iconUrlStr(with: UMComIconSmallType)
+            account.gender = loginUser.gender
+            UMComLoginManager.requestLogin(withLoginAccount: account) { (responseObject, error, callbackCompletion) in
+                if let error = error {
+                    log.debug("登录失败:\(error)")
+                }
+                else {
+                    log.debug("登录成功")
+                    callbackCompletion?()
+                }
+            }
+        }
+        
+        
     }
     
     //更新字体名字

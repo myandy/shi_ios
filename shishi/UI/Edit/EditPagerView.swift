@@ -64,19 +64,26 @@ public class EditPagerView : UIView {
             clist = EditUtils.getCodeFromPingze(list: slist)
         }
         
-        
-        self.contentArray = Array.init(repeating: nil, count: clist.count)
-        let textArray = writting.text.components(separatedBy: Writting.textSeparator)
-        for (index, item) in textArray.enumerated() {
-            self.contentArray[index] = item
+        if self.isFreeFormer {
+            self.contentArray = [writting.text]
         }
-        
-        
+        else {
+            self.contentArray = Array.init(repeating: nil, count: clist.count)
+            let textArray = writting.text.components(separatedBy: Writting.textSeparator)
+            for (index, item) in textArray.enumerated() {
+                self.contentArray[index] = item
+            }
+        }
+  
         self.setupSubviews()
         
         let poetryImage = PoetryImage(rawValue: Int(writting.bgImg))!
         let image = poetryImage.image()
         self.updateImage(image: image)
+        
+        if self.isFreeFormer {
+            self.freeEditView.text = writting.text
+        }
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -100,6 +107,7 @@ public class EditPagerView : UIView {
         
         if self.isFreeFormer {
             self.freeEditView = UITextView()
+            self.freeEditView.backgroundColor = UIColor.clear
             self.freeEditView.font = UIFont.systemFont(ofSize: 17)
             self.addSubview(self.freeEditView)
             self.freeEditView.snp.makeConstraints { (make) in
