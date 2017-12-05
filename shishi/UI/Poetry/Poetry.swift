@@ -80,7 +80,7 @@ class PoetryDB{
         catch{
             print(error)
         }
-        if array.count>0{
+        if array.count > 0{
             return array[0]
         }
         return nil

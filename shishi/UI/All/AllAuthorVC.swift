@@ -20,11 +20,13 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
         case 0:
             if orderByNum {
                 orderByNum = false
+                UserDefaultUtils.setOrderByNum(orderByNum)
                 loadData()
             }
         case 1:
             if !orderByNum {
                 orderByNum = true
+                UserDefaultUtils.setOrderByNum(orderByNum)
                 loadData()
             }
         default:
@@ -80,6 +82,7 @@ class AllAuthorVC: UIViewController, UICollectionViewDelegate,UICollectionViewDa
     }
     
     func loadData(){
+        orderByNum = UserDefaultUtils.isOrderByNum()
         dynasty = UserDefaultUtils.getDynasty()
         items = AuthorDB.getAll(byPNum: orderByNum, dynasty: dynasty)
         cv.reloadData()
