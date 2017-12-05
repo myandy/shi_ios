@@ -89,7 +89,7 @@ extension NormalSearchVC : UITableViewDelegate,UITableViewDataSource {
         let data = items[indexPath.row] as! SearchModel
         cell.title.text = data.getTitle()
         
-        if data.getDesc().isEmpty{
+        if data.getDesc().isEmpty {
             cell.desc.removeFromSuperview()
         }
         else{

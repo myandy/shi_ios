@@ -205,12 +205,11 @@ extension SettingVC{
         UIApplication.shared.open(URL(string: "http://www.weibo.com/anddymao")!)
     }
     
-    //分享给好友 to do
+    //分享给好友
     func shareItemClick(){
-//        UIApplication.shared.open(URL(string: "http://www.weibo.com/anddymao")!)
         let urlString = "https://itunes.apple.com/cn/app/id944955993?mt=8"
-        //SSShareUtil.default.shareToWB(controller: self, title: "诗Shi", image: UIImage(named: "icon")!, url: urlString)
-        SSShareUtil.default.shareToSystem(controller: self, title: "诗Shi", image: UIImage(named: "icon")!, urlString: urlString)
+//        SSStr.Setting.SHARE_FRIENDS_CONTENT
+        SSShareUtil.default.shareToSystem(controller: self, title: SSStr.Setting.SHARE_FRIENDS_TITLE, image: UIImage(named: "icon")!, urlString: urlString)
     }
   
 }
