@@ -24,10 +24,16 @@ extension Former : SearchModel {
     }
     
     func getDesc() -> String {
-        return String(count!)
+        if pingze == nil {
+            return ""
+        }
+        return pingze
     }
     
     func getHint()-> String {
+        if count == 0 {
+            return SSStr.Search.SEARCH_FOMRER_NO_LIMIT
+        }
         return String(count!)
     }
 }

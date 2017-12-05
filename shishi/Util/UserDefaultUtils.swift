@@ -12,6 +12,10 @@ public class UserDefaultUtils {
     
     static let userDefault = UserDefaults.standard
     
+    public static func register() {
+        userDefault.register(defaults: ["dynasty" : 0])
+    }
+    
     public static func getDynasty() -> Int {
         return userDefault.integer(forKey: "dynasty")
     }
@@ -20,7 +24,14 @@ public class UserDefaultUtils {
         userDefault.set(i, forKey: "dynasty")
     }
     
-
+    public static func isOrderByNum() -> Bool {
+        return userDefault.bool(forKey: "orderBuNum")
+    }
+    
+    public static func setOrderByNum(_ i: Bool) {
+        userDefault.set(i, forKey: "orderBuNum")
+    }
+    
     public static func getYunshu() -> Int {
         return userDefault.integer(forKey: "yunshu")
     }

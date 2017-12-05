@@ -85,21 +85,12 @@ class SSStr: NSObject {
         static let ABOUT_WEXIN = "微信公众号：天涯共词Ci".fixLanguage()
         static let ABOUT_VERSION = "当前版本：".fixLanguage()
 
-        
-        
-//        static let ABOUT_LABEL = "关于诗Shi"
-//        static let ABOUT_QQ = "官方QQ群：683485775"
-////        static let ABOUT_INTRO = "诗Shi"
-//        static let ABOUT_EMAIL = "有建议或者bug请联系：\n".appending(ABOUT_EMAIL_VALUE)
-//        static let ABOUT_EMAIL_VALUE = "andymao1991@gmail.com"
-//        static let ABOUT_WEXIN = "微信公众号：天涯共词Ci"
-//        static let ABOUT_VERSION = "当前版本："
-
-
         static let USERNAME_TITLE = "作者名".fixLanguage()
         static let USERNAME_CONTENT = "请输入作者名".fixLanguage()
         static let USERNAME_HINT = "作者名".fixLanguage()
-
+        
+        static let SHARE_FRIENDS_TITLE = "诗三百 思无邪 不读诗 无以言".fixLanguage()
+        static let SHARE_FRIENDS_CONTENT = "诗歌是一条河，在这条漫漫长河里，男女有所怨恨，相从而歌，劳者歌其事，饥者歌其食。今天，物质生活已经丰富，可能最期盼的是一首诗。".fixLanguage()
     }
 
     struct Search {
@@ -109,6 +100,8 @@ class SSStr: NSObject {
         
         static let SEARCH_WRITING_HINT = "搜索作品".fixLanguage()
         static let SEARCH_COLLECT_HINT = "搜索收藏夹".fixLanguage()
+        
+        static let SEARCH_FOMRER_NO_LIMIT = "不限".fixLanguage()
     }
 
     struct FormerEdit {

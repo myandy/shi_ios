@@ -37,7 +37,7 @@ class AuthorDB{
     
     private static let BY_PNUM = " order by p_num"
     
-    private static let BY_DNUM = " order by d_num"
+    private static let BY_DNUM = " order by d_num desc"
 
     private class func getArray(_ rs: FMResultSet) -> [Author] {
         var array = [Author]()

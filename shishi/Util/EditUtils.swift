@@ -15,12 +15,12 @@ class EditUtils {
             return list
         }
         var size=list.count
-        if(list[size-1].trimmingCharacters(in:NSCharacterSet.newlines).isEmpty){
+        if(list[size-1].trimmingCharacters(in:NSCharacterSet.whitespacesAndNewlines).isEmpty){
             size -= 1
         }
         var codes=Array<String>(repeating: "", count: size)
         for i in 0...size-1 {
-            let item = list[i].trimmingCharacters(in:NSCharacterSet.newlines)
+            let item = list[i].trimmingCharacters(in:NSCharacterSet.whitespacesAndNewlines)
             codes[i]=""
             for j in 0...item.characters.count-1{
                 let index = item.index(item.startIndex, offsetBy: j)
