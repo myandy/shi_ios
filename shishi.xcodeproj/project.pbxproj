@@ -275,6 +275,7 @@
 		756EFB851EBD9D08006E65DF /* Observable+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB841EBD9D08006E65DF /* Observable+Result.swift */; };
 		756EFB871EBDCAF0006E65DF /* DuishiEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB861EBDCAF0006E65DF /* DuishiEditView.swift */; };
 		756FE9211FCAFF4C002BE43F /* ExUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FE9201FCAFF4C002BE43F /* ExUITableView.swift */; };
+		756FE9251FD6EB3F002BE43F /* Pods_shishi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; };
 		7596A6351FAF64D200971C35 /* font_ruifs.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7596A6331FAF64D100971C35 /* font_ruifs.ttf */; };
 		7596A63A1FAF66F000971C35 /* NSString+ZYChangeCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7596A6391FAF66F000971C35 /* NSString+ZYChangeCode.m */; };
 		7596A63C1FBCA02B00971C35 /* SSKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596A63B1FBCA02B00971C35 /* SSKolodaView.swift */; };
@@ -337,8 +338,6 @@
 		E22869C71EC2226B00238DF8 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22869C61EC2226B00238DF8 /* SettingVC.swift */; };
 		E278E42C1EF17CD20046324D /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E278E42B1EF17CD20046324D /* AboutVC.swift */; };
 		E278E42E1EF190820046324D /* TouchEffectLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E278E42D1EF190820046324D /* TouchEffectLabel.swift */; };
-		E284A7AA1DE4259A00252160 /* Pods_shishi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; };
-		E284A7AB1DE4259A00252160 /* Pods_shishi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E29558D31DD311720065AA1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29558D11DD311720065AA1B /* Main.storyboard */; };
 		E29558D81DD311720065AA1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29558D61DD311720065AA1B /* LaunchScreen.storyboard */; };
 		E2B0DFCB1EB5F962001B790C /* BackgroundPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B0DFCA1EB5F962001B790C /* BackgroundPagerView.swift */; };
@@ -352,20 +351,6 @@
 		E2E14C751ED489140056009C /* CheckPingzeSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14C741ED489140056009C /* CheckPingzeSettingVC.swift */; };
 		E2F62F931F659A2F00EBF90E /* SearchAuthorPagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F62F921F659A2F00EBF90E /* SearchAuthorPagerVC.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		E284A7AC1DE4259A00252160 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				E284A7AB1DE4259A00252160 /* Pods_shishi.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		24A66A034D3DEB65E9B524B9 /* Pods-shishi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shishi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shishi/Pods-shishi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -916,6 +901,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				756FE9251FD6EB3F002BE43F /* Pods_shishi.framework in Frameworks */,
 				75DE1E191F174CC300AB354A /* QuartzCore.framework in Frameworks */,
 				75DE1E171F174CAE00AB354A /* Accelerate.framework in Frameworks */,
 				75BE6F081EF96D1000A578B2 /* libc++.tbd in Frameworks */,
@@ -937,7 +923,6 @@
 				E2250FB11E533AEA00D062E8 /* libsqlite3.tbd in Frameworks */,
 				759722581F93C668000F6FAA /* libWeiboSDK.a in Frameworks */,
 				751E07D31EACA61D00BAB696 /* UMComDataStorage.framework in Frameworks */,
-				E284A7AA1DE4259A00252160 /* Pods_shishi.framework in Frameworks */,
 				751E08681EACA61D00BAB696 /* libSocialWechat.a in Frameworks */,
 				751E07D61EACA61D00BAB696 /* UMComNetwork.framework in Frameworks */,
 			);
@@ -2462,7 +2447,6 @@
 				E29558C81DD311720065AA1B /* Resources */,
 				7097152FEB5E7C67E5612575 /* [CP] Embed Pods Frameworks */,
 				A713009FEDB3265D36D38717 /* [CP] Copy Pods Resources */,
-				E284A7AC1DE4259A00252160 /* Embed Frameworks */,
 				75BE6F001EF9667800A578B2 /* ShellScript */,
 			);
 			buildRules = (
