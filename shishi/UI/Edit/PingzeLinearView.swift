@@ -52,7 +52,7 @@ public class PingzeLinearView : UIView{
                 let label = UILabel()
                 label.frame = frame
                 label.text=String(c)
-                label.textColor=UIColor.init(intColor: PingzeView.COLOR_ZE)
+                label.textColor=UIColor.init(hex6: PingzeView.COLOR_ZE)
                 addSubview(label)
                 label.snp.makeConstraints({ (maker) in
                     maker.height.width.equalTo(20)

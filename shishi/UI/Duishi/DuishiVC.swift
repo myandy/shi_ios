@@ -13,7 +13,7 @@ import NSObject_Rx
 import SwiftyImage
 
 //顶部上联和刷新视图背景色
-private let containerViewColor = UIColor(intColor:0xf1f1f1)
+private let containerViewColor = UIColor(hex6:0xf1f1f1)
 
 private let cellReuseIdentifier = "cellReuseIdentifier"
 
@@ -61,7 +61,7 @@ class DuishiVC: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        self.view.backgroundColor = UIColor(intColor:0xd8d8d8)
+        self.view.backgroundColor = UIColor(hex6:0xd8d8d8)
         
         self.setupUI()
     }

@@ -322,6 +322,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
             }
             itemView = mainView
         }
+        FontsUtils.setFont(itemView)
         return itemView
         
     }

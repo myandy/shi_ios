@@ -19,7 +19,7 @@ class ShareVC: UIViewController {
     var poetryContent: String!
     
     //背景图片
-    internal var bgImage:UIImage!
+    internal var bgImage:UIImage?
     
     internal lazy var bgImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "launch_image"))
@@ -70,7 +70,10 @@ class ShareVC: UIViewController {
         self.setupUI()
         self.poetryContainerView.isMirrorView = !self.isAlbumImage
         self.poetryContainerView.setupData(title: self.poetryTitle, author: self.poetryAuthor, content: self.poetryContent)
-        self.poetryContainerView.setupBGImage(image: self.bgImage, imageId: nil)
+        if let bgImage = self.bgImage {
+            self.poetryContainerView.setupBGImage(image: bgImage, imageId: nil)
+        }
+        
         self.poetryContainerView.textColor = self.textColor
         
         //更新上次保存的字体大小

@@ -77,9 +77,11 @@ public class EditPagerView : UIView {
   
         self.setupSubviews()
         
-        let poetryImage = PoetryImage(rawValue: Int(writting.bgImg))!
-        let image = poetryImage.image()
-        self.updateImage(image: image)
+        if let poetryImage = PoetryImage(rawValue: Int(writting.bgImg)) {
+            let image = poetryImage.image()
+            self.updateImage(image: image)
+        }
+        
         
         if self.isFreeFormer {
             self.freeEditView.text = writting.text

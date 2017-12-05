@@ -33,6 +33,15 @@ extension Writting : SearchModel{
     func getHint() -> String {
         return ""
     }
+    
+    func getImage() -> UIImage? {
+        if let poetryImage = PoetryImage(rawValue: Int(self.bgImg)) {
+            return poetryImage.image()
+        }
+        else {
+            return self.albumImage()
+        }
+    }
 }
 
 //保存的本地图片

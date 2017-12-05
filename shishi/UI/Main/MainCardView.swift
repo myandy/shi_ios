@@ -216,6 +216,7 @@ extension MainCardView: KolodaViewDataSource {
 //
 //        //cardView.contentTe
 //        cardView.backgroundColor = UIColor.red
+        FontsUtils.setFont(cardView)
         return cardView
     }
     

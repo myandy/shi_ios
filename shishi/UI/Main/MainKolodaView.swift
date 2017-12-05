@@ -136,7 +136,7 @@ class MainKolodaView: UIView {
         
         self.poetryContainerView.setupData(title: writting.title, author: writting.author ?? "", content: writting.text)
         
-        if writting.bgImg != 0 {
+        if writting.bgImg >= 0 {
             self.poetryContainerView.isMirrorView = true
             let poetryImage = PoetryImage(rawValue: Int(writting.bgImg))!
             let image = poetryImage.image()
@@ -157,7 +157,7 @@ class MainKolodaView: UIView {
         }
         else {
             self.poetryContainerView.backgroundColor = UIColor.white
-            self.poetryContainerView.updateTextColor(textColor: AppConfig.Constants.textColorForPaper)
+            self.poetryContainerView.updateTextColor(textColor: AppConfig.Constants.textColorForNoImage)
         }
         
 //        self.poetryContainerView.textColor = UIColor.black

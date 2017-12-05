@@ -276,6 +276,7 @@
 		756EFB871EBDCAF0006E65DF /* DuishiEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EFB861EBDCAF0006E65DF /* DuishiEditView.swift */; };
 		756FE9211FCAFF4C002BE43F /* ExUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FE9201FCAFF4C002BE43F /* ExUITableView.swift */; };
 		756FE9251FD6EB3F002BE43F /* Pods_shishi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75017654B54A18144ADB7DED /* Pods_shishi.framework */; };
+		756FE9271FD6F416002BE43F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FE9261FD6F416002BE43F /* UIColorExtension.swift */; };
 		7596A6351FAF64D200971C35 /* font_ruifs.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7596A6331FAF64D100971C35 /* font_ruifs.ttf */; };
 		7596A63A1FAF66F000971C35 /* NSString+ZYChangeCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7596A6391FAF66F000971C35 /* NSString+ZYChangeCode.m */; };
 		7596A63C1FBCA02B00971C35 /* SSKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596A63B1FBCA02B00971C35 /* SSKolodaView.swift */; };
@@ -795,6 +796,7 @@
 		756EFB841EBD9D08006E65DF /* Observable+Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Result.swift"; sourceTree = "<group>"; };
 		756EFB861EBDCAF0006E65DF /* DuishiEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuishiEditView.swift; sourceTree = "<group>"; };
 		756FE9201FCAFF4C002BE43F /* ExUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUITableView.swift; sourceTree = "<group>"; };
+		756FE9261FD6F416002BE43F /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		7596A6331FAF64D100971C35 /* font_ruifs.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font_ruifs.ttf; sourceTree = "<group>"; };
 		7596A6381FAF66F000971C35 /* NSString+ZYChangeCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZYChangeCode.h"; sourceTree = "<group>"; };
 		7596A6391FAF66F000971C35 /* NSString+ZYChangeCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZYChangeCode.m"; sourceTree = "<group>"; };
@@ -2216,6 +2218,7 @@
 				756EFB7B1EBB8109006E65DF /* UIVIewController+SS.swift */,
 				75F8074E1F408F1200759C2F /* UIButton+SS.swift */,
 				756FE9201FCAFF4C002BE43F /* ExUITableView.swift */,
+				756FE9261FD6F416002BE43F /* UIColorExtension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -2846,6 +2849,7 @@
 				751E081B1EACA61D00BAB696 /* UMComRefreshView.m in Sources */,
 				751E083F1EACA61D00BAB696 /* UMComSearchViewController.m in Sources */,
 				756C77E61F376FD600B9FF54 /* MainKolodaView.swift in Sources */,
+				756FE9271FD6F416002BE43F /* UIColorExtension.swift in Sources */,
 				751E07BD1EACA61D00BAB696 /* UMComLikeListDataController.m in Sources */,
 				751E07EC1EACA61D00BAB696 /* UMComReplyEditViewController.m in Sources */,
 				751E084C1EACA61D00BAB696 /* UMComPrivateChatTableViewController.m in Sources */,
@@ -3036,7 +3040,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = G5YJVZL9SU;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UMCommunitySDK/UMCommunitySDK",
@@ -3076,7 +3080,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = G5YJVZL9SU;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UMCommunitySDK/UMCommunitySDK",

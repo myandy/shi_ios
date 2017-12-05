@@ -34,7 +34,7 @@ class ShareImageCollectionViewCell: UICollectionViewCell {
     }
     
     internal func setupViews() {
-        self.contentView.backgroundColor = UIColor(hexColor: "A9A9AB")
+        self.contentView.backgroundColor = UIColor("#A9A9AB")
         self.contentView.addSubview(self.imageView)
     }
     

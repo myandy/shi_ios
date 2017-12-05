@@ -50,9 +50,20 @@ class EditVC: EditBGImageVC {
     @IBAction func confirmBtnClick(_ sender: Any) {
         
         if self.saveWritting() {
-            let isAlbumImage = segmentedControl.selectedSegmentIndex == 2
-            let bgImage = isAlbumImage ? self.albumImage : self.poetryContainerView.bgImage!
-            SSControllerHelper.showShareContoller(controller: self, poetryTitle: self.writing.title, poetryAuthor: self.writing.author ?? "", poetryContent: self.writing.text, bgImage: bgImage, isAlbumImage: isAlbumImage, textColor: self.poetryContainerView.textColor)
+            let isAlbumImage = self.writing.albumImage() != nil
+            
+            var bgImage: UIImage?
+            if self.segmentedControl.selectedSegmentIndex == 2 {
+                bgImage = self.poetryContainerView.bgImage
+            }
+            else {
+                bgImage = self.writing.getImage()
+            }
+            
+            
+//            isAlbumImage ? self.albumImage : self.poetryContainerView.bgImage!
+            let textColor = self.poetryContainerView.textColor
+            SSControllerHelper.showShareContoller(controller: self, poetryTitle: self.writing.title, poetryAuthor: self.writing.author ?? "", poetryContent: self.writing.text, bgImage: bgImage, isAlbumImage: isAlbumImage, textColor: textColor)
             //删除当前页面
             let index = self.navigationController!.viewControllers.index(of: self)
             self.navigationController!.viewControllers.remove(at: index!)
@@ -103,16 +114,24 @@ class EditVC: EditBGImageVC {
         self.hiddenBgImageCollectionView(isHidden: true)
         
         if !self.isNewWritting {
-            if self.writing.bgImg != 0 {
+            if self.writing.bgImg >= 0 {
                 let poetryImage = PoetryImage(rawValue: Int(self.writing.bgImg))!
                 let image = poetryImage.image()
                 self.poetryContainerView.setupBGImage(image: image, imageId: Int(self.writing.bgImg))
                 self.editPagerView.updateImage(image: image)
+                self.poetryContainerView.updateTextColor(textColor: AppConfig.Constants.textColorForPaper)
             }
             else if let image = self.writing.albumImage() {
                 self.poetryContainerView.setupBGImage(image: image, imageId: nil)
                 self.editPagerView.updateImage(image: image)
+                self.poetryContainerView.updateTextColor(textColor: AppConfig.Constants.textColorForAlbum)
             }
+            else {
+                self.poetryContainerView.updateTextColor(textColor: AppConfig.Constants.textColorForNoImage)
+            }
+        }
+        else {
+            self.poetryContainerView.updateTextColor(textColor: AppConfig.Constants.textColorForNoImage)
         }
     }
     
@@ -206,14 +225,14 @@ class EditVC: EditBGImageVC {
             self.writing.bgImgName = nil
         }
         else if self.segmentedControl.selectedSegmentIndex == 2 {
-            self.writing.bgImg = 0
+            self.writing.bgImg = -1
             let bgImage = self.poetryContainerView.bgImage
             self.writing.saveAlbumBgImage(image: bgImage!)
             //bgImgName = self.saveAlbumBgImage(image: bgImage!)
         }
         else {
             if self.isNewWritting {
-                self.writing.bgImg = 0
+                self.writing.bgImg = -1
                 self.writing.bgImgName = nil
             }
         }

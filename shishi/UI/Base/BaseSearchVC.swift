@@ -34,7 +34,7 @@ class BaseSearchVC: UIViewController {
     lazy var searchBar: UISearchBar! = {
         let searchBar = UISearchBar()
         self.view.addSubview(searchBar)
-        searchBar.barTintColor = UIColor(intColor: SSTheme.ColorInt.BACK)
+        searchBar.barTintColor = UIColor(hex6: SSTheme.ColorInt.BACK)
         searchBar.backgroundImage = UIImage()
         searchBar.snp.makeConstraints { (make) in
             make.top.right.equalToSuperview()

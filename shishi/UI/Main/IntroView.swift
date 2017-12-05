@@ -20,6 +20,15 @@ class IntroView: UIView {
         label.text = SSStr.Main.INTRO
         return label
     }()
+    
+    lazy var introLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.numberOfLines = 0
+        label.textColor = UIColor.gray
+        label.text = SSStr.Main.GUIDE
+        return label
+    }()
 
     lazy var kolodaView: SSKolodaView = {
         let kolodaView = SSKolodaView()
@@ -48,12 +57,18 @@ class IntroView: UIView {
             make.width.lessThanOrEqualToSuperview()
         })
         
+        self.addSubview(self.introLabel)
+        self.introLabel.snp.makeConstraints { (maker) in
+            maker.top.equalTo(self.titleLabel.snp.bottom).offset(convertWidth(pix: 10))
+            maker.centerX.equalToSuperview()
+        }
+        
         self.addSubview(kolodaView)
         
         let introRatio: CGFloat = CGFloat(500) / 600
         self.kolodaView.snp.makeConstraints { (make) in
             make.width.centerX.equalToSuperview()
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(20)
+            make.top.equalTo(self.introLabel.snp.bottom).offset(10)
             make.height.equalTo(self.kolodaView.snp.width).dividedBy(introRatio)
         }
     }

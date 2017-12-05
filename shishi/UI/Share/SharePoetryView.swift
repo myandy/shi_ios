@@ -41,9 +41,9 @@ class SharePoetryView: UIView {
 //        }
 //    }
     
-    lazy var textContentView: UIView = UIView()
+    fileprivate lazy var textContentView: UIView = UIView()
     
-    lazy var contentLabel: UILabel = {
+    fileprivate(set) lazy var contentLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 0
@@ -51,21 +51,21 @@ class SharePoetryView: UIView {
         return label
     }()
     
-    lazy var titleLabel: UILabel = {
+    fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 22)
+        label.font = UIFont.systemFont(ofSize: 22)
         return label
     }()
     
-    lazy var authorLabel: UILabel = {
+    fileprivate lazy var authorLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
     
-    lazy var bgImageView: UIImageView = {
+    fileprivate(set) lazy var bgImageView: UIImageView = {
         let imageView = UIImageView()
 //        imageView.contentMode = .center
         return imageView
@@ -221,9 +221,11 @@ class SharePoetryView: UIView {
     }
     
     public func updateTextColor(textColor: UIColor) {
+        log.debug(textColor.hexString())
         self.titleLabel.textColor = textColor
         self.authorLabel.textColor = textColor
         self.contentLabel.textColor = textColor
+        
     }
     
     public func increaseFontSize() {
@@ -272,10 +274,10 @@ class SharePoetryView: UIView {
     public func updateFont(pointSizeStep: CGFloat) {
         var pointSize = self.pointSize(with: self.titleLabel.font.pointSize, increaseSize: pointSizeStep)
         self.titleLabel.font = UIFont(name: self.titleLabel.font.fontName, size: pointSize)
-        
+
         pointSize = self.pointSize(with: self.authorLabel.font.pointSize, increaseSize: pointSizeStep)
-        self.authorLabel.font = UIFont(name: self.authorLabel.font.fontName, size: pointSize)
-        
+        //self.authorLabel.font = UIFont(name: self.authorLabel.font.fontName, size: pointSize)
+
         pointSize = self.pointSize(with: self.contentLabel.font.pointSize, increaseSize: pointSizeStep)
         self.contentLabel.font = UIFont(name: self.contentLabel.font.fontName, size: pointSize)
     }

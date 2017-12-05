@@ -11,8 +11,8 @@ import UIKit
 class SSTheme: NSObject {
     //MARK:-颜色
     struct ColorInt {
-        public static let BACK =  0xf6f6f6
-        public static let DIVIDE =  0xafafaf
+        public static let BACK: UInt32 =  0xf6f6f6
+        public static let DIVIDE: UInt32 =  0xafafaf
     }
     
 
@@ -31,17 +31,17 @@ class SSTheme: NSObject {
         //分割线
         static let separator = UIColor.init(red: 0xcc / 255.0, green: 0xcc / 255.0, blue: 0xcc / 255.0, alpha: 1.0)
         
-        static let settingBack = UIColor(intColor:0x333333)
+        static let settingBack = UIColor(hex6:0x333333)
         
-        static let settingLine = UIColor(intColor:0x222222)
+        static let settingLine = UIColor(hex6:0x222222)
         
-        static let textHint = UIColor(intColor:0x666666)
+        static let textHint = UIColor(hex6:0x666666)
         
-        static let divideColor = UIColor(intColor: ColorInt.DIVIDE)
+        static let divideColor = UIColor(hex6: ColorInt.DIVIDE)
         
-        static let backColor = UIColor(intColor: ColorInt.BACK)
+        static let backColor = UIColor(hex6: ColorInt.BACK)
         
-        static let whiteHint = UIColor(intColor: 0x9a9a9a)
+        static let whiteHint = UIColor(hex6: 0x9a9a9a)
 
     }
     

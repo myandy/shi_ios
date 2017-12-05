@@ -49,7 +49,8 @@ class SSStr: NSObject {
     }
     
     struct Main {
-        static let INTRO = "诗Shi介绍".fixLanguage()
+        static let INTRO = "诗Shi".fixLanguage()
+        static let GUIDE = "新手指南".fixLanguage()
     }
 
     struct Setting {
