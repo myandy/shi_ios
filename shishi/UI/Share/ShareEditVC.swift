@@ -188,6 +188,8 @@ extension ShareEditVC {
 //        self.poetryContainerView.bgImageView.setContentHuggingPriority(500, for: .vertical)
         
         self.showFirstBGImage()
+        
+        self.poetryContainerView.updateTextColor(textColor: AppConfig.Constants.textColorForPaper)
     }
     
     internal func onAlbumBtnClick() {
@@ -202,6 +204,8 @@ extension ShareEditVC {
         self.hiddenSliderView(isHidden: false)
         self.hiddenBgImageCollectionView(isHidden: true)
         self.updateImageWithSlider()
+        
+        self.poetryContainerView.updateTextColor(textColor: AppConfig.Constants.textColorForAlbum)
         
 //        self.poetryContainerView.bgImageView.setContentHuggingPriority(UILayoutPriorityDefaultHigh, for: .vertical)
         

@@ -280,7 +280,7 @@ extension EditPagerView: UITableViewDataSource,UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: editCellIdentifier, for: indexPath) as! EditPagerCell
-        let textArray = self.writing.textArray
+        let textArray = self.contentArray!
         let content: String? = textArray.count > indexPath.row ? textArray[indexPath.row] : nil
         cell.refresh(code: clist[indexPath.row], content: content)
         cell.editHandler = { [unowned self] content in

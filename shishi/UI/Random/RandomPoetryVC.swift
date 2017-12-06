@@ -80,6 +80,12 @@ class RandomPoetryVC: UIViewController {
             self.updateFont(pointSizeStep: increaseSize)
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        SpeechUtil.default.stop()
+    }
 
     func refresh(){
         if hasPoetry {
@@ -186,6 +192,6 @@ extension RandomPoetryVC {
     fileprivate func speech(poetry: Poetry) {
         let title = StringUtils.titleTextFilter(poerityTitle: poetry.title)
         let content = StringUtils.contentTextFilter(poerityTitle: poetry.poetry)
-        SpeechUtil.default.speech(text: title + content)
+        SpeechUtil.default.speech(texts: [title, content])
     }
 }

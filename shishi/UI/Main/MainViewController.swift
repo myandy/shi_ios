@@ -243,7 +243,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     
     fileprivate func dateString(with date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd mm:ss"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
         
         return formatter.string(from: date)
     }
@@ -300,7 +300,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
             
             let formerItem = self.formerItems[formerIndex]
             let formerName = formerItem.first!.former.name!
-            let updateDate = formerItem.last!.update_dt
+            let updateDate = formerItem.first!.update_dt
             let dateString = self.dateString(with: updateDate)
 //            let contentArray = formerItem.map({ (writting) -> String in
 //                return writting.text

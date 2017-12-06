@@ -34,7 +34,7 @@ class AppConfig {
         static let writtingAuthorFontSize: CGFloat = 16
         
         //如果用内置图片做背景时的文字颜色
-        static let textColorForPaper: UIColor = UIColor("#A9A9AB")
+        static let textColorForPaper: UIColor = UIColor.black
         //如果用相册图片做背景时的文字颜色
         static let textColorForAlbum: UIColor = UIColor.white
         //没有背景时的文字颜色

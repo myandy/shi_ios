@@ -38,7 +38,7 @@ class SSStr: NSObject {
         static let FAVORITE = "收藏".fixLanguage()
         static let DIRECTORY = "目录".fixLanguage()
         static let COPY_CONTENT = "复制内容".fixLanguage()
-        static let SPEAK_CONTENT = "语音朗读".fixLanguage()
+        static let SPEAK_CONTENT = "语音朗读/停止".fixLanguage()
         static let AUTHOR_PEDIA = "作者百科".fixLanguage()
         static let CONTENT_PEDIA = "内容百科".fixLanguage()
         static let MENU_EXIT = "退出".fixLanguage()

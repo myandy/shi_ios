@@ -24,7 +24,7 @@ private let bootimBarHeight = convertWidth(pix: 100)
 //字体变化每次步径
 private let increaseFontStep: CGFloat = AppConfig.Constants.increaseFontStep
 
-
+//第一页是退出动画页，第二页是诗人页
 class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     var poetrys = [Poetry]()
@@ -296,11 +296,14 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
 
 //menu
 extension AuthorPagerVC {
-    public func currentPoetry() -> Poetry {
+    public func currentPoetry() -> Poetry? {
         let pageContentViewController = self.pageController.viewControllers![0]
-        let index = self.controllers.index(of: pageContentViewController)
-        let offset = self.canSwapExit ? 1 : 0
-        let poetry = self.poetrys[index! - offset]
+        let index = self.controllers.index(of: pageContentViewController)!
+        let offset = self.canSwapExit ? 2 : 1
+        if index < offset {
+            return nil
+        }
+        let poetry = self.poetrys[index - offset]
         return poetry
     }
     
@@ -316,29 +319,42 @@ extension AuthorPagerVC {
                                             _ = DataContainer.default.reduceFontOffset()
                                             self.updateFont(pointSizeStep: -increaseFontStep)
                                         case 2:
-                                            let poetry = self.currentPoetry()
+                                            guard let poetry = self.currentPoetry() else {
+                                                return
+                                            }
                                             self.toggleCollection(poetry: poetry)
                                         case 3:
-                                            let poetry = self.currentPoetry()
+                                            guard let poetry = self.currentPoetry() else {
+                                                return
+                                            }
 //                                            let searchController = SearchPoetryVC()
 //                                            searchController.author = poetry.author
 //                                            self.navigationController?.pushViewController(searchController, animated: true)
                                             SSControllerHelper.showDirectoryContoller(controller: self, author: poetry.author)
                                         case 4:
-                                            let poetry = self.currentPoetry()
+                                            guard let poetry = self.currentPoetry() else {
+                                                return
+                                            }
 
                                             UIPasteboard.general.string = StringUtils.contentTextFilter(poerityTitle: poetry.poetry)
                                             self.showToast(message: SSStr.Toast.COPY_SUCCESS)
                                             
                                         case 5:
-                                            let poetry = self.currentPoetry()
-                                            self.speech(poetry: poetry)
+                                            if let poetry = self.currentPoetry() {
+                                                self.speech(poetry: poetry)
+                                            }
+                                            else {
+                                                self.speech(author: self.author)
+                                            }
                                             
                                         case 6:
-                                            let poetry = self.currentPoetry()
-                                            SSControllerHelper.showBaikeContoller(controller: self, word: poetry.author)
+//                                            let poetry = self.currentPoetry()
+//                                            SSControllerHelper.showBaikeContoller(controller: self, word: poetry.author)
+                                            SSControllerHelper.showBaikeContoller(controller: self, word: self.author.name)
                                         case 7:
-                                            let poetry = self.currentPoetry()
+                                            guard let poetry = self.currentPoetry() else {
+                                                return
+                                            }
                                             SSControllerHelper.showBaikeContoller(controller: self, word: poetry.title)
                                         case 8:
                                             self.navigationController?.popViewController(animated: true)
@@ -364,7 +380,11 @@ extension AuthorPagerVC {
     fileprivate func speech(poetry: Poetry) {
         let title = StringUtils.titleTextFilter(poerityTitle: poetry.title)
         let content = StringUtils.contentTextFilter(poerityTitle: poetry.poetry)
-        SpeechUtil.default.speech(text: title + content)
+        SpeechUtil.default.speech(texts: [title, content])
+    }
+    
+    fileprivate func speech(author: Author) {
+       SpeechUtil.default.speech(texts: [author.name, author.intro])
     }
     
     fileprivate func toggleCollection(poetry: Poetry) {

@@ -189,22 +189,27 @@ class EditBGImageVC: UIViewController {
     }
     
     //获取相册第一张图片
+    //改成使用内置图片
+//    internal func resoveFirstAlbumImage() {
+//        let fetchOptions = PHFetchOptions()
+//        let smartAlbums:PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+//        smartAlbums.enumerateObjects({ [weak self] (asset, index, isStop) in
+//            let imageManager = PHImageManager.default()
+//            let requestOptions = PHImageRequestOptions()
+//            requestOptions.isSynchronous = true
+//            let size = CGSize(width: 720, height: 1280)
+//            isStop.pointee = true
+//            imageManager.requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: requestOptions) { image, info in
+//                if let image = image {
+//                    self?.albumImage = self?.resizedImage(image: image)
+//
+//                }
+//            }
+//        })
+//    }
+    
     internal func resoveFirstAlbumImage() {
-        let fetchOptions = PHFetchOptions()
-        let smartAlbums:PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-        smartAlbums.enumerateObjects({ [weak self] (asset, index, isStop) in
-            let imageManager = PHImageManager.default()
-            let requestOptions = PHImageRequestOptions()
-            requestOptions.isSynchronous = true
-            let size = CGSize(width: 720, height: 1280)
-            isStop.pointee = true
-            imageManager.requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: requestOptions) { image, info in
-                if let image = image {
-                    self?.albumImage = self?.resizedImage(image: image)
-                    
-                }
-            }
-        })
+        self.albumImage = UIImage(named: "zuibaichi")!
     }
     
     //相册选择图片

@@ -63,6 +63,9 @@ class EditPagerCell : UITableViewCell {
         self.code = code
         pingzeLinearView.refresh(code: code)
         self.textField.text = content
+        if UserDefaultUtils.isCheckPingze() {
+            EditUtils.checkTextFiled(textFiled: textField,code: self.code)
+        }
     }
     
     public required init?(coder aDecoder: NSCoder) {
