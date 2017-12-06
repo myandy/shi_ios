@@ -195,7 +195,7 @@ extension SettingVC{
     
     //app store 评分
     func marktemClick(){
-        let urlString = "itms-apps://itunes.apple.com/app/id944955993"
+        let urlString = "itms-apps://itunes.apple.com/app/id1277723033"
         let url = URL(string: urlString)
         UIApplication.shared.open(url!)
     }
@@ -207,7 +207,7 @@ extension SettingVC{
     
     //分享给好友
     func shareItemClick(){
-        let urlString = "https://itunes.apple.com/cn/app/id944955993?mt=8"
+        let urlString = "https://itunes.apple.com/cn/app/id1277723033?mt=8"
 //        SSStr.Setting.SHARE_FRIENDS_CONTENT
         SSShareUtil.default.shareToSystem(controller: self, title: SSStr.Setting.SHARE_FRIENDS_TITLE, image: UIImage(named: "icon")!, urlString: urlString)
     }

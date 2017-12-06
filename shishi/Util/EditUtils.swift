@@ -110,6 +110,7 @@ class EditUtils {
                 
                 if checkCode == 0 {
                     let myRange = NSRange(location: index, length: 1)
+
                     //attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: myRange)
                     
 //                    let attributes = [NSUnderlineStyleAttributeName : NSUnderlineStyle.patternSolid.rawValue | NSUnderlineStyle.styleThick.rawValue | NSUnderlineStyle.styleSingle.rawValue, NSUnderlineColorAttributeName: UIColor.red] as [NSAttributedStringKey : Any]
@@ -118,10 +119,11 @@ class EditUtils {
                     
 
                     attributedString.addAttributes(attributes as [String : Any], range: myRange)
+
                 }
                 else if checkCode == 2 {
                     let myRange = NSRange(location: index, length: 1)
-                    attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.green, range: myRange)
+                    attributedString.addAttribute(NSForegroundColorAttributeName, value: SSTheme.Color.greenPingze, range: myRange)
                     
                 }
                 

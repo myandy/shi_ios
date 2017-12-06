@@ -27,13 +27,13 @@ extension Poetry : SearchModel{
     }
     
     func getHint() -> String {
-        return poetry
+        return author
     }
 }
 
 class PoetryDB{
     
-    private static let TABLE_NAME="t_poetry"
+    private static let TABLE_NAME = "t_poetry"
     
     private static let BY_PNUM = " order by p_num desc"
     

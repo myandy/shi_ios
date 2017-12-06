@@ -43,6 +43,9 @@ class SSTheme: NSObject {
         
         static let whiteHint = UIColor(hex6: 0x9a9a9a)
 
+        static let greenPingze = UIColor(hex6: 0x8dc63f)
+        
+        static let redPingze = UIColor(hex6: 0xb03b28)
     }
     
     //尺寸

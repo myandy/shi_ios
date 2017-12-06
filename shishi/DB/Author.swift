@@ -38,6 +38,8 @@ class AuthorDB{
     private static let BY_PNUM = " order by p_num"
     
     private static let BY_DNUM = " order by d_num desc"
+    
+    private static let BY_DNUM_ASC = " order by d_num"
 
     private class func getArray(_ rs: FMResultSet) -> [Author] {
         var array = [Author]()
@@ -72,7 +74,7 @@ class AuthorDB{
     }
 
     public class func getAll(byPNum: Bool,dynasty: Int) -> [Author] {
-       let db = DBManager.shared.getDatabase()
+    let db = DBManager.shared.getDatabase()
         var sql = "select * from ".appending(TABLE_NAME)
         if dynasty>0{
             sql = sql.appending(" where d_dynasty like '").appending(SSStr.All.DYNASTIES[dynasty]).appending("'")
@@ -99,4 +101,22 @@ class AuthorDB{
         return array
     }
 
+    public class func getAllAsc() -> [Author] {
+        let db = DBManager.shared.getDatabase()
+        var sql = "select * from ".appending(TABLE_NAME)
+     
+        sql = sql.appending(BY_DNUM_ASC)
+        var array = [Author]()
+        let rs : FMResultSet
+        do {
+            try rs = db.executeQuery(sql,values: [])
+            array = getArray(rs)
+            
+        }
+        catch{
+            print(error)
+        }
+        return array
+    }
+    
 }
