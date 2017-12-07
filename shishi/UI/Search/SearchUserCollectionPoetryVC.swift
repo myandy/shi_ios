@@ -31,6 +31,9 @@ class SearchUserCollectionPoetryVC: SearchPoetryVC {
  
     }
     
+    override func getHint() -> String {
+        return SSStr.Search.SEARCH_COLLECT_HINT
+    }
 
     /*
     // MARK: - Navigation

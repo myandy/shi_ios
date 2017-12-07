@@ -73,7 +73,10 @@ class FormerIntroVC : UIViewController {
         introView.loadRequest(URLRequest(url: urlStr))
         
         sourceView = UILabel()
-        sourceView.text = former.source
+        
+        if former.source != nil {
+            sourceView.text = former.source
+        }
         sourceView.textColor = UIColor.white
         sourceView.font = UIFont.systemFont(ofSize: 16)
         sourceView.numberOfLines = 0
@@ -86,7 +89,7 @@ class FormerIntroVC : UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let margin:CGFloat = 20.0
-        let height = former.source.heightWithConstrainedWidth(width: introView.frame.width, font: sourceView.font)
+        let height = former.source == nil ? 0: former.source.heightWithConstrainedWidth(width: introView.frame.width, font: sourceView.font)
         introView.scrollView.contentInset = UIEdgeInsets(top: height+margin, left: 0, bottom: 0, right: 0)
         sourceView.frame = CGRect(x: 0, y: -height-margin, width: introView.frame.width, height: height)
     }

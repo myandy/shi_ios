@@ -11,7 +11,7 @@ import UIKit
 class SearchAuthorVC: NormalSearchVC {
 
     override func loadData() {
-        originItems = AuthorDB.getAll(byPNum: false, dynasty: 0)
+        originItems = AuthorDB.getAllAsc()
     }
     
     override func getHint() -> String {
