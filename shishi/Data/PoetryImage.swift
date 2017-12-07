@@ -10,8 +10,8 @@ import UIKit
 
 //背景图片
 enum PoetryImage: Int {
-    
-    case dust = 0,
+    //不要使用0，否则导致数据库默认数值0也有对应的图片
+    case dust = 1000,
     bg001 = 1,
     bg002 = 2,
     bg004 = 4,

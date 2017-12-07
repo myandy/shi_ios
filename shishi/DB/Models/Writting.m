@@ -66,10 +66,7 @@
         self.update_dt = [self customDateWithValue:value];
         return YES;
     }
-    else if ([key isEqualToString:@"bgImg"]) {
-        self.bgImg = -1;
-        return YES;
-    }
+    
     return NO;
 }
 

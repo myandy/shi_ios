@@ -83,4 +83,11 @@ extension EditPagerCell : UITextFieldDelegate {
         
         self.editHandler(textField.text)
     }
+    
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
+        if let text = textField.attributedText?.string {
+            textField.attributedText = nil
+            textField.text = text
+        }
+    }
 }

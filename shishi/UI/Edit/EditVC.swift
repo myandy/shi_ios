@@ -114,8 +114,7 @@ class EditVC: EditBGImageVC {
         self.hiddenBgImageCollectionView(isHidden: true)
         
         if !self.isNewWritting {
-            if self.writing.bgImg >= 0 {
-                let poetryImage = PoetryImage(rawValue: Int(self.writing.bgImg))!
+            if let poetryImage = PoetryImage(rawValue: Int(self.writing.bgImg)) {
                 let image = poetryImage.image()
                 self.poetryContainerView.setupBGImage(image: image, imageId: Int(self.writing.bgImg))
                 self.editPagerView.updateImage(image: image)
