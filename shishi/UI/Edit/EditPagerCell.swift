@@ -35,8 +35,8 @@ class EditPagerCell : UITableViewCell {
         }
         
         self.textField = UITextField()
-        textField.textColor = UIColor.black
-        textField.tintColor = UIColor.black
+//        textField.textColor = UIColor.black
+//        textField.tintColor = UIColor.black
         addSubview(textField)
         textField.snp.makeConstraints{ (make) in
             make.left.equalToSuperview().offset(14)
@@ -57,14 +57,47 @@ class EditPagerCell : UITableViewCell {
         //            make.height.equalTo(1)
         //        }
         
+//        textField.rx.text.subscribe(onNext:{ [unowned self] (text) in
+//            guard let text = text, !text.isEmpty else {
+//                return
+//            }
+//            EditUtils.checkTextField(textField: self.textField,code: self.code)
+//        }).addDisposableTo(self.rx_disposeBag)
+        
+        if UserDefaultUtils.isCheckPingze() {
+            textField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+        }
+        
+        
+    }
+    
+    fileprivate func checkTextField(textField: UITextField, code: String) {
+        guard let text = textField.attributedText?.string, !text.isEmpty else {
+            return
+        }
+        
+        let attrString = EditUtils.pingzeString(text: text, code: code)
+        textField.attributedText = attrString
+    }
+    
+    @objc fileprivate func textFieldDidChange(textField: UITextField) {
+        
+        
+        //点击完选中的字之后
+        if textField.markedTextRange == nil {
+            self.checkTextField(textField: textField, code: self.code)
+        }
     }
     
     public func refresh(code:String, content: String?){
         self.code = code
         pingzeLinearView.refresh(code: code)
-        self.textField.text = content
+        
         if UserDefaultUtils.isCheckPingze() {
-            EditUtils.checkTextFiled(textFiled: textField,code: self.code)
+            self.checkTextField(textField: self.textField, code: self.code)
+        }
+        else {
+            self.textField.attributedText = nil
         }
     }
     
@@ -76,18 +109,19 @@ class EditPagerCell : UITableViewCell {
 
 extension EditPagerCell : UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
+
         if UserDefaultUtils.isCheckPingze() {
-            EditUtils.checkTextFiled(textFiled: textField,code: self.code)
+            self.checkTextField(textField: textField, code: self.code)
         }
-        
-        self.editHandler(textField.text)
+
+        self.editHandler(textField.attributedText?.string)
     }
-    
-    public func textFieldDidBeginEditing(_ textField: UITextField) {
-        if let text = textField.attributedText?.string {
-            textField.attributedText = nil
-            textField.text = text
-        }
-    }
+
+//    public func textFieldDidBeginEditing(_ textField: UITextField) {
+//        if let text = textField.attributedText?.string {
+//            textField.attributedText = nil
+//            textField.text = text
+//        }
+//    }
 }
+

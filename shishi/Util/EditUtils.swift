@@ -93,11 +93,14 @@ class EditUtils {
         }
     }
     
-    public static func checkTextFiled(textFiled: UITextField,code: String) {
+    public static func pingzeString(text: String, code: String) -> NSAttributedString {
+        let attributedString = NSMutableAttributedString(string: text)
+        guard !text.isEmpty else {
+            return attributedString
+        }
         let code = StringUtils.getIntFromString(str: code)
         var pos = -1
-        let text = textFiled.text!
-        let attributedString = NSMutableAttributedString(string: text)
+        
         
         for (index,value) in text.characters.enumerated() {
             if pos >= code.characters.count-1 {
@@ -121,14 +124,20 @@ class EditUtils {
                 else if checkCode == 2 {
                     let myRange = NSRange(location: index, length: 1)
                     attributedString.addAttribute(NSForegroundColorAttributeName, value: SSTheme.Color.greenPingze, range: myRange)
-                    
+                }
+                    //默认色也要设置，否则在某些特殊情况下，默认色会变成其它的属性色，例如失去焦点后
+                else {
+                    let myRange = NSRange(location: index, length: 1)
+                    attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.black, range: myRange)
                 }
                 
             }
             
         }
         
-        textFiled.attributedText = attributedString
+        return attributedString
+        //textFiled.text = nil
+        //textFiled.attributedText = attributedString
     }
     
 }
