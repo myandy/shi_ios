@@ -125,7 +125,7 @@ class EditUtils {
                     let myRange = NSRange(location: index, length: 1)
                     attributedString.addAttribute(NSForegroundColorAttributeName, value: SSTheme.Color.greenPingze, range: myRange)
                 }
-                    //默认色也要设置，否则在某些特殊情况下，默认色会变成其它的属性色，例如失去焦点后
+                    //默认色也要设置，否则在某些特殊情况下，默认色会变成其它的属性色，例如编辑中和编辑完成都检查，失去焦点后所有文字都变绿
                 else {
                     let myRange = NSRange(location: index, length: 1)
                     attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.black, range: myRange)

@@ -61,6 +61,7 @@ extension Writting {
     }
     
     public func saveAlbumBgImage(image: UIImage) {
+        self.bgImg = -1
         self.bgImgName = self.saveImage(image: image)
     }
     

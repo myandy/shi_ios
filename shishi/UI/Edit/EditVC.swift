@@ -77,6 +77,7 @@ class EditVC: EditBGImageVC {
         writing.formerId = former.id
         writing.title = former.name
         writing.author = UserDefaultUtils.getUsername()
+        writing.bgImg = Int64(PoetryImage.dust.rawValue)
         self.isNewWritting = true
         super.init(nibName: nil, bundle: nil)
         
@@ -85,6 +86,10 @@ class EditVC: EditBGImageVC {
     init(writting : Writting) {
         self.writing = writting
         self.isNewWritting = false
+        //如果没有背景图片
+        if self.writing.getImage() == nil {
+            self.writing.bgImg = Int64(PoetryImage.dust.rawValue)
+        }
         super.init(nibName: nil, bundle: nil)
         
     }
@@ -230,9 +235,16 @@ class EditVC: EditBGImageVC {
             //bgImgName = self.saveAlbumBgImage(image: bgImage!)
         }
         else {
-            if self.isNewWritting {
-                self.writing.bgImg = -1
-                self.writing.bgImgName = nil
+//            if self.isNewWritting {
+//                self.writing.bgImg = -1
+//                self.writing.bgImgName = nil
+//            }
+            if let bgImageId = self.poetryContainerView.bgImageId {
+                self.writing.bgImg = Int64(bgImageId)
+            }
+            else {
+                let bgImage = self.poetryContainerView.bgImage
+                self.writing.saveAlbumBgImage(image: bgImage!)
             }
         }
         

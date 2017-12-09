@@ -93,12 +93,12 @@ class EditPagerCell : UITableViewCell {
         self.code = code
         pingzeLinearView.refresh(code: code)
         
+        self.textField.text = content
         if UserDefaultUtils.isCheckPingze() {
+            
             self.checkTextField(textField: self.textField, code: self.code)
         }
-        else {
-            self.textField.attributedText = nil
-        }
+       
     }
     
     public required init?(coder aDecoder: NSCoder) {
