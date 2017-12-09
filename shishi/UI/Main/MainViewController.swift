@@ -219,6 +219,9 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         text = "一白日依山尽,黄河入海流。"
         attr = EditUtils.pingzeString(text: text, code: "13113，\n11334")
         print(attr)
+        text = "白日依山尽黄河入海仄"
+        attr = EditUtils.pingzeString(text: text, code: "13113，\n11334")
+        print(attr)
     }
     
     

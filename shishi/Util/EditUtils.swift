@@ -112,7 +112,7 @@ class EditUtils {
         for (_, value) in text.enumerated() {
             let subString = String(value)
             var subAttrString: NSAttributedString!
-            if pos < count - 1 && "\u{4E00}" <= value  && value <= "\u{9FA5}" {
+            if pos <= count - 1 && "\u{4E00}" <= value  && value <= "\u{9FA5}" {
                 let codeIndex = code.index(code.startIndex, offsetBy: pos)
                 let checkCode = checkPingze(value,code: code[codeIndex])
                 
