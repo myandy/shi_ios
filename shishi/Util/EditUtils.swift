@@ -94,50 +94,105 @@ class EditUtils {
     }
     
     public static func pingzeString(text: String, code: String) -> NSAttributedString {
-        let attributedString = NSMutableAttributedString(string: text)
+        let attributedString = NSMutableAttributedString(string: "")
         guard !text.isEmpty else {
             return attributedString
         }
         let code = StringUtils.getIntFromString(str: code)
         var pos = -1
         
-        
-        for (index,value) in text.characters.enumerated() {
-            if pos >= code.characters.count-1 {
+        let count = (text as NSString).length
+        for (_, value) in text.enumerated() {
+            if pos >= count - 1 {
                 break
             }
+            let subString = String(value)
+            var subAttrString: NSAttributedString!
             if ("\u{4E00}" <= value  && value <= "\u{9FA5}") {
                 pos += 1
                 let codeIndex = code.index(code.startIndex, offsetBy: pos)
                 let checkCode = checkPingze(value,code: code[codeIndex])
                 
                 if checkCode == 0 {
-                    let myRange = NSRange(location: index, length: 1)
-
-                    //attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: myRange)
-                    
-//                    let attributes = [NSUnderlineStyleAttributeName : NSUnderlineStyle.patternSolid.rawValue | NSUnderlineStyle.styleThick.rawValue | NSUnderlineStyle.styleSingle.rawValue, NSUnderlineColorAttributeName: UIColor.red] as [NSAttributedStringKey : Any]
-                    let attributes = [NSStrikethroughColorAttributeName: UIColor.red, NSStrikethroughStyleAttributeName: 2] as [NSAttributedStringKey : Any]
-                    attributedString.addAttributes(attributes as [String : Any], range: myRange)
-
+                    let attributes = [NSStrikethroughColorAttributeName: UIColor.red, NSStrikethroughStyleAttributeName: 2] as [String : Any]
+                    subAttrString = NSAttributedString(string: subString, attributes: attributes)
                 }
                 else if checkCode == 2 {
-                    let myRange = NSRange(location: index, length: 1)
-                    attributedString.addAttribute(NSForegroundColorAttributeName, value: SSTheme.Color.greenPingze, range: myRange)
+                    let attributes = [NSForegroundColorAttributeName: SSTheme.Color.greenPingze] as [String : Any]
+                    subAttrString = NSAttributedString(string: subString, attributes: attributes)
                 }
                     //默认色也要设置，否则在某些特殊情况下，默认色会变成其它的属性色，例如编辑中和编辑完成都检查，失去焦点后所有文字都变绿
                 else {
-                    let myRange = NSRange(location: index, length: 1)
-                    attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.black, range: myRange)
+                    let attributes = [NSForegroundColorAttributeName: UIColor.black] as [String : Any]
+                    subAttrString = NSAttributedString(string: subString, attributes: attributes)
                 }
                 
             }
-            
+            else {
+                subAttrString = NSAttributedString(string: subString)
+                
+            }
+            attributedString.append(subAttrString)
         }
         
         return attributedString
-        //textFiled.text = nil
-        //textFiled.attributedText = attributedString
     }
     
+    
+//    public static func pingzeString(text: String, code: String) -> NSAttributedString {
+//        let attributedString = NSMutableAttributedString(string: text)
+//        guard !text.isEmpty else {
+//            return attributedString
+//        }
+//        let code = StringUtils.getIntFromString(str: code)
+//        var pos = -1
+//
+//
+//        for (index,value) in text.characters.enumerated() {
+//            if pos >= code.characters.count-1 {
+//                break
+//            }
+//            if ("\u{4E00}" <= value  && value <= "\u{9FA5}") {
+//                pos += 1
+//                let codeIndex = code.index(code.startIndex, offsetBy: pos)
+//                let checkCode = checkPingze(value,code: code[codeIndex])
+//
+//                if checkCode == 0 {
+//                    let myRange = NSRange(location: index, length: 1)
+//                    attributedString.removeAttribute(NSStrikethroughColorAttributeName, range: myRange)
+//                    attributedString.removeAttribute(NSForegroundColorAttributeName, range: myRange)
+//                    attributedString.removeAttribute(NSStrikethroughStyleAttributeName, range: myRange)
+//
+//                    //attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: myRange)
+//
+//                    //                    let attributes = [NSUnderlineStyleAttributeName : NSUnderlineStyle.patternSolid.rawValue | NSUnderlineStyle.styleThick.rawValue | NSUnderlineStyle.styleSingle.rawValue, NSUnderlineColorAttributeName: UIColor.red] as [NSAttributedStringKey : Any]
+//                    let attributes = [NSStrikethroughColorAttributeName: UIColor.red, NSStrikethroughStyleAttributeName: 2] as [NSAttributedStringKey : Any]
+//
+//                    attributedString.addAttributes(attributes as [String : Any], range: myRange)
+//
+//                }
+//                else if checkCode == 2 {
+//                    let myRange = NSRange(location: index, length: 1)
+//                    attributedString.removeAttribute(NSStrikethroughColorAttributeName, range: myRange)
+//                    attributedString.removeAttribute(NSForegroundColorAttributeName, range: myRange)
+//                    attributedString.removeAttribute(NSStrikethroughStyleAttributeName, range: myRange)
+//                    attributedString.addAttribute(NSForegroundColorAttributeName, value: SSTheme.Color.greenPingze, range: myRange)
+//                }
+//                    //默认色也要设置，否则在某些特殊情况下，默认色会变成其它的属性色，例如编辑中和编辑完成都检查，失去焦点后所有文字都变绿
+//                else {
+//                    let myRange = NSRange(location: index, length: 1)
+//                    attributedString.removeAttribute(NSStrikethroughColorAttributeName, range: myRange)
+//                    attributedString.removeAttribute(NSForegroundColorAttributeName, range: myRange)
+//                    attributedString.removeAttribute(NSStrikethroughStyleAttributeName, range: myRange)
+//                    attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.black, range: myRange)
+//                }
+//
+//            }
+//
+//        }
+//
+//        return attributedString
+//        //textFiled.text = nil
+//        //textFiled.attributedText = attributedString
+//    }
 }

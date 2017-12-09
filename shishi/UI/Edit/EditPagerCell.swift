@@ -11,13 +11,17 @@ import UIKit
 
 class EditPagerCell : UITableViewCell {
     
-    private var pingzeLinearView: PingzeLinearView!
+    fileprivate var pingzeLinearView: PingzeLinearView!
     
-    private var textField: UITextField!
+    fileprivate var textField: UITextField!
     
     var code: String!
     
     public var editHandler: ((String?) -> Void)!
+    
+    //编辑的同时检测
+    //如果打开会有BUG，可能是typingAttributes和编辑时设置的attributedText有冲突，导致设置进去attributedText再取出来就变了
+    fileprivate let checkWhenEditing = false
     
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -37,6 +41,8 @@ class EditPagerCell : UITableViewCell {
         self.textField = UITextField()
 //        textField.textColor = UIColor.black
 //        textField.tintColor = UIColor.black
+//        textField.allowsEditingTextAttributes = false
+        
         addSubview(textField)
         textField.snp.makeConstraints{ (make) in
             make.left.equalToSuperview().offset(14)
@@ -61,10 +67,11 @@ class EditPagerCell : UITableViewCell {
 //            guard let text = text, !text.isEmpty else {
 //                return
 //            }
-//            EditUtils.checkTextField(textField: self.textField,code: self.code)
+//            print(self.textField.attributedText)
+//            //self.checkTextField(textField: self.textField, code: self.code)
 //        }).addDisposableTo(self.rx_disposeBag)
         
-        if UserDefaultUtils.isCheckPingze() {
+        if self.checkWhenEditing && UserDefaultUtils.isCheckPingze() {
             textField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         }
         
@@ -78,6 +85,9 @@ class EditPagerCell : UITableViewCell {
         
         let attrString = EditUtils.pingzeString(text: text, code: code)
         textField.attributedText = attrString
+//        textField.superview?.setNeedsDisplay()
+//        textField.superview?.setNeedsLayout()
+//        textField.superview?.layoutIfNeeded()
     }
     
     @objc fileprivate func textFieldDidChange(textField: UITextField) {
@@ -93,12 +103,15 @@ class EditPagerCell : UITableViewCell {
         self.code = code
         pingzeLinearView.refresh(code: code)
         
-        self.textField.text = content
+        
         if UserDefaultUtils.isCheckPingze() {
-            
+            self.textField.text = nil
+            self.textField.attributedText = NSMutableAttributedString(string: content ?? "")
             self.checkTextField(textField: self.textField, code: self.code)
         }
-       
+        else {
+            self.textField.text = content
+        }
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -117,11 +130,13 @@ extension EditPagerCell : UITextFieldDelegate {
         self.editHandler(textField.attributedText?.string)
     }
 
-//    public func textFieldDidBeginEditing(_ textField: UITextField) {
-//        if let text = textField.attributedText?.string {
-//            textField.attributedText = nil
-//            textField.text = text
-//        }
-//    }
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
+        if !self.checkWhenEditing, let text = textField.attributedText?.string {
+            textField.attributedText = nil
+            textField.text = text
+//            self.checkTextField(textField: textField, code: self.code)
+        }
+        
+    }
 }
 

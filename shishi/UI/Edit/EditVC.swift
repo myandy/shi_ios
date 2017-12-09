@@ -143,7 +143,7 @@ class EditVC: EditBGImageVC {
         super.viewWillAppear(animated)
         
         if !self.editPagerView.isFreeFormer {
-            IQKeyboardManager.sharedManager().enable = true
+//            IQKeyboardManager.sharedManager().enable = true
         }
         
     }
