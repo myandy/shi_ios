@@ -93,23 +93,26 @@ class EditUtils {
         }
     }
     
+    public static func codeFilter(code: String) -> String {
+        return code.components(separatedBy: CharacterSet.decimalDigits.inverted)
+            .joined()
+    }
+    
     public static func pingzeString(text: String, code: String) -> NSAttributedString {
         let attributedString = NSMutableAttributedString(string: "")
         guard !text.isEmpty else {
             return attributedString
         }
-        let code = StringUtils.getIntFromString(str: code)
-        var pos = -1
+//        let code = StringUtils.getIntFromString(str: code)
+        let code = EditUtils.codeFilter(code: code)
         
-        let count = (text as NSString).length
+        var pos = 0
+        
+        let count = (code as NSString).length
         for (_, value) in text.enumerated() {
-            if pos >= count - 1 {
-                break
-            }
             let subString = String(value)
             var subAttrString: NSAttributedString!
-            if ("\u{4E00}" <= value  && value <= "\u{9FA5}") {
-                pos += 1
+            if pos < count - 1 && "\u{4E00}" <= value  && value <= "\u{9FA5}" {
                 let codeIndex = code.index(code.startIndex, offsetBy: pos)
                 let checkCode = checkPingze(value,code: code[codeIndex])
                 
@@ -126,7 +129,7 @@ class EditUtils {
                     let attributes = [NSForegroundColorAttributeName: UIColor.black] as [String : Any]
                     subAttrString = NSAttributedString(string: subString, attributes: attributes)
                 }
-                
+                pos += 1
             }
             else {
                 subAttrString = NSAttributedString(string: subString)

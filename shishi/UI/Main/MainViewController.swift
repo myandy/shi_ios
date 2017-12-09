@@ -117,6 +117,7 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
         //        self.testShare()
         //        self.testDB()
 //        self.testGenImage()
+//        self.testPingze()
         
         _ = SSNotificationCenter.default.rx
             .notification(SSNotificationCenter.Names.addWritting)
@@ -200,6 +201,24 @@ class MainViewController: UIViewController , iCarouselDataSource, iCarouselDeleg
     
     func testShare() {
         SSShareUtil.default.shareToSystem(controller: self, image: UIImage(named: "back")!)
+    }
+    
+    func testPingze() {
+        var text = "白日依山尽，黄河入海流。"
+        var attr = EditUtils.pingzeString(text: text, code: "13113，\n11334")
+        print(attr)
+        text = "白日依山尽,黄河入海流。"
+        attr = EditUtils.pingzeString(text: text, code: "13113，\n11334")
+        print(attr)
+        text = "白日依山尽黄河入海流。"
+        attr = EditUtils.pingzeString(text: text, code: "13113，\n11334")
+        print(attr)
+        text = ",白日依山尽黄河入海流。"
+        attr = EditUtils.pingzeString(text: text, code: "13113，\n11334")
+        print(attr)
+        text = "一白日依山尽,黄河入海流。"
+        attr = EditUtils.pingzeString(text: text, code: "13113，\n11334")
+        print(attr)
     }
     
     

@@ -29,10 +29,21 @@ public class StringUtils {
         return nil
     }
     
+    //云除字符串中的回车
+    public class func textRemoveEnter(str: String) -> String {
+        var result = str.replacingOccurrences( of:
+            "\r", with: "")
+        result = str.replacingOccurrences( of:
+            "\n", with: "")
+        return result
+    }
     
     /// 从字符串中提取数字
     public class func getIntFromString(str:String) -> String {
-        let scanner = Scanner(string: str)
+        var newString = StringUtils.textRemoveEnter(str: str)
+        newString = newString.replacingOccurrences( of:
+            " ", with: "")
+        let scanner = Scanner(string: newString)
         scanner.scanUpToCharacters(from: CharacterSet.decimalDigits, into: nil)
         var number :Int = 0
         scanner.scanInt(&number)
