@@ -1,8 +1,9 @@
 {
   "images" : [
     {
-      "idiom" : "iphone",
       "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "icon120-2.png",
       "scale" : "2x"
     },
     {
@@ -18,7 +19,7 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "icon.png",
+      "filename" : "icon120-1.png",
       "scale" : "2x"
     },
     {
@@ -59,8 +60,9 @@
       "scale" : "3x"
     },
     {
-      "idiom" : "ios-marketing",
       "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "icon1024-1.png",
       "scale" : "1x"
     }
   ],
