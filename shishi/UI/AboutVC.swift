@@ -85,7 +85,10 @@ class AboutVC: BaseSettingVC {
     }
     
     func emailClicked(){
-        UIApplication.shared.open(URL(string: "mailto://".appending(SSStr.Setting.ABOUT_EMAIL_VALUE))!)
+        let url = URL(string: "mailto://".appending(SSStr.Setting.ABOUT_EMAIL_VALUE))!
+        UIApplication.shared.openURL(url)
+        //UIApplication.shared.open(url, options: <#T##[String : Any]#>, completionHandler: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+        //UIApplication.shared.open()
     }
     
     

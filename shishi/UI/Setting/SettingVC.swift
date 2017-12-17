@@ -196,13 +196,14 @@ extension SettingVC{
     //app store 评分
     func marktemClick(){
         let urlString = "itms-apps://itunes.apple.com/app/id1277723033"
-        let url = URL(string: urlString)
-        UIApplication.shared.open(url!)
+        let url = URL(string: urlString)!
+        UIApplication.shared.openURL(url)
+//        UIApplication.shared.open(url!)
     }
     
     //跳转微博
     func weiboItemClick(){
-        UIApplication.shared.open(URL(string: "http://www.weibo.com/anddymao")!)
+        UIApplication.shared.openURL(URL(string: "http://www.weibo.com/anddymao")!)
     }
     
     //分享给好友
