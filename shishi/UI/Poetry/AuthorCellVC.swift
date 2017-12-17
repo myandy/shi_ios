@@ -61,6 +61,22 @@ class AuthorCellVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackgroundImage()
+        
+        self.updateFontSize()
+        
+        SSNotificationCenter.default.rx.notification(SSNotificationCenter.Names.updateFontSize).subscribe(onNext: { [weak self] notify in
+            self?.updateFontSize()
+        })
+            .addDisposableTo(self.rx_disposeBag)
+    }
+    
+
+    fileprivate func updateFontSize() {
+        //更新上次保存的字体大小
+        let fontOffset = DataContainer.default.fontOffset
+        if fontOffset != 0 {
+            self.updateFont(pointSizeStep: fontOffset)
+        }
     }
     
 

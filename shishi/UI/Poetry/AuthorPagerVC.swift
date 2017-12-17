@@ -145,11 +145,11 @@ class AuthorPagerVC: UIViewController, UIPageViewControllerDataSource, UIPageVie
             self.showTip()
         }
         
-        //更新上次保存的字体大小
-        let fontOffset = DataContainer.default.fontOffset
-        if fontOffset != 0 {
-            self.updateFont(pointSizeStep: fontOffset)
-        }
+//        //更新上次保存的字体大小
+//        let fontOffset = DataContainer.default.fontOffset
+//        if fontOffset != 0 {
+//            self.updateFont(pointSizeStep: fontOffset)
+//        }
         
     }
     
@@ -314,10 +314,10 @@ extension AuthorPagerVC {
                                         switch selectedIndex {
                                         case 0:
                                             _ = DataContainer.default.increaseFontOffset()
-                                            self.updateFont(pointSizeStep: increaseFontStep)
+                                            //self.updateFont(pointSizeStep: increaseFontStep)
                                         case 1:
                                             _ = DataContainer.default.reduceFontOffset()
-                                            self.updateFont(pointSizeStep: -increaseFontStep)
+                                            //self.updateFont(pointSizeStep: -increaseFontStep)
                                         case 2:
                                             guard let poetry = self.currentPoetry() else {
                                                 return
@@ -366,16 +366,16 @@ extension AuthorPagerVC {
         }
     }
     
-    fileprivate func updateFont(pointSizeStep: CGFloat) {
-        self.controllers.forEach { (controller) in
-            if let poetryCellVC = controller as? PoetryCellVC {
-                poetryCellVC.updateFont(pointSizeStep: pointSizeStep)
-            }
-            else if let authorCellVC = controller as? AuthorCellVC {
-                authorCellVC.updateFont(pointSizeStep: pointSizeStep)
-            }
-        }
-    }
+//    fileprivate func updateFont(pointSizeStep: CGFloat) {
+//        self.controllers.forEach { (controller) in
+//            if let poetryCellVC = controller as? PoetryCellVC {
+//                poetryCellVC.updateFont(pointSizeStep: pointSizeStep)
+//            }
+//            else if let authorCellVC = controller as? AuthorCellVC {
+//                authorCellVC.updateFont(pointSizeStep: pointSizeStep)
+//            }
+//        }
+//    }
     
     fileprivate func speech(poetry: Poetry) {
         let title = StringUtils.titleTextFilter(poerityTitle: poetry.title)

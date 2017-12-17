@@ -37,26 +37,46 @@ class PoetryCellVC : UIViewController {
         
     }()
     
+    fileprivate var color: UIColor!
+    fileprivate var pager: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackgroundImage()
+        
+        self.poetryView.refresh(poetry: poetry,color: self.color)
+        
+        self.poetryView.actionHandel = { [unowned self] _ in
+            self.showShareViewController()
+        }
+        self.pageLabel.text = self.pager
+        
+        self.updateFontSize()
+        
+        SSNotificationCenter.default.rx.notification(SSNotificationCenter.Names.updateFontSize).subscribe(onNext: { [weak self] notify in
+            self?.updateFontSize()
+        })
+            .addDisposableTo(self.rx_disposeBag)
     }
 
+    fileprivate func updateFontSize() {
+        //更新上次保存的字体大小
+        let fontOffset = DataContainer.default.fontOffset
+        if fontOffset != 0 {
+            self.updateFont(pointSizeStep: fontOffset)
+        }
+    }
     
     func refresh(poetry:Poetry,color:UIColor){
         
         NSLog("PoetryCell")
     }
     
-    init(poetry:Poetry,color:UIColor,pager:String) {
+    init(poetry:Poetry, color: UIColor, pager: String) {
         super.init(nibName: nil, bundle: nil)
         self.poetry = poetry
-        self.poetryView.refresh(poetry: poetry,color:color)
-        
-        self.poetryView.actionHandel = { [unowned self] _ in
-            self.showShareViewController()
-        }
-        self.pageLabel.text = pager
+        self.color = color
+        self.pager = pager
     }
     
     required init?(coder aDecoder: NSCoder) {
